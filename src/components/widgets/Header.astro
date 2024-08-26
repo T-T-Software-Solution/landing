@@ -179,7 +179,11 @@ const isTopOfPage = Astro.url.pathname === '/';
   }
 
   header.sticky > div:first-child {
-    @apply backdrop-blur-md bg-white/90 dark:bg-slate-900/90;
+    @apply backdrop-blur-md bg-white/30 dark:bg-slate-900/30;
+  }
+
+  #header-bg {
+    @apply absolute inset-0 transition-opacity duration-300 ease-in-out;
   }
 </style>
 
@@ -196,17 +200,31 @@ const isTopOfPage = Astro.url.pathname === '/';
 
     if (isTopOfPage && !isExpanded) {
       header?.classList.add('bg-transparent');
-      header?.classList.remove('bg-white', 'dark:bg-slate-900', 'border-b', 'border-gray-50/0', 'shadow-md');
+      header?.classList.remove(
+        'bg-white/30',
+        'dark:bg-slate-900/30',
+        'border-b',
+        'border-gray-50/0',
+        'shadow-md',
+        'backdrop-blur-md'
+      );
       headerContent?.classList.remove('py-3');
       headerContent?.classList.add('py-4', 'lg:py-10');
       headerBg?.classList.add('opacity-0');
-      headerBg?.classList.remove('opacity-100');
+      headerBg?.classList.remove('opacity-50');
     } else {
       header?.classList.remove('bg-transparent');
-      header?.classList.add('bg-white', 'dark:bg-slate-900', 'border-b', 'border-gray-50/0', 'shadow-md');
+      header?.classList.add(
+        'bg-white/30',
+        'dark:bg-slate-900/30',
+        'border-b',
+        'border-gray-50/0',
+        'shadow-md',
+        'backdrop-blur-md'
+      );
       headerContent?.classList.remove('py-4', 'lg:py-10');
       headerContent?.classList.add('py-3');
-      headerBg?.classList.add('opacity-100');
+      headerBg?.classList.add('opacity-50');
       headerBg?.classList.remove('opacity-0');
     }
   };

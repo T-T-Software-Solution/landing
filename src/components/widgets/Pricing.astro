@@ -21,11 +21,11 @@ const {
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
   <div class="flex items-stretch justify-center">
-    <div class="grid grid-cols-3 gap-4 dark:text-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+    <div class="grid grid-cols-3 gap-4 dark:text-white sm:grid-cols-2 lg:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
       {
         prices &&
           prices.map(({ title, subtitle, price, period, items, callToAction, hasRibbon = false, ribbonTitle }) => (
-            <div class="col-span-3 mx-auto flex w-full sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1">
+            <div class="col-span-3 mx-auto flex w-full sm:col-span-1 lg:col-span-1 lg:col-span-1 xl:col-span-1">
               {price && period && (
                 <div class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow px-6 py-8 flex w-full max-w-sm flex-col justify-between text-center">
                   {hasRibbon && ribbonTitle && (
@@ -48,7 +48,7 @@ const {
                       <span class="text-base leading-6 lowercase text-gray-600 dark:text-slate-400">{period}</span>
                     </div>
                     {items && (
-                      <ul class="my-8 md:my-10 space-y-2 text-left">
+                      <ul class="my-8 lg:my-10 space-y-2 text-left">
                         {items.map(
                           ({ description, icon }) =>
                             description && (

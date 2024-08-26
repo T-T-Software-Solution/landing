@@ -1,8 +1,8 @@
 ---
+import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import ItemGrid from '~/components/ui/ItemGrid.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import Image from '~/components/common/Image.astro';
 import type { Features as Props } from '~/types';
 
 const {
@@ -26,7 +26,7 @@ const {
 <WidgetWrapper
   id={id}
   isDark={isDark}
-  containerClass={`${isBeforeContent ? 'md:pb-8 lg:pb-12' : ''} ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''} ${
+  containerClass={`${isBeforeContent ? 'lg:pb-8 lg:pb-12' : ''} ${isAfterContent ? 'pt-0 lg:pt-0 lg:pt-0' : ''} ${
     classes?.container ?? ''
   }`}
   bg={bg}

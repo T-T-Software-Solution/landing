@@ -59,7 +59,7 @@ const isTopOfPage = Astro.url.pathname === '/';
   <div
     class:list={[
       'relative text-default mx-auto w-full transition-all duration-300 ease-in-out',
-      isTopOfPage ? 'py-6 lg:py-10' : 'py-3 lg:py-3',
+      isTopOfPage ? 'py-4 lg:py-10' : 'py-3 lg:py-3',
       'px-3 lg:px-6',
       {
         'lg:flex lg:justify-between': position !== 'center',
@@ -155,7 +155,7 @@ const isTopOfPage = Astro.url.pathname === '/';
         </div>
         {
           actions?.length ? (
-            <span class="ml-4 rtl:ml-0 rtl:mr-4">
+            <span class="ml-4 rtl:ml-0 rtl:mr-4 p-2">
               {actions.map((btnProps) => (
                 <Button
                   {...btnProps}
@@ -192,25 +192,31 @@ const isTopOfPage = Astro.url.pathname === '/';
     const scrollY = window.scrollY;
     const isTopOfPage = scrollY < 50;
 
-    if (isTopOfPage) {
+    const isExpanded = header?.classList.contains('expanded');
+
+    if (isTopOfPage && !isExpanded) {
       header?.classList.add('bg-transparent');
-      header?.classList.remove('bg-white', 'dark:bg-slate-900', 'border-b', 'border-gray-50/0');
+      header?.classList.remove('bg-white', 'dark:bg-slate-900', 'border-b', 'border-gray-50/0', 'shadow-md');
       headerContent?.classList.remove('py-3');
-      headerContent?.classList.add('py-6', 'lg:py-10');
+      headerContent?.classList.add('py-4', 'lg:py-10');
       headerBg?.classList.add('opacity-0');
       headerBg?.classList.remove('opacity-100');
-      header?.classList.remove('shadow-md');
     } else {
       header?.classList.remove('bg-transparent');
-      header?.classList.add('bg-white', 'dark:bg-slate-900', 'border-b', 'border-gray-50/0');
-      headerContent?.classList.remove('py-6', 'lg:py-10');
+      header?.classList.add('bg-white', 'dark:bg-slate-900', 'border-b', 'border-gray-50/0', 'shadow-md');
+      headerContent?.classList.remove('py-4', 'lg:py-10');
       headerContent?.classList.add('py-3');
       headerBg?.classList.add('opacity-100');
       headerBg?.classList.remove('opacity-0');
-      header?.classList.add('shadow-md');
     }
   };
 
   window.addEventListener('scroll', updateHeader);
+  const linkContainer = document.querySelector('nav ul');
+  if (linkContainer) {
+    linkContainer.addEventListener('scroll', () => {
+      updateHeader();
+    });
+  }
   updateHeader();
 </script>

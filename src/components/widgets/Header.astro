@@ -59,7 +59,7 @@ const isTopOfPage = Astro.url.pathname === '/';
   <div
     class:list={[
       'relative text-default mx-auto w-full transition-all duration-300 ease-in-out',
-      isTopOfPage ? 'py-10' : 'py-3',
+      isTopOfPage ? 'py-6 lg:py-10' : 'py-3 lg:py-3',
       'px-3 lg:px-6',
       {
         'lg:flex lg:justify-between': position !== 'center',
@@ -185,47 +185,30 @@ const isTopOfPage = Astro.url.pathname === '/';
 
 <script>
   const header = document.querySelector('header');
-  const logo = header?.querySelector('.logo');
   const headerBg = document.getElementById('header-bg');
   const headerContent = header?.querySelector('div:last-child');
-  let lastScrollY = window.scrollY;
 
   const updateHeader = () => {
     const scrollY = window.scrollY;
-    const isScrollingDown = scrollY > lastScrollY;
     const isTopOfPage = scrollY < 50;
 
     if (isTopOfPage) {
-      header.classList.add('bg-transparent');
-      header.classList.remove('bg-white', 'dark:bg-slate-900', 'border-b', 'border-gray-50/0');
-      headerContent.classList.remove('py-3');
-      headerContent.classList.add('py-10');
-      headerBg.style.opacity = '0';
-      header.classList.remove('shadow-md');
-      logo.classList.remove('scale-90');
+      header?.classList.add('bg-transparent');
+      header?.classList.remove('bg-white', 'dark:bg-slate-900', 'border-b', 'border-gray-50/0');
+      headerContent?.classList.remove('py-3');
+      headerContent?.classList.add('py-6', 'lg:py-10');
+      headerBg?.classList.add('opacity-0');
+      headerBg?.classList.remove('opacity-100');
+      header?.classList.remove('shadow-md');
     } else {
-      header.classList.remove('bg-transparent');
-      header.classList.add('bg-white', 'dark:bg-slate-900', 'border-b', 'border-gray-50/0');
-      headerContent.classList.remove('py-10');
-      headerContent.classList.add('py-3');
-      headerBg.style.opacity = '1';
-      header.classList.add('shadow-md');
-      logo.classList.add('scale-90');
+      header?.classList.remove('bg-transparent');
+      header?.classList.add('bg-white', 'dark:bg-slate-900', 'border-b', 'border-gray-50/0');
+      headerContent?.classList.remove('py-6', 'lg:py-10');
+      headerContent?.classList.add('py-3');
+      headerBg?.classList.add('opacity-100');
+      headerBg?.classList.remove('opacity-0');
+      header?.classList.add('shadow-md');
     }
-
-    if (isScrollingDown && !isTopOfPage) {
-      header.style.transform = 'translateY(-100%)';
-    } else {
-      header.style.transform = 'translateY(0)';
-    }
-
-    if (!isTopOfPage) {
-      header.classList.add('shadow-md');
-    } else {
-      header.classList.remove('shadow-md');
-    }
-
-    lastScrollY = scrollY;
   };
 
   window.addEventListener('scroll', updateHeader);

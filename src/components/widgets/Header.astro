@@ -1,13 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Logo from '~/components/Logo.astro';
-import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
+import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import Button from '~/components/ui/Button.astro';
-
-import { getHomePermalink } from '~/utils/permalinks';
-import { trimSlash, getAsset } from '~/utils/permalinks';
 import type { CallToAction } from '~/types';
+import { getAsset, getHomePermalink, trimSlash } from '~/utils/permalinks';
 
 interface Link {
   text?: string;
@@ -45,25 +43,29 @@ const {
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
+const isTopOfPage = Astro.url.pathname === '/';
 ---
 
 <header
   class:list={[
     { sticky: isSticky, relative: !isSticky, dark: isDark },
-    'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out',
+    'top-0 z-40 flex-none mx-auto w-full transition-all ease-in-out duration-300',
+    isTopOfPage ? 'bg-transparent' : 'bg-white dark:bg-slate-900 border-b border-gray-50/0',
   ]}
   {...isSticky ? { 'data-aw-sticky-header': true } : {}}
   {...id ? { id } : {}}
 >
-  <div class="absolute inset-0"></div>
+  <div class="absolute inset-0 transition-all duration-300 ease-in-out opacity-0" id="header-bg"></div>
   <div
     class:list={[
-      'relative text-default py-3 px-3 md:px-6 mx-auto w-full',
+      'relative text-default mx-auto w-full transition-all duration-300 ease-in-out',
+      isTopOfPage ? 'py-10' : 'py-3',
+      'px-3 lg:px-6',
       {
-        'md:flex md:justify-between': position !== 'center',
+        'lg:flex lg:justify-between': position !== 'center',
       },
       {
-        'md:grid md:grid-cols-3 md:items-center': position === 'center',
+        'lg:flex lg:justify-between lg:items-center': position === 'center',
       },
       {
         'max-w-7xl': !isFullWidth,
@@ -72,18 +74,21 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   >
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
       <a class="flex items-center" href={getHomePermalink()}>
-        <Logo />
+        <Logo class="w-auto h-8" />
       </a>
-      <div class="flex items-center md:hidden">
+      <div class="flex items-center lg:hidden">
         <ToggleMenu />
       </div>
     </div>
     <nav
-      class="items-center w-full md:w-auto hidden md:flex md:mx-5 text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:justify-self-center"
+      class:list={[
+        'items-center w-full lg:w-auto hidden lg:flex text-default overflow-y-auto overflow-x-hidden lg:overflow-y-visible lg:overflow-x-auto',
+        { 'lg:w-1/2 justify-center': position === 'center' },
+      ]}
       aria-label="Main navigation"
     >
       <ul
-        class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center"
+        class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl lg:text-[0.9375rem] tracking-[0.01rem] font-bold lg:justify-center"
       >
         {
           links.map(({ text, href, links }) => (
@@ -92,15 +97,15 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                 <>
                   <button type="button" class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center">
                     {text}{' '}
-                    <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
+                    <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden lg:inline" />
                   </button>
-                  <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
+                  <ul class="dropdown-menu lg:backdrop-blur-md dark:lg:bg-dark rounded lg:absolute pl-4 lg:pl-0 lg:hidden font-bold lg:bg-white/90 lg:min-w-[200px] drop-shadow-xl">
                     {links.map(({ text: text2, href: href2 }) => (
                       <li>
                         <a
                           class:list={[
-                            'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
-                            { 'aw-link-active': href2 === currentPath },
+                            'first:rounded-t last:rounded-b lg:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
+                            { 'text-primary dark:text-primary': href2 === currentPath },
                           ]}
                           href={href2}
                         >
@@ -114,7 +119,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                 <a
                   class:list={[
                     'hover:text-link dark:hover:text-white px-4 py-3 flex items-center',
-                    { 'aw-link-active': href === currentPath },
+                    { 'text-primary dark:text-primary': href === currentPath },
                   ]}
                   href={href}
                 >
@@ -129,12 +134,13 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     <div
       class:list={[
         { 'ml-auto rtl:ml-0 rtl:mr-auto': position === 'left' },
-        'hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0 md:justify-self-end',
+        'hidden lg:self-center lg:flex items-center lg:mb-0 fixed w-full lg:w-auto lg:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 lg:p-0',
+        { 'lg:w-1/4': position === 'center' },
       ]}
     >
-      <div class="items-center flex justify-between w-full md:w-auto">
+      <div class="items-center flex justify-between w-full lg:w-auto">
         <div class="flex">
-          {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
+          {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 lg:w-5 lg:h-5 lg:inline-block" />}
           {
             showRssFeed && (
               <a
@@ -151,7 +157,11 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
           actions?.length ? (
             <span class="ml-4 rtl:ml-0 rtl:mr-4">
               {actions.map((btnProps) => (
-                <Button {...btnProps} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" />
+                <Button
+                  {...btnProps}
+                  variant="primary"
+                  class="ml-2 py-1.5 px-4 md:px-5 font-bold shadow-none text-sm w-auto"
+                />
               ))}
             </span>
           ) : (
@@ -162,3 +172,63 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     </div>
   </div>
 </header>
+
+<style>
+  header.sticky {
+    @apply fixed top-0 left-0 w-full overflow-hidden;
+  }
+
+  header.sticky > div:first-child {
+    @apply backdrop-blur-md bg-white/90 dark:bg-slate-900/90;
+  }
+</style>
+
+
+<script>
+  const header = document.querySelector('header');
+  const logo = header?.querySelector('.logo');
+  const headerBg = document.getElementById('header-bg');
+  const headerContent = header?.querySelector('div:last-child');
+  let lastScrollY = window.scrollY;
+
+  const updateHeader = () => {
+    const scrollY = window.scrollY;
+    const isScrollingDown = scrollY > lastScrollY;
+    const isTopOfPage = scrollY < 50;
+
+    if (isTopOfPage) {
+      header.classList.add('bg-transparent');
+      header.classList.remove('bg-white', 'dark:bg-slate-900', 'border-b', 'border-gray-50/0');
+      headerContent.classList.remove('py-3');
+      headerContent.classList.add('py-10');
+      headerBg.style.opacity = '0';
+      header.classList.remove('shadow-md');
+      logo.classList.remove('scale-90');
+    } else {
+      header.classList.remove('bg-transparent');
+      header.classList.add('bg-white', 'dark:bg-slate-900', 'border-b', 'border-gray-50/0');
+      headerContent.classList.remove('py-10');
+      headerContent.classList.add('py-3');
+      headerBg.style.opacity = '1';
+      header.classList.add('shadow-md');
+      logo.classList.add('scale-90');
+    }
+
+    if (isScrollingDown && !isTopOfPage) {
+      header.style.transform = 'translateY(-100%)';
+    } else {
+      header.style.transform = 'translateY(0)';
+    }
+
+    if (!isTopOfPage) {
+      header.classList.add('shadow-md');
+    } else {
+      header.classList.remove('shadow-md');
+    }
+
+    lastScrollY = scrollY;
+  };
+
+  window.addEventListener('scroll', updateHeader);
+  updateHeader();
+</script>

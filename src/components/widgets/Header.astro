@@ -188,11 +188,11 @@ const isTopOfPage = Astro.url.pathname === '/';
 </style>
 
 <script>
-  const header = document.querySelector('header');
-  const headerBg = document.getElementById('header-bg');
-  const headerContent = header?.querySelector('div:last-child');
+  function updateHeader() {
+    const header = document.querySelector('header');
+    const headerBg = document.getElementById('header-bg');
+    const headerContent = header?.querySelector('div:last-child');
 
-  const updateHeader = () => {
     const scrollY = window.scrollY;
     const isTopOfPage = scrollY < 50;
 
@@ -227,14 +227,23 @@ const isTopOfPage = Astro.url.pathname === '/';
       headerBg?.classList.add('opacity-50');
       headerBg?.classList.remove('opacity-0');
     }
-  };
+  }
 
+  // Run on initial load
+  updateHeader();
+
+  // Run on scroll
   window.addEventListener('scroll', updateHeader);
+
+  // Run when the DOM content is loaded
+  document.addEventListener('DOMContentLoaded', updateHeader);
+
+  // Run when Astro swaps pages
+  document.addEventListener('astro:after-swap', updateHeader);
+
+  // Update header when link container scrolls
   const linkContainer = document.querySelector('nav ul');
   if (linkContainer) {
-    linkContainer.addEventListener('scroll', () => {
-      updateHeader();
-    });
+    linkContainer.addEventListener('scroll', updateHeader);
   }
-  updateHeader();
 </script>

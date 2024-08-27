@@ -19,19 +19,21 @@ const {
 ---
 
 <section class="relative lg:-mt-[76px] not-prose" {...id ? { id } : {}}>
-  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-    <slot name="bg">
-      {bg ? <Fragment set:html={bg} /> : null}
+  <div class="absolute inset-0 pointer-events-none w-full overflow-hidden" aria-hidden="true">
+    <slot name="bg" class="w-full">
+      <div class="absolute inset-0 z-[-1] w-full h-full opacity-25">
+        {bg ? <Image class="max-w-full h-auto" src={bg} alt="hero background" /> : null}
+      </div>
     </slot>
   </div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="pt-0 lg:pt-[200px] pointer-events-none"></div>
+    <div class="pt-[100px] lg:pt-[200px] pointer-events-none"></div>
     <div class="py-20 lg:py-28">
       <div class="text-center pb-10 lg:pb-16 max-w-5xl mx-auto">
         {
           tagline && (
             <p
-              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
+              class="text-2xl text-secondary dark:text-blue-200 font-bold tracking-wide uppercase mb-8"
               set:html={tagline}
             />
           )
@@ -39,13 +41,13 @@ const {
         {
           title && (
             <h1
-              class="text-5xl lg:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+              class="text-5xl lg:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 whitespace-pre"
               set:html={title}
             />
           )
         }
         <div class="max-w-3xl mx-auto">
-          {subtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
+          {subtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300 whitespace-pre" set:html={subtitle} />}
           {
             actions && (
               <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">

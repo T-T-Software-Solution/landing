@@ -22,17 +22,19 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
+	tagline="T.T. Software Solution"
+    title={`We are Software Solution Expert\n made by MVP Technical Team`}
+	subtitle={`เราคือผู้นำด้าน Microsoft Technology ในประเทศไทย\n พัฒนาโซลูชันธุรกิจด้วย ASP.NET, Azure และ C# โดยทีม MVP และผู้เชี่ยวชาญ`}
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
+        text: 'Our Services',
+        href: '/services',
         icon: 'tabler:download',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Contact us', href: '/contact' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+    bg="~/assets/images/hero-bg-shape.png"
   >
     <Fragment slot="title">
       Free template for <span class="hidden xl:inline">creating websites with</span>

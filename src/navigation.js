@@ -1,4 +1,4 @@
-import { getAsset, getPermalink } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -8,24 +8,7 @@ export const headerData = {
     },
     {
       text: 'สินค้า/บริการ',
-      links: [
-        {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
-        },
-        {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
-        },
-        {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
-        },
-      ],
+      href: '#',
     },
     {
       text: 'ผลงานของเรา',
@@ -37,7 +20,7 @@ export const headerData = {
     },
     {
       text: 'แหล่งเรียนรู้',
-      href: '#',
+      href: 'https://portal.tt-ss.net/blogs/',
     },
     {
       text: 'ร่วมงานกับเรา',
@@ -46,70 +29,43 @@ export const headerData = {
   ],
   actions: [{
     text: 'ติดต่อเรา',
-    href: 'https://github.com/onwidget/astrowind',
+    href: '#',
   }],
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'เมนู',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: 'หน้าแรก', href: getPermalink('/') },
+        { text: 'สินค้า/บริการ', href: '#' },
+        { text: 'ผลงานของเรา', href: '#' },
+        { text: 'ทีมงาน', href: '#' },
       ],
     },
     {
-      title: 'Platform',
+      title: ' ',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
-      ],
-    },
-    {
-      title: 'Support',
-      links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
-      ],
-    },
-    {
-      title: 'Company',
-      links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'แหล่งเรียนรู้', href: 'https://portal.tt-ss.net/blogs/' },
+        { text: 'ร่วมงานกับเรา', href: '#' },
+        { text: 'เกี่ยวกับเรา', href: '#' },
+        { text: 'ติดต่อเรา', href: '#' },
       ],
     },
   ],
-  secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+  contactLinks: [
+    { icon: 'envelope', text: 'nakorn@tt-ss.net', href: 'mailto:nakorn@tt-ss.net' },
+    { icon: 'envelope', text: 'hr@tt-ss.net (ฝ่ายทรัพยากรบุคคล)', href: 'mailto:hr@tt-ss.net' },
+    { icon: 'phone', text: '086-899-6243 (สำนักงานกรุงเทพ)', href: 'tel:0868996243' },
+    { icon: 'phone', text: '061-018-1275 (สำนักงานขอนแก่น)', href: 'tel:0610181275' },
+    { icon: 'line', text: '@ttss', href: 'https://line.me/R/ti/p/@ttss' },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    { ariaLabel: "Medium", icon: 'tabler:brand-medium', href: 'https://medium.com/t-t-software-solution' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/ttsoftwaresolution' },
+    { ariaLabel: 'YouTube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/@ttsoftwaresolution' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/t-t-software-solution' },
+    { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/T-T-Software-Solution' },
   ],
-  footNote: `
-    <img class="w-5 h-5 lg:w-6 lg:h-6 lg:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://onwidget.com/favicon/favicon-32x32.png" alt="onWidget logo" loading="lazy"></img>
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://onwidget.com/"> onWidget</a> · All rights reserved.
-  `,
 };

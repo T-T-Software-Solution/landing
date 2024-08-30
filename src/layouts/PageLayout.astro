@@ -16,16 +16,19 @@ const { metadata } = Astro.props;
 
 <Layout metadata={metadata}>
   <slot name="header">
-    <Header
-      {...headerData}
-      isSticky
-      position="center"
-    />
+    <Header {...headerData} isSticky position="center" />
   </slot>
   <main>
     <slot />
   </main>
   <slot name="footer">
-    <Footer {...footerData} />
+    <Footer {...footerData}>
+      <Fragment slot="description">
+        <p>
+          We are Software Solution Expertmade by <span class="text-primary font-bold">MVP Technical Team</span><br
+          />พัฒนาโซลูชันธุรกิจด้วย ASP.NET, Azure และ C# โดยทีม MVP และผู้เชี่ยวชาญ
+        </p>
+      </Fragment>
+    </Footer>
   </slot>
 </Layout>

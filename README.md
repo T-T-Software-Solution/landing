@@ -1,295 +1,86 @@
-# 🚀 AstroWind
+# T.T. Software Solution Landing Page
 
-<img src="https://raw.githubusercontent.com/onwidget/.github/main/resources/astrowind/lighthouse-score.png" align="right"
-     alt="AstroWind Lighthouse Score" width="100" height="358">
+## Description
 
-🌟 _Most *starred* & *forked* Astro theme in 2022 & 2023_. 🌟
-
-**AstroWind** is a free and open-source template to make your website using **[Astro 4.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account web best practices.
-
-- ✅ **Production-ready** scores in **PageSpeed Insights** reports.
-- ✅ Integration with **Tailwind CSS** supporting **Dark mode** and **_RTL_**.
-- ✅ **Fast and SEO friendly blog** with automatic **RSS feed**, **MDX** support, **Categories & Tags**, **Social Share**, ...
-- ✅ **Image Optimization** (using new **Astro Assets** and **Unpic** for Universal image CDN).
-- ✅ Generation of **project sitemap** based on your routes.
-- ✅ **Open Graph tags** for social media sharing.
-- ✅ **Analytics** built-in Google Analytics, and Splitbee integration.
-
-<br>
-
-<img src="https://raw.githubusercontent.com/onwidget/.github/main/resources/astrowind/screenshot-astrowind-1.png" alt="AstroWind Theme Screenshot">
-
-[![onWidget](https://custom-icon-badges.demolab.com/badge/made%20by%20-onWidget-556bf2?style=flat-square&logo=onwidget&logoColor=white&labelColor=101827)](https://onwidget.com)
-[![License](https://img.shields.io/github/license/onwidget/astrowind?style=flat-square&color=dddddd&labelColor=000000)](https://github.com/onwidget/astrowind/blob/main/LICENSE.md)
-[![Maintained](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg?style=flat-square)](https://github.com/onwidget)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/onwidget/astrowind#contributing)
-[![Known Vulnerabilities](https://snyk.io/test/github/onwidget/astrowind/badge.svg?style=flat-square)](https://snyk.io/test/github/onwidget/astrowind)
-[![Stars](https://img.shields.io/github/stars/onwidget/astrowind.svg?style=social&label=stars&maxAge=86400&color=ff69b4)](https://github.com/onwidget/astrowind)
-[![Forks](https://img.shields.io/github/forks/onwidget/astrowind.svg?style=social&label=forks&maxAge=86400&color=ff69b4)](https://github.com/onwidget/astrowind)
-
-<br>
-
-<details open>
-<summary>Table of Contents</summary>
-
-- [Demo](#demo)
-- [Upcoming: AstroWind 2.0 – We Need Your Vision!](#-upcoming-astrowind-20--we-need-your-vision)
-- [Getting started](#getting-started)
-  - [Project structure](#project-structure)
-  - [Commands](#commands)
-  - [Configuration](#configuration)
-  - [Deploy](#deploy)
-- [Frequently Asked Questions](#frequently-asked-questions)
-- [Related Projects](#related-projects)
-- [Contributing](#contributing)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
-
-</details>
-
-<br>
-
-## Demo
-
-📌 [https://astrowind.vercel.app/](https://astrowind.vercel.app/)
-
-<br>
-
-## 🔔 Upcoming: AstroWind 2.0 – We Need Your Vision!
-
-We're embarking on an exciting journey with **AstroWind 2.0**, and we want you to be a part of it! We're currently taking the first steps in developing this new version and your insights are invaluable. Join the discussion and share your feedback, ideas, and suggestions to help shape the future of **AstroWind**. Let's make **AstroWind 2.0** even better, together!
-
-[Share Your Feedback in Our Discussion!](https://github.com/onwidget/astrowind/discussions/392)
-
-<br>
-
-## Getting started
-
-**AstroWind** tries to give you quick access to creating a website using [Astro 4.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/). It's a free theme which focuses on simplicity, good practices and high performance.
-
-Very little vanilla javascript is used only to provide basic functionality so that each developer decides which framework (React, Vue, Svelte, Solid JS...) to use and how to approach their goals.
-
-In this version the template supports all the options in the `output` configuration, `static`, `hybrid` and `server`, but the blog only works with `prerender = true`. We are working on the next version and aim to make it fully compatible with SSR.
-
-### Project structure
-
-Inside **AstroWind** template, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   ├── _headers
-│   └── robots.txt
-├── src/
-│   ├── assets/
-│   │   ├── favicons/
-│   │   ├── images/
-│   │   └── styles/
-│   │       └── tailwind.css
-│   ├── components/
-│   │   ├── blog/
-│   │   ├── common/
-│   │   ├── ui/
-│   │   ├── widgets/
-│   │   │   ├── Header.astro
-│   │   │   └── ...
-│   │   ├── CustomStyles.astro
-│   │   ├── Favicons.astro
-│   │   └── Logo.astro
-│   ├── content/
-│   │   ├── post/
-│   │   │   ├── post-slug-1.md
-│   │   │   ├── post-slug-2.mdx
-│   │   │   └── ...
-│   │   └-- config.ts
-│   ├── layouts/
-│   │   ├── Layout.astro
-│   │   ├── MarkdownLayout.astro
-│   │   └── PageLayout.astro
-│   ├── pages/
-│   │   ├── [...blog]/
-│   │   │   ├── [category]/
-│   │   │   ├── [tag]/
-│   │   │   ├── [...page].astro
-│   │   │   └── index.astro
-│   │   ├── index.astro
-│   │   ├── 404.astro
-│   │   ├-- rss.xml.ts
-│   │   └── ...
-│   ├── utils/
-│   ├── config.yaml
-│   └── navigation.js
-├── package.json
-├── astro.config.mjs
-└── ...
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory if they do not require any transformation or in the `assets/` directory if they are imported directly.
-
-[![Edit AstroWind on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/onwidget/astrowind/tree/main) [![Open in Gitpod](https://svgshare.com/i/xdi.svg)](https://gitpod.io/?on=gitpod#https://github.com/onwidget/astrowind) [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/onwidget/astrowind)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file `README.md`. Update `src/config.yaml` and contents. Have fun!
-
-<br>
-
-### Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command               | Action                                             |
-| :-------------------- | :------------------------------------------------- |
-| `npm install`         | Installs dependencies                              |
-| `npm run dev`         | Starts local dev server at `localhost:3000`        |
-| `npm run build`       | Build your production site to `./dist/`            |
-| `npm run preview`     | Preview your build locally, before deploying       |
-| `npm run format`      | Format codes with Prettier                         |
-| `npm run lint:eslint` | Run Eslint                                         |
-| `npm run astro ...`   | Run CLI commands like `astro add`, `astro preview` |
-
-<br>
-
-### Configuration
-
-Basic configuration file: `./src/config.yaml`
-
-```yaml
-site:
-  name: 'Example'
-  site: 'https://example.com'
-  base: '/' # Change this if you need to deploy to Github Pages, for example
-  trailingSlash: false # Generate permalinks with or without "/" at the end
-
-  googleSiteVerificationId: false # Or some value,
-
-# Default SEO metadata
-metadata:
-  title:
-    default: 'Example'
-    template: '%s — Example'
-  description: 'This is the default meta description of Example website'
-  robots:
-    index: true
-    follow: true
-  openGraph:
-    site_name: 'Example'
-    images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
-    type: website
-  twitter:
-    handle: '@twitter_user'
-    site: '@twitter_user'
-    cardType: summary_large_image
+This repository contains the source code for the T.T. Software Solution Landing Page. The landing page is designed to provide an engaging and informative introduction to T.T. Software Solution's services and offerings. It is built using modern web development technologies to ensure a responsive and user-friendly experience.
 
-i18n:
-  language: en
-  textDirection: ltr
+## Setup Development Environment
 
-apps:
-  blog:
-    isEnabled: true # If the blog will be enabled
-    postsPerPage: 6 # Number of posts per page
+### IDE
 
-    post:
-      isEnabled: true
-      permalink: '/blog/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
-      robots:
-        index: true
+**[Visual Studio Code](https://code.visualstudio.com/download)**
 
-    list:
-      isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
-      robots:
-        index: true
+ในส่วนของ VSCode Extension ที่แนะนำ สามารถค้นหาได้โดยการเปิดแท็บ Extensions(ctrl+shift+x) และค้นหาคำว่า `@recommended` จะมี extensions โผล่ขึ้นมาในหัวข้อของ WORKSPACE RECOMMENDATIONS สามารถเลือกติดตั้งได้ตามต้องการเลย(ไม่จำเป็นต้องติดตั้งทั้งหมด)
 
-    category:
-      isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
-      robots:
-        index: true
+### Runtime
 
-    tag:
-      isEnabled: true
-      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
-      robots:
-        index: false
+**[Node.js](https://nodejs.org/en)**
 
-    isRelatedPostsEnabled: true # If a widget with related posts is to be displayed below each post
-    relatedPostsCount: 4 # Number of related posts to display
+ในส่วนของ Node.js ให้เลือกติดตั้งเวอร์ชั่น LTS (Long Term Support) หรือ Current (Latest Features) ก็ได้ แต่ในการพัฒนาโปรแกรมจะแนะนำให้ใช้ LTS เพื่อให้มั่นใจว่าจะไม่มีปัญหาในการรันโปรแกรมในเวอร์ชันที่ต่างกัน
+ซึ่งในโปรเจกต์นี้ใช้ Node.js เวอร์ชัน 20
 
-analytics:
-  vendors:
-    googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+> สามารถตรวจสอบเวอร์ชั่น Node.js ได้โดยการรันคำสั่ง `node -v` ใน Terminal
 
-ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
-```
+> การเปลี่ยนเวอร์ชันของ Node.js จะยุ่งยากนิดนึง **อยากแนะนำให้ติดตั้ง Node.js ผ่าน เครื่องมืออื่น ๆ เช่น [Volta(Windows/Unix)](https://volta.sh/), [asdf(Unix)](https://asdf-vm.com/) หรือ [mise(Unix)](https://mise.jdx.dev/) เป็นต้น** เครื่องมือเหล่านี้จะช่วยให้คุณสามารถเปลี่ยนเวอร์ชันของ Node.js ได้อย่างง่ายดายเพียงไม่กี่คำสั่ง
 
-<br>
+### Package Manager
 
-#### Customize Design
+**[Bun](https://bun.sh/docs/installation)**
 
-To customize Font families, Colors or more Elements refer to the following files:
+ในส่วนของโปรเจกต์นี้ เราจะใช้ Bun เป็นตัวจัดการ Package ของโปรเจกต์ เพื่อให้สามารถติดตั้ง package ที่จำเป็นต่อการพัฒนาโปรเจกต์ได้อย่างง่ายดาย และรวดเร็ว
 
-- `src/components/CustomStyles.astro`
-- `src/assets/styles/tailwind.css`
+## Setup Project
 
-### Deploy
+### Clone Project
 
-#### Deploy to production (manual)
+- ขั้นตอนแรกให้ทำการ Clone Project ลงในเครื่องของคุณ
 
-You can create an optimized production build with:
+  ```bash
+  $ git clone https://github.com/T-T-Software-Solution/landing.git
+  ```
 
-```shell
-npm run build
-```
+### Install Packages
 
-Now, your website is ready to be deployed. All generated files are located at
-`dist` folder, which you can deploy the folder to any hosting service you
-prefer.
+- ติดตั้ง package ที่จำเป็นต่อการพัฒนาโปรเจกต์ โดยคำสั่งนี้จะทำการติดตั้ง package ทั้งหมดที่อยู่ในไฟล์ [package.json](/package.json) และจะเก็บไว้ในโฟลเดอร์ `node_modules`
 
-#### Deploy to Netlify
+  ```bash
+  $ bun install
+  # หรือ
+  $ npm install
+  ```
+  
+### Run Development Server
 
-Clone this repository on your own GitHub account and deploy it to Netlify:
+- หลังจากติดตั้ง package เสร็จเรียบร้อยแล้ว ให้รันคำสั่งต่อไปนี้เพื่อรันเว็บไซต์บนเครื่องของคุณ
 
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/onwidget/astrowind)
+  ```bash
+  $ bun dev
+  # หรือ
+  $ npm run dev
+  ```
 
-#### Deploy to Vercel
+- เมื่อเซิร์ฟเวอร์เริ่มทำงานแล้ว คุณสามารถเปิดเบราว์เซอร์และเข้าไปที่ `http://localhost:4321` เพื่อดูผลลัพธ์ของโปรเจกต์
 
-Clone this repository on your own GitHub account and deploy to Vercel:
+### Build Project
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonwidget%2Fastrowind)
+- เมื่อพัฒนาโปรเจกต์เสร็จเรียบร้อยแล้ว คุณสามารถสร้างไฟล์สำหรับการ deploy โดยใช้คำสั่งต่อไปนี้
 
-<br>
+  ```bash
+  $ bun run build
+  # หรือ
+  $ npm run build
+  ```
 
-## Frequently Asked Questions
+- ไฟล์ที่ถูกสร้างขึ้นจะถูกเก็บไว้ในโฟลเดอร์ `dist` ซึ่งสามารถนำไป deploy บนเซิร์ฟเวอร์จริงได้
 
-- Why?
--
--
+### Preview Production Build
 
-<br>
+- คุณสามารถทดสอบการทำงานของโปรเจกต์ในสภาพแวดล้อม production โดยใช้คำสั่งต่อไปนี้
 
-## Related projects
+  ```bash
+  $ bun run preview
+  # หรือ
+  $ npm run preview
+  ```
 
-- [TailNext](https://tailnext.vercel.app/) - Free template using Next.js 14 and Tailwind CSS with the new App Router.
-- [Qwind](https://qwind.pages.dev/) - Free template to make your website using Qwik + Tailwind CSS.
-
-## Contributing
-
-If you have any ideas, suggestions or find any bugs, feel free to open a discussion, an issue or create a pull request.
-That would be very useful for all of us and we would be happy to listen and take action.
-
-## Acknowledgements
-
-Initially created by [onWidget](https://onwidget.com) and maintained by a community of [contributors](https://github.com/onwidget/astrowind/graphs/contributors).
-
-## License
-
-**AstroWind** is licensed under the MIT license — see the [LICENSE](./LICENSE.md) file for details.
+- คำสั่งนี้จะทำการรันเซิร์ฟเวอร์ขึ้นมาโดย มันจะทำการอ่านไฟล์ที่ถูกสร้างขึ้นมาในโฟลเดอร์ `dist` และจะทำการรันเซิร์ฟเวอร์บนเครื่องของคุณ ซึ่งคุณสามารถเข้าไปที่ `http://localhost:4321` เพื่อดูผลลัพธ์ของโปรเจกต์ได้

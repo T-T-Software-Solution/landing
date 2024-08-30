@@ -25,8 +25,6 @@ const metadata = {
 
   <Hero
     tagline="T.T. Software Solution"
-    title={`We are Software Solution Expert\n made by MVP Technical Team`}
-    subtitle={`เราคือผู้นำด้าน Microsoft Technology ในประเทศไทย\n พัฒนาโซลูชันธุรกิจด้วย ASP.NET, Azure และ C# โดยทีม MVP และผู้เชี่ยวชาญ`}
     actions={[
       {
         variant: 'primary',
@@ -37,6 +35,12 @@ const metadata = {
     ]}
     bg="~/assets/images/hero-bg-shape.jpeg"
   >
+    <Fragment slot="title">
+      We are Software Solution Expert<br />made by MVP Technical Team
+    </Fragment>
+    <Fragment slot="subtitle">
+      เราคือผู้นำด้าน Microsoft Technology ในประเทศไทย<br />พัฒนาโซลูชันธุรกิจด้วย ASP.NET, Azure และ C# โดยทีม MVP และผู้เชี่ยวชาญ
+    </Fragment>
     <Fragment slot="contact">
       <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-8 text-muted content-center">
         <div class="col-span-1">

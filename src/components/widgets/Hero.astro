@@ -36,7 +36,7 @@ const {
         {
           tagline && (
             <p
-              class="font-serif text-2xl text-secondary dark:text-secondary font-bold tracking-wide uppercase mb-8"
+              class="font-serif text-3xl text-secondary dark:text-secondary font-bold tracking-wide uppercase mb-6"
               set:html={tagline}
             />
           )
@@ -44,25 +44,14 @@ const {
         {
           title && (
             <h1
-              class="text-xl sm:text-3xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 whitespace-pre-wrap"
+              class="text-xl xs:text-2xl sm:text-3xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
               set:html={title}
             />
           )
         }
         <div class="mx-auto">
-          {
-            subtitle && (
-              <p
-                class="text-md sm:text-xl text-muted mb-6 dark:text-slate-300 whitespace-pre-wrap"
-                set:html={subtitle}
-              />
-            )
-          }
-          {
-            contact && (
-              <Fragment set:html={contact} />
-            )
-          }
+          {subtitle && <p class="text-md sm:text-xl text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
+          {contact && <Fragment set:html={contact} />}
           {
             actions && (
               <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">

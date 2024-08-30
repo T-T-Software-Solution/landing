@@ -1,6 +1,9 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+import FacebookIcon from '~/components/icons/FacebookIcon.astro';
+import LineIcon from '~/components/icons/LineIcon.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
   title: 'T.T. Software Solution — ที.ที. ซอฟแวร์ โซลูชั่น',
@@ -12,34 +15,51 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-	tagline="T.T. Software Solution"
+    tagline="T.T. Software Solution"
     title={`We are Software Solution Expert\n made by MVP Technical Team`}
-	subtitle={`เราคือผู้นำด้าน Microsoft Technology ในประเทศไทย\n พัฒนาโซลูชันธุรกิจด้วย ASP.NET, Azure และ C# โดยทีม MVP และผู้เชี่ยวชาญ`}
+    subtitle={`เราคือผู้นำด้าน Microsoft Technology ในประเทศไทย\n พัฒนาโซลูชันธุรกิจด้วย ASP.NET, Azure และ C# โดยทีม MVP และผู้เชี่ยวชาญ`}
     actions={[
       {
         variant: 'primary',
         text: 'Our Services',
         href: '/services',
-        icon: 'tabler:download',
       },
       { text: 'Contact us', href: '/contact' },
     ]}
-    bg="~/assets/images/hero-bg-shape.png"
-	image=`<Image src="~/assets/images/hero-bg-shape.png" width="1024" height="576" />`
+    bg="~/assets/images/hero-bg-shape.jpeg"
   >
-    <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 4.0</span> + Tailwind CSS
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 4.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+    <Fragment slot="contact">
+      <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-8 text-muted content-center">
+        <div class="col-span-1">
+          <span>สนใจติดต่อ</span>
+        </div>
+        <a href="tel:0868996243" target="_blank">
+          <div class="flex items-center gap-2 w-fit">
+            <Icon name="phone" />
+            <span>086-899-6243 (สำนักงานกรุงเทพ)</span>
+          </div>
+        </a>
+        <a href="mailto:nakorn@tt-ss.net" target="_blank">
+          <div class="flex items-center gap-2 w-fit">
+            <Icon name="envelope" />
+            <span>nakorn@tt-ss.net</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/ttsoftwaresolution" target="_blank">
+          <div class="flex items-center gap-2 w-fit">
+            {/* <Icon name="facebook" /> */}
+            <FacebookIcon width="1em" height="1em" />
+            <span>T. T. Software Solution</span>
+          </div>
+        </a>
+        <a href="https://line.me/R/ti/p/@ttss" target="_blank">
+          <div class="flex items-center gap-2 w-fit">
+            {/* <Icon name="line" /> */}
+            <LineIcon width="1em" height="1em" />
+            <span>@ttss</span>
+          </div>
+        </a>
+      </div>
     </Fragment>
   </Hero>
 </Layout>

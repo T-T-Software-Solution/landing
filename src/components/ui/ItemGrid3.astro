@@ -32,9 +32,12 @@ const {
         containerClass
       )}
     >
-      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
+      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }, index) => (
         <div>
-          <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
+          <div
+            class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}
+            style={`--animation-order: ${index};`}
+          >
             <div class="flex justify-center">
               {(icon || defaultIcon) && (
                 <div class={twMerge('w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2', defaultIconClass, itemClasses?.icon)}>
@@ -62,3 +65,18 @@ const {
     </div>
   )
 }
+
+<style>
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    transition-delay: calc(var(--animation-order, 0) * 0.1s);
+  }
+  .animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

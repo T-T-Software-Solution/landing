@@ -6,10 +6,10 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
+import ImageBentoGrid from '~/components/widgets/ImageBentoGrid.astro';
+import OurServices from '~/components/widgets/OurServices.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Layout from '~/layouts/PageLayout.astro';
@@ -39,7 +39,8 @@ const metadata = {
       We are Software Solution Expert<br />made by MVP Technical Team
     </Fragment>
     <Fragment slot="subtitle">
-      เราคือผู้นำด้าน Microsoft Technology ในประเทศไทย<br />พัฒนาโซลูชันธุรกิจด้วย ASP.NET, Azure และ C# โดยทีม MVP และผู้เชี่ยวชาญ
+      เราคือผู้นำด้าน Microsoft Technology ในประเทศไทย<br />พัฒนาโซลูชันธุรกิจด้วย ASP.NET, Azure และ C# โดยทีม MVP
+      และผู้เชี่ยวชาญ
     </Fragment>
     <Fragment slot="contact">
       <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-8 text-muted content-center">
@@ -76,53 +77,66 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  <!-- Note Widget ******************* -->
+  <!-- ImageBentoGrid Widget ******************* -->
 
-  <Note />
+  <ImageBentoGrid
+    images={[
+      { url: '~/assets/images/bento-primary.webp' , class: {
+        container: 'col-span-3 md:col-span-2'
+      } },
+      { url: '~/assets/images/bento-secondary.webp' },
+      { url: '~/assets/images/bento-third.webp' },
+    ]}
+  />
 
-  <!-- Features Widget *************** -->
+  <!-- OurServices Widget ******************* -->
 
-  <Features
-    id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022."
+  <OurServices
+    tagline="บริการของเรา"
+    id="ourServices"
+    title="Our Services"
+    subtitle="โซลูชันเทคโนโลยีที่ครบวงจร พัฒนาระบบตามความต้องการของธุรกิจคุณ"
+    classes={{
+      headline: {
+        container: 'mx-auto',
+      },
+    }}
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: 'Back Office Web Application Service',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
+          'บริการพัฒนาแอปพลิเคชันเว็บสำหรับระบบหลังบ้าน ช่วยจัดการงานภายในองค์กร อย่างมีประสิทธิภาพ เช่น ระบบบัญชี การจัดการลูกค้า และการบริหารทรัพยากร ออกแบบให้เหมาะสมกับกระบวนการทำงานเฉพาะของแต่ละธุรกิจ',
+        icon: '~/assets/images/web-development.svg',
       },
       {
-        title: 'Ready-to-use Components',
+        title: 'Azure Cloud by Professtional',
         description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
+          'บริการให้คำปรึกษาและพัฒนาโซลูชันบนคลาวด์ Azure โดยผู้เชี่ยวชาญ ช่วยองค์กร ในการย้ายระบบสู่คลาวด์ จัดการทรัพยากรไอทีและเพิ่มความปลอดภัยให้กับข้อมูลสำคัญ',
+        icon: '~/assets/images/cloud.svg',
       },
       {
-        title: 'Best Practices',
+        title: 'Responsive Web Design Service',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
+          'บริการออกแบบเว็บไซต์ที่รองรับการแสดงผลบนทุกอุปกรณ์ ทั้งคอมพิวเตอร์ แท็บเล็ต และสมาร์ทโฟน สร้างประสบการณ์การใช้งานที่ดีให้กับผู้ใช้ พร้อมเพิ่มโอกาสทางธุรกิจ ด้วยการเข้าถึงกลุ่มเป้าหมายได้กว้างขึ้น',
+        icon: '~/assets/images/responsive-web.svg',
       },
       {
-        title: 'Excellent Page Speed',
+        title: 'Training and skills development',
         description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
+          'บริการฝึกอบรมและพัฒนาทักษะด้านไอทีสำหรับบุคลากรในองค์กร ครอบคลุมหลักสูตร ที่เกี่ยวข้องกับเทคโนโลยีล่าสุด เพื่อเพิ่มประสิทธิภาพการทำงานและการใช้งานระบบต่างๆ',
+        icon: '~/assets/images/teacher.svg',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
+        title: 'Data Visualization Service',
         description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
+          'บริการนำเสนอข้อมูลในรูปแบบภาพที่เข้าใจง่าย ช่วยวิเคราะห์และตีความข้อมูลซับซ้อน ได้อย่างมีประสิทธิภาพ เหมาะสำหรับการนำเสนอรายงาน การวิเคราะห์แนวโน้มตลาด และการตัดสินใจทางธุรกิจ',
+        icon: '~/assets/images/analysis.svg',
       },
       {
-        title: 'Open to new ideas and contributions',
+        title: 'Automated Test Service',
         description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
+          'บริการพัฒนาและติดตั้งระบบทดสอบอัตโนมัติ ช่วยลดเวลาและค่าใช้จ่ายในการทดสอบ ซอฟต์แวร์ พร้อมเพิ่มความมั่นใจในคุณภาพของผลิตภัณฑ์ก่อนนำไปใช้งานจริง',
+        icon: '~/assets/images/tecnique.svg',
       },
     ]}
   />

@@ -1,0 +1,101 @@
+---
+import { twMerge } from 'tailwind-merge';
+import Image from '../common/Image.astro';
+import Headline from '../ui/Headline.astro';
+import type { CallToAction, Headline as HeadlineProps, Widget } from '~/types';
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Button from '../ui/Button.astro';
+
+export interface Props extends Omit<HeadlineProps, 'classes'>, Widget {
+  images: {
+    url: string;
+    class?: {
+      image?: string;
+      container?: string;
+    };
+  }[];
+  containerClass?: string;
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  callToAction1?: CallToAction;
+}
+const {
+  containerClass = await Astro.slots.render('containerClass'),
+  images = [],
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+  callToAction1,
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
+  <div
+    class={twMerge(
+      'grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 grid-rows-3 md:grid-rows-2 gap-2 md:gap-5 px-4 lg:px-[120px] py-5 max-w-[1800px] mx-auto',
+      containerClass
+    )}
+  >
+    {
+      images.map((img, index) => (
+        <div class={twMerge('col-span-3 md:col-span-1', img.class?.container)}>
+          <Image
+            src={img.url}
+            alt={`image-${index}`}
+            class={twMerge('w-full h-full rounded-xl animate-slide-up-delay animate-on-scroll', img.class?.image)}
+            fetchpriority="high"
+          />
+        </div>
+      ))
+    }
+  </div>
+  {
+    callToAction1 && (
+      <div class="mt-8 text-primary text-center">
+        <Button variant="link" {...callToAction1} />
+      </div>
+    )
+  }
+</WidgetWrapper>
+
+<style>
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    transition-delay: calc(var(--animation-order, 0) * 0.1s);
+  }
+  .animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  function handleIntersection(entries: IntersectionObserverEntry[]) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

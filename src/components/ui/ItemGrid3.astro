@@ -13,6 +13,7 @@ const {
   description: descriptionClass = '',
   icon: defaultIconClass = 'text-primary',
   action: actionClass = '',
+  detail: detailClass = '',
 } = classes;
 ---
 
@@ -45,7 +46,7 @@ const {
                 </div>
               )}
             </div>
-            <div class="mt-0.5">
+            <div class={twMerge('mt-0.5', detailClass, itemClasses?.detail)}>
               {title && <h3 class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</h3>}
               {description && (
                 <p

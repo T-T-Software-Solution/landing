@@ -14,6 +14,7 @@ const {
   icon: defaultIconClass = 'text-primary',
   action: actionClass = '',
   detail: detailClass = '',
+  image: imageClass = ''
 } = classes;
 ---
 
@@ -42,7 +43,7 @@ const {
             <div class="flex justify-center">
               {(icon || defaultIcon) && (
                 <div class={twMerge('w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2', defaultIconClass, itemClasses?.icon)}>
-                  <Image src={icon || defaultIcon} alt="icon" class="" fetchpriority="high" />
+                  <Image src={icon || defaultIcon} alt="icon" class={twMerge('', imageClass, itemClasses?.image)} fetchpriority="high" />
                 </div>
               )}
             </div>

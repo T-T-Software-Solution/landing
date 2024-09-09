@@ -20,7 +20,7 @@ export const headerData = {
     },
     {
       text: 'แหล่งเรียนรู้',
-      href: 'https://portal.tt-ss.net/blogs/',
+      href: 'https://portal.tt-ss.net/',
     },
     {
       text: 'ร่วมงานกับเรา',
@@ -47,7 +47,7 @@ export const footerData = {
     {
       title: ' ',
       links: [
-        { text: 'แหล่งเรียนรู้', href: 'https://portal.tt-ss.net/blogs/' },
+        { text: 'แหล่งเรียนรู้', href: 'https://portal.tt-ss.net/' },
         { text: 'ร่วมงานกับเรา', href: '#' },
         { text: 'เกี่ยวกับเรา', href: '#' },
         { text: 'ติดต่อเรา', href: '#' },

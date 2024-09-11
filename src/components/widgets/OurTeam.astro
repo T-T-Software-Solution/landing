@@ -1,0 +1,135 @@
+---
+import { Image as AstroImage } from 'astro:assets';
+import { SITE } from 'astrowind:config';
+import { twMerge } from 'tailwind-merge';
+import logo from '~/assets/images/logo.svg';
+import icon from '~/assets/images/tt-icon.svg';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Image from '../common/Image.astro';
+
+const {
+  title = await Astro.slots.render('title'),
+  descriptionFirst = await Astro.slots.render('descriptionFirst'),
+  descriptionSecond = await Astro.slots.render('descriptionSecond'),
+  imageExecutive = [],
+  imagCertified = [],
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <div class="justify-start items-start gap-12 flex flex-col lg:flex-row">
+    <div class="flex-col justify-start items-start gap-5 flex w-full animate-slide-up-delay animate-on-scroll">
+      <AstroImage src={logo} alt={SITE?.name} class="w-auto h-12" />
+      <div class="self-stretch">
+        <h2
+          class={twMerge(
+            'font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl md:whitespace-pre-wrap'
+          )}
+          set:html={title}
+        />
+
+        <div class="self-stretch text-zinc-600 text-xl font-normal">
+          {descriptionFirst && <p class={twMerge('mt-4 text-muted')} set:html={descriptionFirst} />}
+          {descriptionSecond && <p class={twMerge('mt-4 text-muted')} set:html={descriptionSecond} />}
+        </div>
+      </div>
+    </div>
+    <div class="w-full flex flex-col gap-5">
+      <!-- Section For Image Executive -->
+      <div class="gap-7 grid-cols-3 grid">
+        {
+          imageExecutive.map((img, index) => (
+            <div class="w-full h-full relative animate-slide-up-delay animate-on-scroll">
+              <Image
+                src={img.url}
+                alt={`image-${index}`}
+                class={twMerge(
+                  'w-full h-full shadow-lg rounded-xl',
+                  img.class?.image
+                )}
+                loading="lazy"
+                decoding="async"
+                fetchpriority="high"
+              />
+              <div class="absolute hidden lg:flex items-center justify-center right-0 w-fit h-fit py-0.5 px-2 top-4 bg-white rounded-l-2xl">
+                <div class="flex flex-row items-center gap-1">
+                  <AstroImage src={icon} alt={SITE?.name} class="w-4 h-4" />
+                  <div class="text-black font-semibold text-[0.675rem]">
+                    {img.role}
+                  </div>
+                </div>
+              </div>
+              <div class="absolute lg:hidden flex items-center justify-center bottom-0 w-full h-fit p-0.5 md:p-2 bg-white bg-opacity-80 rounded-b-xl">
+                <div class="flex flex-row items-center gap-1">
+                  <AstroImage src={icon} alt={SITE?.name} class="w-4 h-4" />
+                  <div class="text-black font-semibold text-xs md:text-md">
+                    {img.role}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Section For Imag Certified -->
+      <div class="justify-center items-center gap-7 grid-cols-3 grid">
+        {
+          imagCertified.map((img, index) => (
+            <div class={twMerge('col-span-1 w-full h-full', img.class?.container)}>
+              <Image
+                src={img.url}
+                alt={`image-${index}`}
+                class={twMerge(
+                  'w-full h-full object-cover rounded-xl animate-slide-up-delay animate-on-scroll',
+                  img.class?.image
+                )}
+                fetchpriority="high"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <style>
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s ease-out,
+          transform 0.6s ease-out;
+        transition-delay: calc(var(--animation-order, 0) * 0.1s);
+      }
+      .animate-on-scroll.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+
+    <script>
+      function handleIntersection(entries: IntersectionObserverEntry[]) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      }
+
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1,
+      });
+
+      document.addEventListener('astro:page-load', () => {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+        elements.forEach((el) => observer.observe(el));
+      });
+    </script>
+  </div></WidgetWrapper
+>

@@ -1,34 +1,11 @@
 ---
-import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import type { Widget } from '~/types';
-import logo from '~/assets/images/logo.svg';
 import { Image as AstroImage } from 'astro:assets';
-import Image from '../common/Image.astro';
 import { SITE } from 'astrowind:config';
 import { twMerge } from 'tailwind-merge';
-
-export interface Props extends Widget {
-  title?: string;
-  titleColor?: string;
-  descriptionFirst?: string;
-  descriptionSecond?: string;
-  containerClass?: string;
-  imageExecutive: {
-    url: string;
-    role?: string;
-    class?: {
-      image?: string;
-      container?: string;
-    };
-  }[];
-  imagCertified: {
-    url: string;
-    class?: {
-      image?: string;
-      container?: string;
-    };
-  }[];
-}
+import logo from '~/assets/images/logo.svg';
+import icon from '~/assets/images/tt-icon.svg';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Image from '../common/Image.astro';
 
 const {
   title = await Astro.slots.render('title'),
@@ -44,7 +21,7 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <div class="justify-start items-start gap-12 flex flex-col md:flex-row">
+  <div class="justify-start items-start gap-12 flex flex-col lg:flex-row">
     <div class="flex-col justify-start items-start gap-5 flex w-full">
       <AstroImage src={logo} alt={SITE?.name} class="w-auto h-12" />
       <div class="self-stretch">
@@ -66,20 +43,30 @@ const {
       <div class="gap-7 grid-cols-3 grid">
         {
           imageExecutive.map((img, index) => (
-            <div class="w-full h-full relative">
+            <div class="w-full h-full relative animate-slide-up-delay animate-on-scroll">
               <Image
                 src={img.url}
                 alt={`image-${index}`}
                 class={twMerge(
-                  'w-full h-full  shadow-md shadow-black rounded-xl animate-slide-up-delay animate-on-scroll',
+                  'w-full h-full shadow-lg rounded-xl',
                   img.class?.image
                 )}
+                loading="lazy"
+                decoding="async"
                 fetchpriority="high"
               />
-              <div class="absolute w-[30px] h-[10px] right-0 top-3 md:w-[35px] md:h-[15px] md:top-4 lg:w-[80px] lg:h-[28px] lg:top-4 bg-white rounded-l-2xl animate-slide-up-delay animate-on-scroll">
-                <div class="absolute left-[2px] h-2 md:h-3 md:left-[5px] lg:h-6 lg:left-[20px] justify-center items-center gap-1 inline-flex">
-                  <Image src={'~/assets/images/tt-icon.svg'} alt={SITE?.name} class="w-auto h-2 md:h-3 lg:h-3" />
-                  <div class="text-black font-bold text-[0.375rem] md:text-[0.475rem] lg:text-[0.675rem]">
+              <div class="absolute hidden lg:flex items-center justify-center right-0 w-fit h-fit py-0.5 px-2 top-4 bg-white rounded-l-2xl">
+                <div class="flex flex-row items-center gap-1">
+                  <AstroImage src={icon} alt={SITE?.name} class="w-4 h-4" />
+                  <div class="text-black font-semibold text-[0.675rem]">
+                    {img.role}
+                  </div>
+                </div>
+              </div>
+              <div class="absolute lg:hidden flex items-center justify-center bottom-0 w-full h-fit p-0.5 md:p-2 bg-white bg-opacity-80 rounded-b-xl">
+                <div class="flex flex-row items-center gap-1">
+                  <AstroImage src={icon} alt={SITE?.name} class="w-4 h-4" />
+                  <div class="text-black font-semibold text-xs md:text-md">
                     {img.role}
                   </div>
                 </div>

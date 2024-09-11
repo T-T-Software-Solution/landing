@@ -4,11 +4,10 @@ import FacebookIcon from '~/components/icons/FacebookIcon.astro';
 import LineIcon from '~/components/icons/LineIcon.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import ImageBentoGrid from '~/components/widgets/ImageBentoGrid.astro';
-import OurPartner from '~/components/widgets/OurPartner.astro';
+import OurPartners from '~/components/widgets/OurPartners.astro';
 import OurServices from '~/components/widgets/OurServices.astro';
 import OurTeam from '~/components/widgets/OurTeam.astro';
 import OurWorks from '~/components/widgets/OurWorks.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Technologies from '~/components/widgets/Technologies.astro';
 import WorkEnvironment from '~/components/widgets/WorkEnvironment.astro';
 import Layout from '~/layouts/PageLayout.astro';
@@ -238,7 +237,7 @@ const metadata = {
   <!-- Technologies Widget ************** -->
 
   <Technologies
-    title="Technology we use"
+    title="Technologies we use"
     subtitle="เครื่องมือและเทคโนโลยีที่เราใช้เพื่อสร้างโซลูชันที่มีประสิทธิภาพ"
     tagline="เทคโนโลยีที่เราใช้"
     items={[
@@ -297,7 +296,7 @@ const metadata = {
         icon: '~/assets/images/microsoft-sql-server.svg',
       },
     ]}
-    callToAction1={{ variant: 'secondary', text: 'See All  Technology', href: '/technologies' }}
+    callToAction1={{ variant: 'secondary', text: 'ดูเทคโนโลยีทั้งหมด', href: '/technologies' }}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-[#FFF6F4] dark:bg-transparent"></div>
@@ -306,11 +305,11 @@ const metadata = {
 
   <!-- OurPartner Widget ******* -->
 
-  <OurPartner
+  <OurPartners
     classes={{
       container: 'lg:py-0 lg:pt-20 py-0 pt-12',
     }}
-    title="Our Partner"
+    title="Our Partners"
     subtitle="เราภูมิใจที่ได้เป็นพันธมิตรกับบริษัทเทคโนโลยีชั้นนำและได้รับการรับรองจากองค์กรระดับสากล"
     tagline="พาร์ทเนอร์ของเรา"
     items={[
@@ -330,8 +329,7 @@ const metadata = {
   />
 
   <WorkEnvironment
-    title="Support Work From Anywhere Happy Environment made better result"
-    subtitle="ทำงานจากทุกที่ สนับสนุนการทำงานแบบไร้ขีดจำกัด สร้างสภาพแวดล้อมที่มีความสุข เพิ่มประสิทธิภาพการทำงาน"
+    subtitle="สนับสนุนการทำงานจากทุกที่ สร้างสภาพแวดล้อมที่มีความสุข และเพิ่มประสิทธิภาพการทำงาน"
     images={[
       { url: '~/assets/images/WorkEnvironment1.webp' },
       { url: '~/assets/images/WorkEnvironment2.webp' },
@@ -345,5 +343,9 @@ const metadata = {
       text: 'ดูภาพบรรยากาศการทำงาน',
       href: 'https://portal.tt-ss.net/work-environment',
     }}
-  />
+  >
+  <Fragment slot="title">
+    Support Work From <span class="underline underline-offset-2 decoration-wavy decoration-primary">Anywhere</span><br /> A Happy Environment for Better Results
+  </Fragment>
+  </WorkEnvironment>
 </Layout>

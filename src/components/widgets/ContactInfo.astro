@@ -1,0 +1,16 @@
+---
+import { Icon } from 'astro-icon/components';
+const { title, phone, email, icon } = Astro.props;
+---
+
+<div class="bg-white p-6 rounded-lg shadow-md">
+  <h2 class="text-lg font-semibold mb-2">{title}</h2>
+  <p class="flex items-center">
+    <Icon name="phone" class="w-5 h-5 mr-2" />
+    <span>{phone}</span>
+  </p>
+  <p class="flex items-center mt-2">
+    <Icon name={icon} class="w-5 h-5 mr-2" />
+    <a href={`mailto:${email}`}>{email}</a>
+  </p>
+</div>

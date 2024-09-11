@@ -29,7 +29,7 @@ export const headerData = {
   ],
   actions: [{
     text: 'ติดต่อเรา',
-    href: '#',
+    href: '/contact-us',
   }],
 };
 
@@ -50,7 +50,7 @@ export const footerData = {
         { text: 'แหล่งเรียนรู้', href: 'https://portal.tt-ss.net/' },
         { text: 'ร่วมงานกับเรา', href: '#' },
         { text: 'เกี่ยวกับเรา', href: '#' },
-        { text: 'ติดต่อเรา', href: '#' },
+        { text: 'ติดต่อเรา', href: '/contact-us' },
       ],
     },
   ],

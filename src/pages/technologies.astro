@@ -1,0 +1,168 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { default as TechSection } from '~/components/widgets/Technologies.astro';
+import Headline from '~/components/ui/Headline.astro';
+
+const metadata = {
+  title: 'เทคโนโลยีที่เราใช้',
+};
+---
+
+<Layout metadata={metadata}>
+  <Headline
+    classes={{
+      container: 'pt-20 px-2'
+    }}
+    tagline="เทคโนโลยีที่เราใช้"
+    title="Technologies we use"
+    subtitle="เครื่องมือและเทคโนโลยีที่เราใช้เพื่อสร้างโซลูชันที่มีประสิทธิภาพ"
+  />
+  <TechSection
+    items={[
+      {
+        description: '.NET',
+        icon: '~/assets/images/dotnet.svg',
+      },
+      {
+        description: 'Microsoft Azure',
+        icon: '~/assets/images/azure.svg',
+        classes: {
+          icon: 'mt-[30px]',
+        },
+      },
+      {
+        description: 'React',
+        icon: '~/assets/images/react.svg',
+      },
+      {
+        description: 'TypeScript',
+        icon: '~/assets/images/typescript.svg',
+      },
+      {
+        description: 'Next.js',
+        icon: '~/assets/images/nextjs.svg',
+      },
+      {
+        description: 'Docker',
+        icon: '~/assets/images/docker.svg',
+      },
+      {
+        description: 'Kubernetes',
+        icon: '~/assets/images/kubernetes.svg',
+      },
+      {
+        description: 'Node.js',
+        icon: '~/assets/images/nodejs.svg',
+      },
+      {
+        description: 'PostgreSQL',
+        icon: '~/assets/images/pgsql.svg',
+      },
+      {
+        description: 'MongoDB',
+        icon: '~/assets/images/mongodb.svg',
+        classes: {
+          icon: 'mt-[30px]',
+        },
+      },
+      {
+        description: 'Tailwind CSS',
+        icon: '~/assets/images/tailwindcss.svg',
+      },
+      {
+        description: 'Microsoft SQL Server',
+        icon: '~/assets/images/microsoft-sql-server.svg',
+      },
+      {
+        description: 'React Native',
+        icon: '~/assets/images/react-native.svg',
+        classes: {
+          icon: 'max-w-[140px]',
+        },
+      },
+      {
+        description: 'Terraform',
+        icon: '~/assets/images/terraform.png',
+      },
+      {
+        description: 'RabbitMQ',
+        icon: '~/assets/images/rabbitmq.png',
+        classes: {
+          image: '!max-h-[90px] w-full',
+        },
+      },
+      {
+        description: 'Redis',
+        icon: '~/assets/images/redis.svg',
+        classes: {
+          icon: 'mt-[20px]',
+        },
+      },
+      {
+        description: 'OpenTelemetry',
+        icon: '~/assets/images/opentelemetry.png',
+      },
+      {
+        description: 'Jaeger',
+        icon: '~/assets/images/jaeger.png',
+        classes: {
+          icon: 'mt-[20px]',
+        },
+      },
+      {
+        description: 'Grafana',
+        icon: '~/assets/images/grafana.png',
+        classes: {
+          icon: 'mt-[20px]',
+        },
+      },
+      {
+        description: 'Prometheus',
+        icon: '~/assets/images/prometheus.png',
+      },
+      {
+        description: 'Jasper Report',
+        icon: '~/assets/images/jaspersoft.svg',
+        classes: {
+          icon: 'mt-[30px]',
+        },
+      },
+      {
+        description: 'Apache Superset',
+        icon: '~/assets/images/superset_logo.svg',
+        classes: {
+          icon: 'mt-[30px]',
+        },
+      },
+      {
+        description: 'Jenkins',
+        icon: '~/assets/images/jenkins.png',
+        classes: {
+          icon: 'mt-[30px]',
+        },
+      },
+      {
+        description: 'gRPC',
+        icon: '~/assets/images/grpc-logo.png',
+        classes: {
+          image: '!max-h-[90px] w-full',
+        },
+      },
+      {
+        description: 'tRPC',
+        icon: '~/assets/images/trpc.svg',
+        classes: {
+          icon: 'mt-[20px]',
+        },
+      },
+      {
+        description: 'NestJs',
+        icon: '~/assets/images/nestjs.png',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-[#FFF6F4] dark:bg-transparent"></div>
+    </Fragment>
+  </TechSection>
+</Layout>

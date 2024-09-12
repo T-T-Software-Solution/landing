@@ -12,7 +12,7 @@ export const headerData = {
     },
     {
       text: 'ผลงานของเรา',
-      href: '#',
+      href: '/our-works',
     },
     {
       text: 'ทีมงาน',
@@ -40,7 +40,7 @@ export const footerData = {
       links: [
         { text: 'หน้าแรก', href: getPermalink('/') },
         { text: 'สินค้า/บริการ', href: '#' },
-        { text: 'ผลงานของเรา', href: '#' },
+        { text: 'ผลงานของเรา', href: '/our-works' },
         { text: 'ทีมงาน', href: '#' },
       ],
     },

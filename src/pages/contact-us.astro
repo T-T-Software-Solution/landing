@@ -1,8 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Image from '~/components/common/Image.astro';  
-import ContactInfo from '~/components/widgets/ContactInfo.astro'; 
-import OfficeLocation from '~/components/widgets/OfficeLocation.astro'; 
+import Image from '~/components/common/Image.astro';
+import ContactInfo from '~/components/widgets/ContactInfo.astro';
+import OfficeLocation from '~/components/widgets/OfficeLocation.astro';
 
 const contactImg = '~/assets/images/contact.png';
 
@@ -12,63 +12,79 @@ const metadata = {
 
 const officeLocations = [
   {
-    officeName: "สำนักงานใหญ่ ลาดกระบัง",
-    address: "10 ซอยลาดกระบัง 22 เขตลาดกระบัง กทม 10520",
-    mapSrc: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3259.2933681064014!2d100.73058316365028!3d13.719971663771863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d672190f3bb51%3A0xecdb3317fc974069!2zMTAg4LiL4Lit4LiiIOC4peC4suC4lOC4geC4o-C4sOC4muC4seC4hyAyMiDguYHguILguKfguIfguKXguLLguJTguIHguKPguLDguJrguLHguIcg4LmA4LiC4LiV4Lil4Liy4LiU4LiB4Lij4Liw4Lia4Lix4LiHIOC4geC4o-C4uOC4h-C5gOC4l-C4nuC4oeC4q-C4suC4meC4hOC4oyAxMDUyMA!5e0!3m2!1sth!2sth!4v1726043417259!5m2!1sth!2sth"
+    officeName: 'สำนักงานใหญ่ ลาดกระบัง',
+    address: '10 ซอยลาดกระบัง 22 เขตลาดกระบัง กทม 10520',
+    mapSrc:
+      'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3259.2933681064014!2d100.73058316365028!3d13.719971663771863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d672190f3bb51%3A0xecdb3317fc974069!2zMTAg4LiL4Lit4LiiIOC4peC4suC4lOC4geC4o-C4sOC4muC4seC4hyAyMiDguYHguILguKfguIfguKXguLLguJTguIHguKPguLDguJrguLHguIcg4LmA4LiC4LiV4Lil4Liy4LiU4LiB4Lij4Liw4Lia4Lix4LiHIOC4geC4o-C4uOC4h-C5gOC4l-C4nuC4oeC4q-C4suC4meC4hOC4oyAxMDUyMA!5e0!3m2!1sth!2sth!4v1726043417259!5m2!1sth!2sth',
   },
   {
-    officeName: "อุทยานวิทยาศาสตร์ภูมิภาค ภาคตะวันออกเฉียงเหนือ",
-    address: "เลขที่ 123 หมู่ 16 ถนนกัลปพฤกษ์ ตำบลในเมือง อำเภอเมืองขอนแก่น จังหวัดขอนแก่น",
-    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.3900951679334!2d102.81679277578957!3d16.455773528972657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31228a6f8180f739%3A0x4761e1a9d67a269!2z4Lit4Li44LiX4Lii4Liy4LiZ4Lin4Li04LiX4Lii4Liy4Lio4Liy4Liq4LiV4Lij4LmM4Lig4Li54Lih4Li04Lig4Liy4LiEIOC4oOC4suC4hOC4leC4sOC4p-C4seC4meC4reC4reC4geC5gOC4ieC4teC4ouC4h-C5gOC4q-C4meC4t-C4rSAxIDogUlNQIE5vcnRoZWFzdCAx!5e0!3m2!1sth!2sth!4v1726046017141!5m2!1sth!2sth"
+    officeName: 'อุทยานวิทยาศาสตร์ภูมิภาค ภาคตะวันออกเฉียงเหนือ',
+    address: 'เลขที่ 123 หมู่ 16 ถนนกัลปพฤกษ์ ตำบลในเมือง อำเภอเมืองขอนแก่น จังหวัดขอนแก่น',
+    mapSrc:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.3900951679334!2d102.81679277578957!3d16.455773528972657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31228a6f8180f739%3A0x4761e1a9d67a269!2z4Lit4Li44LiX4Lii4Liy4LiZ4Lin4Li04LiX4Lii4Liy4Lio4Liy4Liq4LiV4Lij4LmM4Lig4Li54Lih4Li04Lig4Liy4LiEIOC4oOC4suC4hOC4leC4sOC4p-C4seC4meC4reC4reC4geC5gOC4ieC4teC4ouC4h-C5gOC4q-C4meC4t-C4rSAxIDogUlNQIE5vcnRoZWFzdCAx!5e0!3m2!1sth!2sth!4v1726046017141!5m2!1sth!2sth',
   },
   {
-    officeName: "ตึก Glowfish ขอนแก่น",
-    address: "ห้อง 525 อาคารขอนแก่น อินโนเวชั่น เซ็นเตอร์, เลขที่ 999, ชั้น 12 ถนนศรีจันทร์, ตำบลในเมือง อำเภอเมืองขอนแก่น จังหวัดขอนแก่น 40000",
-    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.8975113237548!2d102.8296517757892!3d16.430030729676673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31228bdb277cbd79%3A0xd2a772d2cd99fd54!2sGlowfish%20Khon%20Kaen!5e0!3m2!1sth!2sth!4v1726046059692!5m2!1sth!2sth"
-  }
+    officeName: 'ตึก Glowfish ขอนแก่น',
+    address:
+      'ห้อง 525 อาคารขอนแก่น อินโนเวชั่น เซ็นเตอร์, เลขที่ 999, ชั้น 12 ถนนศรีจันทร์, ตำบลในเมือง อำเภอเมืองขอนแก่น จังหวัดขอนแก่น 40000',
+    mapSrc:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.8975113237548!2d102.8296517757892!3d16.430030729676673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31228bdb277cbd79%3A0xd2a772d2cd99fd54!2sGlowfish%20Khon%20Kaen!5e0!3m2!1sth!2sth!4v1726046059692!5m2!1sth!2sth',
+  },
+];
+const contactInfoList = [
+  {
+    title: 'แผนก Technical',
+    phone: '086-899-6243',
+    email: 'nakorn@tt-ss.net',
+    icon: 'envelope',
+  },
+  {
+    title: 'แผนก Customer',
+    phone: '090-1619166',
+    email: 'watcharapong@tt-ss.net',
+    icon: 'envelope',
+  },
+  {
+    title: 'แผนก HR',
+    phone: '061-0181275',
+    email: 'hr@tt-ss.net',
+    icon: 'envelope',
+  },
 ];
 ---
 
 <Layout metadata={metadata}>
   <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
-
     <h1 class="font-bold font-heading text-4xl md:text-4xl leading-tighter tracking-tighter text-center mt-12">
       ติดต่อเรา
     </h1>
     <div class="mx-auto max-w-3xl text-center mb-8 mt-4">
-      <p class="text-xl text-gray-600">
-        เราพร้อมให้บริการลูกค้าและพันธมิตรของเราอย่างดีที่สุด
-      </p>
+      <p class="text-xl text-gray-600">เราพร้อมให้บริการลูกค้าและพันธมิตรของเราอย่างดีที่สุด</p>
     </div>
 
-    <!-- Section ข้อมูลการติดต่อ -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <ContactInfo title="แผนก Technical" phone="086-899-6243" email="nakorn@tt-ss.net" icon="envelope" />
-      <ContactInfo title="แผนก Customer" phone="090-1619166" email="watcharapong@tt-ss.net" icon="envelope" />
-      <ContactInfo title="แผนก HR" phone="061-0181275" email="hr@tt-ss.net" icon="envelope" />
+      {
+        contactInfoList.map((contact) => (
+          <ContactInfo title={contact.title} phone={contact.phone} email={contact.email} icon={contact.icon} />
+        ))
+      }
     </div>
 
-    <!-- Section Google Maps -->
     <div class="mt-12">
       <h2 class="text-2xl font-semibold text-center mb-4">ที่ตั้งสำนักงานของเรา</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Loop ข้อมูลจาก officeLocations และใช้ map เพื่อนำไปแสดงใน OfficeLocation component -->
-        {officeLocations.map((location) => (
-          <OfficeLocation 
-            officeName={location.officeName} 
-            address={location.address} 
-            mapSrc={location.mapSrc} 
-          />
-        ))}
+        {
+          officeLocations.map((location) => (
+            <OfficeLocation officeName={location.officeName} address={location.address} mapSrc={location.mapSrc} />
+          ))
+        }
       </div>
     </div>
 
-    <!-- Section รูปภาพ -->
     <div class="grid grid-cols-1 gap-4 mt-12">
       <div class="mx-auto">
         <Image src={contactImg} alt="สำนักงาน" class="w-full h-auto rounded-lg shadow-md object-cover" />
       </div>
     </div>
-
   </section>
 </Layout>

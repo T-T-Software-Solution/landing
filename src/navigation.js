@@ -24,7 +24,7 @@ export const headerData = {
     },
     {
       text: 'ร่วมงานกับเรา',
-      href: '#',
+      href: '/career',
     },
   ],
   actions: [{
@@ -48,7 +48,7 @@ export const footerData = {
       title: ' ',
       links: [
         { text: 'แหล่งเรียนรู้', href: 'https://portal.tt-ss.net/' },
-        { text: 'ร่วมงานกับเรา', href: '#' },
+        { text: 'ร่วมงานกับเรา', href: '/career' },
         { text: 'เกี่ยวกับเรา', href: '#' },
         { text: 'ติดต่อเรา', href: '#' },
       ],

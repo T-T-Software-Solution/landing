@@ -1,224 +1,356 @@
 ---
+import { twMerge } from 'tailwind-merge';
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Content from '~/components/widgets/Content.astro';
+import Content2 from '~/components/widgets/Content2.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Services',
+  title: 'บริการของเรา',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <Headline
+      title="บริการของเรา"
+      subtitle="บริการออกแบบและจัดทำ ระบบ Back Office Web Application สำหรับองค์กร"
+      classes={{ container: 'pt-12 lg:pt-0 animate-on-scroll' }}
+    />
 
-  <Hero
-    tagline="Services"
-    title="Elevate your projects with our stunning templates"
-    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/' }]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'AstroWind Hero Image',
-    }}
-  />
+    <!-- Features2 Widget ************** -->
 
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Explore our diverse templates"
-    subtitle="Discover our selection below to streamline and elevate your projects."
-    columns={3}
-    items={[
-      {
-        title: 'Educational',
-        description:
-          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
-        icon: 'tabler:home-star',
-      },
-      {
-        title: 'Photography',
-        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
-        icon: 'tabler:photo',
-      },
-      {
-        title: 'E-commerce',
-        description:
-          'Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps.',
-        icon: 'tabler:shopping-cart',
-      },
-      {
-        title: 'Blog',
-        description:
-          'With attention to typography, these templates empower effective content presentation for writers at any stage, ensuring visually engaging and user-friendly blogs.',
-        icon: 'tabler:article',
-      },
-      {
-        title: 'Business',
-        description:
-          'Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence.',
-        icon: 'tabler:building-store',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
-        icon: 'tabler:arrow-big-up-lines',
-      },
-      {
-        title: 'Medical',
-        description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
-        icon: 'tabler:vaccine',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
-        icon: 'tabler:tie',
-      },
-    ]}
-  />
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    items={[
-      {
-        title: 'High-Quality Designs',
-        description:
-          'Our templates feature top-tier designs that ensure a professional and polished appearance for your projects.',
-        icon: 'tabler:wand',
-      },
-      {
-        title: 'Customization Tools',
-        description:
-          'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
-        icon: 'tabler:settings',
-      },
-      {
-        title: 'Pre-Designed Elements',
-        description:
-          'Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations.',
-        icon: 'tabler:presentation',
-      },
-      {
-        title: 'Preview and Mockup Views',
-        description:
-          'Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations.',
-        icon: 'tabler:carousel-horizontal',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Features Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'Time Savings',
-        description:
-          'Streamline your workflow, enabling you to create stunning materials efficiently and allocate more time to your core tasks.',
-        icon: 'tabler:clock',
-      },
-      {
-        title: 'Professional Appearance',
-        description:
-          'Elevate your projects with the polished and sophisticated look that our templates provide, making a lasting impression on your audience.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Cost-Efficiency',
-        description:
-          'Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost.',
-        icon: 'tabler:coin',
-      },
-      {
-        title: 'Instant Download',
-        description:
-          'Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay.',
-        icon: 'tabler:file-download',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Benefits Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Benefits</h3>
-    </Fragment>
-  </Content>
-
-  <!-- Testimonials Widget *********** -->
-
-  <Testimonials
-    title="Words from real customers"
-    testimonials={[
-      {
-        testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients.`,
-        name: 'Emily Kennedy',
-        job: 'Front-end developer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Emily Kennedy Image',
+    <Features2
+      classes={{
+        container: 'lg:py-12 lg:pt-0',
+        panel: 'border border-gray-200 dark:border-gray-800',
+      }}
+      columns={3}
+      items={[
+        {
+          title: 'ระบบ Back Office Web Application',
+          description: 'ออกแบบและพัฒนาระบบ Back Office ที่ตรงตามความต้องการเฉพาะขององค์กรคุณ',
+          icon: 'tabler:browser',
         },
-      },
-      {
-        testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments.`,
-        name: 'Sarah Hansen',
-        job: 'Photographer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Sarah Hansen Image',
+        {
+          title: 'Data Visualization',
+          description: 'ออกแบบและพัฒนา Dashboard และการแสดงผลข้อมูลที่ช่วยในการวิเคราะห์และตัดสินใจ',
+          icon: 'tabler:chart-pie',
         },
-      },
-      {
-        testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
-        name: 'Mark Wilkinson',
-        job: 'Small business owner',
-        image: {
-          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
-          alt: 'Mark Wilkinson Image',
+        {
+          title: 'บริการ Azure Cloud',
+          description: 'ให้คำปรึกษา พัฒนา และดูแลระบบบน Azure Cloud โดยทีมงานมืออาชีพ',
+          icon: 'tabler:cloud',
         },
-      },
-    ]}
-    callToAction={{
-      target: '_blank',
-      text: 'More testimonials...',
-      href: 'https://github.com/onwidget/astrowind',
-      icon: 'tabler:chevron-right',
-    }}
-  />
+      ]}
+    />
 
-  <!-- CallToAction Widget *********** -->
+    <!-- Content Widget **************** -->
 
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Start exploring',
-        href: '/',
-      },
-    ]}
-    title="Dive into our template collection"
-    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
-  />
+    <Content2
+      isReversed
+      classes={{ container: 'mb-16 animate-on-scroll' }}
+      isAfterContent
+      items={[
+        {
+          title: 'การออกแบบที่ปรับแต่งได้เฉพาะตัว',
+          description: 'บริษัทฯ ออกแบบระบบฐานข้อมูล และหน้าจอสำหรับ บันทึกข้อมูลตามความต้องการของลูกค้า',
+          icon: 'tabler:adjustments',
+        },
+        {
+          title: 'รายงานที่ปรับแต่งได้',
+          description: 'ระบบที่จัดทำ สามารถออกรายงานต่างๆ ได้ตรงตามความต้องการของลูกค้า',
+          icon: 'tabler:report',
+        },
+        {
+          title: 'การผสานการทำงานกับระบบเดิม และระบบ Login อื่นๆ',
+          description:
+            'ระบบที่จัดทำ สามารถเชื่อมกับระบบ Login เดิมของลูกค้า เช่น LDAP, Active Directory หรือ Google ก็ได้',
+          icon: 'tabler:puzzle',
+        },
+      ]}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 animate-on-scroll">
+          ทำไมต้องเลือกบริการของเรา?
+        </h3>
+        <div class="text-muted text-base my-2 animate-on-scroll">
+          เพราะเราเข้าใจดีว่าการทำงานในแต่ละองค์กรมีความซับซ้อนและแตกต่างกันไป
+          การออกแบบระบบที่ไม่เพียงแต่ตรงตามความต้องการแต่ยังช่วยเพิ่มประสิทธิภาพในการดำเนินงานจึงเป็นสิ่งที่สำคัญ
+          ด้วยบริการของเรา คุณจะได้ระบบที่ตอบโจทย์
+          ช่วยให้การจัดการข้อมูลและการดำเนินงานภายในองค์กรของคุณเป็นเรื่องง่ายขึ้น มีประสิทธิภาพมากขึ้น
+          และปลอดภัยยิ่งขึ้น
+        </div>
+        <p class="animate-on-scroll">
+          ให้เราช่วยคุณพัฒนาระบบ Back Office
+          ที่จะเป็นเครื่องมือสำคัญในการสนับสนุนการเติบโตและความสำเร็จขององค์กรคุณในยุคดิจิทัลนี้..
+        </p>
+      </Fragment>
+      <Fragment slot="image">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full h-full">
+          <Image
+            src="~/assets/images/db-design.webp"
+            alt="ระบบฐานข้อมูล"
+            class="w-full h-72 lg:col-span-2 animate-on-scroll"
+            style={`--animation-order: 0;`}
+          />
+          <Image
+            src="~/assets/images/report-design.webp"
+            alt="ระบบรายงาน"
+            class="w-full h-72 animate-on-scroll"
+            style={`--animation-order: 1;`}
+          />
+          <Image
+            src="~/assets/images/login-any.webp"
+            alt="ระบบล็อกอิน"
+            class="w-full h-72 animate-on-scroll"
+            style={`--animation-order: 2;`}
+          />
+        </div>
+      </Fragment>
+    </Content2>
+
+    <!-- Content Widget **************** -->
+
+    <Content2
+      classes={{ container: 'mb-16 animate-on-scroll' }}
+      isReversed
+      isAfterContent
+      items={[
+        {
+          title: 'การออกแบบที่ปรับแต่งได้เฉพาะตัว',
+          description:
+            'ทุกองค์กรมีวิธีการทำงานและการจัดการข้อมูลที่ไม่เหมือนกัน ซึ่งซอฟต์แวร์ทั่วไปในตลาดอาจไม่สามารถตอบโจทย์ได้ เราจึงออกแบบและพัฒนาระบบที่สร้างขึ้นเพื่อองค์กรของคุณโดยเฉพาะ คุณไม่ต้องเสียเวลาปรับระบบให้เข้ากับวิธีการทำงานของคุณ เพราะเราจะออกแบบระบบที่สอดคล้องกับกระบวนการทำงานขององค์กรคุณได้อย่างลงตัว',
+          icon: 'tabler:adjustments',
+        },
+        {
+          title: 'ประสิทธิภาพในการดำเนินงานที่เพิ่มขึ้น',
+          description:
+            'ระบบของเราช่วยให้การบันทึกข้อมูล การจัดการเอกสาร และการดำเนินงานต่าง ๆ ภายในองค์กรเป็นไปอย่างราบรื่นและรวดเร็วมากยิ่งขึ้น ลดความซับซ้อนและความยุ่งยากในขั้นตอนการทำงานเดิม ๆ ซึ่งไม่เพียงช่วยประหยัดเวลา แต่ยังช่วยลดข้อผิดพลาดที่อาจเกิดขึ้นจากการทำงานด้วยตนเอง',
+          icon: 'tabler:chart-arrows',
+        },
+        {
+          title: 'รายงานที่สามารถปรับแต่งได้ตามความต้องการของคุณ',
+          description:
+            'การที่คุณสามารถเข้าถึงรายงานที่ถูกออกแบบให้ตรงตามความต้องการขององค์กร ช่วยให้คุณได้รับข้อมูลที่ถูกต้องและสำคัญในเวลาที่ต้องการ ไม่ว่าจะเป็นรายงานสำหรับการวิเคราะห์ข้อมูลภายใน การตรวจสอบประสิทธิภาพ หรือการตัดสินใจด้านกลยุทธ์ ระบบของเราสามารถสร้างรายงานที่ปรับแต่งได้ให้ตรงกับสิ่งที่คุณต้องการอย่างแท้จริง',
+          icon: 'tabler:report',
+        },
+        {
+          title: 'การผสานการทำงานกับระบบเดิมที่คุณมีอยู่แล้ว',
+          description:
+            'เราเข้าใจถึงความสำคัญของการเชื่อมต่อระบบใหม่เข้ากับระบบที่คุณใช้อยู่ในปัจจุบัน เช่น ระบบ Login อย่าง LDAP, Active Directory หรือ Google การผสานการทำงานนี้ช่วยให้การเปลี่ยนแปลงระบบภายในองค์กรของคุณเป็นไปอย่างราบรื่น ไม่ต้องเริ่มต้นใหม่ทั้งหมด แต่สามารถใช้ประโยชน์จากโครงสร้างที่มีอยู่แล้วได้อย่างเต็มที่',
+          icon: 'tabler:puzzle',
+        },
+        {
+          title: 'ความปลอดภัยและการควบคุมการเข้าถึงที่ง่ายดาย',
+          description:
+            'การจัดการความปลอดภัยของข้อมูลเป็นเรื่องสำคัญ ระบบของเราจึงออกแบบมาให้สามารถควบคุมการเข้าถึงได้อย่างง่ายดายและปลอดภัย คุณสามารถมั่นใจได้ว่าข้อมูลสำคัญขององค์กรจะได้รับการปกป้องและเข้าถึงได้เฉพาะผู้ที่มีสิทธิ์',
+          icon: 'tabler:shield-lock',
+        },
+        {
+          title: 'การสนับสนุนที่มุ่งเน้นความสำเร็จของคุณ',
+          description:
+            'ทีมงานของเราพร้อมให้การสนับสนุนในทุกขั้นตอน ตั้งแต่การวิเคราะห์ความต้องการ การออกแบบและพัฒนา จนถึงการติดตั้งและดูแลระบบหลังการใช้งาน เรามุ่งมั่นที่จะให้บริการที่ดีที่สุดเพื่อให้คุณมั่นใจว่าระบบที่เราออกแบบและพัฒนาให้นั้นจะช่วยให้องค์กรของคุณประสบความสำเร็จ',
+          icon: 'tabler:headset',
+        },
+      ]}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 animate-on-scroll">
+          ประโยชน์ที่คุณจะได้รับจากการใช้บริการของเรา
+        </h3>
+      </Fragment>
+    </Content2>
+
+    <!-- Content Widget **************** -->
+
+    <Content2
+      isReversed
+      classes={{ container: 'mb-16 animate-on-scroll' }}
+      isAfterContent
+      imageContainerClasses="content-center mt-0 md:mt-10"
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 animate-on-scroll">
+          บริการออกแบบและจัดทำ <span class="text-primary">Data Visualization</span>
+        </h3>
+        <p class="animate-on-scroll">
+          บริการออกแบบและพัฒนา Data Virtualization ในรูปแบบ Dashboard หรืออื่นๆ
+          เพื่อการวิเคราะห์ข้อมูลที่ใช้ในการแสดงภาพการมองเห็นข้อมูล (Data Visualization) ซึ่งรวมถึงแผนภูมิแท่ง,
+          แผนภูมิวงกลม, กราฟเส้น, และแผนภูมิอื่นๆที่หลากหลาย
+        </p>
+        <p class="animate-on-scroll">
+          เพื่อแสดงผลการวิเคราะห์ข้อมูลจำนวนมากในรูปแบบที่เข้าใจง่ายและสามารถปรับใช้ได้กับข้อมูลต่างๆ
+          ทั้งนี้เพื่อช่วยให้ผู้ใช้งานสามารถตรวจสอบและตัดสินใจได้อย่างมีข้อมูลเพียงพอ ทุก Virtaulization
+          ได้รับการออกแบบมาเพื่อให้ผู้ใช้สามารถค้นหาและกรองข้อมูลตามความต้องการ
+          เพื่อให้ง่ายต่อการวิเคราะห์และติดตามประสิทธิภาพต่างๆ ได้อย่างมีประสิทธิภาพ
+        </p>
+      </Fragment>
+      <Fragment slot="image">
+        <Image src="~/assets/images/data-visualize.webp" alt="Data Visualization" class="w-full h-full rounded-lg animate-on-scroll" />
+      </Fragment>
+    </Content2>
+    <!-- Content Widget **************** -->
+
+    <Content2
+      isReversed
+      isAfterContent
+      items={[
+        {
+          title: 'การย้ายระบบไปยัง Azure Cloud',
+          description:
+            'บริการนี้ช่วยให้ธุรกิจของคุณสามารถย้ายและติดตั้งระบบงานบนพื้นที่คลาวด์ของ Azure ได้อย่างราบรื่นและเหมาะสมที่สุด โดยปรับแต่งให้ตรงตามความต้องการและโครงสร้างเฉพาะขององค์กรคุณ',
+          icon: 'tabler:cloud',
+        },
+        {
+          title: 'การพัฒนาโซลูชั่นบน Azure Cloud',
+          description:
+            'ออกแบบและพัฒนาโซลูชั่นที่ทำงานบน Azure Cloud ด้วยประสิทธิภาพสูง ทั้งนี้ เรามุ่งเน้นให้โซลูชั่นเหล่านั้นมีการบูรณาการที่ลงตัวกับระบบงานอื่นๆ ในองค์กรของคุณ',
+          icon: 'tabler:cloud-cog',
+        },
+        {
+          title: 'การให้คำปรึกษาและการจัดอบรม',
+          description:
+            'เรามีบริการให้คำปรึกษาและคำแนะนำที่เกี่ยวข้องกับการใช้งาน Azure Cloud รวมถึงการจัดอบรมเฉพาะทาง ซึ่งจะช่วยให้ทีมของคุณเข้าใจและใช้ประโยชน์จากคลาวด์ได้อย่างเต็มที่',
+          icon: 'tabler:users-group',
+        },
+        {
+          title: 'การดูแลระบบที่ติดตั้งบน Azure Cloud',
+          description:
+            'บริการดูแลระบบที่ติดตั้งอยู่บน Azure Cloud เพื่อให้มีความมั่นคง และปลอดภัย, บริหารค่าใช้จ่ายที่เหมาะสมสำหรับการใช้ Cloud',
+          icon: 'tabler:database-import',
+        },
+      ]}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 animate-on-scroll">
+          บริการเกี่ยวกับ Azure Cloud โดยทีมงานมืออาชีพ
+        </h3>
+        <div class="text-muted text-base my-2 animate-on-scroll">
+          บริษัทของเราเป็นผู้นำด้านการให้คำปรึกษาและพัฒนาที่เกี่ยวกับ Azure Cloud
+          ด้วยทีมงานที่มีความเชี่ยวชาญและประสบการณ์สูง พร้อมทั้งบริการหลากหลายเพื่อรองรับความต้องการของธุรกิจทุกรูปแบบ
+          บริการของเราประกอบด้วย:
+        </div>
+      </Fragment>
+      <Fragment slot="image">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-full">
+          <Image
+            src="~/assets/images/service-azure.webp"
+            alt="Azure Cloud"
+            class="w-full h-80 md:col-span-2 rounded-lg animate-on-scroll"
+          />
+          <div class="relative animate-on-scroll">
+            <Image src="~/assets/images/ceo.jpeg" alt="ทีมงานมืออาชีพ" class="w-full h-72 rounded-lg" />
+            {
+              [
+                { url: '~/assets/images/devops_engineer.png' },
+                { url: '~/assets/images/azure_developer.png' },
+                { url: '~/assets/images/azure_fundamentals.png' },
+              ].map(({ url }, index) => (
+                <div
+                  class={twMerge(
+                    'absolute bottom-0 right-0 bg-white rounded-l-lg p-2',
+                    index === 0
+                      ? 'right-0 min-[490px]:right-0 bottom-0'
+                      : index === 1
+                        ? 'right-0 min-[490px]:right-12 bottom-12 min-[490px]:bottom-0'
+                        : 'right-0 min-[490px]:right-24 bottom-24 min-[490px]:bottom-0'
+                  )}
+                >
+                  <Image src={url} alt="trust-cert" class="w-10 h-10 min-[490px]:w-10 min-[490px]:h-10" />
+                </div>
+              ))
+            }
+          </div>
+          <div class="relative animate-on-scroll">
+            <Image
+              src="~/assets/images/mvp-ponggun.webp"
+              alt="ทีมงานมืออาชีพ"
+              class="w-full h-72 rounded-lg md:!object-left min-[490px]:!object-top !object-left animate-on-scroll"
+            />
+            <div class={twMerge('absolute bottom-0 right-0 bg-white rounded-l-lg p-2 min-[490px]:right-0 ')}>
+              <Image
+                src={'~/assets/images/mvp-azure.webp'}
+                alt="mvp-azure"
+                class="w-10 h-10 min-[490px]:w-10 min-[490px]:h-10 animate-on-scroll"
+              />
+            </div>
+          </div>
+        </div>
+      </Fragment>
+    </Content2>
+    <!-- CallToAction Widget *********** -->
+
+    <CallToAction
+      actions={[
+        {
+          variant: 'primary',
+          target: '_blank',
+          text: 'ติดต่อเรา',
+          href: '/contact-us',
+        },
+      ]}
+    >
+      <Fragment slot="title">
+        <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 py-2 animate-on-scroll">
+          พร้อมยกระดับธุรกิจของคุณด้วยเทคโนโลยีที่ทันสมัย
+        </h2>
+      </Fragment>
+
+      <Fragment slot="subtitle">
+        <p class="text-muted md:text-lg my-2 animate-on-scroll">
+          ให้เราช่วยคุณพัฒนาระบบที่จะเป็นเครื่องมือสำคัญในการสนับสนุนการเติบโต และความสำเร็จขององค์กรคุณในยุคดิจิทัลนี้
+        </p>
+      </Fragment>
+    </CallToAction>
+  </WidgetWrapper>
 </Layout>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-on-scroll {
+    opacity: 0;
+    transition:
+      opacity 0.6s,
+      transform 0.6s;
+    transition-delay: calc(var(--animation-order, 0) * 0.1s);
+  }
+  .animate-on-scroll.show {
+    opacity: 1;
+    animation: fadeInUp 0.6s ease-out;
+  }
+</style>
+
+<script>
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

@@ -16,7 +16,7 @@ export const headerData = {
     },
     {
       text: 'ทีมงาน',
-      href: '#',
+      href: '/teams',
     },
     {
       text: 'แหล่งเรียนรู้',
@@ -41,7 +41,7 @@ export const footerData = {
         { text: 'หน้าแรก', href: getPermalink('/') },
         { text: 'สินค้า/บริการ', href: '#' },
         { text: 'ผลงานของเรา', href: '/our-works' },
-        { text: 'ทีมงาน', href: '#' },
+        { text: 'ทีมงาน', href: '/teams' },
       ],
     },
     {

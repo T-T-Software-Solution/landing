@@ -65,7 +65,7 @@ const internationalProjects = [
 ---
 
 <Layout metadata={metadata}>
-  <WidgetWrapper>
+  <WidgetWrapper containerClass='max-w-7xl mx-auto'>
     <Headline
       title="ผลงานของเรา"
       subtitle="ค้นพบโครงการที่น่าตื่นเต้นและสร้างสรรค์ของทีมเรา ทั้งในประเทศและต่างประเทศ"
@@ -88,14 +88,35 @@ const internationalProjects = [
         <h3 class="text-2xl font-semibold mb-4">ภาคเอกชน</h3>
         <ProjectGrid
           projects={privateProjects}
-          classes={{ itemContent: 'flex flex-col justify-center items-center h-full' }}
+          classes={{ itemContent: 'flex flex-col justify-center items-center h-full animate-on-scroll' }}
         />
       </div>
     </section>
 
     <section>
       <h2 class="text-3xl font-bold mb-6">ผลงานในต่างประเทศ</h2>
-      <ProjectGrid projects={internationalProjects} classes={{ container: 'gap-4 lg:grid-cols-2' }} />
+      <ProjectGrid projects={internationalProjects} classes={{ container: 'gap-4 lg:grid-cols-2', itemContent: 'animate-on-scroll' }} />
     </section>
   </WidgetWrapper>
 </Layout>
+
+<script>
+  function handleIntersection(entries: IntersectionObserverEntry[]) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

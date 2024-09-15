@@ -26,8 +26,11 @@ const { projects, classes } = Astro.props;
 
 <div class={twMerge('grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-8', classes?.container)}>
   {
-    projects.map((project) => (
-      <div class={twMerge('bg-white rounded-lg shadow-md overflow-hidden h-full', classes?.item)}>
+    projects.map((project, index) => (
+      <div 
+        class={twMerge('bg-white rounded-lg shadow-md overflow-hidden h-full fade-up', classes?.item)}
+        style={`animation-delay: ${index * 100}ms;`}
+      >
         <div class={twMerge('relative', classes?.itemContent)}>
           <div class="relative">
             <Image
@@ -65,3 +68,41 @@ const { projects, classes } = Astro.props;
     ))
   }
 </div>
+
+<style>
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-up {
+    opacity: 0;
+    animation: fadeUp 0.6s ease-out forwards;
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-up {
+      animation-play-state: running;
+    }
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    transition-delay: calc(var(--animation-order, 0) * 0.1s);
+  }
+  .animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

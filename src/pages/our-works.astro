@@ -38,7 +38,7 @@ const privateProjects = [
   },
   {
     image: '~/assets/images/cert-event-banana.webp',
-    imageClass: '!object-contain p-4',
+    imageClass: '!object-contain p-4 ',
     title: 'หนังสือรับรองจากลูกค้า',
     description:
       'ด้วยการให้บริการที่ดีตลอดมา ลูกค้าจึงได้ออกหนังสือรับรองให้แก่บริษัทฯ เพื่อแสดงให้เห็นถึงความมั่นใจในการรับบริการจากบริษัทฯ',
@@ -81,7 +81,7 @@ const internationalProjects = [
 
       <div class="mb-8">
         <h3 class="text-2xl font-semibold mb-4">ภาครัฐ</h3>
-        <ProjectGrid projects={governmentProjects} />
+        <ProjectGrid projects={governmentProjects} classes={{ itemContent: 'flex flex-col justify-between h-full' }} />
       </div>
 
       <div class="mb-8">

@@ -1,0 +1,94 @@
+---
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'สภาพแวดล้อมการทำงาน | Work Environment',
+};
+
+const images = [
+  { src: '~/assets/images/work_environments/work-env-1.webp', alt: 'ออฟฟิศขอนแก่น' },
+  { src: '~/assets/images/work_environments/work-env-2.webp', alt: 'พื้นที่ทำงานร่วมกัน' },
+  { src: '~/assets/images/work_environments/work-env-3.webp', alt: 'นำเสนอจบการฝึกงาน' },
+  { src: '~/assets/images/work_environments/work-env-4.webp', alt: 'session remote work' },
+  { src: '~/assets/images/work_environments/work-env-5.webp', alt: 'work from anywhere bkk' },
+  { src: '~/assets/images/work_environments/work-env-6.webp', alt: 'work from anywhere bkk' },
+  { src: '~/assets/images/work_environments/work-env-7.webp', alt: 'kkc meeting' },
+  { src: '~/assets/images/work_environments/work-env-8.webp', alt: 'kkc meeting' },
+  { src: '~/assets/images/work_environments/work-env-9.webp', alt: 'kkc meeting' },
+  { src: '~/assets/images/work_environments/work-env-10.webp', alt: 'we are ttss' },
+  { src: '~/assets/images/work_environments/work-env-11.webp', alt: 'work starbucks' },
+  { src: '~/assets/images/work_environments/work-env-12.webp', alt: 'work evaluation' },
+  { src: '~/assets/images/work_environments/work-env-14.webp', alt: 'joining the team' },
+];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper>
+    <Headline title="สภาพแวดล้อมการทำงาน" subtitle="สัมผัสบรรยากาศการทำงานที่สร้างสรรค์และเป็นมิตรของเรา" />
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      {
+        images.map((image, index) => (
+          <div
+            class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-up-element image-container"
+            style={`--delay: ${index * 0.1}s`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full md:h-72 !object-cover !object-center image-scale"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </WidgetWrapper>
+</Layout>
+
+<style>
+  .fade-up-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    transition-delay: var(--delay, 0s);
+  }
+  .fade-up-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .image-container {
+    overflow: hidden;
+  }
+  .image-scale {
+    transition: transform 0.3s ease-in-out;
+  }
+  .image-container:hover .image-scale {
+    transform: scale(1.1);
+  }
+</style>
+
+<script>
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.fade-up-element');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

@@ -8,7 +8,7 @@ export const headerData = {
     },
     {
       text: 'สินค้า/บริการ',
-      href: '#',
+      href: '/services',
     },
     {
       text: 'ผลงานของเรา',
@@ -16,7 +16,7 @@ export const headerData = {
     },
     {
       text: 'ทีมงาน',
-      href: '#',
+      href: '/our-team',
     },
     {
       text: 'แหล่งเรียนรู้',
@@ -39,9 +39,9 @@ export const footerData = {
       title: 'เมนู',
       links: [
         { text: 'หน้าแรก', href: getPermalink('/') },
-        { text: 'สินค้า/บริการ', href: '#' },
+        { text: 'สินค้า/บริการ', href: '/services' },
         { text: 'ผลงานของเรา', href: '/our-works' },
-        { text: 'ทีมงาน', href: '#' },
+        { text: 'ทีมงาน', href: '/our-team' },
       ],
     },
     {

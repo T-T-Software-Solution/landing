@@ -1,0 +1,108 @@
+---
+import { Icon } from 'astro-icon/components';
+import Image from '../common/Image.astro';
+import { twMerge } from 'tailwind-merge';
+
+export interface Project {
+  title?: string;
+  description?: string;
+  image: string;
+  link?: string;
+  imageClass?: string;
+  badgeImage?: string;
+}
+
+interface Props {
+  projects: Project[];
+  classes?: {
+    container?: string;
+    item?: string;
+    itemContent?: string;
+  };
+}
+
+const { projects, classes } = Astro.props;
+---
+
+<div class={twMerge('grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-8', classes?.container)}>
+  {
+    projects.map((project, index) => (
+      <div 
+        class={twMerge('bg-white rounded-lg shadow-md overflow-hidden h-full fade-up', classes?.item)}
+        style={`animation-delay: ${index * 100}ms;`}
+      >
+        <div class={twMerge('relative', classes?.itemContent)}>
+          <div class="relative">
+            <Image
+              src={project.image}
+              alt={project.title ?? ''}
+              class={twMerge('w-full h-60 !object-top', project.imageClass)}
+            />
+            {project.badgeImage && (
+              <div class="absolute top-0 right-0 bg-white rounded-l-lg p-4">
+                <Image src={project.badgeImage} alt={project.title} class="w-6 h-6 min-[490px]:w-14 min-[490px]:h-14" />
+              </div>
+            )}
+            {(project.title || project.description) && (
+              <div class="p-6">
+                {project.title && <h3 class="text-xl font-semibold mb-2">{project.title}</h3>}
+                {project.description && <p class="text-gray-600 mb-4 whitespace-pre-wrap">{project.description}</p>}
+              </div>
+            )}
+          </div>
+          {project.link && (
+            <div class="flex justify-center mt-auto pt-4 pb-6">
+              <a
+                href={project.link}
+                class="text-primary hover:text-primary-dark flex items-center gap-2"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                ดูรายละเอียด
+                <Icon name="tabler:arrow-right" class="w-4 h-4" />
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-up {
+    opacity: 0;
+    animation: fadeUp 0.6s ease-out forwards;
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-up {
+      animation-play-state: running;
+    }
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    transition-delay: calc(var(--animation-order, 0) * 0.1s);
+  }
+  .animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

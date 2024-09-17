@@ -13,13 +13,13 @@ const metadata = {
 const officeLocations = [
   {
     officeName: 'สำนักงานใหญ่ ลาดกระบัง',
-    address: '10 ซอยลาดกระบัง 22 เขตลาดกระบัง กทม 10520',
+    address: '10 ซอยลาดกระบัง 22 เขตลาดกระบัง กรุงเทพมหานคร 10520',
     mapSrc:
       'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3259.2933681064014!2d100.73058316365028!3d13.719971663771863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d672190f3bb51%3A0xecdb3317fc974069!2zMTAg4LiL4Lit4LiiIOC4peC4suC4lOC4geC4o-C4sOC4muC4seC4hyAyMiDguYHguILguKfguIfguKXguLLguJTguIHguKPguLDguJrguLHguIcg4LmA4LiC4LiV4Lil4Liy4LiU4LiB4Lij4Liw4Lia4Lix4LiHIOC4geC4o-C4uOC4h-C5gOC4l-C4nuC4oeC4q-C4suC4meC4hOC4oyAxMDUyMA!5e0!3m2!1sth!2sth!4v1726043417259!5m2!1sth!2sth',
   },
   {
     officeName: 'อุทยานวิทยาศาสตร์ภูมิภาค ภาคตะวันออกเฉียงเหนือ',
-    address: 'เลขที่ 123 หมู่ 16 ถนนกัลปพฤกษ์ ตำบลในเมือง อำเภอเมืองขอนแก่น จังหวัดขอนแก่น',
+    address: 'ห้อง 203 เลขที่ 123 หมู่ 16 ถนนกัลปพฤกษ์ ตำบลในเมือง อำเภอเมืองขอนแก่น จังหวัดขอนแก่น 40002',
     mapSrc:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.3900951679334!2d102.81679277578957!3d16.455773528972657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31228a6f8180f739%3A0x4761e1a9d67a269!2z4Lit4Li44LiX4Lii4Liy4LiZ4Lin4Li04LiX4Lii4Liy4Lio4Liy4Liq4LiV4Lij4LmM4Lig4Li54Lih4Li04Lig4Liy4LiEIOC4oOC4suC4hOC4leC4sOC4p-C4seC4meC4reC4reC4geC5gOC4ieC4teC4ouC4h-C5gOC4q-C4meC4t-C4rSAxIDogUlNQIE5vcnRoZWFzdCAx!5e0!3m2!1sth!2sth!4v1726046017141!5m2!1sth!2sth',
   },
@@ -73,11 +73,9 @@ const contactInfoList = [
     <div class="mt-12">
       <h2 class="text-2xl font-semibold text-center mb-4">ที่ตั้งสำนักงานของเรา</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {
-          officeLocations.map((location) => (
-            <OfficeLocation officeName={location.officeName} address={location.address} mapSrc={location.mapSrc} />
-          ))
-        }
+        {officeLocations.map(location => (
+          <OfficeLocation officeName={location.officeName} address={location.address} mapSrc={location.mapSrc} />
+        ))}
       </div>
     </div>
 

@@ -96,11 +96,13 @@ const totalEmployees = Object.entries(employeeStats)
                       index === 0
                         ? 'right-0 min-[490px]:right-0 top-0'
                         : index === 1
-                          ? 'right-0 min-[490px]:right-12 top-12 min-[490px]:top-0'
+                          ? 'right-0 min-[490px]:right-12 top-12 min-[490px]:top-0 rounded-none'
                           : 'right-0 min-[490px]:right-24 top-24 min-[490px]:top-0'
                     )}
                   >
-                    <Image src={url} alt={exec.name} class="w-10 h-10 min-[490px]:w-10 min-[490px]:h-10" />
+                    <div class="w-10 h-10">
+                      <Image src={url} alt={exec.name} class="w-10 h-10 !object-contain" />
+                    </div>
                   </div>
                 ))}
               </div>

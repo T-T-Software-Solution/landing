@@ -190,12 +190,17 @@ const metadata = {
         </p>
       </Fragment>
       <Fragment slot="image">
-        <Image src="~/assets/images/data-visualize.webp" alt="Data Visualization" class="w-full h-full rounded-lg animate-on-scroll" />
+        <Image
+          src="~/assets/images/data-visualize.webp"
+          alt="Data Visualization"
+          class="w-full h-full rounded-lg animate-on-scroll"
+        />
       </Fragment>
     </Content2>
     <!-- Content Widget **************** -->
 
     <Content2
+      imageContainerClasses="content-center"
       isReversed
       isAfterContent
       items={[
@@ -256,11 +261,13 @@ const metadata = {
                     index === 0
                       ? 'right-0 min-[490px]:right-0 bottom-0'
                       : index === 1
-                        ? 'right-0 min-[490px]:right-12 bottom-12 min-[490px]:bottom-0'
+                        ? 'right-0 min-[490px]:right-12 bottom-12 min-[490px]:bottom-0 rounded-none'
                         : 'right-0 min-[490px]:right-24 bottom-24 min-[490px]:bottom-0'
                   )}
                 >
-                  <Image src={url} alt="trust-cert" class="w-10 h-10 min-[490px]:w-10 min-[490px]:h-10" />
+                  <div class="w-10 h-10">
+                    <Image src={url} alt="trust-cert" class="w-10 h-10 !object-contain" />
+                  </div>
                 </div>
               ))
             }
@@ -272,11 +279,13 @@ const metadata = {
               class="w-full h-72 rounded-lg md:!object-left min-[490px]:!object-top !object-left animate-on-scroll"
             />
             <div class={twMerge('absolute bottom-0 right-0 bg-white rounded-l-lg p-2 min-[490px]:right-0 ')}>
-              <Image
-                src={'~/assets/images/mvp-azure.webp'}
-                alt="mvp-azure"
-                class="w-10 h-10 min-[490px]:w-10 min-[490px]:h-10 animate-on-scroll"
-              />
+              <div class="w-12 h-12 flex items-center justify-center">
+                <Image
+                  src={'~/assets/images/mvp-azure.webp'}
+                  alt="mvp-azure"
+                  class="w-10 h-10 animate-on-scroll !object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>

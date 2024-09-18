@@ -15,6 +15,10 @@ export const headerData = {
       href: '/our-works',
     },
     {
+      text: 'มาตรฐานของเรา',
+      href: '/our-standard',
+    },
+    {
       text: 'ทีมงาน',
       href: '/our-team',
     },
@@ -41,6 +45,7 @@ export const footerData = {
         { text: 'หน้าแรก', href: getPermalink('/') },
         { text: 'สินค้า/บริการ', href: '/services' },
         { text: 'ผลงานของเรา', href: '/our-works' },
+        { text: 'มาตรฐานของเรา', href: '/our-standard' }, 
         { text: 'ทีมงาน', href: '/our-team' },
       ],
     },

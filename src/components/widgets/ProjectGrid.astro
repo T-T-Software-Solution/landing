@@ -18,6 +18,9 @@ interface Props {
     container?: string;
     item?: string;
     itemContent?: string;
+    textContent?: string;
+    title?: string;
+    description?: string;
   };
 }
 
@@ -27,7 +30,7 @@ const { projects, classes } = Astro.props;
 <div class={twMerge('grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-8', classes?.container)}>
   {
     projects.map((project, index) => (
-      <div 
+      <div
         class={twMerge('bg-white rounded-lg shadow-md overflow-hidden h-full fade-up', classes?.item)}
         style={`animation-delay: ${index * 100}ms;`}
       >
@@ -40,13 +43,19 @@ const { projects, classes } = Astro.props;
             />
             {project.badgeImage && (
               <div class="absolute top-0 right-0 bg-white rounded-l-lg p-4">
-                <Image src={project.badgeImage} alt={project.title} class="w-6 h-6 min-[490px]:w-14 min-[490px]:h-14" />
+                <div class="w-6 h-6 min-[490px]:w-10 min-[490px]:h-10">
+                  <Image
+                    src={project.badgeImage}
+                    alt={project.title}
+                    class="w-6 h-6 min-[490px]:w-10 min-[490px]:h-10 !object-contain"
+                  />
+                </div>
               </div>
             )}
             {(project.title || project.description) && (
-              <div class="p-6">
-                {project.title && <h3 class="text-xl font-semibold mb-2">{project.title}</h3>}
-                {project.description && <p class="text-gray-600 mb-4 whitespace-pre-wrap">{project.description}</p>}
+              <div class={twMerge('p-6', classes?.textContent)}>
+                {project.title && <h3 class={twMerge('text-xl font-semibold mb-2', classes?.title)}>{project.title}</h3>}
+                {project.description && <p class={twMerge('text-gray-600 mb-4 whitespace-pre-wrap', classes?.description)}>{project.description}</p>}
               </div>
             )}
           </div>

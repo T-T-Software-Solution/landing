@@ -26,37 +26,22 @@ const governmentProjects = [
 const privateProjects = [
   {
     image: '~/assets/images/eventbanana-logo.png',
-    imageClass: '!object-contain p-4',
+    imageClass: 'p-4 min-h-60 !object-contain !object-center',
+    title: 'Event Banana',
+    description: 'พัฒนาระบบบริหารจัดการต้นทุนและทรัพยากรมนุษย์ ในรูปแบบ Web Application และ Web Service',
   },
   {
-    image: '~/assets/images/easy-insure.webp',
-    imageClass: '!object-contain p-4',
-  },
-  {
-    image: '~/assets/images/ap-logo-sm.png',
-    imageClass: '!object-contain p-4',
-  },
-  {
-    image: '~/assets/images/cert-event-banana.webp',
-    imageClass: '!object-contain p-4 h-fit',
-    title: 'หนังสือรับรองจากลูกค้า',
-    description:
-      'ด้วยการให้บริการที่ดีตลอดมา ลูกค้าจึงได้ออกหนังสือรับรองให้แก่บริษัทฯ เพื่อแสดงให้เห็นถึงความมั่นใจในการรับบริการจากบริษัทฯ',
-  },
-  {
-  image: '~/assets/images/easyinsure.png',
-    imageClass: '!object-contain p-4 h-fit',
+    image: '~/assets/images/easyinsure.png',
     title: 'Easyinsure',
     description:
-      'โบรกเกอร์ประกันภัยออนไลน์ที่ให้บริการครบวงจร รวดเร็วและสะดวกสบาย สามารถเปรียบเทียบเบี้ยประกันจากหลายบริษัทชั้นนำ พร้อมข้อเสนอที่เหมาะสมที่สุดสำหรับคุณ จ่ายง่าย ได้ความคุ้มครองทันที',
-    
+      'โบรกเกอร์ประกันภัยออนไลน์ที่ให้บริการครบวงจร รวดเร็วและสะดวกสบาย พร้อมข้อเสนอที่เหมาะสมที่สุดสำหรับคุณ จ่ายง่าย ได้ความคุ้มครองทันที',
+    link: '/our-works/detail/easyinsure',
   },
   {
-  image: '~/assets/images/siamlaw.png',
-    imageClass: '!object-contain p-4 h-fit', 
+    image: '~/assets/images/siamlaw.png',
     title: 'Siamlaw Group',
     description:
-      'บริษัทกฎหมายที่เชี่ยวชาญด้านกฎหมายธุรกิจและการลงทุน ให้บริการปรึกษาและดำเนินคดีทั่วไทย มั่นใจได้ในคุณภาพ', 
+      'พัฒนาระบบจัดเก็บข้อมูลคดีความ ติดตามสถานะคดีความ ทั้งส่วนของทนายความ เจ้าหน้าที่ รวมถึงการวางบิล ออกใบกำกับภาษี และรายงานสำหรับผู้บริหาร',
   },
 ];
 
@@ -68,19 +53,24 @@ const internationalProjects = [
     image: '~/assets/images/storm.webp',
     imageClass: 'md:h-72',
     badgeImage: '~/assets/images/WRM.png',
+    link: '/our-works/detail/wrm',
+  },
+];
+
+const certificateProjects = [
+  {
+    image: '~/assets/images/certificate_of_work_event_banana.webp',
+    imageClass: 'h-fit md:h-full',
   },
   {
-    title: 'WRM STORM Manager & OPS Manager',
-    description:
-      'ด้วยการให้บริการที่ดีตลอดมา ลูกค้าจึงได้ออกหนังสือรับรองให้แก่บริษัทฯ เพื่อแสดงให้เห็นถึงความมั่นใจในการรับบริการจากบริษัทฯ',
-    image: '~/assets/images/cert_storm.webp',
-    imageClass: '!object-contain h-fit md:h-72',
+    image: '~/assets/images/certificate_of_work_wrm.webp',
+    imageClass: 'h-fit md:h-full',
   },
 ];
 ---
 
 <Layout metadata={metadata}>
-  <WidgetWrapper containerClass='max-w-7xl mx-auto'>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
     <Headline
       title="ผลงานของเรา"
       subtitle="ค้นพบโครงการที่น่าตื่นเต้นและสร้างสรรค์ของทีมเรา ทั้งในประเทศและต่างประเทศ"
@@ -90,9 +80,10 @@ const internationalProjects = [
     <section class="mb-12">
       <h2 class="text-3xl font-bold mb-4">ผลงานภายในประเทศ</h2>
       <p class="text-gray-600 mb-6">
-        บริษัทฯ ได้มุ่งมั่นพัฒนาคุณภาพการให้บริการ ตั้งแต่อดีตจนถึงปัจจุบัน จนได้รับการยอมรับในวงกว้าง สังเกตุได้จาก
-        ลูกค้าในอดีตที่เราเคยพัฒนาระบบให้ ในปัจจุบัน เราก็ได้รับการว่าจ้างให้ปรับปรุงระบบงานเดิมให้ทันสมัย (Upgrade and
-        Enhancement) เป็นต้น
+        บริษัทฯ มุ่งมั่นพัฒนาคุณภาพการให้บริการอย่างต่อเนื่องมาตั้งแต่อดีตจนถึงปัจจุบัน
+        จนได้รับความเชื่อมั่นและยอมรับจากลูกค้าอย่างกว้างขวาง โดยสามารถสังเกตได้จาก
+        การที่ลูกค้าเดิมที่เคยใช้บริการพัฒนาระบบกับบริษัทฯ ยังคงมอบความไว้วางใจให้บริษัทฯ
+        ดำเนินการปรับปรุงและพัฒนาระบบเดิมให้ทันสมัย (Upgrade and Enhancement) เป็นต้น
       </p>
 
       <div class="mb-8">
@@ -104,14 +95,18 @@ const internationalProjects = [
         <h3 class="text-2xl font-semibold mb-4">ภาคเอกชน (บางส่วน)</h3>
         <ProjectGrid
           projects={privateProjects}
-          classes={{ itemContent: 'flex flex-col justify-center items-center h-full animate-on-scroll' }}
+          classes={{ itemContent: 'flex flex-col justify-between h-full animate-on-scroll' }}
         />
       </div>
     </section>
 
     <section>
       <h2 class="text-3xl font-bold mb-6">ผลงานในต่างประเทศ (บางส่วน)</h2>
-      <ProjectGrid projects={internationalProjects} classes={{ container: 'gap-4 lg:grid-cols-2', itemContent: 'animate-on-scroll' }} />
+      <ProjectGrid projects={internationalProjects} classes={{ itemContent: 'animate-on-scroll' }} />
+    </section>
+    <section>
+      <h2 class="text-3xl font-bold mb-6">หนังสือรับรองผลงาน (Certificate of Work)</h2>
+      <ProjectGrid projects={certificateProjects} classes={{ itemContent: 'h-full animate-on-scroll' }} />
     </section>
   </WidgetWrapper>
 </Layout>

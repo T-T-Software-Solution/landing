@@ -50,7 +50,7 @@ const {
   <div class="mx-auto max-w-5xl p-4 lg:px-4">
     <div class={`lg:flex ${isReversed ? 'lg:flex-row-reverse' : ''} lg:gap-16`}>
       <div class={twMerge('lg:basis-3/4 self-center', image ? 'lg:basis-3/4' : 'lg:basis-full')}>
-        {content && <div class="md:mb-12 text-lg dark:text-slate-400" set:html={content} />}
+        {content && <div class="md:mb-12 text-lg dark:text-slate-400 animate-on-scroll" set:html={content} />}
 
         {
           callToAction && (
@@ -77,7 +77,7 @@ const {
       </div>
       {
         image && (
-          <div aria-hidden="true" class={twMerge('content-center mt-10 lg:mt-0 lg:basis-1/4', imageContainerClasses)}>
+          <div aria-hidden="true" class={twMerge('content-center mt-10 lg:mt-0 lg:basis-1/4 animate-on-scroll', imageContainerClasses)}>
             <div class="relative m-auto max-w-4xl">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
@@ -91,3 +91,39 @@ const {
     </div>
   </div>
 </WidgetWrapper>
+
+<style>
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    transition-delay: calc(var(--animation-order, 0) * 0.1s);
+  }
+  .animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  function handleIntersection(entries: IntersectionObserverEntry[]) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

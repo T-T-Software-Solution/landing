@@ -1,20 +1,13 @@
 ---
 const { officeName, address, mapSrc } = Astro.props;
-
-const formattedOfficeName = officeName.replace('ภูมิภาค ', 'ภูมิภาค<br>');
-
-const formattedAddress = address
-  .replace('หมู่ 16', 'หมู่ 16<br>')  
-  .replace('ชั้น 12', 'ชั้น 12<br>')  
-  .replace('ตำบลในเมือง', 'ตำบลในเมือง<br>');  
 ---
 
 <div class="bg-white p-4 rounded-lg shadow-md h-full flex flex-col">
   <div class="mb-4 flex-grow">
     <!-- ใช้ set:html เพื่อแสดงผล officeName ขึ้นบรรทัดใหม่ -->
-    <h3 class="font-semibold mb-2" set:html={formattedOfficeName}></h3>
+    <h3 class="font-semibold mb-2" set:html={officeName}></h3>
     <!-- ใช้ set:html เพื่อแสดงผลที่อยู่ขึ้นบรรทัดใหม่ -->
-    <p class="text-sm text-gray-600" set:html={formattedAddress}></p>
+    <p class="text-sm text-gray-600" set:html={address}></p>
   </div>
 
   <div class="relative overflow-hidden rounded-lg" style="padding-bottom: 56.25%;">

@@ -9,22 +9,6 @@ const metadata = {
   title: 'ทีมงานของเรา',
 };
 
-const employeeStats = {
-  'ผู้บริหาร': 3,
-  'Software Developer': 14,
-  'Mobile Developer': 2,
-  'DevOps Engineer': 4,
-  'Software Tester': 4,
-  'Software Automation Tester': 4,
-  'Project Manager': 1,
-  'Business Analyst/ System Analyst': 1,
-  'Software Engineer': 4,
-  'ฝ่ายบุคคล': 1,
-  'ฝ่ายบัญชี': 1,
-  'UX/UI':1,
-  'Information Security Officer':1,
-};
-
 const executives = [
   {
     name: 'Nakorn Rientrakunchai',
@@ -67,6 +51,25 @@ const executives = [
   },
 ];
 
+const employeeStats = {
+  'ผู้บริหาร': executives.length,
+  'Software Developer': 14,
+  'Mobile Developer': 2,
+  'DevOps Engineer': 4,
+  'Software Tester': 4,
+  'Software Automation Tester': 4,
+  'Project Manager': 1,
+  'Business Analyst/ System Analyst': 1,
+  'Software Engineer': 4,
+  'ฝ่ายบุคคล': 1,
+  'ฝ่ายบัญชี': 1,
+  'UX/UI':1,
+  'Information Security Officer':1,
+};
+
+const totalEmployees = Object.entries(employeeStats)
+  .filter(([position]) => position !== 'ผู้บริหาร')
+  .reduce((acc, [_, count]) => acc + count, 0);
 ---
 
 <Layout metadata={metadata}>
@@ -177,7 +180,7 @@ const executives = [
         <div class="bg-white border border-gray-200 shadow-lg rounded-lg p-6 text-center">
           <h3 class="text-xl font-semibold mb-4">พนักงานทั้งหมด</h3>
           <p class="text-4xl font-bold text-primary">
-            <span class="employee-count" data-target={38}>{38}</span>
+            <span class="employee-count" data-target={totalEmployees}>{totalEmployees}</span>
           </p>
         </div>
         {

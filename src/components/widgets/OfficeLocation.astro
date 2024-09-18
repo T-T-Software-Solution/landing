@@ -4,8 +4,10 @@ const { officeName, address, mapSrc } = Astro.props;
 
 <div class="bg-white p-4 rounded-lg shadow-md h-full flex flex-col">
   <div class="mb-4 flex-grow">
-    <h3 class="font-semibold mb-2">{officeName}</h3>
-    <p class="text-sm text-gray-600">{address}</p>
+    <!-- ใช้ set:html เพื่อแสดงผล officeName ขึ้นบรรทัดใหม่ -->
+    <h3 class="font-semibold mb-2" set:html={officeName}></h3>
+    <!-- ใช้ set:html เพื่อแสดงผลที่อยู่ขึ้นบรรทัดใหม่ -->
+    <p class="text-sm text-gray-600" set:html={address}></p>
   </div>
 
   <div class="relative overflow-hidden rounded-lg" style="padding-bottom: 56.25%;">
@@ -16,7 +18,6 @@ const { officeName, address, mapSrc } = Astro.props;
       class="absolute top-0 left-0 w-full h-full"
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
-    >
-    </iframe>
+    ></iframe>
   </div>
 </div>

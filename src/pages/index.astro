@@ -6,6 +6,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import ImageBentoGrid from '~/components/widgets/ImageBentoGrid.astro';
 import OurPartners from '~/components/widgets/OurPartners.astro';
 import OurServices from '~/components/widgets/OurServices.astro';
+import OurStandrad from '~/components/widgets/OurStandrad.astro';
 import OurTeam from '~/components/widgets/OurTeam.astro';
 import OurWorks from '~/components/widgets/OurWorks.astro';
 import Technologies from '~/components/widgets/Technologies.astro';
@@ -215,10 +216,12 @@ const metadata = {
       <div class="absolute inset-0 bg-[#FFF6F4] dark:bg-transparent"></div>
     </Fragment>
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Empower Your Business with Advanced Analytics</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Empower Your Business with Advanced Analytics
+      </h3>
     </Fragment>
   </OurWorks>
-  
+
   <!-- OurTeam Widget ******************* -->
   <OurTeam
     title='Empowering Your Digital Journey\nwith <span class="text-secondary">Expert Solutions</span>'
@@ -311,7 +314,7 @@ const metadata = {
       container: 'lg:py-0 lg:pt-20 py-0 pt-12',
     }}
     title="Our Partners"
-    subtitle="เราภูมิใจที่ได้เป็นพันธมิตรกับบริษัทเทคโนโลยีชั้นนำและได้รับการรับรองจากองค์กรระดับสากล"
+    subtitle="เราภูมิใจที่ได้เป็นพันธมิตรกับบริษัทเทคโนโลยีชั้นนำ"
     tagline="พาร์ทเนอร์ของเรา"
     items={[
       {
@@ -332,6 +335,38 @@ const metadata = {
     ]}
   />
 
+  <OurStandrad
+    isReversed
+    isAfterContent
+    image={{
+      src: '~/assets/images/IEC-ISO-29110_lg.webp',
+      alt: 'Azure Cloud',
+    }}
+  >
+    <Fragment slot="content">
+      <h3
+        class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl md:text-4xl dark:text-white mb-2 animate-on-scroll"
+      >
+        Our Standard with ISO 29110
+      </h3>
+      <div class="text-muted text-base my-2 animate-on-scroll">
+        <div class="indent-10">
+          เราใช้มาตรฐาน <span class="font-bold text-primary"
+            >การบริหารจัดการโครงการ (Project Management: PM Process)</span
+          > และควบคุม <span class="font-bold text-primary">
+            กระบวนการด้านการสร้างซอฟต์แวร์ (Software Implementation: SI Process)
+          </span> บนมาตรฐาน ISO และได้รับการรับรองจากองค์กรระดับสากล
+        </div>
+        <div class="indent-10">
+          เป็นสิ่งที่ช่วยการันตีได้ว่าลูกค้าของเราจะได้รับบริการจากผู้พัฒนาซอฟต์แวร์ที่มีมาตรฐาน
+          ซึ่งรวมถึงทีมงานที่มีความรู้ความเข้าใจในกระบวนการพัฒนา
+          ทำให้ลูกค้าสามารถติดตามความคืบหน้าและตรวจสอบความถูกต้องได้ตลอดโครงการ นอกจากนี้แล้ว
+          เมื่อจบโครงการก็ยังได้รับเอกสารอ้างอิงสำหรับให้ดูแลหรือพัฒนาต่อยอดระบบได้
+        </div>
+      </div>
+    </Fragment>
+  </OurStandrad>
+
   <WorkEnvironment
     subtitle="สนับสนุนการทำงานจากทุกที่ สร้างสภาพแวดล้อมที่มีความสุข และเพิ่มประสิทธิภาพการทำงาน"
     images={[
@@ -348,8 +383,9 @@ const metadata = {
       href: '/work-environment',
     }}
   >
-  <Fragment slot="title">
-    Support Work From <span class="underline underline-offset-2 decoration-wavy decoration-primary">Anywhere</span><br /> A Happy Environment for Better Results
-  </Fragment>
+    <Fragment slot="title">
+      Support Work From <span class="underline underline-offset-2 decoration-wavy decoration-primary">Anywhere</span><br
+      /> A Happy Environment for Better Results
+    </Fragment>
   </WorkEnvironment>
 </Layout>

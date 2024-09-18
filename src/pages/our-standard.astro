@@ -1,0 +1,45 @@
+---
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'มาตรฐานของเรา | Our Standard',
+};
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <Headline title="มาตรฐานของเรา" classes={{ container: 'pt-12 lg:pt-0' }} />
+    <div class="indent-20 animate-on-scroll mb-4">
+      ทางบริษัทได้รับผ่านการประเมิน และได้รับการรับรองมาตรฐาน ISO 29110 ในกระบวนการ การบริหารจัดการโครงการ (Project
+      Management: PM Process) และควบคุมกระบวนการด้านการสร้างซอฟต์แวร์ (Software Implementation: SI Process) เมื่อวันที่
+      17 กันยายน 2567
+    </div>
+    <div class="flex justify-center my-4">
+      <Image src="~/assets/images/IEC-ISO-29110_lg.webp" alt="ISO 29110" class="w-full max-w-4xl" />
+    </div>
+  </WidgetWrapper>
+</Layout>
+
+<script>
+  function handleIntersection(entries: IntersectionObserverEntry[]) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

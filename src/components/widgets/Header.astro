@@ -88,7 +88,7 @@ const isTopOfPage = Astro.url.pathname === '/';
       aria-label="Main navigation"
     >
       <ul
-        class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl lg:text-[0.9375rem] tracking-[0.01rem] font-bold lg:justify-center"
+        class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl min-[1130px]:text-[0.9375rem] tracking-[0.01rem] font-bold lg:justify-center lg:text-[12px]"
       >
         {
           links.map(({ text, href, links }) => (
@@ -104,7 +104,7 @@ const isTopOfPage = Astro.url.pathname === '/';
                       <li>
                         <a
                           class:list={[
-                            'first:rounded-t last:rounded-b lg:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
+                            'first:rounded-t last:rounded-b lg:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 min-[1130px]:px-5 lg:px-2 block whitespace-no-wrap',
                             { 'text-primary dark:text-primary': href2 === currentPath },
                           ]}
                           href={href2}
@@ -118,7 +118,7 @@ const isTopOfPage = Astro.url.pathname === '/';
               ) : (
                 <a
                   class:list={[
-                    'hover:text-link dark:hover:text-white px-4 py-3 flex items-center',
+                    'hover:text-link dark:hover:text-white px-3 py-3 flex items-center min-[1130px]:px-3 lg:px-3',
                     { 'text-primary dark:text-primary': href === currentPath },
                   ]}
                   href={href}

@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: 'T.T. Software Solution — ที.ที. ซอฟแวร์ โซลูชั่น'
+  site: 'https://agreeable-meadow-038a31900.5.azurestaticapps.net'
   base: '/'
   trailingSlash: false
 
@@ -9,18 +9,18 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: 'T.T. Software Solution — ที.ที. ซอฟแวร์ โซลูชั่น'
+    template: '%s — T.T. Software Solution — ที.ที. ซอฟแวร์ โซลูชั่น'
+  description: "We are Software Solution Expert made by MVP Technical Team — เราคือผู้นำด้าน Microsoft Technology ในประเทศไทย พัฒนาโซลูชันธุรกิจด้วย ASP.NET, Azure และ C# โดยทีม MVP และผู้เชี่ยวชาญ"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: 'T.T. Software Solution — ที.ที. ซอฟแวร์ โซลูชั่น'
     images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+      - url: '~/assets/images/bento-primary.webp'
+        width: 2100
+        height: 875
     type: website
   twitter:
     handle: '@onwidget'
@@ -28,39 +28,39 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: th
   textDirection: ltr
 
 apps:
   blog:
-    isEnabled: true
+    isEnabled: false
     postsPerPage: 6
 
     post:
-      isEnabled: true
+      isEnabled: false
       permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
       robots:
         index: true
 
     list:
-      isEnabled: true
+      isEnabled: false
       pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
       robots:
         index: true
 
     category:
-      isEnabled: true
+      isEnabled: false
       pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
       robots:
         index: true
 
     tag:
-      isEnabled: true
+      isEnabled: false
       pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
       robots:
         index: false
 
-    isRelatedPostsEnabled: true
+    isRelatedPostsEnabled: false
     relatedPostsCount: 4
 
 analytics:

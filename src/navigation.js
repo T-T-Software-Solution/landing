@@ -46,15 +46,14 @@ export const footerData = {
         { text: 'สินค้า/บริการ', href: '/services' },
         { text: 'ผลงานของเรา', href: '/our-works' },
         { text: 'มาตรฐานของเรา', href: '/our-standard' }, 
-        { text: 'ทีมงาน', href: '/our-team' },
       ],
     },
     {
       title: ' ',
       links: [
+        { text: 'ทีมงาน', href: '/our-team' },
         { text: 'แหล่งเรียนรู้', href: 'https://portal.tt-ss.net/' },
         { text: 'ร่วมงานกับเรา', href: '/career' },
-        { text: 'เกี่ยวกับเรา', href: '#' },
         { text: 'ติดต่อเรา', href: '/contact-us' },
       ],
     },

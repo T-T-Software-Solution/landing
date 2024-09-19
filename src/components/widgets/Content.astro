@@ -1,10 +1,15 @@
 ---
 import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
-import type { Content as Props } from '~/types';
+import type { Content } from '~/types';
 import Headline from '../ui/Headline.astro';
 import ItemGrid from '../ui/ItemGrid.astro';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import { twMerge } from 'tailwind-merge';
+
+export interface Props extends Content {
+  imageContainerClasses?: string;
+}
 
 const {
   title = await Astro.slots.render('title'),
@@ -22,13 +27,14 @@ const {
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
+  imageContainerClasses = ''
 } = Astro.props;
 ---
 
 <WidgetWrapper
   id={id}
   isDark={isDark}
-  containerClass={`max-w-7xl mx-auto ${isAfterContent ? 'pt-0 lg:pt-0 lg:pt-0' : ''} ${classes?.container ?? ''}`}
+  containerClass={`max-w-7xl mx-auto ${isAfterContent ? 'pt-0 lg:pt-0 lg:pt-0' : ''} ${classes?.container ?? ''} bg-white border border-gray-200 shadow-lg py-4 lg:py-4 rounded-lg`}
   bg={bg}
 >
   <Headline
@@ -41,9 +47,9 @@ const {
       subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
     }}
   />
-  <div class="mx-auto max-w-7xl p-4 lg:px-8">
+  <div class="mx-auto max-w-7xl p-4 lg:px-4">
     <div class={`lg:flex ${isReversed ? 'lg:flex-row-reverse' : ''} lg:gap-16`}>
-      <div class="lg:basis-1/2 self-center">
+      <div class={twMerge("lg:basis-1/2 self-center", image ? 'lg:basis-1/2' : 'lg:basis-full')}>
         {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
 
         {
@@ -60,17 +66,18 @@ const {
           defaultIcon="tabler:check"
           classes={{
             container: `gap-y-4 lg:gap-y-8`,
-            panel: 'max-w-none',
+            panel: 'max-w-none animate-on-scroll',
             title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
             description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
-            icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1',
+            icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-primary dark:bg-primary text-gray-50 p-1',
             action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+            ...((classes?.items as Record<string, never>) ?? {}),
           }}
         />
       </div>
-      <div aria-hidden="true" class="mt-10 lg:mt-0 lg:basis-1/2">
-        {
-          image && (
+      {
+        image && (
+          <div aria-hidden="true" class={twMerge("mt-10 lg:mt-0 lg:basis-1/2", imageContainerClasses)}>
             <div class="relative m-auto max-w-4xl">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
@@ -86,9 +93,9 @@ const {
                 />
               )}
             </div>
-          )
-        }
-      </div>
+          </div>
+        )
+      }
     </div>
   </div>
 </WidgetWrapper>

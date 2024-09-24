@@ -3,7 +3,6 @@ import { Image as AstroImage } from 'astro:assets';
 import { SITE } from 'astrowind:config';
 import { twMerge } from 'tailwind-merge';
 import logo from '~/assets/images/logo.svg';
-import icon from '~/assets/images/tt-icon.svg';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Image from '~/components/common/Image.astro';
 
@@ -17,6 +16,7 @@ const {
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
+  contentImage = await Astro.slots.render('contentImage'),
 } = Astro.props;
 ---
 
@@ -32,6 +32,18 @@ const {
         <div class="self-stretch text-zinc-600 text-lg md:text-xl font-normal">
           {descriptionFirst && <p class={twMerge('mt-4 text-muted')} set:html={descriptionFirst} />}
           {descriptionSecond && <p class={twMerge('mt-4 text-muted')} set:html={descriptionSecond} />}
+          {
+            contentImage && (
+              <div class="flex justify-center items-center mt-4">
+                <Image
+                  src={contentImage}
+                  alt={`mvp-azure`}
+                  class={twMerge('w-full h-full')}
+                  fetchpriority="high"
+                />
+              </div>
+            )
+          }
         </div>
       </div>
     </div>
@@ -45,10 +57,7 @@ const {
                 <Image
                   src={img.url}
                   alt={`image-${index}`}
-                  class={twMerge(
-                    'w-full h-full',
-                    img.class?.image
-                  )}
+                  class={twMerge('w-full h-full', img.class?.image)}
                   loading="lazy"
                   decoding="async"
                   fetchpriority="high"

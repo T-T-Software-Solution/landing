@@ -19,6 +19,10 @@ export const headerData = {
       href: '/our-standard',
     },
     {
+      text: 'ใบรับรองของเรา',
+      href: '/our-certification',
+    },
+    {
       text: 'ทีมงาน',
       href: '/our-team',
     },
@@ -46,6 +50,7 @@ export const footerData = {
         { text: 'สินค้า/บริการ', href: '/services' },
         { text: 'ผลงานของเรา', href: '/our-works' },
         { text: 'มาตรฐานของเรา', href: '/our-standard' }, 
+        { text: 'ใบรับรองของเรา', href: '/our-certification' },
       ],
     },
     {

@@ -118,7 +118,7 @@ const isTopOfPage = Astro.url.pathname === '/';
               ) : (
                 <a
                   class:list={[
-                    'hover:text-link dark:hover:text-white px-3 py-3 flex items-center min-[1130px]:px-3 lg:px-3',
+                    'hover:text-link dark:hover:text-white px-3 py-3 flex items-center lg:px-1.5',
                     { 'text-primary dark:text-primary': href === currentPath },
                   ]}
                   href={href}

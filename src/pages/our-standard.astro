@@ -9,18 +9,36 @@ const metadata = {
 };
 
 const images = [
-  { src: '~/assets/images/our_certificates/Ponggun/Ponggun-MVP.webp', alt: 'Ponggun-MVP' },
+  {
+    src: '~/assets/images/our_certificates/Ponggun/Ponggun-MVP.webp',
+    alt: 'Ponggun-MVP',
+    link: 'https://www.credly.com/badges/a925f8a4-5107-4bc4-8ab5-cee3b663b404/public_url',
+  },
   {
     src: '~/assets/images/our_certificates/Nakorn/Nakorn-DevOps Engineer Expert.webp',
     alt: 'Nakorn-DevOps Engineer Expert',
+    link: 'https://learn.microsoft.com/api/credentials/share/en-gb/NakornRientrakrunchai-3290/AD8C30B6C0025EF7?sharingId=57B1B17B693AE35E',
   },
   {
     src: '~/assets/images/our_certificates/Nakorn/Nakorn-Azure Developer Associate.webp',
     alt: 'Nakorn-Azure Developer Associate',
+    link: 'https://learn.microsoft.com/en-gb/users/nakornrientrakrunchai-3290/credentials/4bce7cd7a3ed3e22',
   },
-  { src: '~/assets/images/our_certificates/Nakorn/Nakorn-Azure Fundamentals.webp', alt: 'Nakorn-Azure Fundamentals' },
-  { src: '~/assets/images/our_certificates/Ponggun/Ponggun-Azure.webp', alt: 'Ponggun-Azure' },
-  { src: '~/assets/images/our_certificates/Too/Too-Azure.webp', alt: 'Too-Azure' },
+  {
+    src: '~/assets/images/our_certificates/Nakorn/Nakorn-Azure Fundamentals.webp',
+    alt: 'Nakorn-Azure Fundamentals',
+    link: 'https://learn.microsoft.com/api/credentials/share/en-gb/NakornRientrakrunchai-3290/FCB870799C623A35?sharingId=57B1B17B693AE35E',
+  },
+  {
+    src: '~/assets/images/our_certificates/Ponggun/Ponggun-Azure.webp',
+    alt: 'Ponggun-Azure',
+    link: 'https://learn.microsoft.com/api/credentials/share/en-gb/ponggun/E8FF6C3510E41237?sharingId=AZ-MVP-5004988',
+  },
+  {
+    src: '~/assets/images/our_certificates/Too/Too-Azure.webp',
+    alt: 'Too-Azure',
+    link: 'https://learn.microsoft.com/en-us/users/keeratiratanapatayakorn-9126/credentials/3ddadb0646b98f76',
+  },
   { src: '~/assets/images/our_certificates/Nakorn/Nakorn-Professional.webp', alt: 'Nakorn-Professional' },
 ];
 ---
@@ -54,7 +72,9 @@ const images = [
             class="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 fade-up-element image-container animate-on-scroll"
             style={`--delay: ${index * 0.1}s`}
           >
-            <Image src={image.src} alt={image.alt} class="w-full h-full !object-contain !object-center image-scale" />
+            <a href={image.link ?? '#'} target="_blank">
+              <Image src={image.src} alt={image.alt} class="w-full h-full !object-contain !object-center image-scale" />
+            </a>
           </div>
         ))
       }

@@ -72,7 +72,7 @@ const images = [
             class="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 fade-up-element image-container animate-on-scroll"
             style={`--delay: ${index * 0.1}s`}
           >
-            <a href={image.link ?? '#'} target="_blank">
+            <a href={image.link ?? '#'} target="_blank" rel="noopener noreferrer">
               <Image src={image.src} alt={image.alt} class="w-full h-full !object-contain !object-center image-scale" />
             </a>
           </div>

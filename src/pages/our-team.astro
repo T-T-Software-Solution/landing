@@ -47,29 +47,28 @@ const executives = [
       'บริหารจัดการโครงการ ปรับปรุงระบบเผยแพร่ข้อมูล การจัดซื้อจัดจ้างภาครัฐ ของหน่วยงานกรุงเทพมหานคร (e-GP BMA) Phase 2',
       'วิทยากรบรรยาย แก่นักศึกษาคณะวิศวกรรมศาสตร์ มหาวิทยาลัยขอนแก่น',
       'วิทยากรอบรมผู้ใช้งาน โครงการปรับปรุงระบบเผยแพร่ข้อมูล การจัดซื้อจัดจ้างภาครัฐ ของหน่วยงานกรุงเทพมหานคร (e-GP BMA) Phase 2',
-      
     ],
   },
 ];
 
 const employeeStats = {
-  'ผู้บริหาร': executives.length,
-  'Software Developer': 14,
-  'Mobile Developer': 2,
-  'DevOps Engineer': 4,
-  'Software Tester': 4,
-  'Software Automation Tester': 4,
+  Executive: executives.length,
   'Project Manager': 1,
   'Business Analyst/ System Analyst': 1,
   'Software Engineer': 4,
-  'ฝ่ายบุคคล': 1,
-  'ฝ่ายบัญชี': 1,
-  'UX/UI':1,
-  'Information Security Officer':1,
+  'Software Developer': 14,
+  'Mobile Developer': 2,
+  'DevOps Engineer': 4,
+  'Software Automation Tester': 4,
+  'Software Tester': 4,
+  'Information Security Officer': 1,
+  'UX/UI': 1,
+  'Human Resource': 1,
+  Accountant: 1,
 };
 
 const totalEmployees = Object.entries(employeeStats)
-  .filter(([position]) => position !== 'ผู้บริหาร')
+  .filter(([position]) => position !== 'Executive')
   .reduce((acc, [_, count]) => acc + count, 0);
 ---
 
@@ -171,27 +170,29 @@ const totalEmployees = Object.entries(employeeStats)
       <Image src="~/assets/images/team-photo.png" alt="รูปรวมพนักงาน" class="w-full max-w-4xl rounded-lg shadow-lg" />
     </div>
     <section class="mb-16 animate-on-scroll" id="employee-count">
-      <h2 class="text-3xl font-bold my-8 text-center">จำนวนพนักงาน</h2>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div class="hidden md:block"></div>
         <div class="bg-white border border-gray-200 shadow-lg rounded-lg p-6 text-center">
-          <h3 class="text-xl font-semibold mb-4">ผู้บริหาร</h3>
-          <p class="text-4xl font-bold text-primary">
-            <span class="employee-count" data-target={employeeStats.ผู้บริหาร}>{employeeStats.ผู้บริหาร}</span>
-          </p>
-        </div>
-        <div class="bg-white border border-gray-200 shadow-lg rounded-lg p-6 text-center">
-          <h3 class="text-xl font-semibold mb-4">พนักงานทั้งหมด</h3>
+          <h3 class="text-2xl font-bold mb-4">All Team Members</h3>
           <p class="text-4xl font-bold text-primary">
             <span class="employee-count" data-target={totalEmployees}>{totalEmployees}</span>
           </p>
         </div>
+        <div class="hidden md:block"></div>
+        <div class="hidden md:block"></div>
+        <div class="bg-white border border-gray-200 shadow-lg rounded-lg p-6 text-center">
+          <h3 class="text-xl font-semibold mb-4">Executive</h3>
+          <p class="text-4xl font-bold text-primary">
+            <span class="employee-count" data-target={employeeStats.Executive}>{employeeStats.Executive}</span>
+          </p>
+        </div>
+        <div class="hidden md:block"></div>
         {
           Object.entries(employeeStats).map(
             ([position, count]) =>
-              position !== 'ผู้บริหาร' && (
-                <div class="bg-white border border-gray-200 shadow-lg rounded-lg p-6 text-center">
-                  <h3 class="text-xl font-semibold mb-4">{position}</h3>
+              position !== 'Executive' && (
+                <div class="bg-white border border-gray-200 shadow-lg rounded-lg p-6 text-center flex flex-col justify-between">
+                  <h3 class="text-lg lg:text-xl font-semibold mb-4">{position}</h3>
                   <p class="text-4xl font-bold text-primary">
                     <span class="employee-count" data-target={count}>
                       {count}

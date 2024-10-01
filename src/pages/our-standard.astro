@@ -57,7 +57,7 @@ const images = [
       </p>
       <p class="font-bold md:text-lg">เมื่อวันที่ 17 กันยายน 2567</p>
     </div>
-    <div class="flex justify-center my-4 animate-on-scroll max-w-xl mx-auto">
+    <div class="border-[2px] border-black flex justify-center my-4 animate-on-scroll max-w-xl mx-auto shadow-xl hover:shadow-2xl transition-shadow duration-300 fade-up-element image-container">
       <Image src="~/assets/images/ISO.webp" alt="ISO 29110" class="!object-contain h-auto w-auto" />
     </div>
     <Headline title="ใบรับรองของเรา" classes={{ container: 'pt-8 mb-8 sm:mb-6 sm:pt-6 lg:mb-8' }} />
@@ -73,7 +73,7 @@ const images = [
             style={`--delay: ${index * 0.1}s`}
           >
             <a href={image.link ?? '#'} target="_blank" rel="noopener noreferrer">
-              <Image src={image.src} alt={image.alt} class="w-full h-full !object-contain !object-center image-scale" />
+              <Image src={image.src} alt={image.alt} class="w-full h-full !object-contain !object-center" />
             </a>
           </div>
         ))

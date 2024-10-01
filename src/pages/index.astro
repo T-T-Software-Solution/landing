@@ -186,6 +186,13 @@ const metadata = {
   <!-- OurWorks Widget **************** -->
 
   <OurWorks
+    classes={{
+      container: 'py-0 lg:py-0 lg:pt-0',
+      headline: {
+        title: 'whitespace-pre-line',
+        container: 'mb-0 lg:mb-0 max-w-7xl',
+      },
+    }}
     isReversed
     isAfterContent
     items={[
@@ -218,6 +225,44 @@ const metadata = {
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
         Empower Your Business with Advanced Analytics
+      </h3>
+    </Fragment>
+  </OurWorks>
+
+  <OurWorks
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Customizable conversation flows',
+        description: 'ออกแบบและปรับแต่งลำดับการสนทนาได้ตามต้องการ รองรับ use cases ที่หลากหลายของธุรกิจ',
+      },
+      {
+        title: 'Multi-platform support',
+        description: 'รองรับการทำงานบนหลากหลายแพลตฟอร์ม ทั้ง web, mobile และ desktop applications ด้วยมาตรฐานเดียวกัน',
+      },
+      {
+        title: 'Continuous learning and improvement',
+        description: 'พัฒนาประสิทธิภาพอย่างต่อเนื่องด้วยระบบการเรียนรู้อัตโนมัติ ปรับปรุงการตอบสนอง จากข้อมูลจริง',
+      },
+      {
+        title: 'Analytics and insights dashboard',
+        description:
+          'วิเคราะห์และพัฒนาอย่างต่อเนื่อง มาพร้อมแดชบอร์ดวิเคราะห์ข้อมูลเชิงลึก ช่วยให้คุณเข้าใจพฤติกรรมลูกค้าและปรับปรุง chatbot ให้ฉลาดขึ้นเรื่อยๆ',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/chatbot.webp',
+      alt: 'Everything in One Place',
+      class: 'mx-auto w-full !object-contain max-h-96 lg:max-h-full',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-[#FFF6F4] dark:bg-transparent"></div>
+    </Fragment>
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Custom AI Chatbot Development to Elevate Your Business
       </h3>
     </Fragment>
   </OurWorks>

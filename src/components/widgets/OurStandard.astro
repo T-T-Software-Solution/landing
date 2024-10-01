@@ -77,12 +77,12 @@ const {
       </div>
       {
         image && (
-          <div aria-hidden="true" class={twMerge('content-center mt-10 lg:mt-0 lg:basis-1/4 animate-on-scroll', imageContainerClasses)}>
+          <div aria-hidden="true" class={twMerge('content-start mt-10 lg:mt-0 lg:basis-1/4 animate-on-scroll', imageContainerClasses)}>
             <div class="relative m-auto max-w-4xl">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
               ) : (
-                <Image fetchpriority="high" class="mx-auto w-auto rounded-lg h-60 !object-contain" {...image} />
+                <Image fetchpriority="high" class="mx-auto w-auto rounded-lg h-auto !object-contain" {...image} />
               )}
             </div>
           </div>

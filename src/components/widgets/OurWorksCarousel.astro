@@ -11,7 +11,7 @@ import OurWorks from './OurWorks.astro';
 
   <div class="carousel-container">
     <div class="carousel flex">
-      <div class="slide flex justify-center items-center">
+      <div class="slide flex justify-center items-start md:items-center ">
         <OurWorks
           isReversed
           items={[
@@ -41,7 +41,7 @@ import OurWorks from './OurWorks.astro';
           </Fragment>
         </OurWorks>
       </div>
-      <div class="slide flex justify-center items-center">
+      <div class="slide flex justify-center items-start md:items-center">
         <OurWorks
           isReversed
           items={[
@@ -78,7 +78,7 @@ import OurWorks from './OurWorks.astro';
           </Fragment>
         </OurWorks>
       </div>
-      <div class="slide flex justify-center items-center">
+      <div class="slide flex justify-center items-start md:items-center">
         <OurWorks
           imageContainerClasses="mt-0"
           isReversed
@@ -191,6 +191,6 @@ import OurWorks from './OurWorks.astro';
     nextBtn?.addEventListener('click', () => showSlide(currentIndex + 1));
 
     let currentIndex = 0;
-    setInterval(() => showSlide(currentIndex + 1), 5000);
+    // setInterval(() => showSlide(currentIndex + 1), 5000);
   });
 </script>

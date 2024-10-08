@@ -8,7 +8,7 @@ import OurPartners from '~/components/widgets/OurPartners.astro';
 import OurServices from '~/components/widgets/OurServices.astro';
 import OurStandard from '~/components/widgets/OurStandard.astro';
 import OurTeam from '~/components/widgets/OurTeam.astro';
-import OurWorks from '~/components/widgets/OurWorks.astro';
+import OurWorksCarousel from '~/components/widgets/OurWorksCarousel.astro';
 import Technologies from '~/components/widgets/Technologies.astro';
 import WorkEnvironment from '~/components/widgets/WorkEnvironment.astro';
 import Layout from '~/layouts/PageLayout.astro';
@@ -143,129 +143,8 @@ const metadata = {
     ]}
   />
 
-  <!-- OurWorks Widget **************** -->
-
-  <OurWorks
-    classes={{
-      container: 'py-0 lg:py-0 pt-12 lg:pt-20',
-      headline: {
-        title: 'whitespace-pre-line',
-        container: 'mb-0 lg:mb-0 max-w-7xl',
-      },
-    }}
-    isReversed
-    title="Everything in One Place: Empower Your Business with Advanced Analytics"
-    subtitle="เทคโนโลยีที่ถูกพัฒนามาเพื่อใช้งานง่าย ยืดหยุ่น แสดงผลได้ครบทุกอุปกรณ์ พร้อมแดชบอร์ดอัจฉริยะที่ช่วยวิเคราะห์ข้อมูลเชิงลึก\nปรับแต่งได้ตามความต้องการ เพื่อขับเคลื่อนกลยุทธ์การตลาดและเพิ่มประสิทธิภาพธุรกิจของคุณ"
-    items={[
-      {
-        title: 'Comprehensive dashboard views',
-        description: 'ดูภาพรวมประสิทธิภาพธุรกิจของคุณบนอุปกรณ์หลากหลาย ตั้งแต่สมาร์ทโฟนจนถึงเดสก์ท็อป',
-      },
-      {
-        title: 'Real-time data updates',
-        description: 'ติดตามตัวชี้วัดทางธุรกิจของคุณด้วยข้อมูลแบบเรียลไทม์และการอัปเดตทันที',
-      },
-      {
-        title: 'Customizable widgets',
-        description: 'ปรับแต่ง dashboard ให้เน้น KPI ที่สำคัญที่สุดสำหรับธุรกิจของคุณ',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/new-monitor.webp',
-      alt: 'Everything in One Place',
-    }}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-[#FFF6F4] dark:bg-transparent"></div>
-    </Fragment>
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Everything in One Place</h3>
-    </Fragment>
-  </OurWorks>
-
-  <!-- OurWorks Widget **************** -->
-
-  <OurWorks
-    classes={{
-      container: 'py-0 lg:py-0 lg:pt-0',
-      headline: {
-        title: 'whitespace-pre-line',
-        container: 'mb-0 lg:mb-0 max-w-7xl',
-      },
-    }}
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Data visualization',
-        description: `แปลงข้อมูลที่ซับซ้อนให้เป็นแผนภูมิ กราฟ และอินโฟกราฟิกที่เข้าใจง่าย`,
-      },
-      {
-        title: 'Predictive analytics',
-        description: 'ใช้อัลกอริทึมการเรียนรู้ของเครื่องเพื่อคาดการณ์แนวโน้มและตัดสินใจโดยอิงจากข้อมูล',
-      },
-      {
-        title: 'Custom reporting',
-        description: 'สร้างรายงานโดยละเอียดที่ปรับแต่งตามความต้องการเฉพาะของธุรกิจและผู้มีส่วนได้ส่วนเสียของคุณ',
-      },
-      {
-        title: 'Multi-source data integration',
-        description: 'รวมข้อมูลจากแหล่งต่างๆ เพื่อมุมมองที่ครอบคลุมของระบบนิเวศทางธุรกิจของคุณ',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/mockup-use-tablet.webp',
-      alt: 'Empower Your Business',
-      class: 'mx-auto w-full !object-contain max-h-96 lg:max-h-full',
-    }}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-[#FFF6F4] dark:bg-transparent"></div>
-    </Fragment>
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Empower Your Business with Advanced Analytics
-      </h3>
-    </Fragment>
-  </OurWorks>
-
-  <OurWorks
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Customizable conversation flows',
-        description: 'ออกแบบและปรับแต่งลำดับการสนทนาได้ตามต้องการ รองรับ use cases ที่หลากหลายของธุรกิจ',
-      },
-      {
-        title: 'Multi-platform support',
-        description: 'รองรับการทำงานบนหลากหลายแพลตฟอร์ม ทั้ง web, mobile และ desktop applications ด้วยมาตรฐานเดียวกัน',
-      },
-      {
-        title: 'Continuous learning and improvement',
-        description: 'พัฒนาประสิทธิภาพอย่างต่อเนื่องด้วยระบบการเรียนรู้อัตโนมัติ ปรับปรุงการตอบสนอง จากข้อมูลจริง',
-      },
-      {
-        title: 'Analytics and insights dashboard',
-        description:
-          'วิเคราะห์และพัฒนาอย่างต่อเนื่อง มาพร้อมแดชบอร์ดวิเคราะห์ข้อมูลเชิงลึก ช่วยให้คุณเข้าใจพฤติกรรมลูกค้าและปรับปรุง chatbot ให้ฉลาดขึ้นเรื่อยๆ',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/chatbot.webp',
-      alt: 'Everything in One Place',
-      class: 'mx-auto w-full !object-contain max-h-96 lg:max-h-full',
-    }}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-[#FFF6F4] dark:bg-transparent"></div>
-    </Fragment>
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Custom AI Chatbot Development to Elevate Your Business
-      </h3>
-    </Fragment>
-  </OurWorks>
+  <!-- OurWorksCarousel Widget ******************* -->
+  <OurWorksCarousel />
 
   <!-- OurTeam Widget ******************* -->
   <OurTeam

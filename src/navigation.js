@@ -24,7 +24,16 @@ export const headerData = {
     },
     {
       text: 'แหล่งเรียนรู้',
-      href: 'https://portal.tt-ss.net/',
+      links: [
+        {
+          text: 'Medium TTSS',
+          href: 'https://medium.com/t-t-software-solution'
+        }
+      ]
+    },
+    {
+      text: 'ข่าวสารและกิจกรรม',
+      href: '#',
     },
     {
       text: 'ร่วมงานกับเรา',

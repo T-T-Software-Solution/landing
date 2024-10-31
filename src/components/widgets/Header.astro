@@ -88,7 +88,7 @@ const isTopOfPage = Astro.url.pathname === '/';
       aria-label="Main navigation"
     >
       <ul
-        class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl min-[1130px]:text-[0.9375rem] tracking-[0.01rem] font-bold lg:justify-center lg:text-[12px]"
+        class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl min-[1575px]:text-[0.9375rem] tracking-[0.01rem] font-bold lg:justify-center lg:text-[10px] xl:text-[14px]"
       >
         {
           links.map(({ text, href, links }) => (
@@ -99,7 +99,7 @@ const isTopOfPage = Astro.url.pathname === '/';
                     {text}{' '}
                     <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden lg:inline" />
                   </button>
-                  <ul class="dropdown-menu lg:backdrop-blur-md dark:lg:bg-dark rounded lg:absolute pl-4 lg:pl-0 lg:hidden font-bold lg:bg-white/90 lg:min-w-[200px] drop-shadow-xl">
+                  <ul class="dropdown-menu lg:backdrop-blur-md dark:lg:bg-dark rounded lg:absolute pl-4 lg:pl-0 lg:hidden font-bold lg:bg-white/90 lg:min-w-[200px] drop-shadow-2xl">
                     {links.map(({ text: text2, href: href2 }) => (
                       <li>
                         <a

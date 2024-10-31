@@ -2,25 +2,299 @@
 // JobOpening.astro
 import Image from '~/components/common/Image.astro';
 
-const { careerJob } = Astro.props;
+const jobs = [
+  {
+    image: '~/assets/images/jobs/SE.webp',
+    title: 'Software Engineer',
+    description: {
+      sections: [
+        {
+          title: 'Analyze and design systems',
+          items: [
+            'Collaborate with the team to identify user requirements and plan full-stack software development, covering both frontend and backend components.',
+            'Develop flowcharts, technical specifications, and system architecture that address the entire application stack (frontend, backend, database).',
+          ],
+        },
+        {
+          title: 'Work with cross-functional teams',
+          items: [
+            'Communicate with the Product Owner, UX/UI Designer, backend engineers, and frontend developers to ensure alignment with business and technical requirements.',
+            'Work closely with DevOps and QA teams to streamline deployment pipelines and ensure smooth integration across all layers of the application.',
+          ],
+        },
+        {
+          title: 'Develop and maintain software (Frontend & Backend)',
+          items: [
+            'Design and develop high-quality frontend components using modern frameworks (e.g., React, Angular, Vue).',
+            'Implement responsive and accessible UI designs, ensuring optimal performance across multiple devices.',
+            'Build and maintain backend services, APIs, and databases, ensuring robust and scalable infrastructure.',
+            'Write clean, well-tested code following best practices and industry standards, both for frontend and backend services.',
+            'Debug and resolve issues across the entire stack, including frontend, backend, and database.',
+          ],
+        },
+        {
+          title: 'Participate in code reviews and collaboration',
+          items: [
+            'Actively participate in peer code reviews for both frontend and backend code.',
+            'Provide and incorporate feedback on performance, security, and maintainability across the full stack.',
+          ],
+        },
+        {
+          title: 'Test and ensure quality (Frontend & Backend)',
+          items: [
+            'Write and execute unit, integration, and end-to-end tests for frontend and backend components to ensure overall system quality.',
+            'Ensure that both frontend and backend systems meet the specified requirements and perform optimally in production environments.',
+          ],
+        },
+        {
+          title: 'Maintain and improve software:',
+          items: [
+            'Continuously monitor and enhance both frontend and backend components for optimal performance, security, and scalability.',
+            'Keep the software operational and up-to-date with new features and patches, ensuring proper integration of frontend and backend updates.',
+            'Create comprehensive documentation, covering both frontend and backend systems for long-term maintenance and support.',
+          ],
+        },
+      ],
+    },
+    qualifications: [
+      "Bachelor's degree in Computer Science, Computer Engineering, or a related field.",
+      'At least 1-3 years of experience as a Software Engineer or Software Developer.',
+      'Strong proficiency in JavaScript, TypeScript, C# and SQL.',
+      'Experience with React, Next.js, .NET Core, PostgreSQL, MSSQL, Redis and MongoDB.',
+      'Solid understanding of software development principles and methodologies (e.g., Agile, DevOps).',
+      'Excellent problem-solving, analytical, and debugging skills.',
+      'Ability to develop and test software using Test-Driven Development (TDD) methodology.',
+      'Strong communication skills and ability to work well within a team.',
+      'Ability to work in an adaptive environment and manage change effectively.',
+      'Able to work with minimal supervision.',
+      'Passion for staying up-to-date with the latest technology trends and best practices.',
+    ],
+    locations: {
+      remote: 'Remote Working - Work Anywhere',
+      office: ['KKU Science Park', 'Glowfish Khon Kaen'],
+    },
+    contact: {
+      tel: '06-1018-1275 (HR)',
+      email: 'hr@tt-ss.net',
+    },
+    applyLink: 'https://forms.gle/gm33nzXHeRXcsm669',
+  },
+  {
+    image: '~/assets/images/jobs/Net.webp',
+    title: '.NET (C#) Developer',
+    description: {
+      sections: [
+        {
+          title: 'Job Description',
+          items: [
+            'Work with the Product Owner, Development Manager to develop web application according to the assignment',
+            'Develop Web interface and Restful Web API with the Mobile Developer',
+            'Suggest solution and share knowledge with colleagues',
+          ],
+        },
+      ],
+    },
+    qualifications: [
+      'Minimum of 1-3 years of hands-on experience with .NET Core or .NET framework ASP.NET (WebForms, MVC, WebAPI), JavaScript',
+      'Proficient in C#, with a good knowledge of its ecosystems',
+      'Solid understanding and experience with object-oriented design.',
+      'Strong understanding of Web API technologies such as RESTful, WebSockets, WebHooks.',
+      'Skill for writing reusable C# libraries',
+      'Familiar with various design and architectural patterns',
+      'Committed to writing clean, readable C# code',
+      'Understanding fundamental design principles for application scaling',
+      'Ability to design database schemas that represent and supports analytic processes, familiar with relational databases, preferably MSSQL, including data modeling, concurrency, stored procedure development.',
+      'Basic understanding of Common Language Runtime (CLR), its limitations, weaknesses, and workarounds',
+      'English communication is a plus',
+      'Familiarity with CI/CD is a plus',
+      'Experience in Design Patterns is a plus',
+      'Algorithm Analysis is a plus',
+      'Able to work with minimal supervision',
+    ],
+    locations: {
+      remote: 'Remote Working - Work Anywhere',
+      office: ['KKU Science Park', 'Glowfish Khon Kaen'],
+    },
+    contact: {
+      tel: '06-1018-1275 (HR)',
+      email: 'hr@tt-ss.net',
+    },
+    applyLink: 'https://forms.gle/ZReYauwG16ZhgeM68',
+  },
+  {
+    image: '~/assets/images/jobs/DevOps.webp',
+    title: 'DevOps Engineer',
+    description: {
+      sections: [
+        {
+          title: 'The Opportunity',
+          items: [
+            'Our site reliability team is based remotely in Thailand. As a DevOps Engineer, you will work closely with the SRE Leader to build automated tools for enhancing high productivity in all environments.',
+            "T.T. Software Solutions use technology to lead the enterprise software like natural crisis manager in the USA using cloud scalable infrastructure, we're providing a leading solution software to help people live better with a usually natural disaster.",
+            'We are looking for a software engineer who focuses on productivity by crafting efficient software to join our friendly team.',
+          ],
+        },
+        {
+          title: 'Responsibilities',
+          items: [
+            'Automating manual tasks. For example, configuration changes, creating tools for automatic tasks, shortening delivery software process, etc.',
+            'Ensure systems are available with a minimum of manual effort',
+            'Supporting and troubleshooting developers where needed',
+            'Helping to create the DevOps culture',
+            'Sharing knowledge of DevOps across the software engineering team',
+          ],
+        },
+        {
+          title: 'Minimum Requirements',
+          items: [
+            'Strong programming skills as a former backend engineer',
+            'Problem Solving Skill',
+            'Effective communication skills to be able to explain your thought process and reasonable proposal in a global team environment.',
+            'Experience in container-based technology e.g. Docker.',
+          ],
+        },
+        {
+          title: 'Expected Requirements',
+          items: [
+            '3+ years of software engineering experience using object-oriented languages, preferably JavaScript/TypeScript.',
+            'Experience managing Linux-based/Windows-based systems in a public cloud (Preferred, Microsoft Azure)',
+            'Experience in writing automated tools using GitHub Actions and JavaScript/TypeScript',
+            'Experience in Infrastructure as Code (Terraform)',
+            'Experience with Kubernetes',
+            'Ability to troubleshoot systems issues quickly and accurately',
+            'Strong knowledge of Linux',
+          ],
+        },
+      ],
+    },
+    qualifications: [],
+    locations: {
+      remote: 'Remote Working - Work Anywhere',
+      office: ['KKU Science Park', 'Glowfish Khon Kaen'],
+    },
+    contact: {
+      tel: '06-1018-1275 (HR)',
+      email: 'hr@tt-ss.net',
+    },
+    applyLink: 'https://forms.gle/ZReYauwG16ZhgeM68',
+  },
+  {
+    image: '~/assets/images/jobs/Tester.webp',
+    title: 'Tester (Automate+Manual)',
+    description: {
+      sections: [
+        {
+          title: 'Job Description',
+          items: [
+            'Get requirement and create the test scripts or test scenarios to ensure the test coverage included in test result',
+            'Ensure the system has provided flawless experience to target users',
+            'Record issues found in tracking system with details that allow developer to perform tasks',
+            'Execute all types of testing (usability, functionality, unit test, integrated test)',
+            'Have experience in automate testing is a plus',
+            'Can write OOP is a plusProvide support to non-technical teamAble to work with remote development team with transparencyDeliver work on time',
+          ],
+        },
+        {
+          title: 'Manual Testing',
+          items: ['Use Notion to create test cases'],
+        },
+        {
+          title: 'Automated Testing',
+          items: ['Use JMeter, Selenium, Postman, BrowserStack'],
+        },
+      ],
+    },
+    qualifications: [
+      "Bachelor's degree in a related field",
+      '1-2 years of experience as a Automate Tester',
+      'Sense of ownership in work on hands',
+      'Problem-solving skills',
+      'Attention to details',
+      'Have experience in Web application and Mobile Testing',
+      'Good communication skill in both speaking and writing (Communication in English is a plus)',
+      'SQL command skills is a plus',
+      'Have responsibility, be honest, and always on time',
+      'Have own Personal Computer and Internet',
+      'Can share your knowledge through Notion',
+      'Able to work with minimal supervision',
+    ],
+    locations: {
+      remote: 'Remote Working - Work Anywhere',
+      office: ['KKU Science Park', 'Glowfish Khon Kaen'],
+    },
+    contact: {
+      tel: '06-1018-1275 (HR)',
+      email: 'hr@tt-ss.net',
+    },
+    applyLink: 'https://forms.gle/DrDBKSYCDTGQhzui7',
+  },
+];
 ---
 
 <section id="apply" class="py-16 bg-white">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-semibold text-center mb-8">ตำแหน่งงานที่เปิดรับ</h2>
-    <div class="max-w-sm mx-auto bg-gray-100 p-6 rounded-lg shadow-md">
-      <Image 
-        src={careerJob}
-        alt="Software Engineer" 
-        class="w-full h-auto rounded-t-lg mb-4"
-      />
-      <div class="text-center">
-        <!-- <h3 class="text-xl font-bold mb-4">Automate Tester</h3> -->
-        <p class="text-lg mb-4">สนใจสมัครงาน ส่ง Resume ได้ที่ <br> hr@tt-ss.net</p>
-        <!-- <a href="https://forms.gle/GZoYGZthGoKsgkrf8" class="bg-primary px-6 py-3 rounded-md text-lg font-semibold text-white transition">
-         สมัครงาน
-        </a> -->
-      </div>
+    <div class="space-y-8">
+        {
+          jobs.map((job) => (
+            <div class="bg-gray-100 p-8 rounded-lg shadow-md">
+              <div class="flex flex-col md:flex-row gap-6">
+                <div class="md:w-1/3">
+                  <Image src={job.image} alt={job.title} class="w-full h-auto rounded-lg mb-4" />
+                </div>
+                <div class="md:w-2/3">
+                  <h3 class="text-2xl font-bold mb-4">{job.title}</h3>
+
+                  {job.description.sections.map((section) => (
+                    <div class="mb-6">
+                      <h4 class="text-xl font-semibold mb-3">{section.title}</h4>
+                      <ul class="list-disc pl-5 space-y-2">
+                        {section.items.map((item) => (
+                          <li>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+
+                  {job.qualifications?.length > 0 && (
+                    <div class="mb-6">
+                      <h4 class="text-xl font-semibold mb-3">Qualifications</h4>
+                      <ul class="list-disc pl-5 space-y-2">
+                        {job.qualifications?.map((qual) => (
+                          <li>{qual}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  <div class="mb-6">
+                    <h4 class="text-xl font-semibold mb-3">Location</h4>
+                    <p class="font-medium">{job.locations.remote}</p>
+                    <p class="mt-2">Office:</p>
+                    <ul class="list-disc pl-5">
+                      {job.locations.office.map((loc) => (
+                        <li>{loc}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div class="mb-6">
+                    <h4 class="text-xl font-semibold mb-3">Contact</h4>
+                    <p>Tel: {job.contact.tel}</p>
+                    <p>Email: {job.contact.email}</p>
+                  </div>
+
+                  <a
+                    href={job.applyLink}
+                    class="inline-block bg-primary px-6 py-3 rounded-md text-lg font-semibold text-white transition hover:bg-primary-dark"
+                  >
+                    สมัครงาน
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))
+        }
     </div>
   </div>
 </section>

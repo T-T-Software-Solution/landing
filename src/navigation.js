@@ -33,7 +33,7 @@ export const headerData = {
     },
     {
       text: 'ข่าวสารและกิจกรรม',
-      href: '#',
+      href: '/news-and-events',
     },
     {
       text: 'ร่วมงานกับเรา',

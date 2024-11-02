@@ -1,0 +1,114 @@
+---
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: `โครงการมหา'ลัยไทบ้าน`,
+};
+
+const event = {
+  date: 'เมื่อวันที่ 31 พฤษภาคม พ.ศ. 2567',
+  title: `โครงการมหา'ลัยไทบ้าน`,
+  description: `บริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด ได้เข้าร่วมงานเปิดตัวหลักสูตรใหม่ในโครงการ “มหา'ลัยไทบ้าน” ซึ่งเป็นกิจกรรมที่มุ่งเน้นการนำความรู้ด้านเทคโนโลยีมาสนับสนุนและเสริมสร้างพื้นที่การศึกษาในชุมชน โครงการมหา'ลัยไทบ้านมุ่งมั่นในการสร้างระบบนิเวศการเรียนรู้ที่ยั่งยืน เพื่อยกระดับคุณภาพชีวิตของชุมชน ภายใต้การสนับสนุนจาก มูลนิธิอาสาสมัครเพื่อสังคม (มอส.) และโครงการอาสาคืนถิ่น - Return Homeland บริษัทฯ มีความภาคภูมิใจที่ได้ร่วมเป็นส่วนหนึ่งในความพยายามนี้ ร่วมฟัง ร่วมฝัน และร่วมสร้างอนาคตที่ดีกับชุมชน`,
+  image: '~/assets/images/news_events/Thai Ban University Project/ภาพหน้าแรก.webp',
+};
+
+const images = [
+  {
+    src: '~/assets/images/news_events/Thai Ban University Project/ภาพหน้าแรก.webp',
+    alt: 'ภาพหน้าแรก',
+  },
+  {
+    src: '~/assets/images/news_events/Thai Ban University Project/LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_1.webp',
+    alt: 'LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_1',
+  },
+  {
+    src: '~/assets/images/news_events/Thai Ban University Project/LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_2.webp',
+    alt: 'LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_2',
+  },
+  {
+    src: '~/assets/images/news_events/Thai Ban University Project/LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_3.webp',
+    alt: 'LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_3',
+  },
+  {
+    src: '~/assets/images/news_events/Thai Ban University Project/LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_4.webp',
+    alt: 'LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_4',
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <Headline title="" subtitle={event.title} classes={{ container: 'pt-12 lg:pt-0' }} />
+    <div class="p-6">
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">{event.date}</p>
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">
+        {event.description}
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      {
+        images.map((image, index) => (
+          <div
+            class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-up-element image-container"
+            style={`--delay: ${index * 0.1}s`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full md:h-72 !object-cover !object-center image-scale"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </WidgetWrapper>
+</Layout>
+
+<style>
+  .fade-up-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    transition-delay: var(--delay, 0s);
+  }
+  .fade-up-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .image-container {
+    overflow: hidden;
+  }
+  .image-scale {
+    transition: transform 0.3s ease-in-out;
+  }
+  .image-container:hover .image-scale {
+    transform: scale(1.1);
+  }
+</style>
+
+<script>
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.fade-up-element');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

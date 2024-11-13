@@ -3,6 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import TeamVisualization from '~/components/widgets/TeamVisualization.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -50,25 +51,6 @@ const executives = [
     ],
   },
 ];
-
-const employeeStats = {
-  'Executive': executives.length,
-  'Project Manager': 1,
-  'Business Analyst/ System Analyst': 3,
-  'Software Engineer': 4,
-  'Software Developer': 10,
-  'Mobile Developer': 2,
-  'DevOps Engineer': 4,
-  'Software Tester': 8,
-  'R&D': 2,
-  'Information Security Officer': 1,
-  'UX/UI': 1,
-  'Admin': 2,
-};
-
-const totalEmployees = Object.entries(employeeStats)
-  .filter(([position]) => position !== 'Executive')
-  .reduce((acc, [_, count]) => acc + count, 0);
 ---
 
 <Layout metadata={metadata}>
@@ -168,41 +150,7 @@ const totalEmployees = Object.entries(employeeStats)
     <div class="flex justify-center">
       <Image src="~/assets/images/team-photo-new.webp" alt="รูปรวมพนักงาน" class="w-full max-w-4xl rounded-lg shadow-lg" />
     </div>
-    <section class="mb-16 animate-on-scroll" id="employee-count">
-      <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-        <div class="hidden md:block"></div>
-        <div class="bg-white border border-gray-200 shadow-lg rounded-lg p-6 text-center">
-          <h3 class="text-2xl font-bold mb-4">All Team Members</h3>
-          <p class="text-4xl font-bold text-primary">
-            <span class="employee-count" data-target={totalEmployees}>{totalEmployees}</span>
-          </p>
-        </div>
-        <div class="hidden md:block"></div>
-        <div class="hidden md:block"></div>
-        <div class="bg-white border border-gray-200 shadow-lg rounded-lg p-6 text-center">
-          <h3 class="text-xl font-semibold mb-4">Executive</h3>
-          <p class="text-4xl font-bold text-primary">
-            <span class="employee-count" data-target={employeeStats.Executive}>{employeeStats.Executive}</span>
-          </p>
-        </div>
-        <div class="hidden md:block"></div>
-        {
-          Object.entries(employeeStats).map(
-            ([position, count]) =>
-              position !== 'Executive' && (
-                <div class="bg-white border border-gray-200 shadow-lg rounded-lg p-6 text-center flex flex-col justify-between">
-                  <h3 class="text-lg lg:text-xl font-semibold mb-4">{position}</h3>
-                  <p class="text-4xl font-bold text-primary">
-                    <span class="employee-count" data-target={count}>
-                      {count}
-                    </span>
-                  </p>
-                </div>
-              )
-          )
-        }
-      </div>
-    </section>
+    <TeamVisualization />
   </WidgetWrapper>
 </Layout>
 

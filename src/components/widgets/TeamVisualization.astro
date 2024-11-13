@@ -1,0 +1,452 @@
+---
+import Image from '../common/Image.astro';
+---
+
+<div class="team-visualization">
+  <!-- Center circle -->
+  <!-- <div class="member-circle center">
+    <span class="count">38+</span>
+    <span class="label">Members</span>
+    <span class="sub-label">ณ วันที่ 6 พ.ค 2024</span>
+  </div> -->
+
+  <!-- Outer circles -->
+  <div class="member-circle role1">
+    <span class="md:text-lg text-sm">Software Developer</span>
+  </div>
+  <div class="member-circle role2 has-border">
+    <span class="md:text-lg text-sm">DevOps Engineer</span>
+  </div>
+  <div class="member-circle role3">
+    <span class="md:text-lg text-sm">BA/SA</span>
+  </div>
+  <div class="member-circle role4">
+    <span class="md:text-lg text-sm">Software Engineer</span>
+  </div>
+  <div class="member-circle role5 has-border">
+    <span class="md:text-lg text-sm">Accountant</span>
+  </div>
+  <div class="member-circle role6 has-border">
+    <span class="md:text-lg text-sm">Software Tester</span>
+  </div>
+  <div class="member-circle role-center">
+    <span><Image src="~/assets/images/tt-icon.svg" alt="TT Software" class="sm:w-20 sm:h-20 w-10 h-10" /></span>
+    <span class="text-base sm:text-xl md:text-2xl lg:text-4xl">38+</span>
+  </div>
+  <div class="member-text">
+    <span class="text-base sm:text-xl md:text-xl lg:text-3xl">Members</span>
+    <span class="text-[10px] sm:text-sm md:text-base lg:text-xl">จำนวนทีมงาน</span>
+    <span class="text-[10px] sm:text-sm">ณ วันที่ 6 พ.ค 2024</span>
+  </div>
+  <div class="member-circle role7 has-border">
+    <span class="md:text-lg text-sm">Project Manager</span>
+  </div>
+  <div class="member-circle role8 has-border">
+    <span class="md:text-lg text-sm">Mobile Developer</span>
+  </div>
+  <div class="member-circle role9">
+    <span class="md:text-lg text-sm">Software Automation Tester</span>
+  </div>
+  <div class="member-circle role10">
+    <span class="lg:text-base text-xs sm:text-sm">Information Security Officer</span>
+  </div>
+  <div class="member-circle role11 has-border">
+    <span class="md:text-lg text-sm">UX/UI</span>
+  </div>
+  <div class="member-circle role12">
+    <span class="md:text-lg text-sm">Human Resource</span>
+  </div>
+</div>
+
+<style>
+  .team-visualization {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin: 0px auto;
+  }
+
+  .member-circle {
+    position: absolute;
+    background: linear-gradient(70deg, #fac61f, #f89721, #db6f31);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+  }
+  .member-circle.has-border {
+    background: #fff;
+    color: #101010;
+  }
+
+  .member-circle.has-border::before {
+    border-radius: 100%;
+    content: '';
+    background-image: linear-gradient(70deg, #fac61f, #f89721, #db6f31);
+    top: -7px;
+    left: -7px;
+    bottom: -7px;
+    right: -7px;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .center {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  .count {
+    font-size: 2.25em;
+  }
+
+  .label {
+    font-size: 1.2em;
+  }
+
+  .sub-label {
+    font-size: 0.8em;
+  }
+
+  .role1 {
+    top: 5%;
+    left: 25%;
+  }
+  .role2 {
+    top: 12%;
+    left: 55%;
+  }
+  .role3 {
+    top: 20%;
+    left: 80%;
+  }
+  .role4 {
+    top: 40%;
+    left: 67%;
+  }
+  .role5 {
+    top: 60%;
+    right: 2%;
+  }
+  .role6 {
+    bottom: 5%;
+    left: 60%;
+  }
+  .role-center {
+    top: 30%;
+    left: calc(50% - 55px);
+    width: 110px;
+    height: 110px;
+  }
+  .member-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #101010;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    top: 50%;
+    left: calc(50% - 55px);
+    width: 110px;
+    height: 110px;
+  }
+  .role7 {
+    top: 15%;
+    left: 0%;
+  }
+  .role8 {
+    top: 32%;
+    left: 7%;
+  }
+  .role9 {
+    top: 50%;
+    left: 0%;
+  }
+  .role10 {
+    top: 66%;
+    left: 18%;
+  }
+  .role11 {
+    bottom: 7%;
+    left: 0%;
+  }
+  .role12 {
+    bottom: 5%;
+    left: 32%;
+  }
+
+  .role10,
+  .role12,
+  .role8,
+  .role6,
+  .role2 {
+    width: 80px;
+    height: 80px;
+  }
+
+  .role9,
+  .role5,
+  .role4,
+  .role1 {
+    width: 90px;
+    height: 90px;
+  }
+
+  .role11,
+  .role7,
+  .role3 {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Optional: Add hover effect */
+  .member-circle:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    color: #fff;
+  }
+
+  @media (min-width: 475px) {
+    .role8 {
+      left: 15%;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .team-visualization {
+      width: 640px;
+      height: 600px;
+    }
+    .role5 {
+      top: 60%;
+      left: 72%;
+    }
+    .role7 {
+      top: 17%;
+      left: 10%;
+    }
+
+    .role-center {
+      left: calc(50% - 90px);
+      width: 180px;
+      height: 180px;
+    }
+    .member-text {
+      top: 55%;
+      left: calc(50% - 90px);
+      width: 180px;
+      height: 180px;
+    }
+    .role11,
+    .role10,
+    .role12,
+    .role8,
+    .role6,
+    .role2 {
+      width: 100px;
+      height: 100px;
+    }
+
+    .role9,
+    .role5,
+    .role4,
+    .role1 {
+      width: 110px;
+      height: 110px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .team-visualization {
+      width: 768px;
+      height: 600px;
+    }
+
+    .role7 {
+      left: 10%;
+    }
+
+    .role8 {
+      top: 35%;
+      left: 20%;
+    }
+
+    .role10,
+    .role12,
+    .role8,
+    .role6,
+    .role2 {
+      width: 100px;
+      height: 100px;
+    }
+
+    .role9,
+    .role5,
+    .role4,
+    .role1 {
+      width: 110px;
+      height: 110px;
+    }
+
+    .role11,
+    .role7,
+    .role3 {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .team-visualization {
+      width: 1024px;
+      height: 800px;
+    }
+
+    .role1 {
+      top: 10%;
+      left: 25%;
+      width: 150px;
+      height: 150px;
+    }
+    .role2 {
+      top: 12%;
+      left: 55%;
+      width: 120px;
+      height: 120px;
+    }
+    .role3 {
+      top: 20%;
+      left: 80%;
+      width: 120px;
+      height: 120px;
+    }
+    .role4 {
+      top: 40%;
+      left: 65%;
+      width: 140px;
+      height: 140px;
+    }
+    .role5 {
+      top: 58%;
+      left: 80%;
+      width: 120px;
+      height: 120px;
+    }
+    .role6 {
+      bottom: 5%;
+      left: 68%;
+      width: 120px;
+      height: 120px;
+    }
+    .role-center {
+      top: 35%;
+      left: calc(50% - 110px);
+      width: 220px;
+      height: 220px;
+    }
+    .member-text {
+      top: 62.5%;
+      left: calc(50% - 110px);
+      width: 220px;
+      height: 220px;
+    }
+    .role7 {
+      top: 20%;
+      left: 5%;
+      width: 120px;
+      height: 120px;
+    }
+    .role8 {
+      top: 42.5%;
+      left: 20%;
+      width: 140px;
+      height: 140px;
+    }
+    .role9 {
+      top: 60%;
+      left: 0%;
+      width: 150px;
+      height: 150px;
+    }
+    .role10 {
+      top: 70%;
+      left: 20%;
+      width: 150px;
+      height: 150px;
+    }
+    .role11 {
+      bottom: 2%;
+      left: 10%;
+      width: 80px;
+      height: 80px;
+    }
+    .role12 {
+      bottom: -5%;
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  @media (max-width: 365px) {
+    .role10,
+    .role12,
+    .role8,
+    .role6,
+    .role2 {
+      width: 80px;
+      height: 80px;
+    }
+
+    .role9,
+    .role5,
+    .role4,
+    .role1 {
+      width: 80px;
+      height: 80px;
+    }
+
+    .role11,
+    .role7,
+    .role3 {
+      width: 55px;
+      height: 55px;
+    }
+
+    .role7 span {
+      font-size: 10px;
+    }
+
+    .role3 {
+      top: 27%;
+    }
+
+    .role6 {
+      bottom: 7%;
+      left: 65%;
+      width: 70px;
+      height: 70px;
+    }
+
+    .role8 {
+      left: 2%;
+      width: 70px;
+      height: 70px;
+    }
+
+    .role10 {
+      left: 10%;
+    }
+  }
+</style>

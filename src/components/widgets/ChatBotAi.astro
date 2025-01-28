@@ -1,4 +1,5 @@
 ---
+import { environmentConfig } from '~/config';
 import Image from '../common/Image.astro';
 ---
 
@@ -27,7 +28,7 @@ import Image from '../common/Image.astro';
       </div>
       <div class="w-fit">
         <Image
-          src={`~/assets/images/chatbot-ai.webp`}
+          src={`${environmentConfig.baseImageUrl}/images/chatbot-ai.webp`}
           alt="AI Chatbot"
           class="w-full h-full min-w-[200px] lg:min-w-[300px]"
         />

@@ -1,10 +1,10 @@
 ---
 // JobOpening.astro
 import Image from '~/components/common/Image.astro';
-
+import { environmentConfig } from '~/config';
 const jobs = [
   {
-    image: '~/assets/images/jobs/SE.webp',
+    image: `${environmentConfig.baseImageUrl}/images/jobs/SE.webp`,
     title: 'Software Engineer',
     description: {
       sections: [
@@ -80,7 +80,7 @@ const jobs = [
     applyLink: 'https://forms.gle/gm33nzXHeRXcsm669',
   },
   {
-    image: '~/assets/images/jobs/Net.webp',
+    image: `${environmentConfig.baseImageUrl}/images/jobs/Net.webp`,
     title: '.NET (C#) Developer',
     description: {
       sections: [
@@ -122,7 +122,7 @@ const jobs = [
     applyLink: 'https://forms.gle/ZReYauwG16ZhgeM68',
   },
   {
-    image: '~/assets/images/jobs/DevOps.webp',
+    image: `${environmentConfig.baseImageUrl}/images/jobs/DevOps.webp`,
     title: 'DevOps Engineer',
     description: {
       sections: [
@@ -179,7 +179,7 @@ const jobs = [
     applyLink: 'https://forms.gle/TgKurf9VQ7rHgJYU7',
   },
   {
-    image: '~/assets/images/jobs/Tester.webp',
+    image: `${environmentConfig.baseImageUrl}/images/jobs/Tester.webp`,
     title: 'Tester (Automate+Manual)',
     description: {
       sections: [

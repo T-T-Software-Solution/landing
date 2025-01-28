@@ -1,0 +1,110 @@
+---
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: `แบ่งปันความรู้ในหัวข้อ “จิตวิทยากับการเขียนโปรแกรม: เส้นทางสู่ความสำเร็จและความสุข”`,
+};
+
+const event = {
+  date: 'วันที่ 21 พฤษภาคม พ.ศ. 2567',
+  title: `แบ่งปันความรู้ในหัวข้อ “จิตวิทยากับการเขียนโปรแกรม: เส้นทางสู่ความสำเร็จและความสุข”`,
+  description:
+    'คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท ได้เข้าร่วมแบ่งปันความรู้ในหัวข้อ “จิตวิทยากับการเขียนโปรแกรม: เส้นทางสู่ความสำเร็จและความสุข” ซึ่งจัดโดยสมาคมโปรแกรมเมอร์แห่งประเทศไทย โดยกิจกรรมนี้มีเป้าหมายเพื่อให้ความรู้เกี่ยวกับความเชื่อมโยงระหว่างจิตวิทยาและการพัฒนาซอฟต์แวร์ รวมถึงการส่งเสริมแนวทางการทำงานอย่างมีประสิทธิภาพ อันจะช่วยยกระดับคุณภาพชีวิตการทำงานของนักพัฒนา สามารถดูย้อนหลังได้ที่',
+  descriptionLink: 'https://www.youtube.com/watch?v=cCYs4xw_NRY',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/psychology-and-programming/ปก.webp`,
+  link: '/news-and-events/psychology-and-programming',
+};
+
+const images = [
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news_events/psychology-and-programming/ปก.webp`,
+    alt: 'ปก',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <Headline title="" subtitle={event.title} classes={{ container: 'pt-12 lg:pt-0' }} />
+    <div class="p-6">
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">{event.date}</p>
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">
+        {event.description}
+        <a
+          class="text-primary hover:text-primary-dark"
+          rel="noopener noreferrer"
+          target="_blank"
+          href={event.descriptionLink}>Youtube</a
+        >
+      </p>
+    </div>
+    <div
+      class={`grid grid-cols-1 md:grid-cols-2 ${images.length > 2 ? 'lg:grid-cols-3' : ''} gap-4 mt-8 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8`}
+    >
+      {
+        images.map((image, index) => (
+          <div
+            class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-up-element image-container"
+            style={`--delay: ${index * 0.1}s`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full md:h-72 !object-cover !object-center image-scale"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </WidgetWrapper>
+</Layout>
+
+<style>
+  .fade-up-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    transition-delay: var(--delay, 0s);
+  }
+  .fade-up-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .image-container {
+    overflow: hidden;
+  }
+  .image-scale {
+    transition: transform 0.3s ease-in-out;
+  }
+  .image-container:hover .image-scale {
+    transform: scale(1.1);
+  }
+</style>
+
+<script>
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.fade-up-element');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

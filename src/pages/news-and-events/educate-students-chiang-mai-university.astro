@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -12,36 +13,36 @@ const event = {
   date: 'วันที่ 21 กุมภาพันธ์ พ.ศ. 2567',
   title: `ให้ความรู้นักศึกษา มหาวิทยาลัยเชียงใหม่ ครั้งที่ 2`,
   description: `คณะผู้บริหารจากบริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด พร้อมด้วยทีมงาน ได้เข้าร่วมแบ่งปันความรู้และประสบการณ์ในการทำงานให้กับนักศึกษาสาขาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเชียงใหม่ เป็นครั้งที่ 2 บริษัทฯ ขอขอบคุณอาจารย์สาขาวิศวกรรมคอมพิวเตอร์  และขอบคุณทุกท่านที่มีส่วนร่วมในการถ่ายทอดประสบการณ์เชิงลึกและข้อเท็จจริงที่เป็นประโยชน์ให้แก่นักศึกษาในครั้งนี้`,
-  image: '~/assets/images/news_events/Educate students Chiang Mai University/ภาพหน้าแรก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/Educate students Chiang Mai University/ภาพหน้าแรก.webp`,
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/Educate students Chiang Mai University/ภาพหน้าแรก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Educate students Chiang Mai University/ภาพหน้าแรก.webp`,
     alt: 'ภาพหน้าแรก',
   },
   {
-    src: '~/assets/images/news_events/Educate students Chiang Mai University/LINE_ALBUM_TTSSxCMU 21-01-24_241030_2.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Educate students Chiang Mai University/LINE_ALBUM_TTSSxCMU 21-01-24_241030_2.webp`,
     alt: 'LINE_ALBUM_TTSSxCMU 21-01-24_241030_2',
   },
   {
-    src: '~/assets/images/news_events/Educate students Chiang Mai University/LINE_ALBUM_TTSSxCMU 21-01-24_241030_3.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Educate students Chiang Mai University/LINE_ALBUM_TTSSxCMU 21-01-24_241030_3.webp`,
     alt: 'LINE_ALBUM_TTSSxCMU 21-01-24_241030_3',
   },
   {
-    src: '~/assets/images/news_events/Educate students Chiang Mai University/LINE_ALBUM_TTSSxCMU 21-01-24_241030_4.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Educate students Chiang Mai University/LINE_ALBUM_TTSSxCMU 21-01-24_241030_4.webp`,
     alt: 'LINE_ALBUM_TTSSxCMU 21-01-24_241030_4',
   },
   {
-    src: '~/assets/images/news_events/Educate students Chiang Mai University/LINE_ALBUM_TTSSxCMU 21-01-24_241030_5.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Educate students Chiang Mai University/LINE_ALBUM_TTSSxCMU 21-01-24_241030_5.webp`,
     alt: 'LINE_ALBUM_TTSSxCMU 21-01-24_241030_5',
   },
   {
-    src: '~/assets/images/news_events/Educate students Chiang Mai University/LINE_ALBUM_TTSSxCMU 21-01-24_241030_6.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Educate students Chiang Mai University/LINE_ALBUM_TTSSxCMU 21-01-24_241030_6.webp`,
     alt: 'LINE_ALBUM_TTSSxCMU 21-01-24_241030_6',
   },
   {
-    src: '~/assets/images/news_events/Educate students Chiang Mai University/LINE_ALBUM_TTSSxCMU 21-01-24_241030_7.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Educate students Chiang Mai University/LINE_ALBUM_TTSSxCMU 21-01-24_241030_7.webp`,
     alt: 'LINE_ALBUM_TTSSxCMU 21-01-24_241030_7',
   }
 ];

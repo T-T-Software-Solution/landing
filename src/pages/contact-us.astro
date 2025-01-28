@@ -3,8 +3,9 @@ import Layout from '~/layouts/PageLayout.astro';
 import Image from '~/components/common/Image.astro';
 import ContactInfo from '~/components/widgets/ContactInfo.astro';
 import OfficeLocation from '~/components/widgets/OfficeLocation.astro';
+import { environmentConfig } from '~/config';
 
-const contactImg = '~/assets/images/contact.webp';
+const contactImg = `${environmentConfig.baseImageUrl}/images/contact.webp`;
 
 const metadata = {
   title: 'ติดต่อเรา',

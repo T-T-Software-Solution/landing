@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -13,20 +14,20 @@ const event = {
   title: 'เข้าพบลูกค้า บริษัท สยามลอว์กรุ๊ป จำกัด',
   description:
     'ตัวแทนจากบริษัทฯ ได้เข้าพบลูกค้าบริษัท สยามลอว์กรุ๊ป จำกัด เพื่อมอบกระเช้าร่วมแสดงความยินดีในโอกาสที่ลูกค้าใช้ระบบของเรา ซึ่งส่งผลให้ลูกค้าได้รับงานเพิ่มขึ้นอย่างต่อเนื่อง และมีการขยายสาขาเพิ่มเติม ทั้งนี้ ลูกค้าแสดงความประทับใจต่อระบบของเราและยินดีที่จะเริ่มดำเนินการในเฟสที่ 2 (Mobile Applications) ควบคู่ไปได้ทันที บริษัทฯ ขอขอบคุณทีมงานทุกท่านสำหรับการทำงานอย่างเต็มที่ โดยลูกค้าได้ฝากคำชมว่า การทำงานร่วมกับทีมของเราทำให้รู้สึกดีและเชื่อมั่นว่าจะมีโปรเจคอื่นๆ ที่จะดำเนินงานต่อไปในอนาคต',
-  image: '~/assets/images/news_events/Siam Law Group Company Limited/รูปปก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/Siam Law Group Company Limited/รูปปก.webp`,
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/Siam Law Group Company Limited/รูปปก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Siam Law Group Company Limited/รูปปก.webp`,
     alt: 'รูปปก',
   },
   {
-    src: '~/assets/images/news_events/Siam Law Group Company Limited/IMG_4760.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Siam Law Group Company Limited/IMG_4760.webp`,
     alt: 'IMG_4760.webp',
   },
   {
-    src: '~/assets/images/news_events/Siam Law Group Company Limited/IMG_4763.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Siam Law Group Company Limited/IMG_4763.webp`,
     alt: 'IMG_4763.webp',
   },
 ];

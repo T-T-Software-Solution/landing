@@ -1,0 +1,133 @@
+---
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'ผลิตภัณฑ์',
+};
+
+const products = [
+  {
+    title: 'TT AI Chat',
+    description:
+      'TT AI Chat คือ ระบบที่พัฒนาโดยทีมงานผู้เชี่ยวชาญของเรา เพื่อตอบโจทย์การใช้งานและจัดการ AI อย่างมีประสิทธิภาพ',
+    subDescription:
+      'เช่น การกำหนดสิทธิ์การเข้าถึงข้อมูลและควบคุมการมองเห็นข้อมูล เพื่อให้ AI ทำงานได้อย่างปลอดภัยและตอบสนองความต้องการของคุณได้อย่างสมบูรณ์แบบ',
+    image: '~/assets/images/ai.webp',
+  },
+  {
+    title: 'TT HR',
+    description:
+      'TT HR คือ ระบบบริหารบุคลากร ที่พัฒนาขึ้นโดยทีมงานผู้เชี่ยวชาญของเรา เพื่อตอบโจทย์ทุกความต้องการในการจัดการทรัพยากรบุคคลในองค์กร ระบบนี้ครอบคลุมการจัดการข้อมูลบุคคลทั้งหมด',
+    subDescription:
+      'ตั้งแต่ประวัติส่วนตัว การจ้างงาน ประวัติการศึกษา ไปจนถึงการออกรายงานที่สำคัญ เช่น กพ.7 นอกจากนี้ ยังมาพร้อมฟังก์ชันระบบจัดการเงินเดือนและระบบการลา ที่ช่วยให้การดำเนินการต่าง ๆ เป็นไปอย่างสะดวกและครบวงจร',
+    image: '~/assets/images/hr.webp',
+  },
+  {
+    title: 'TT CMS',
+    description:
+      'TT CMS คือระบบจัดการ Content Management System ที่พัฒนาขึ้นโดยทีมงานของเรา เพื่อช่วยให้การจัดการเนื้อหา (Content) ฝั่ง Public บนเว็บไซต์ของคุณเป็นเรื่องง่ายและสะดวกสบาย',
+    subDescription:
+      'ระบบนี้ออกแบบมาเพื่อรองรับไฟล์หลากหลายรูปแบบ พร้อมด้วย RichEditor ที่ช่วยให้ผู้ใช้งานสามารถแก้ไขเนื้อหาได้โดยตรงบนเว็บไซต์ โดยไม่จำเป็นต้องมีความรู้ด้านการเขียนโค้ด ผู้ใช้งานสามารถจัดการเนื้อหาได้อย่างรวดเร็วและเป็นระบบ',
+    image: '~/assets/images/cms.webp',
+  },
+  {
+    title: 'TT RSS',
+    description:
+      'TT RSS คือระบบที่พัฒนาขึ้นโดยทีมงานผู้เชี่ยวชาญของเรา เพื่อตอบสนองความต้องการในการค้นหาและติดตามประกาศโครงการจัดซื้อจัดจ้างภาครัฐทั่วประเทศอย่างมีประสิทธิภาพ',
+    subDescription:
+      'ระบบนี้รวบรวมข้อมูลการจัดซื้อจัดจ้างจากหน่วยงานภาครัฐทุกแห่งไว้ในที่เดียว ช่วยให้การค้นหาและติดตามโครงการที่เกี่ยวข้องกับองค์กรของคุณเป็นเรื่องง่าย สะดวก และรวดเร็ว',
+    image: '~/assets/images/rss-feed.webp',
+  },
+  {
+    title: 'TT Budget',
+    description: ` คือระบบบริหารงบประมาณที่ออกแบบและพัฒนาโดยทีมงานผู้เชี่ยวชาญของเรา เพื่อรองรับทุกขั้นตอนของการจัดการงบประมาณอย่างครบวงจร`,
+    subDescription: `ตั้งแต่กระบวนการวางแผนตั้งงบประมาณ การจัดสรรงบประมาณให้กับหน่วยงานที่เกี่ยวข้อง การโยกย้ายงบประมาณ ไปจนถึงการติดตามการใช้งบประมาณอย่างมีประสิทธิภาพ`,
+    image: '~/assets/images/budget.webp',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <Headline
+      title="ผลิตภัณฑ์ของเรา"
+      subtitle="ผลิตภัณฑ์ที่เราจัดทำสำหรับองค์กร"
+      classes={{ container: 'pt-12 lg:pt-0 animate-on-scroll' }}
+    />
+    <!-- Content Widget **************** -->
+
+    {
+      products.map((product, index) => (
+        <Content
+          isReversed={index % 2 === 0}
+          classes={{ container: 'mb-16 animate-on-scroll' }}
+          isAfterContent
+          imageContainerClasses="content-center mt-0 md:mt-10 lg:basis-1/2"
+          contentContainerClasses="lg:gap-6"
+          contentClasses="lg:basis-1/2"
+        >
+          <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white md:text-3xl mb-2 animate-on-scroll">
+              <span class="text-primary">{product.title}</span>
+            </h3>
+            <p class="animate-on-scroll indent-10">{product.description}</p>
+            <p class="animate-on-scroll">{product.subDescription}</p>
+          </Fragment>
+          <Fragment slot="image">
+            <Image src={`${product.image}`} alt={product.title} class="w-full h-full rounded-lg animate-on-scroll" />
+          </Fragment>
+        </Content>
+      ))
+    }
+  </WidgetWrapper>
+</Layout>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-on-scroll {
+    opacity: 0;
+    transition:
+      opacity 0.6s,
+      transform 0.6s;
+    transition-delay: calc(var(--animation-order, 0) * 0.1s);
+  }
+  .animate-on-scroll.show {
+    opacity: 1;
+    animation: fadeInUp 0.6s ease-out;
+  }
+</style>
+
+<script>
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

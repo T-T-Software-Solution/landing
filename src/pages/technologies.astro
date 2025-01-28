@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { default as TechSection } from '~/components/widgets/Technologies.astro';
 import Headline from '~/components/ui/Headline.astro';
+import { environmentConfig } from '~/config';
 
 const metadata = {
   title: 'เทคโนโลยีที่เราใช้',
@@ -21,143 +22,143 @@ const metadata = {
     items={[
       {
         description: '.NET',
-        icon: '~/assets/images/dotnet.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/dotnet.svg`,
       },
       {
         description: 'Microsoft Azure',
-        icon: '~/assets/images/azure.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/azure.svg`,
         classes: {
           icon: 'mt-[30px]',
         },
       },
       {
         description: 'React',
-        icon: '~/assets/images/react.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/react.svg`,
       },
       {
         description: 'TypeScript',
-        icon: '~/assets/images/typescript.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/typescript.svg`,
       },
       {
         description: 'Next.js',
-        icon: '~/assets/images/nextjs.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/nextjs.svg`,
       },
       {
         description: 'Docker',
-        icon: '~/assets/images/docker.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/docker.svg`,
       },
       {
         description: 'Kubernetes',
-        icon: '~/assets/images/kubernetes.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/kubernetes.svg`,
       },
       {
         description: 'Node.js',
-        icon: '~/assets/images/nodejs.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/nodejs.svg`,
       },
       {
         description: 'PostgreSQL',
-        icon: '~/assets/images/pgsql.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/pgsql.svg`,
       },
       {
         description: 'MongoDB',
-        icon: '~/assets/images/mongodb.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/mongodb.svg`,
         classes: {
           icon: 'mt-[30px]',
         },
       },
       {
         description: 'Tailwind CSS',
-        icon: '~/assets/images/tailwindcss.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/tailwindcss.svg`,
       },
       {
         description: 'Microsoft SQL Server',
-        icon: '~/assets/images/microsoft-sql-server.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/microsoft-sql-server.svg`,
       },
       {
         description: 'React Native',
-        icon: '~/assets/images/react-native.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/react-native.svg`,
         classes: {
           icon: 'max-w-[140px]',
         },
       },
       {
         description: 'Terraform',
-        icon: '~/assets/images/terraform.png',
+        icon: `${environmentConfig.baseImageUrl}/images/terraform.png`,
       },
       {
         description: 'RabbitMQ',
-        icon: '~/assets/images/rabbitmq.png',
+        icon: `${environmentConfig.baseImageUrl}/images/rabbitmq.png`,
         classes: {
           image: '!max-h-[90px] w-full',
         },
       },
       {
         description: 'Redis',
-        icon: '~/assets/images/redis.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/redis.svg`,
         classes: {
           icon: 'mt-[20px]',
         },
       },
       {
         description: 'OpenTelemetry',
-        icon: '~/assets/images/opentelemetry.png',
+        icon: `${environmentConfig.baseImageUrl}/images/opentelemetry.png`,
       },
       {
         description: 'Jaeger',
-        icon: '~/assets/images/jaeger.png',
+        icon: `${environmentConfig.baseImageUrl}/images/jaeger.png`,
         classes: {
           icon: 'mt-[20px]',
         },
       },
       {
         description: 'Grafana',
-        icon: '~/assets/images/grafana.png',
+        icon: `${environmentConfig.baseImageUrl}/images/grafana.png`,
         classes: {
           icon: 'mt-[20px]',
         },
       },
       {
         description: 'Prometheus',
-        icon: '~/assets/images/prometheus.png',
+        icon: `${environmentConfig.baseImageUrl}/images/prometheus.png`,
       },
       {
         description: 'Jasper Report',
-        icon: '~/assets/images/jaspersoft.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/jaspersoft.svg`,
         classes: {
           icon: 'mt-[30px]',
         },
       },
       {
         description: 'Apache Superset',
-        icon: '~/assets/images/superset_logo.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/superset_logo.svg`,
         classes: {
           icon: 'mt-[30px]',
         },
       },
       {
         description: 'Jenkins',
-        icon: '~/assets/images/jenkins.png',
+        icon: `${environmentConfig.baseImageUrl}/images/jenkins.png`,
         classes: {
           icon: 'mt-[30px]',
         },
       },
       {
         description: 'gRPC',
-        icon: '~/assets/images/grpc-logo.png',
+        icon: `${environmentConfig.baseImageUrl}/images/grpc-logo.png`,
         classes: {
           image: '!max-h-[90px] w-full',
         },
       },
       {
         description: 'tRPC',
-        icon: '~/assets/images/trpc.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/trpc.svg`,
         classes: {
           icon: 'mt-[20px]',
         },
       },
       {
         description: 'NestJs',
-        icon: '~/assets/images/nestjs.png',
+        icon: `${environmentConfig.baseImageUrl}/images/nestjs.png`,
       },
     ]}
   >

@@ -5,7 +5,6 @@ import {
   getImagesOptimized,
   astroAsseetsOptimizer,
   unpicOptimizer,
-  isUnpicCompatible,
   type ImageProps,
 } from '~/utils/images-optimization';
 
@@ -42,7 +41,7 @@ const _image = await findImage(props.src);
 let image: ImageType | undefined = undefined;
 
 if (typeof _image === 'string') {
-  if ((_image.startsWith('http://') || _image.startsWith('https://')) && isUnpicCompatible(_image)) {
+  if ((_image.startsWith('http://') || _image.startsWith('https://'))) {
     image = await getImagesOptimized(_image, props, unpicOptimizer);
   } else {
     image = {

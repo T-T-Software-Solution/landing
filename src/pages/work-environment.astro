@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -9,21 +10,21 @@ const metadata = {
 };
 
 const images = [
-  { src: '~/assets/images/work_environments/work-env-1.webp', alt: 'ออฟฟิศขอนแก่น' },
-  { src: '~/assets/images/work_environments/work-env-2.webp', alt: 'พื้นที่ทำงานร่วมกัน' },
-  { src: '~/assets/images/work_environments/work-env-3.webp', alt: 'นำเสนอจบการฝึกงาน' },
-  { src: '~/assets/images/work_environments/work-env-4.webp', alt: 'session remote work' },
-  { src: '~/assets/images/work_environments/work-env-5.webp', alt: 'work from anywhere bkk' },
-  { src: '~/assets/images/work_environments/work-env-6.webp', alt: 'work from anywhere bkk' },
-  { src: '~/assets/images/work_environments/work-env-7.webp', alt: 'kkc meeting' },
-  { src: '~/assets/images/work_environments/work-env-8.webp', alt: 'kkc meeting' },
-  { src: '~/assets/images/work_environments/work-env-9.webp', alt: 'kkc meeting' },
-  { src: '~/assets/images/work_environments/work-env-10.webp', alt: 'we are ttss' },
-  { src: '~/assets/images/work_environments/work-env-11.webp', alt: 'work starbucks' },
-  { src: '~/assets/images/work_environments/work-env-12.webp', alt: 'work evaluation' },
-  { src: '~/assets/images/work_environments/work-env-14.webp', alt: 'joining the team' },
-  { src: '~/assets/images/work_environments/work-env-15.webp', alt: 'cloud native kkc' },
-  { src: '~/assets/images/work_environments/work-env-16.webp', alt: 'new year outing CNK' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-1.webp`, alt: 'ออฟฟิศขอนแก่น' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-2.webp`, alt: 'พื้นที่ทำงานร่วมกัน' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-3.webp`, alt: 'นำเสนอจบการฝึกงาน' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-4.webp`, alt: 'session remote work' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-5.webp`, alt: 'work from anywhere bkk' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-6.webp`, alt: 'work from anywhere bkk' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-7.webp`, alt: 'kkc meeting' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-8.webp`, alt: 'kkc meeting' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-9.webp`, alt: 'kkc meeting' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-10.webp`, alt: 'we are ttss' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-11.webp`, alt: 'work starbucks' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-12.webp`, alt: 'work evaluation' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-14.webp`, alt: 'joining the team' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-15.webp`, alt: 'cloud native kkc' },
+  { src: `${environmentConfig.baseImageUrl}/images/work_environments/work-env-16.webp`, alt: 'new year outing CNK' },
 ];
 ---
 

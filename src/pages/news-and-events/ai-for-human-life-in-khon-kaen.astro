@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -14,32 +15,32 @@ const event = {
   description:
     'บริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด ร่วมกับภาคีเครือข่าย จัดกิจกรรมให้ความรู้ในหัวข้อ AI for Human Life in Khon Kaen โดยภายในงานมีการบรรยายครอบคลุมหัวข้อต่าง ๆ อาทิ พื้นฐานด้าน AI, AI ในมุมมองเชิงสร้างสรรค์, กฎหมาย, การศึกษา และบทบาทของ AI ในชุมชน ทั้งนี้ บริษัทฯ ได้รับเกียรติจากทีมผู้เชี่ยวชาญจากหลากหลายกลุ่มชุมชนเทคโนโลยี (Tech Community) ที่มาร่วมแบ่งปันประสบการณ์ตรงในด้านต่าง ๆ ซึ่งเป็นประโยชน์ต่อผู้เข้าร่วมงาน ท่านสามารถรับชมย้อนหลังได้ที่',
   descriptionLink: 'https://youtu.be/a3V2TN9VeZY',
-  image: '~/assets/images/news_events/AI for Human Life in Khon Kaen/ภาพหน้าแรก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/AI for Human Life in Khon Kaen/ภาพหน้าแรก.webp`,
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/AI for Human Life in Khon Kaen/ภาพหน้าแรก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/AI for Human Life in Khon Kaen/ภาพหน้าแรก.webp`,
     alt: 'ภาพหน้าแรก',
   },
   {
-    src: '~/assets/images/news_events/AI for Human Life in Khon Kaen/450164514_7453971558035924_7047239320018578637_n.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/AI for Human Life in Khon Kaen/450164514_7453971558035924_7047239320018578637_n.webp`,
     alt: '450164514_7453971558035924_7047239320018578637_n',
   },
   {
-    src: '~/assets/images/news_events/AI for Human Life in Khon Kaen/LINE_ALBUM_AI for human_241028_2.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/AI for Human Life in Khon Kaen/LINE_ALBUM_AI for human_241028_2.webp`,
     alt: 'LINE_ALBUM_AI for human_241028_2',
   },
   {
-    src: '~/assets/images/news_events/AI for Human Life in Khon Kaen/LINE_ALBUM_AI for human_241028_3.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/AI for Human Life in Khon Kaen/LINE_ALBUM_AI for human_241028_3.webp`,
     alt: 'LINE_ALBUM_AI for human_241028_3',
   },
   {
-    src: '~/assets/images/news_events/AI for Human Life in Khon Kaen/LINE_ALBUM_AI for human_241028_4.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/AI for Human Life in Khon Kaen/LINE_ALBUM_AI for human_241028_4.webp`,
     alt: 'LINE_ALBUM_AI for human_241028_4',
   },
   {
-    src: '~/assets/images/news_events/AI for Human Life in Khon Kaen/LINE_ALBUM_AI for human_241028_5.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/AI for Human Life in Khon Kaen/LINE_ALBUM_AI for human_241028_5.webp`,
     alt: 'LINE_ALBUM_AI for human_241028_5',
   },
 ];

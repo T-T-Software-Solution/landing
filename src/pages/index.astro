@@ -11,6 +11,7 @@ import OurTeam from '~/components/widgets/OurTeam.astro';
 import OurWorksCarousel from '~/components/widgets/OurWorksCarousel.astro';
 import Technologies from '~/components/widgets/Technologies.astro';
 import WorkEnvironment from '~/components/widgets/WorkEnvironment.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -32,7 +33,7 @@ const metadata = {
       },
       { text: 'ติดต่อเรา', href: '/contact-us' },
     ]}
-    bg="~/assets/images/hero-bg-shape.webp"
+    bg={`${environmentConfig.baseImageUrl}/images/hero-bg-shape.webp`}
   >
     <Fragment slot="title">
       We are Software Solution Expert<br />made by MVP Technical Team
@@ -83,11 +84,23 @@ const metadata = {
       {
         url: '~/assets/images/bento-primary.webp',
         class: {
-          container: 'col-span-3 md:col-span-2',
+          container: 'col-span-3 md:col-span-2 h-fit',
+          image: 'md:min-h-[400px] max-h-[400px] !object-cover',
         },
       },
-      { url: '~/assets/images/bento-secondary.webp' },
-      { url: '~/assets/images/bento-third.webp' },
+      { url: `${environmentConfig.baseImageUrl}/images/bento-secondary.webp`,
+        class: {
+          image: 'md:min-h-[400px] max-h-[400px] !object-cover',
+          container: 'h-fit',
+        },
+      },
+      {
+        url: `${environmentConfig.baseImageUrl}/images/bento-third.webp`,
+        class: {
+          image: 'md:min-h-[400px] max-h-[400px] !object-cover',
+          container: 'h-fit',
+        },
+      },
     ]}
   />
 
@@ -107,38 +120,38 @@ const metadata = {
       {
         title: 'Back Office Web Application Service',
         description:
-          'บริการพัฒนาแอปพลิเคชันเว็บสำหรับระบบหลังบ้าน ช่วยจัดการงานภายในองค์กร อย่างมีประสิทธิภาพ เช่น ระบบบัญชี การจัดการลูกค้า และการบริหารทรัพยากร ออกแบบให้เหมาะสมกับกระบวนการทำงานเฉพาะของแต่ละธุรกิจ',
-        icon: '~/assets/images/web-development.svg',
+          'บริการพัฒนาแอปพลิเคชันเว็บสำหรับระบบหลังบ้าน ช่วยจัดการงานภายในองค์กร อย่างมีประสิทธิภาพ เช่น ระบบบัญชี การจัดการลูกค้า และการบริหารทรัพยากร ออกแบบให้เหมาะสมกับกระบนการทำงานเฉพาะของแต่ละธุรกิจ',
+        icon: `${environmentConfig.baseImageUrl}/images/web-development.svg`,
       },
       {
         title: 'Azure Cloud by Professtional',
         description:
           'บริการให้คำปรึกษาและพัฒนาโซลูชันบนคลาวด์ Azure โดยผู้เชี่ยวชาญ ช่วยองค์กร ในการย้ายระบบสู่คลาวด์ จัดการทรัพยากรไอทีและเพิ่มความปลอดภัยให้กับข้อมูลสำคัญ',
-        icon: '~/assets/images/cloud.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/cloud.svg`,
       },
       {
         title: 'Responsive Web Design Service',
         description:
           'บริการออกแบบเว็บไซต์ที่รองรับการแสดงผลบนทุกอุปกรณ์ ทั้งคอมพิวเตอร์ แท็บเล็ต และสมาร์ทโฟน สร้างประสบการณ์การใช้งานที่ดีให้กับผู้ใช้ พร้อมเพิ่มโอกาสทางธุรกิจ ด้วยการเข้าถึงกลุ่มเป้าหมายได้กว้างขึ้น',
-        icon: '~/assets/images/responsive-web.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/responsive-web.svg`,
       },
       {
         title: 'Training and Skills Development',
         description:
           'บริการฝึกอบรมและพัฒนาทักษะด้านไอทีสำหรับบุคลากรในองค์กร ครอบคลุมหลักสูตร ที่เกี่ยวข้องกับเทคโนโลยีล่าสุด เพื่อเพิ่มประสิทธิภาพการทำงานและการใช้งานระบบต่างๆ',
-        icon: '~/assets/images/teacher.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/teacher.svg`,
       },
       {
         title: 'Data Visualization Service',
         description:
           'บริการนำเสนอข้อมูลในรูปแบบภาพที่เข้าใจง่าย ช่วยวิเคราะห์และตีความข้อมูลซับซ้อน ได้อย่างมีประสิทธิภาพ เหมาะสำหรับการนำเสนอรายงาน การวิเคราะห์แนวโน้มตลาด และการตัดสินใจทางธุรกิจ',
-        icon: '~/assets/images/analysis.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/analysis.svg`,
       },
       {
         title: 'Automated Test Service',
         description:
           'บริการพัฒนาและติดตั้งระบบทดสอบอัตโนมัติ ช่วยลดเวลาและค่าใช้จ่ายในการทดสอบ ซอฟต์แวร์ พร้อมเพิ่มความมั่นใจในคุณภาพของผลิตภัณฑ์ก่อนนำไปใช้งานจริง',
-        icon: '~/assets/images/tecnique.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/tecnique.svg`,
       },
     ]}
   />
@@ -152,16 +165,16 @@ const metadata = {
     descriptionFirst="ด้วยประสบการณ์อันยาวนานและความเชี่ยวชาญระดับ Microsoft MVP ของเรา เราพร้อมยกระดับธุรกิจของคุณ ด้วยโซลูชัน ซอฟต์แวร์ ที่ล้ำสมัย ไม่ว่าจะเป็นการพัฒนา แอปพลิเคชัน การวางระบบคลาวด์ หรือการจัดการ โครงสร้างพื้นฐานไอที"
     descriptionSecond="เรามีทีมผู้เชี่ยวชาญที่พร้อมนำพาคุณสู่ความสำเร็จในยุคดิจิทัลด้วยการรับรองจาก Microsoft ในด้าน Azure และ DevOps เราพร้อมสร้างสรรค์โซลูชัน ที่ตอบโจทย์ความต้องการเฉพาะของธุรกิจคุณ เพื่อให้คุณก้าวล้ำคู่แข่ง ในตลาดที่มีการแข่งขันสูง"
     imageExecutive={[
-      { url: '~/assets/images/ceo-index.webp', role: 'CEO' },
-      { url: '~/assets/images/cto-index.webp', role: 'CTO' },
-      { url: '~/assets/images/gm-index.webp', role: 'GM' },
+      { url: `${environmentConfig.baseImageUrl}/images/ceo-index.webp`, role: 'CEO' },
+      { url: `${environmentConfig.baseImageUrl}/images/cto-index.webp`, role: 'CTO' },
+      { url: `${environmentConfig.baseImageUrl}/images/gm-index.webp`, role: 'GM' },
     ]}
     imagCertified={[
-      { url: '~/assets/images/azure_fundamentals.png' },
-      { url: '~/assets/images/azure_developer.png' },
-      { url: '~/assets/images/devops_engineer.png' },
+      { url: `${environmentConfig.baseImageUrl}/images/azure_fundamentals.png` },
+      { url: `${environmentConfig.baseImageUrl}/images/azure_developer.png` },
+      { url: `${environmentConfig.baseImageUrl}/images/devops_engineer.png` },
     ]}
-    contentImage={`~/assets/images/mvp-circle.webp`}
+    contentImage={`${environmentConfig.baseImageUrl}/images/mvp-circle.webp`}
   />
   <!-- Technologies Widget ************** -->
 
@@ -172,57 +185,57 @@ const metadata = {
     items={[
       {
         description: '.NET',
-        icon: '~/assets/images/dotnet.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/dotnet.svg`,
       },
       {
         description: 'Microsoft Azure',
-        icon: '~/assets/images/azure.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/azure.svg`,
         classes: {
           icon: 'mt-[30px]',
         },
       },
       {
         description: 'React',
-        icon: '~/assets/images/react.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/react.svg`,
       },
       {
         description: 'TypeScript',
-        icon: '~/assets/images/typescript.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/typescript.svg`,
       },
       {
         description: 'Next.js',
-        icon: '~/assets/images/nextjs.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/nextjs.svg`,
       },
       {
         description: 'Docker',
-        icon: '~/assets/images/docker.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/docker.svg`,
       },
       {
         description: 'Kubernetes',
-        icon: '~/assets/images/kubernetes.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/kubernetes.svg`,
       },
       {
         description: 'Node.js',
-        icon: '~/assets/images/nodejs.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/nodejs.svg`,
       },
       {
         description: 'PostgreSQL',
-        icon: '~/assets/images/pgsql.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/pgsql.svg`,
       },
       {
         description: 'MongoDB',
-        icon: '~/assets/images/mongodb.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/mongodb.svg`,
         classes: {
           icon: 'mt-[30px]',
         },
       },
       {
         description: 'Tailwind CSS',
-        icon: '~/assets/images/tailwindcss.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/tailwindcss.svg`,
       },
       {
         description: 'Microsoft SQL Server',
-        icon: '~/assets/images/microsoft-sql-server.svg',
+        icon: `${environmentConfig.baseImageUrl}/images/microsoft-sql-server.svg`,
       },
     ]}
     callToAction1={{ variant: 'secondary', text: 'ดูเทคโนโลยีทั้งหมด', href: '/technologies' }}
@@ -243,19 +256,19 @@ const metadata = {
     tagline="พาร์ทเนอร์ของเรา"
     items={[
       {
-        icon: '~/assets/images/jumpbox.png',
+        icon: `${environmentConfig.baseImageUrl}/images/jumpbox.png`,
       },
       {
-        icon: '~/assets/images/thaitype.png',
+        icon: `${environmentConfig.baseImageUrl}/images/thaitype.png`,
       },
       {
-        icon: '~/assets/images/thai-programmer.webp',
+        icon: `${environmentConfig.baseImageUrl}/images/thai-programmer.webp`,
       },
       {
-        icon: '~/assets/images/lawxtech.webp',
+        icon: `${environmentConfig.baseImageUrl}/images/lawxtech.webp`,
       },
       {
-        icon: '~/assets/images/arctica.webp',
+        icon: `${environmentConfig.baseImageUrl}/images/arctica.webp`,
       },
     ]}
   />
@@ -264,7 +277,7 @@ const metadata = {
     isReversed
     isAfterContent
     image={{
-      src: '~/assets/images/IEC-ISO-29110_lg.webp',
+      src: `${environmentConfig.baseImageUrl}/images/IEC-ISO-29110_lg.webp`,
       alt: 'Azure Cloud',
     }}
   >
@@ -295,12 +308,12 @@ const metadata = {
   <WorkEnvironment
     subtitle="สนับสนุนการทำงานจากทุกที่ สร้างสภาพแวดล้อมที่มีความสุข และเพิ่มประสิทธิภาพการทำงาน"
     images={[
-      { url: '~/assets/images/WorkEnvironment1.webp' },
-      { url: '~/assets/images/WorkEnvironment2.webp' },
-      { url: '~/assets/images/WorkEnvironment3.webp' },
-      { url: '~/assets/images/WorkEnvironment4.webp' },
-      { url: '~/assets/images/WorkEnvironment5.webp' },
-      { url: '~/assets/images/WorkEnvironment6.webp' },
+      { url: `${environmentConfig.baseImageUrl}/images/WorkEnvironment1.webp` },
+      { url: `${environmentConfig.baseImageUrl}/images/WorkEnvironment2.webp` },
+      { url: `${environmentConfig.baseImageUrl}/images/WorkEnvironment3.webp` },
+      { url: `${environmentConfig.baseImageUrl}/images/WorkEnvironment4.webp` },
+      { url: `${environmentConfig.baseImageUrl}/images/WorkEnvironment5.webp` },
+      { url: `${environmentConfig.baseImageUrl}/images/WorkEnvironment6.webp` },
     ]}
     callToAction1={{
       variant: 'secondary',

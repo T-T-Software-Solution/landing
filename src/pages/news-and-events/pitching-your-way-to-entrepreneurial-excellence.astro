@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -13,28 +14,28 @@ const event = {
   title: 'Pitching Your Way to Entrepreneurial Excellence',
   description:
       'ผู้บริหารบริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด ได้รับเกียรติร่วมเป็นผู้ให้ความเห็นในงาน Pitching Your Way to Entrepreneurial Excellence ซึ่งจัดโดยนักศึกษาสาขาการเงิน คณะบริหารธุรกิจและการบัญชี มหาวิทยาลัยขอนแก่น บริษัทฯ ขอขอบ สาขวิชาการเงิน คณะบริหารธุรกิจและการบัญชี มหาวิทยาลัยขอนแก่นที่เปิดโอกาสให้ร่วมแบ่งปันประสบการณ์และมุมมอง เพื่อส่งเสริมความรู้ด้านการเป็นผู้ประกอบการแก่นักศึกษา',
-  image: '~/assets/images/news_events/Pitching Your Way to Entrepreneurial Excellence/ภาพหน้าแรก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/Pitching Your Way to Entrepreneurial Excellence/ภาพหน้าแรก.webp`,
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/Pitching Your Way to Entrepreneurial Excellence/ภาพหน้าแรก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Pitching Your Way to Entrepreneurial Excellence/ภาพหน้าแรก.webp`,
     alt: 'ภาพหน้าแรก',
   },
   {
-    src: '~/assets/images/news_events/Pitching Your Way to Entrepreneurial Excellence/LINE_ALBUM_20241010 คณะบริหารธุรกิจและการบัญชี ม ม.ขอนแ.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Pitching Your Way to Entrepreneurial Excellence/LINE_ALBUM_20241010 คณะบริหารธุรกิจและการบัญชี ม ม.ขอนแ.webp`,
     alt: 'LINE_ALBUM_20241010 คณะบริหารธุรกิจและการบัญชี ม ม.ขอนแ',
   },
   {
-    src: '~/assets/images/news_events/Pitching Your Way to Entrepreneurial Excellence/LINE_ALBUM_20241010 คณะบริหารธุรกิจและการบัญชี ม ม.ขอนแ2.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Pitching Your Way to Entrepreneurial Excellence/LINE_ALBUM_20241010 คณะบริหารธุรกิจและการบัญชี ม ม.ขอนแ2.webp`,
     alt: 'LINE_ALBUM_20241010 คณะบริหารธุรกิจและการบัญชี ม ม.ขอนแ2',
   },
   {
-    src: '~/assets/images/news_events/Pitching Your Way to Entrepreneurial Excellence/LINE_ALBUM_20241010 คณะบริหารธุรกิจและการบัญชี ม ม.ขอนแ3.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Pitching Your Way to Entrepreneurial Excellence/LINE_ALBUM_20241010 คณะบริหารธุรกิจและการบัญชี ม ม.ขอนแ3.webp`,
     alt: 'LINE_ALBUM_20241010 คณะบริหารธุรกิจและการบัญชี ม ม.ขอนแ3',
   },
   {
-    src: '~/assets/images/news_events/Pitching Your Way to Entrepreneurial Excellence/LINE_ALBUM_20241010 คณะบริหารธุรกิจและการบัญชี ม ม.ขอนแ5.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Pitching Your Way to Entrepreneurial Excellence/LINE_ALBUM_20241010 คณะบริหารธุรกิจและการบัญชี ม ม.ขอนแ5.webp`,
     alt: 'LINE_ALBUM_20241010 คณะบริหารธุรกิจและการบัญชี ม ม.ขอนแ5',
   },
 ];

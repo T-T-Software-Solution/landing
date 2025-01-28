@@ -2,6 +2,7 @@
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import EventGrid from '~/components/widgets/EventGrid.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -14,7 +15,7 @@ const events = [
     title: 'เข้าพบลูกค้า บริษัท สยามลอว์กรุ๊ป จำกัด',
     description:
       'ตัวแทนจากบริษัทฯ ได้เข้าพบลูกค้าบริษัท สยามลอว์กรุ๊ป จำกัด เพื่อมอบกระเช้าร่วมแสดงความยินดีในโอกาสที่ลูกค้าใช้ระบบของเรา ซึ่งส่งผลให้ลูกค้าได้รับงานเพิ่มขึ้นอย่างต่อเนื่อง และมีการขยายสาขาเพิ่มเติม ทั้งนี้ ลูกค้าแสดงความประทับใจต่อระบบของเราและยินดีที่จะเริ่มดำเนินการในเฟสที่ 2 (Mobile Applications) ควบคู่ไปได้ทันที บริษัทฯ ขอขอบคุณทีมงานทุกท่านสำหรับการทำงานอย่างเต็มที่ โดยลูกค้าได้ฝากคำชมว่า การทำงานร่วมกับทีมของเราทำให้รู้สึกดีและเชื่อมั่นว่าจะมีโปรเจคอื่นๆ ที่จะดำเนินงานต่อไปในอนาคต',
-    image: '~/assets/images/news_events/Siam Law Group Company Limited/รูปปก.webp',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Siam Law Group Company Limited/รูปปก.webp`,
     link: '/news-and-events/siam-low-group',
   },
   {
@@ -22,7 +23,7 @@ const events = [
     title: 'โรงเรียนบ้านด่านกรงกราง',
     description:
       'บริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด ได้จัดกิจกรรมจิตอาสาโดยมอบอุปกรณ์สำหรับปรับปรุงอาคาร (ทาสี) และแผ่นยางปูพื้นให้แก่ชมรมคีตะมวยไทย โรงเรียนบ้านด่านกรงกราง จังหวัดนครราชสีมา เพื่อสนับสนุนการสร้างสภาพแวดล้อมที่สวยงามและเอื้อต่อการฝึกซ้อมของสมาชิกชมรม บริษัทฯ ขอขอบคุณที่ได้มีโอกาสร่วมเป็นส่วนหนึ่งในการสนับสนุนกิจกรรมสร้างสรรค์และการพัฒนาโรงเรียน',
-    image: '~/assets/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/ภาพหน้าแรก.webp',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/ภาพหน้าแรก.webp`,
     link: '/news-and-events/ban-dan-krong-krang-school',
   },
   {
@@ -30,24 +31,33 @@ const events = [
     title: 'Pitching Your Way to Entrepreneurial Excellence',
     description:
       'ผู้บริหารบริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด ได้รับเกียรติร่วมเป็นผู้ให้ความเห็นในงาน Pitching Your Way to Entrepreneurial Excellence ซึ่งจัดโดยนักศึกษาสาขาการเงิน คณะบริหารธุรกิจและการบัญชี มหาวิทยาลัยขอนแก่น บริษัทฯ ขอขอบ สาขวิชาการเงิน คณะบริหารธุรกิจและการบัญชี มหาวิทยาลัยขอนแก่นที่เปิดโอกาสให้ร่วมแบ่งปันประสบการณ์และมุมมอง เพื่อส่งเสริมความรู้ด้านการเป็นผู้ประกอบการแก่นักศึกษา',
-    image: '~/assets/images/news_events/Pitching Your Way to Entrepreneurial Excellence/ภาพหน้าแรก.webp',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Pitching Your Way to Entrepreneurial Excellence/ภาพหน้าแรก.webp`,
     link: '/news-and-events/pitching-your-way-to-entrepreneurial-excellence',
   },
   {
-    date: 'วันที่ 8 กรกฎาคม พ.ศ. 2567',
-    title: 'AI for Human Life in Khon Kaen',
+    date: 'วันที่ 2 ตุลาคม พ.ศ. 2567',
+    title: 'ร่วมแนะนำบริษัทในฐานะผู้ประกอบการภายใต้อุทยานวิทยาศาสตร์ มหาวิทยาลัยขอนแก่น',
     description:
-      'บริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด ร่วมกับภาคีเครือข่าย จัดกิจกรรมให้ความรู้ในหัวข้อ AI for Human Life in Khon Kaen โดยภายในงานมีการบรรยายครอบคลุมหัวข้อต่าง ๆ อาทิ พื้นฐานด้าน AI, AI ในมุมมองเชิงสร้างสรรค์, กฎหมาย, การศึกษา และบทบาทของ AI ในชุมชน ทั้งนี้ บริษัทฯ ได้รับเกียรติจากทีมผู้เชี่ยวชาญจากหลากหลายกลุ่มชุมชนเทคโนโลยี (Tech Community) ที่มาร่วมแบ่งปันประสบการณ์ตรงในด้านต่าง ๆ ซึ่งเป็นประโยชน์ต่อผู้เข้าร่วมงาน ท่านสามารถรับชมย้อนหลังได้ที่',
-    descriptionLink: 'https://youtu.be/a3V2TN9VeZY',
-    image: '~/assets/images/news_events/AI for Human Life in Khon Kaen/ภาพหน้าแรก.webp',
-    link: '/news-and-events/ai-for-human-life-in-khon-kaen',
+      'คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท ได้รับเกียรติร่วมแนะนำบริษัทในฐานะผู้ประกอบการภายใต้อุทยานวิทยาศาสตร์ มหาวิทยาลัยขอนแก่น ให้แก่คณะจากอุทยานวิทยาศาสตร์จังหวัดเชียงใหม่ คณะผู้แทนจากประเทศฝรั่งเศส และบริษัทสตาร์ทอัพ',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/starup-kku-science-park/ปก.webp`,
+    link: '/news-and-events/starup-kku-science-park',
+  },
+  {
+    date: 'วันที่ 26 สิงหาคม พ.ศ. 2567',
+    title: 'แชร์ประสบการณ์การเปิดบริษัทซอฟต์แวร์เฮาส์',
+    description:
+      'คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท  ได้ร่วมแชร์ประสบการณ์การเปิดบริษัทซอฟต์แวร์เฮาส์ (Software House) ในรูปแบบการทำงานจากระยะไกล (Remote Work) ต่อเนื่องเป็นปีที่ 11 ผ่าน [Podcast] ซึ่งเน้นการสร้างวัฒนธรรมองค์กรที่ทำงานแบบ Remote Work 100% โดยเนื้อหาที่น่าสนใจนี้สามารถรับชมย้อนหลังได้ทางช่อง YouTube ของเพจเฟซบุ๊กไทยไทป์ สามารถดูย้อนหลังได้ที่',
+    descriptionLink: 'https://youtu.be/xAwXHCgQi9g',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/share-experience-opening-software-house/ปก.webp`,
+    link: '/news-and-events/share-experience-opening-software-house',
   },
   {
     date: 'วันที่ 16 สิงหาคม พ.ศ. 2567',
     title: 'โครงการสัมมนาพัฒนาสมรรถนะสําหรับบัณฑิตพันธุ์ใหม่ (iTalk6)',
     description:
-      'คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัทได้เข้าร่วมบรรยายให้ความรู้แก่นักศึกษาสาขาวิชาสารสนเทศศาสตร์ (iSchool KKU) คณะมนุษยศาสตร์และสังคมศาสตร์ มหาวิทยาลัยขอนแก่น ในหัวข้อ “ร่วมสำรวจและเตรียมความพร้อมสู่เส้นทางแห่งความสำเร็จในสายงานแห่งยุคดิจิทัล: Exploration and Preparation for Future Work in the Digital Era” บริษัทฯ ขอขอบคุณสาขาวิชาสารสนเทศศาสตร์ (iSchool KKU) คณะมนุษยศาสตร์และสังคมศาสตร์ มหาวิทยาลัยขอนแก่น ที่มอบโอกาสให้ได้ร่วมแบ่งปันประสบการณ์และองค์ความรู้ที่เป็นประโยชน์ต่อการเตรียมความพร้อมสำหรับอนาคตในยุคดิจิทัล',
-    image: '~/assets/images/news_events/Seminar project to develop competency for new graduates/ภาพหน้าแรก.webp',
+      'คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัทได้เข้าร่วมบรรยายให้ความรู้แก่นักศึกษาสาขาวิชาสารสนเทศศาสตร์ (iSchool KKU) คณะมนุษยศาสตร์และสังคมศาสตร์ มหาวิทยาลัยขอนแก่น ในหัวข้อ “ร่วมสำรวจและเตรียมความพร้อมสู่เส้นทางแห่งความสำเร็จในสายงานแห่งยุคดิจิทัล: Exploration and Preparation for Future Work in the Digital Era” \n\t บริษัทฯ ขอขอบคุณสาขาวิชาสารสนเทศศาสตร์ (iSchool KKU) คณะมนุษยศาสตร์และสังคมศาสตร์ มหาวิทยาลัยขอนแก่น ที่มอบโอกาสให้ได้ร่วมแบ่งปันประสบการณ์และองค์ความรู้ที่เป็นประโยชน์ต่อการเตรียมความพร้อมสำหรับอนาคตในยุคดิจิทัล ติดตามชมเนื้อหาย้อนหลังได้ที่',
+    descriptionLink: 'https://youtu.be/w0mFQl51m0Y',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Seminar project to develop competency for new graduates/ภาพหน้าแรก.webp`,
     link: '/news-and-events/seminar-project-to-develop-competency-for-new-graduates',
   },
   {
@@ -55,43 +65,118 @@ const events = [
     title: 'สัมมนาทางวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยขอนแก่น',
     description:
       'ผู้บริหารและทีมงานของบริษัท ได้รับเกียรติร่วมเป็นวิทยากรในงานสัมมนาทางด้านวิศวกรรมคอมพิวเตอร์เพื่อถ่ายทอดความรู้แก่นักศึกษาสาขาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยขอนแก่น บริษัทฯ ขอขอบพระคุณ ผู้ช่วยศาสตราจารย์ภาณุพงษ์ วันจันทึก ที่มอบโอกาสอันดีในการแบ่งปันความรู้แก่น้อง ๆ นักศึกษาในครั้งนี้',
-    image: '~/assets/images/news_events/Computer Engineering Seminar Khon Kaen University/ภาพหน้าแรก.webp',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Computer Engineering Seminar Khon Kaen University/ภาพหน้าแรก.webp`,
     link: '/news-and-events/computer-engineering-seminar-khon-kaen-university',
+  },
+  {
+    date: 'วันที่ 8 กรกฎาคม พ.ศ. 2567',
+    title: 'AI for Human Life in Khon Kaen',
+    description:
+      'บริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด ร่วมกับภาคีเครือข่าย จัดกิจกรรมให้ความรู้ในหัวข้อ AI for Human Life in Khon Kaen โดยภายในงานมีการบรรยายครอบคลุมหัวข้อต่าง ๆ อาทิ พื้นฐานด้าน AI, AI ในมุมมองเชิงสร้างสรรค์, กฎหมาย, การศึกษา และบทบาทของ AI ในชุมชน ทั้งนี้ บริษัทฯ ได้รับเกียรติจากทีมผู้เชี่ยวชาญจากหลากหลายกลุ่มชุมชนเทคโนโลยี (Tech Community) ที่มาร่วมแบ่งปันประสบการณ์ตรงในด้านต่าง ๆ ซึ่งเป็นประโยชน์ต่อผู้เข้าร่วมงาน ท่านสามารถรับชมย้อนหลังได้ที่',
+    descriptionLink: 'https://youtu.be/a3V2TN9VeZY',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/AI for Human Life in Khon Kaen/ภาพหน้าแรก.webp`,
+    link: '/news-and-events/ai-for-human-life-in-khon-kaen',
   },
   {
     date: 'วันที่ 31 พฤษภาคม พ.ศ. 2567',
     title: `โครงการมหา'ลัยไทบ้าน`,
     description: `บริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด ได้เข้าร่วมงานเปิดตัวหลักสูตรใหม่ในโครงการ “มหา'ลัยไทบ้าน” ซึ่งเป็นกิจกรรมที่มุ่งเน้นการนำความรู้ด้านเทคโนโลยีมาสนับสนุนและเสริมสร้างพื้นที่การศึกษาในชุมชน โครงการมหา'ลัยไทบ้านมุ่งมั่นในการสร้างระบบนิเวศการเรียนรู้ที่ยั่งยืน เพื่อยกระดับคุณภาพชีวิตของชุมชน ภายใต้การสนับสนุนจาก มูลนิธิอาสาสมัครเพื่อสังคม (มอส.) และโครงการอาสาคืนถิ่น - Return Homeland บริษัทฯ มีความภาคภูมิใจที่ได้ร่วมเป็นส่วนหนึ่งในความพยายามนี้ ร่วมฟัง ร่วมฝัน และร่วมสร้างอนาคตที่ดีกับชุมชน`,
-    image: '~/assets/images/news_events/Thai Ban University Project/ภาพหน้าแรก.webp',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Thai Ban University Project/ภาพหน้าแรก.webp`,
     link: '/news-and-events/thai-ban-university-project',
+  },
+  {
+    date: 'วันที่ 21 พฤษภาคม พ.ศ. 2567',
+    title: `แบ่งปันความรู้ในหัวข้อ “จิตวิทยากับการเขียนโปรแกรม: เส้นทางสู่ความสำเร็จและความสุข”`,
+    description:
+      'คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท ได้เข้าร่วมแบ่งปันความรู้ในหัวข้อ “จิตวิทยากับการเขียนโปรแกรม: เส้นทางสู่ความสำเร็จและความสุข” ซึ่งจัดโดยสมาคมโปรแกรมเมอร์แห่งประเทศไทย โดยกิจกรรมนี้มีเป้าหมายเพื่อให้ความรู้เกี่ยวกับความเชื่อมโยงระหว่างจิตวิทยาและการพัฒนาซอฟต์แวร์ รวมถึงการส่งเสริมแนวทางการทำงานอย่างมีประสิทธิภาพ อันจะช่วยยกระดับคุณภาพชีวิตการทำงานของนักพัฒนา สามารถดูย้อนหลังได้ที่',
+    descriptionLink: 'https://www.youtube.com/watch?v=cCYs4xw_NRY',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/psychology-and-programming/ปก.webp`,
+    link: '/news-and-events/psychology-and-programming',
   },
   {
     date: 'วันที่ 6 มีนาคม 2567',
     title: `การเตรียมความพร้อมก่อนการทำงานด้านการพัฒนาซอฟต์แวร์`,
     description: `คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท และทีมงาน ได้เข้าร่วมบรรยายแก่นักศึกษาสาขาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยขอนแก่น ในหัวข้อ “การเตรียมความพร้อมก่อนการทำงานด้านการพัฒนาซอฟต์แวร์” เป็นครั้งที่ 2 บริษัทฯ หวังเป็นอย่างยิ่งว่านักศึกษาจะได้รับประโยชน์จากประสบการณ์ในครั้งนี้อย่างเต็มที่ และสามารถนำความรู้และทักษะที่ได้รับไปปรับใช้ในการเตรียมตัวเข้าสู่สายงานหรือการศึกษาต่อไปในอนาคต บริษัทฯ ขอขอบคุณ รศ.ดร.กานดา สายแก้ว  ที่ให้การสนับสนุนและเปิดโอกาสในการจัดกิจกรรมนี้`,
-    image: '~/assets/images/news_events/Preparation before working in software development/ภาพหน้าแรก.webp',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/ภาพหน้าแรก.webp`,
     link: '/news-and-events/preparation-before-working-in-software-development',
   },
   {
     date: 'วันที่ 21 กุมภาพันธ์ พ.ศ. 2567',
     title: `ให้ความรู้นักศึกษา มหาวิทยาลัยเชียงใหม่ ครั้งที่ 2`,
     description: `คณะผู้บริหารจากบริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด พร้อมด้วยทีมงาน ได้เข้าร่วมแบ่งปันความรู้และประสบการณ์ในการทำงานให้กับนักศึกษาสาขาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเชียงใหม่ เป็นครั้งที่ 2 บริษัทฯ ขอขอบคุณอาจารย์สาขาวิศวกรรมคอมพิวเตอร์  และขอบคุณทุกท่านที่มีส่วนร่วมในการถ่ายทอดประสบการณ์เชิงลึกและข้อเท็จจริงที่เป็นประโยชน์ให้แก่นักศึกษาในครั้งนี้`,
-    image: '~/assets/images/news_events/Educate students Chiang Mai University/ภาพหน้าแรก.webp',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Educate students Chiang Mai University/ภาพหน้าแรก.webp`,
     link: '/news-and-events/educate-students-chiang-mai-university',
   },
   {
-    date: 'วันที่ 9 มกราคม พ.ศ. 2566',
-    title: `ให้ความรู้นักศึกษา มหาวิทยาลัยเชียงใหม่ ครั้งที่ 1`,
-    description: `คณะผู้บริหารจากบริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด พร้อมด้วยทีมงาน ได้เข้าร่วมแบ่งปันความรู้และประสบการณ์ในการทำงานให้กับนักศึกษาสาขาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเชียงใหม่ เป็นครั้งที่ 2 บริษัทฯ ขอขอบคุณอาจารย์สาขาวิศวกรรมคอมพิวเตอร์  และขอบคุณทุกท่านที่มีส่วนร่วมในการถ่ายทอดประสบการณ์เชิงลึกและข้อเท็จจริงที่เป็นประโยชน์ให้แก่นักศึกษาในครั้งนี้`,
-    image: '~/assets/images/news_events/Educate students Chiang Mai University 1/ภาพหน้าแรก.webp',
-    link: '/news-and-events/educate-students-chiang-mai-university-1',
+    date: 'วันที่ 21 ธันวาคม พ.ศ. 2566',
+    title: `ร่วมแนะนำผู้เข้าร่วมโครงการ “The Cloud Camp” ซึ่งจัดโดย Jumpbox`,
+    description: `คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท ร่วมแนะนำผู้เข้าร่วมโครงการ “The Cloud Camp” ซึ่งจัดโดย Jumpbox โดยมีการบรรยายในหัวข้อเกี่ยวกับการใช้งานเทคโนโลยี Cloud Native ทั้งนี้ ได้กล่าวถึงบทบาทของ .NET Aspire ในการช่วยลดเวลาในการติดตั้ง Backing Service สำหรับการสังเกตการณ์ระบบ (Observability) เช่น การติดตามสถิติการทำงานของแอปพลิเคชัน (Application Metrics), การตรวจสอบการทำงานแบบกระจาย (Distributed Tracing), การรวมบันทึกข้อมูล (Log Aggregation) และการค้นหาบริการ (Service Discovery) รวมถึงการเพิ่มประสิทธิภาพด้านกลยุทธ์เพื่อความเสถียรของระบบ (Resiliency Strategy) อาทิ การกำหนด Timeout, Circuit Breaker และ Retry Attempts ซึ่งช่วยให้การดูแลรักษาระบบมีประสิทธิภาพมากยิ่งขึ้น สามารถดูย้อนหลังได้ที่`,
+    descriptionLink: 'https://youtu.be/eozUs3x7hkA',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/the-cloud-camp/หน้าปก.webp`,
+    link: '/news-and-events/the-cloud-camp',
+  },
+  {
+    date: 'วันที่ 9 ธันวาคม พ.ศ. 2566',
+    title: `ร่วมงาน “Microsoft Ignite – After Party Thailand 2023`,
+    description: `คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท ได้เข้าร่วมงาน “Microsoft Ignite – After Party Thailand 2023” และได้รับเกียรติเป็นวิทยากรบรรยายในหัวข้อ Azure Chaos Studio: Improve resilience through chaos engineering and fault injection สามารถดูย้อนหลังได้ที่`,
+    descriptionLink: 'https://youtu.be/suoJ_S52HN4',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/microsoft-ignite-after-party-thailand-2023/ปก.webp`,
+    link: '/news-and-events/microsoft-ignite-after-party-thailand-2023',
+  },
+  {
+    date: 'วันที่ 25 พฤศจิกายน 2566',
+    title: '.NET Conf',
+    description: `คุณวิทวัส กาพย์ไกรแก้ว และคุณนคร เหรียญตระกูลชัย ผู้บริหารบริษัท เข้าร่วมงาน .NET Conf ซึ่งเป็นงานสัมมนาและแลกเปลี่ยนประสบการณ์ของนักพัฒนาในสาย .NET โดยกลุ่มนักพัฒนา Microsoft ในประเทศไทย งานนี้มุ่งเน้นการเผยแพร่ความรู้และการสร้างเครือข่ายระหว่างนักพัฒนา และองค์กรต่าง ๆ ที่สนใจในเทคโนโลยี .NET ในโอกาสนี้ คุณวิทวัส กาพย์ไกรแก้ว ได้ร่วมเป็นวิทยากรบรรยายในหัวข้อ “.NET Aspire”  \nดูข้อมูลเพิ่มเติมได้ที่ Slide:`,
+    descriptionLink:
+      'https://docs.google.com/presentation/d/1Ym8xmHYy0VPD_uTHG9XI2mURE2Q2yZN29rFoDRkqfAI/edit?usp=sharing',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/dotnet-conf/ปก.webp`,
+    link: '/news-and-events/dotnet-conf',
+  },
+  {
+    date: 'วันที่ 3-5 พฤศจิกายน 2566',
+    title: `Outing ประจำปี 2566`,
+    description: `บริษัทได้จัดกิจกรรม Outing ประจำปี ระหว่างวันที่ 3-5 พฤศจิกายน พ.ศ. 2566 ณ จังหวัดระยอง กิจกรรมครั้งนี้นอกจากจะเป็นโอกาสให้ทีมงานได้ผ่อนคลายและใช้เวลาร่วมกันแล้ว ยังช่วยส่งเสริมความสามัคคีและความสัมพันธ์อันดีในทีมอีกด้วย\nขอขอบคุณทุกท่านที่มีส่วนร่วมในการสร้างบรรยากาศอันอบอุ่น สนุกสนาน และสร้างสรรค์ตลอดการจัดกิจกรรม และหวังเป็นอย่างยิ่งว่าทุกท่านจะได้รับประสบการณ์ที่ดีและมีความสุขจากกิจกรรมในครั้งนี้`,
+    image: `${environmentConfig.baseImageUrl}/images/news_events/outing-2566/รูปปก.webp`,
+    link: '/news-and-events/outing-2566',
+  },
+  {
+    date: 'วันที่ 20 ตุลาคม 2566',
+    title: '.NET Meetup',
+    description: `คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท ได้เข้าร่วมงาน .NET Meetup ซึ่งเป็นงานพบปะสำหรับผู้ที่สนใจและนักพัฒนาในสาย .NET ในประเทศไทย ภายในงานมีการแลกเปลี่ยนความรู้และประสบการณ์ใหม่ ๆ เกี่ยวกับเทคโนโลยี .NET สามารถดูย้อนหลังได้ที่`,
+    descriptionLink:
+      'https://docs.google.com/presentation/d/1UZbLoW-xJarqNv6NuYvgdIBugYc6Xi7UDCXnkPD6BGs/edit?usp=sharing',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/dotnet-meetup/ภาพปก.webp`,
+    link: '/news-and-events/dotnet-meetup',
   },
   {
     date: 'วันที่ 23 มิถุนายน พ.ศ. 2566',
     title: `Cloud Native Thaiban Khon Kaen`,
     description: `บริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด ร่วมกับทีมงานจากเครือข่ายพันธมิตร ได้ร่วมกันจัดงาน "Cloud Native Thaiban Khon Kaen" หรือ "คลาวด์เนทีฟไทบ้าน" ที่จังหวัดขอนแก่น โดยงานนี้มีวัตถุประสงค์เพื่อเป็นเวทีในการแลกเปลี่ยนความรู้และแบ่งปันข้อมูลข่าวสาร รวมถึงเทคโนโลยีใหม่ ๆ ในด้าน Cloud Native, ปัญญาประดิษฐ์ (AI) และเทคโนโลยีที่เกี่ยวข้อง ภายในงานยังมีผู้เชี่ยวชาญจากหลายภาคส่วน อาทิ คุณรูฟ จาก ODDS, คุณคริส จาก Thoughtworks, คุณป้องกัน MVP จาก Microsoft และ JoJo จาก Jumpbox ที่มาร่วมแบ่งปันประสบการณ์ และนำเสนอมุมมองที่เป็นประโยชน์แก่ผู้เข้าร่วม นอกจากนี้ ยังมีกิจกรรมสนุกสนาน เช่น การสอยดาว การตักไข่ และการจัดเวิร์กชอปให้ผู้เข้าร่วมได้ลงมือปฏิบัติจริงในบรรยากาศที่เป็นกันเอง งาน "คลาวด์เนทีฟไทบ้าน" ครั้งนี้จึงถือเป็นอีกหนึ่งกิจกรรมที่สร้างสรรค์และน่าตื่นเต้นสำหรับผู้สนใจในเทคโนโลยี`,
-    image: '~/assets/images/news_events/Cloud Native Thaiban Khon Kaen/ภาพหน้าแรก.webp',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Cloud Native Thaiban Khon Kaen/ภาพหน้าแรก.webp`,
     link: '/news-and-events/cloud-native-thaiban-khon-kaen',
+  },
+  {
+    date: 'วันที่ 17 พฤษภาคม 2566',
+    title: 'Deploy a Website to Azure with Azure App Service',
+    description: `คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท  ได้ร่วมแบ่งปันความรู้ผ่าน Live ของ Microsoft Reactor โดยบรรยายในหัวข้อ “Deploy a Website to Azure with Azure App Service” ซึ่งเป็นการสาธิตและแนะนำวิธีการนำเว็บไซต์ขึ้นสู่แพลตฟอร์ม Azure โดยใช้บริการ Azure App Service เพื่อช่วยให้นักพัฒนาและผู้สนใจสามารถเรียนรู้ขั้นตอนและแนวปฏิบัติที่ดีในการใช้เทคโนโลยีของ Microsoft ในการพัฒนาและบริหารจัดการเว็บไซต์ ดูข้อมูลเพิ่มเติมได้ที่ Slide:`,
+    descriptionLink: 'https://1drv.ms/p/s!At70Q7njCy4Wg4ASSsqo1Derb_Lp2w?e=Qq2ZhU',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/deploy-a-website-to-azure-with-azure-app-service/ปก.webp`,
+    link: '/news-and-events/deploy-a-website-to-azure-with-azure-app-service',
+  },
+  {
+    date: 'วันที่ 25 กุมภาพันธ์ 2566',
+    title: 'Microsoft Build',
+    description: `คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท ได้เข้าร่วมและถ่ายทอดความรู้ในงาน "Microsoft Build" ซึ่งเป็นงานสัมมนาระดับโลกที่จัดขึ้นเพื่อเผยแพร่และแนะนำเทคโนโลยีใหม่ ๆ ของ Microsoft ภายในงานมีการพูดถึงเทคโนโลยีหลากหลายด้าน เช่น Power Platform, Azure Services, Microsoft Data Service และ Azure AI โดยมีการเน้นพิเศษในเรื่องของการนำเทคโนโลยี AI มาประยุกต์ใช้ให้เกิดประโยชน์และใช้งานได้ง่ายยิ่งขึ้น ติดตามสรุปเนื้อหาได้ที่`,
+    descriptionLink: 'https://medium.com/t-t-software-solution/สรุปเนื้อหาจากงาน-thailand-developer-day-211d9171f66d',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/microsoft-build/ปก.webp`,
+    link: '/news-and-events/microsoft-build',
+  },
+  {
+    date: 'วันที่ 9 มกราคม พ.ศ. 2566',
+    title: `ให้ความรู้นักศึกษา มหาวิทยาลัยเชียงใหม่ ครั้งที่ 1`,
+    description: `คณะผู้บริหารจากบริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด พร้อมด้วยทีมงาน ได้เข้าร่วมแบ่งปันความรู้และประสบการณ์ในการทำงานให้กับนักศึกษาสาขาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเชียงใหม่ เป็นครั้งที่ 2 บริษัทฯ ขอขอบคุณอาจารย์สาขาวิศวกรรมคอมพิวเตอร์  และขอบคุณทุกท่านที่มีส่วนร่วมในการถ่ายทอดประสบการณ์เชิงลึกและข้อเท็จจริงที่เป็นประโยชน์ให้แก่นักศึกษาในครั้งนี้`,
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Educate students Chiang Mai University 1/ภาพหน้าแรก.webp`,
+    link: '/news-and-events/educate-students-chiang-mai-university-1',
   },
 ];
 ---

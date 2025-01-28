@@ -1,6 +1,7 @@
 ---
 import Image from '~/components/common/Image.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -35,7 +36,7 @@ const screens = [1, 2, 3];
         {
           screens.map((num) => (
             <Image
-              src={`~/assets/images/easy_insure_screen/easy_insure_screen_${num}.webp`}
+              src={`${environmentConfig.baseImageUrl}/images/easy_insure_screen/easy_insure_screen_${num}.webp`}
               alt={`Easyinsure ${num}`}
               class="w-full h-full rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:scale-105 !object-left-top animate-on-scroll"
             />

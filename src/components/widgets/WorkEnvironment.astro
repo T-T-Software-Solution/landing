@@ -48,7 +48,7 @@ const {
           <Image
             src={img.url}
             alt={`image-${index}`}
-            class={twMerge('w-full h-full rounded-xl animate-slide-up-delay animate-on-scroll', img.class?.image)}
+            class={twMerge('w-full h-full rounded-xl animate-slide-up-delay animate-on-scroll md:min-h-[300px] max-h-[300px] !object-cover', img.class?.image)}
             fetchpriority="high"
           />
         </div>

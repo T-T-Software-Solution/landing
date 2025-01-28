@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -12,30 +13,30 @@ const event = {
   date: 'วันที่ 31 พฤษภาคม พ.ศ. 2567',
   title: `โครงการมหา'ลัยไทบ้าน`,
   description: `บริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด ได้เข้าร่วมงานเปิดตัวหลักสูตรใหม่ในโครงการ “มหา'ลัยไทบ้าน” ซึ่งเป็นกิจกรรมที่มุ่งเน้นการนำความรู้ด้านเทคโนโลยีมาสนับสนุนและเสริมสร้างพื้นที่การศึกษาในชุมชน โครงการมหา'ลัยไทบ้านมุ่งมั่นในการสร้างระบบนิเวศการเรียนรู้ที่ยั่งยืน เพื่อยกระดับคุณภาพชีวิตของชุมชน ภายใต้การสนับสนุนจาก มูลนิธิอาสาสมัครเพื่อสังคม (มอส.) และโครงการอาสาคืนถิ่น - Return Homeland บริษัทฯ มีความภาคภูมิใจที่ได้ร่วมเป็นส่วนหนึ่งในความพยายามนี้ ร่วมฟัง ร่วมฝัน และร่วมสร้างอนาคตที่ดีกับชุมชน`,
-  image: '~/assets/images/news_events/Thai Ban University Project/ภาพหน้าแรก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/Thai Ban University Project/ภาพหน้าแรก.webp`,
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/Thai Ban University Project/ภาพหน้าแรก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Thai Ban University Project/ภาพหน้าแรก.webp`,
     alt: 'ภาพหน้าแรก',
   },
   {
-    src: '~/assets/images/news_events/Thai Ban University Project/LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_1.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Thai Ban University Project/LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_1.webp`,
     alt: 'LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_1',
   },
   {
-    src: '~/assets/images/news_events/Thai Ban University Project/LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_2.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Thai Ban University Project/LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_2.webp`,
     alt: 'LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_2',
   },
   {
-    src: '~/assets/images/news_events/Thai Ban University Project/LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_3.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Thai Ban University Project/LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_3.webp`,
     alt: 'LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_3',
   },
   {
-    src: '~/assets/images/news_events/Thai Ban University Project/LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_4.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Thai Ban University Project/LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_4.webp`,
     alt: 'LINE_ALBUM_ภูผาม่านทริป 29-31May2024_241030_4',
-  }
+  },
 ];
 ---
 

@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -14,13 +15,13 @@ const event = {
   description:
     'คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท ได้เข้าร่วมแบ่งปันความรู้ในหัวข้อ “จิตวิทยากับการเขียนโปรแกรม: เส้นทางสู่ความสำเร็จและความสุข” ซึ่งจัดโดยสมาคมโปรแกรมเมอร์แห่งประเทศไทย โดยกิจกรรมนี้มีเป้าหมายเพื่อให้ความรู้เกี่ยวกับความเชื่อมโยงระหว่างจิตวิทยาและการพัฒนาซอฟต์แวร์ รวมถึงการส่งเสริมแนวทางการทำงานอย่างมีประสิทธิภาพ อันจะช่วยยกระดับคุณภาพชีวิตการทำงานของนักพัฒนา สามารถดูย้อนหลังได้ที่',
   descriptionLink: 'https://www.youtube.com/watch?v=cCYs4xw_NRY',
-  image: '~/assets/images/news_events/psychology-and-programming/ปก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/psychology-and-programming/ปก.webp`,
   link: '/news-and-events/psychology-and-programming',
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/psychology-and-programming/ปก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/psychology-and-programming/ปก.webp`,
     alt: 'ปก',
   },
 ];

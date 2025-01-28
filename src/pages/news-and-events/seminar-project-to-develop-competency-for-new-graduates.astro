@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -14,21 +15,21 @@ const event = {
   description:
     'คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัทได้เข้าร่วมบรรยายให้ความรู้แก่นักศึกษาสาขาวิชาสารสนเทศศาสตร์ (iSchool KKU) คณะมนุษยศาสตร์และสังคมศาสตร์ มหาวิทยาลัยขอนแก่น ในหัวข้อ “ร่วมสำรวจและเตรียมความพร้อมสู่เส้นทางแห่งความสำเร็จในสายงานแห่งยุคดิจิทัล: Exploration and Preparation for Future Work in the Digital Era” \n\t บริษัทฯ ขอขอบคุณสาขาวิชาสารสนเทศศาสตร์ (iSchool KKU) คณะมนุษยศาสตร์และสังคมศาสตร์ มหาวิทยาลัยขอนแก่น ที่มอบโอกาสให้ได้ร่วมแบ่งปันประสบการณ์และองค์ความรู้ที่เป็นประโยชน์ต่อการเตรียมความพร้อมสำหรับอนาคตในยุคดิจิทัล ติดตามชมเนื้อหาย้อนหลังได้ที่',
   descriptionLink: 'https://youtu.be/w0mFQl51m0Y',
-  image: '~/assets/images/news_events/Seminar project to develop competency for new graduates/ภาพหน้าแรก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/Seminar project to develop competency for new graduates/ภาพหน้าแรก.webp`,
   link: '/news-and-events/seminar-project-to-develop-competency-for-new-graduates',
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/Seminar project to develop competency for new graduates/ภาพหน้าแรก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Seminar project to develop competency for new graduates/ภาพหน้าแรก.webp`,
     alt: 'ภาพหน้าแรก',
   },
   {
-    src: '~/assets/images/news_events/Seminar project to develop competency for new graduates/455644059_528497139522903_711459751426150700_n.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Seminar project to develop competency for new graduates/455644059_528497139522903_711459751426150700_n.webp`,
     alt: '455644059_528497139522903_711459751426150700_n',
   },
   {
-    src: '~/assets/images/news_events/Seminar project to develop competency for new graduates/455859152_528497219522895_5565238331052375558_n.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Seminar project to develop competency for new graduates/455859152_528497219522895_5565238331052375558_n.webp`,
     alt: '455859152_528497219522895_5565238331052375558_n',
   },
 ];

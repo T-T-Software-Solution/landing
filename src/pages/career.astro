@@ -6,8 +6,9 @@ import Benefits from '~/components/widgets/Benefits.astro';
 import WorkingStyle from '~/components/widgets/WorkingStyle.astro';
 import JobOpening from '~/components/widgets/JobOpening.astro';
 
+import { environmentConfig } from '~/config';
 
-const careerImage = '~/assets/images/career.webp';
+const careerImage = `${environmentConfig.baseImageUrl}/images/career.webp`;
 ---
 
 <Layout metadata={{ title: 'ร่วมงานกับเรา' }}>
@@ -15,6 +16,4 @@ const careerImage = '~/assets/images/career.webp';
   <JobOpening />
   <Benefits />
   <WorkingStyle />
-  
-  
 </Layout>

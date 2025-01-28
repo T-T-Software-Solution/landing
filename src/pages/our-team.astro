@@ -4,6 +4,7 @@ import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import TeamVisualization from '~/components/widgets/TeamVisualization.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -15,35 +16,35 @@ const executives = [
     name: 'Nakorn Rientrakunchai',
     position: 'Chief Executive Officer (CEO)',
     bio: 'เป็นผู้มีความรู้และความสามารถโดดเด่นในด้านการพัฒนาโซลูชั่นด้วยเทคโนโลยีของ Microsoft',
-    image: '~/assets/images/ceo.webp',
+    image: `${environmentConfig.baseImageUrl}/images/ceo.webp`,
     certificates: [
       'ได้รับการรับรองความเชี่ยวชาญผ่านใบรับรอง Microsoft Certified Azure Developer Associate',
       'ได้รับการรับรองความเชี่ยวชาญผ่านใบรับรอง Microsoft Certified DevOps Engineer Expert ',
       'การได้รับใบรับรองเหล่านี้ไม่เพียงแต่ยืนยันถึงความรู้และทักษะที่เขามีเท่านั้น แต่ยังรวมถึงการมีส่วนร่วมและการตอบสนองต่อความต้องการของโปรเจ็กต์ที่ซับซ้อนและการแก้ไขปัญหาที่หลากหลาย ทั้งนี้ยังสะท้อนถึงความมุ่งมั่นในการพัฒนาโปรแกรมให้ดีขึ้นอย่างไม่หยุดยั้ง',
     ],
     badgeImages: [
-      { url: '~/assets/images/devops_engineer.png' },
-      { url: '~/assets/images/azure_developer.png' },
-      { url: '~/assets/images/azure_fundamentals.png' },
+      { url: `${environmentConfig.baseImageUrl}/images/devops_engineer.png` },
+      { url: `${environmentConfig.baseImageUrl}/images/azure_developer.png` },
+      { url: `${environmentConfig.baseImageUrl}/images/azure_fundamentals.png` },
     ],
   },
   {
     name: 'Wittawat Karpkrikaew',
     position: 'Chief Technology Officer (CTO)',
     bio: 'Wittawat Karpkrikaew, หรือที่รู้จักกันในชื่อ Ponggun',
-    image: '~/assets/images/cto.webp',
+    image: `${environmentConfig.baseImageUrl}/images/cto.webp`,
     imageClass: '!object-top md:!object-center',
     certificates: [
       'ได้พิสูจน์ศักยภาพและความหลงใหลในเทคโนโลยี Microsoft ด้วยการทำงานจากที่ไกลอย่างมีประสิทธิภาพ ซึ่งสะท้อนให้เห็นถึงความสามารถในการปรับตัวและการนำเสนอผลงานที่โดดเด่นได้ในทุกสถานการณ์',
       'ได้รับการยอมรับในระดับสูงจาก Microsoft โดยได้รับรางวัล Microsoft Most Valuable Professional (MVP) ในปี 2022 สำหรับหมวดหมู่ Microsoft Azure ซึ่งเป็นการยกย่องถึงความเชี่ยวชาญและการมีส่วนร่วมอย่างต่อเนื่องกับชุมชนเทคโนโลยี',
     ],
-    badgeImages: [{ url: '~/assets/images/mvp-azure.webp' }],
+    badgeImages: [{ url: `${environmentConfig.baseImageUrl}/images/mvp-azure.webp` }],
   },
   {
     name: 'Watcharapong Suckavanich',
     position: 'General Manager (GM)',
     bio: 'ประสบการณ์ด้านบริหารโครงการและวิทยากรอบรมมากกว่า 12 ปี',
-    image: '~/assets/images/team-gm.webp',
+    image: `${environmentConfig.baseImageUrl}/images/team-gm.webp`,
     certificates: [
       'บริหารจัดการโครงการ ปรับปรุงระบบเผยแพร่ข้อมูล การจัดซื้อจัดจ้างภาครัฐ ของหน่วยงานกรุงเทพมหานคร (e-GP BMA) Phase 2',
       'วิทยากรบรรยาย แก่นักศึกษาคณะวิศวกรรมศาสตร์ มหาวิทยาลัยขอนแก่น',
@@ -120,7 +121,7 @@ const executives = [
         </div>
         <div class="">
           <Image
-            src="~/assets/images/genmentor.webp"
+            src={`${environmentConfig.baseImageUrl}/images/genmentor.webp`}
             alt="รูปรวมพนักงาน"
             class="w-full max-w-4xl rounded-lg shadow-lg"
           />
@@ -140,7 +141,7 @@ const executives = [
         </div>
         <div class="">
           <Image
-            src="~/assets/images/mvp-ponggun.webp"
+            src={`${environmentConfig.baseImageUrl}/images/mvp-ponggun.webp`}
             alt="รูปรวมพนักงาน"
             class="w-full rounded-lg shadow-lg h-80 !object-left"
           />
@@ -148,7 +149,11 @@ const executives = [
       </div>
     </section>
     <div class="flex justify-center">
-      <Image src="~/assets/images/team-photo-new.webp" alt="รูปรวมพนักงาน" class="w-full max-w-4xl rounded-lg shadow-lg" />
+      <Image
+        src={`${environmentConfig.baseImageUrl}/images/team-photo-new.webp`}
+        alt="รูปรวมพนักงาน"
+        class="w-full max-w-4xl rounded-lg shadow-lg"
+      />
     </div>
     <TeamVisualization />
   </WidgetWrapper>

@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -13,37 +14,37 @@ const event = {
   title: 'สัมมนาทางวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยขอนแก่น',
   description:
     'ผู้บริหารและทีมงานของบริษัท ได้รับเกียรติร่วมเป็นวิทยากรในงานสัมมนาทางด้านวิศวกรรมคอมพิวเตอร์เพื่อถ่ายทอดความรู้แก่นักศึกษาสาขาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยขอนแก่น บริษัทฯ ขอขอบพระคุณ ผู้ช่วยศาสตราจารย์ภาณุพงษ์ วันจันทึก ที่มอบโอกาสอันดีในการแบ่งปันความรู้แก่น้อง ๆ นักศึกษาในครั้งนี้',
-  image: '~/assets/images/news_events/Computer Engineering Seminar Khon Kaen University/ภาพหน้าแรก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/Computer Engineering Seminar Khon Kaen University/ภาพหน้าแรก.webp`,
   link: '/news-and-events/computer-engineering-seminar-khon-kaen-university',
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/Computer Engineering Seminar Khon Kaen University/ภาพหน้าแรก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Computer Engineering Seminar Khon Kaen University/ภาพหน้าแรก.webp`,
     alt: 'ภาพหน้าแรก',
   },
   {
-    src: '~/assets/images/news_events/Computer Engineering Seminar Khon Kaen University/449931230_502965982076019_5143179441403570767_n.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Computer Engineering Seminar Khon Kaen University/449931230_502965982076019_5143179441403570767_n.webp`,
     alt: '449931230_502965982076019_5143179441403570767_n',
   },
   {
-    src: '~/assets/images/news_events/Computer Engineering Seminar Khon Kaen University/450026082_502966008742683_1540242181830760051_n.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Computer Engineering Seminar Khon Kaen University/450026082_502966008742683_1540242181830760051_n.webp`,
     alt: '450026082_502966008742683_1540242181830760051_n',
   },
   {
-    src: '~/assets/images/news_events/Computer Engineering Seminar Khon Kaen University/450155619_502965972076020_2907079163669473876_n.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Computer Engineering Seminar Khon Kaen University/450155619_502965972076020_2907079163669473876_n.webp`,
     alt: '450155619_502965972076020_2907079163669473876_n',
   },
   {
-    src: '~/assets/images/news_events/Computer Engineering Seminar Khon Kaen University/450162703_502966002076017_9101776794572176927_n.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Computer Engineering Seminar Khon Kaen University/450162703_502966002076017_9101776794572176927_n.webp`,
     alt: '450162703_502966002076017_9101776794572176927_n',
   },
   {
-    src: '~/assets/images/news_events/Computer Engineering Seminar Khon Kaen University/LINE_ALBUM_สัมมนาทางวิศวกรรมคอมพิวเตอร์ 050767_241030_2.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Computer Engineering Seminar Khon Kaen University/LINE_ALBUM_สัมมนาทางวิศวกรรมคอมพิวเตอร์ 050767_241030_2.webp`,
     alt: 'LINE_ALBUM_สัมมนาทางวิศวกรรมคอมพิวเตอร์ 050767_241030_2',
   },
   {
-    src: '~/assets/images/news_events/Computer Engineering Seminar Khon Kaen University/LINE_ALBUM_สัมมนาทางวิศวกรรมคอมพิวเตอร์ 050767_241030_3.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Computer Engineering Seminar Khon Kaen University/LINE_ALBUM_สัมมนาทางวิศวกรรมคอมพิวเตอร์ 050767_241030_3.webp`,
     alt: 'LINE_ALBUM_สัมมนาทางวิศวกรรมคอมพิวเตอร์ 050767_241030_3',
   },
 ];

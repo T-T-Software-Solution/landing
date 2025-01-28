@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -13,17 +14,17 @@ const event = {
   title: 'ร่วมแนะนำบริษัทในฐานะผู้ประกอบการภายใต้อุทยานวิทยาศาสตร์ มหาวิทยาลัยขอนแก่น',
   description:
     'คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท ได้รับเกียรติร่วมแนะนำบริษัทในฐานะผู้ประกอบการภายใต้อุทยานวิทยาศาสตร์ มหาวิทยาลัยขอนแก่น ให้แก่คณะจากอุทยานวิทยาศาสตร์จังหวัดเชียงใหม่ คณะผู้แทนจากประเทศฝรั่งเศส และบริษัทสตาร์ทอัพ',
-  image: '~/assets/images/news_events/starup-kku-science-park/ปก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/starup-kku-science-park/ปก.webp`,
   link: '/news-and-events/starup-kku-science-park',
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/starup-kku-science-park/ปก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/starup-kku-science-park/ปก.webp`,
     alt: 'ปก',
   },
   {
-    src: '~/assets/images/news_events/starup-kku-science-park/461999186_10160859186898787_8115159893390656753_n.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/starup-kku-science-park/461999186_10160859186898787_8115159893390656753_n.webp`,
     alt: '461999186_10160859186898787_8115159893390656753_n',
   },
 ];

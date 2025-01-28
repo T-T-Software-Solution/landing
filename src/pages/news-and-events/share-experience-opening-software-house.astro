@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -14,13 +15,13 @@ const event = {
   description:
     'คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท  ได้ร่วมแชร์ประสบการณ์การเปิดบริษัทซอฟต์แวร์เฮาส์ (Software House) ในรูปแบบการทำงานจากระยะไกล (Remote Work) ต่อเนื่องเป็นปีที่ 11 ผ่าน [Podcast] ซึ่งเน้นการสร้างวัฒนธรรมองค์กรที่ทำงานแบบ Remote Work 100% โดยเนื้อหาที่น่าสนใจนี้สามารถรับชมย้อนหลังได้ทางช่อง YouTube ของเพจเฟซบุ๊กไทยไทป์ สามารถดูย้อนหลังได้ที่',
   descriptionLink: 'https://youtu.be/xAwXHCgQi9g',
-  image: '~/assets/images/news_events/share-experience-opening-software-house/ปก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/share-experience-opening-software-house/ปก.webp`,
   link: '/news-and-events/share-experience-opening-software-house',
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/share-experience-opening-software-house/ปก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/share-experience-opening-software-house/ปก.webp`,
     alt: 'ปก',
   },
 ];

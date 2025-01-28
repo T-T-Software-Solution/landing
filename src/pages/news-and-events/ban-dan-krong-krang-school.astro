@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -13,44 +14,44 @@ const event = {
   title: 'โรงเรียนบ้านด่านกรงกราง',
   description:
     'บริษัท ที.ที. ซอฟต์แวร์ โซลูชั่น จำกัด ได้จัดกิจกรรมจิตอาสาโดยมอบอุปกรณ์สำหรับปรับปรุงอาคาร (ทาสี) และแผ่นยางปูพื้นให้แก่ชมรมคีตะมวยไทย โรงเรียนบ้านด่านกรงกราง จังหวัดนครราชสีมา เพื่อสนับสนุนการสร้างสภาพแวดล้อมที่สวยงามและเอื้อต่อการฝึกซ้อมของสมาชิกชมรม บริษัทฯ ขอขอบคุณที่ได้มีโอกาสร่วมเป็นส่วนหนึ่งในการสนับสนุนกิจกรรมสร้างสรรค์และการพัฒนาโรงเรียน',
-  image: '~/assets/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/ภาพหน้าแรก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/ภาพหน้าแรก.webp`,
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/ภาพหน้าแรก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/ภาพหน้าแรก.webp`,
     alt: 'ภาพหน้าแรก',
   },
   {
-    src: '~/assets/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/462798579_568140758891874_8043639945717320941_n.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/462798579_568140758891874_8043639945717320941_n.webp`,
     alt: '462798579_568140758891874_8043639945717320941_n.webp',
   },
   {
-    src: '~/assets/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_1.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_1.webp`,
     alt: 'LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_1.webp',
   },
   {
-    src: '~/assets/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_2.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_2.webp`,
     alt: 'LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_2.webp',
   },
   {
-    src: '~/assets/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_3.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_3.webp`,
     alt: 'LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_3.webp',
   },
   {
-    src: '~/assets/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_4.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_4.webp`,
     alt: 'LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_4.webp',
   },
   {
-    src: '~/assets/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_5.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_5.webp`,
     alt: 'LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_5.webp',
   },
   {
-    src: '~/assets/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_6.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_6.webp`,
     alt: 'LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_6.webp',
   },
   {
-    src: '~/assets/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_7.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_7.webp`,
     alt: 'LINE_ALBUM_20241012 โรงเรียนบ้านด่านกรงกราง_241028_7.webp',
   },
 ];

@@ -3,6 +3,7 @@ import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import ProjectGrid from '~/components/widgets/ProjectGrid.astro';
+import { environmentConfig } from '~/config';
 
 const metadata = {
   title: 'ผลงานของเรา | Our Works',
@@ -12,33 +13,33 @@ const governmentProjects = [
   {
     title: 'หน่วยงานกรุงเทพมหานคร',
     description: 'ระบบเผยแพร่ข้อมูลจัดซื้อจัดจ้างภาครัฐของหน่วยงานกรุงเทพมหานคร',
-    image: '~/assets/images/protal-egp2.webp',
+    image: `${environmentConfig.baseImageUrl}/images/protal-egp2.webp`,
     link: 'https://egp2.bangkok.go.th',
   },
   {
     title: 'อบรมหลักสูตรการใช้งาน ระบบเผยแพร่ข้อมูลการจัดซื้อจัดจ้างภาครัฐของหน่วยงานกรุงเทพมหานคร ระยะที่ 2',
     description:
       'เมื่อวันที่ 18 กรกฎาคม 2567 บริษัทฯได้จัดอบรมหลักสูตรการใช้งาน ระบบเผยแพร่ข้อมูลการจัดซื้อจัดจ้างภาครัฐของหน่วยงานกรุงเทพมหานคร ระยะที่ 2 โดยลุล่วงไปด้วยดี และได้ส่งงานตามกรอบเวลา ซึ่งแสดงให้เห็นถึงศักยภาพของบริษัทฯ ได้เป็นอย่างดี',
-    image: '~/assets/images/seminar-egp.webp',
+    image: `${environmentConfig.baseImageUrl}/images/seminar-egp.webp`,
   },
 ];
 
 const privateProjects = [
   {
-    image: '~/assets/images/eventbanana-logo.png',
+    image: `${environmentConfig.baseImageUrl}/images/eventbanana-logo.png`,
     imageClass: 'p-4 min-h-60 !object-contain !object-center',
     title: 'Event Banana',
     description: 'อีเวนท์ บานาน่า เป็นแพลตฟอร์มออนไลน์ที่รวบรวมสถานที่จัดงานกว่า 5,000 แห่งทั่วไทย และเสนอเมนูอาหารสำหรับงานต่าง ๆ มากกว่า 2,000 เมนู เหมาะสำหรับการจัดประชุม งานแต่ง งานเลี้ยง และงานองค์กร ช่วยให้การจัดงานง่ายขึ้นในทุกขั้นตอน',
   },
   {
-    image: '~/assets/images/easyinsure.webp',
+    image: `${environmentConfig.baseImageUrl}/images/easyinsure.webp`,
     title: 'Easyinsure',
     description:
       'โบรกเกอร์ประกันภัยออนไลน์ที่ให้บริการครบวงจร รวดเร็วและสะดวกสบาย พร้อมข้อเสนอที่เหมาะสมที่สุดสำหรับคุณ จ่ายง่าย ได้ความคุ้มครองทันที',
     link: '/our-works/detail/easyinsure',
   },
   {
-    image: '~/assets/images/siamlaw.webp',
+    image: `${environmentConfig.baseImageUrl}/images/siamlaw.webp`,
     title: 'Siamlaw Group',
     description:
       'พัฒนาระบบจัดเก็บข้อมูลคดีความ ติดตามสถานะคดีความ ทั้งส่วนของทนายความ เจ้าหน้าที่ รวมถึงการวางบิล ออกใบกำกับภาษี และรายงานสำหรับผู้บริหาร',
@@ -50,23 +51,13 @@ const internationalProjects = [
     title: 'WRM STORM Manager & OPS Manager',
     description:
       'ระบบจัดการทรัพยากรในกรณีเกิดเหตุฉุกเฉิน เช่น การซ่อมแซมโครงสร้างพื้นฐานของสาธารณูปโภค (ระบบไฟฟ้า, ระบบจ่ายแก๊ส ฯลฯ) และการดับไฟป่า\nระบบนี้มีความสามารถในการติดตามทรัพยากรทั้งบุคลากรและอุปกรณ์ที่ใช้ในเหตุการณ์ จัดหาอาหารและที่พัก รวมถึงการบริหารจัดการค่าใช้จ่ายสำหรับผู้ให้บริการในสถานการณ์ฉุกเฉิน\nผู้ใช้สามารถอัปเดตข้อมูลการทำงาน ส่งรายงาน และค้นหาเส้นทางไปยังที่พักผ่านแอปพลิเคชันบนมือถือได้อย่างสะดวก ระบบนี้ช่วยให้การดำเนินงานในสถานการณ์ฉุกเฉินเป็นไปอย่างรวดเร็วและมีประสิทธิภาพสูงสุด',
-    image: '~/assets/images/storm.webp',
+    image: `${environmentConfig.baseImageUrl}/images/storm.webp`,
     imageClass: 'md:h-72',
-    badgeImage: '~/assets/images/WRM.webp',
+    badgeImage: `${environmentConfig.baseImageUrl}/images/WRM.webp`,
     link: '/our-works/detail/wrm',
   },
 ];
 
-const certificateProjects = [
-  {
-    image: '~/assets/images/certificate_of_work_event_banana.webp',
-    imageClass: 'h-fit md:h-full',
-  },
-  {
-    image: '~/assets/images/certificate_of_work_wrm.webp',
-    imageClass: 'h-fit md:h-full',
-  },
-];
 ---
 
 <Layout metadata={metadata}>
@@ -104,10 +95,6 @@ const certificateProjects = [
       <h2 class="text-3xl font-bold mb-6">ผลงานในต่างประเทศ (บางส่วน)</h2>
       <ProjectGrid projects={internationalProjects} classes={{ itemContent: 'animate-on-scroll' }} />
     </section>
-    <!-- <section>
-      <h2 class="text-3xl font-bold mb-6">หนังสือรับรองผลงาน (Certificate of Work)</h2>
-      <ProjectGrid projects={certificateProjects} classes={{ itemContent: 'h-full animate-on-scroll' }} />
-    </section> -->
   </WidgetWrapper>
 </Layout>
 

@@ -7,6 +7,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import ChatBotAi from '~/components/widgets/ChatBotAi.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -93,19 +94,19 @@ const metadata = {
       <Fragment slot="image">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full h-full">
           <Image
-            src="~/assets/images/db-design.webp"
+            src={`${environmentConfig.baseImageUrl}/images/db-design.webp`}
             alt="ระบบฐานข้อมูล"
             class="w-full h-72 lg:col-span-2 animate-on-scroll"
             style={`--animation-order: 0;`}
           />
           <Image
-            src="~/assets/images/report-design.webp"
+            src={`${environmentConfig.baseImageUrl}/images/report-design.webp`}
             alt="ระบบรายงาน"
             class="w-full h-72 animate-on-scroll"
             style={`--animation-order: 1;`}
           />
           <Image
-            src="~/assets/images/login-any.webp"
+            src={`${environmentConfig.baseImageUrl}/images/login-any.webp`}
             alt="ระบบล็อกอิน"
             class="w-full h-72 animate-on-scroll"
             style={`--animation-order: 2;`}
@@ -194,7 +195,7 @@ const metadata = {
       </Fragment>
       <Fragment slot="image">
         <Image
-          src="~/assets/images/data-visualize.webp"
+          src={`${environmentConfig.baseImageUrl}/images/data-visualize.webp`}
           alt="Data Visualization"
           class="w-full h-full rounded-lg animate-on-scroll"
         />
@@ -246,17 +247,21 @@ const metadata = {
       <Fragment slot="image">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-full">
           <Image
-            src="~/assets/images/service-azure.webp"
+            src={`${environmentConfig.baseImageUrl}/images/service-azure.webp`}
             alt="Azure Cloud"
             class="w-full h-80 md:col-span-2 rounded-lg animate-on-scroll"
           />
           <div class="relative animate-on-scroll">
-            <Image src="~/assets/images/ceo.webp" alt="ทีมงานมืออาชีพ" class="w-full h-72 rounded-lg" />
+            <Image
+              src={`${environmentConfig.baseImageUrl}/images/ceo.webp`}
+              alt="ทีมงานมืออาชีพ"
+              class="w-full h-72 rounded-lg"
+            />
             {
               [
-                { url: '~/assets/images/devops_engineer.png' },
-                { url: '~/assets/images/azure_developer.png' },
-                { url: '~/assets/images/azure_fundamentals.png' },
+                { url: `${environmentConfig.baseImageUrl}/images/devops_engineer.png` },
+                { url: `${environmentConfig.baseImageUrl}/images/azure_developer.png` },
+                { url: `${environmentConfig.baseImageUrl}/images/azure_fundamentals.png` },
               ].map(({ url }, index) => (
                 <div
                   class={twMerge(
@@ -277,14 +282,14 @@ const metadata = {
           </div>
           <div class="relative animate-on-scroll">
             <Image
-              src="~/assets/images/mvp-ponggun.webp"
+              src={`${environmentConfig.baseImageUrl}/images/mvp-ponggun.webp`}
               alt="ทีมงานมืออาชีพ"
               class="w-full h-72 rounded-lg md:!object-left min-[490px]:!object-top !object-left animate-on-scroll"
             />
             <div class={twMerge('absolute bottom-0 right-0 bg-white rounded-l-lg p-2 min-[490px]:right-0 ')}>
               <div class="w-12 h-12 flex items-center justify-center">
                 <Image
-                  src={'~/assets/images/mvp-azure.webp'}
+                  src={`${environmentConfig.baseImageUrl}/images/mvp-azure.webp`}
                   alt="mvp-azure"
                   class="w-10 h-10 animate-on-scroll !object-contain"
                 />

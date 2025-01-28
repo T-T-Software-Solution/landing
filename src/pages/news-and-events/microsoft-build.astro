@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -13,13 +14,13 @@ const event = {
   title: 'Microsoft Build',
   description: `คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท ได้เข้าร่วมและถ่ายทอดความรู้ในงาน "Microsoft Build" ซึ่งเป็นงานสัมมนาระดับโลกที่จัดขึ้นเพื่อเผยแพร่และแนะนำเทคโนโลยีใหม่ ๆ ของ Microsoft ภายในงานมีการพูดถึงเทคโนโลยีหลากหลายด้าน เช่น Power Platform, Azure Services, Microsoft Data Service และ Azure AI โดยมีการเน้นพิเศษในเรื่องของการนำเทคโนโลยี AI มาประยุกต์ใช้ให้เกิดประโยชน์และใช้งานได้ง่ายยิ่งขึ้น`,
   descriptionLink: 'https://medium.com/t-t-software-solution/สรุปเนื้อหาจากงาน-thailand-developer-day-211d9171f66d',
-  image: '~/assets/images/news_events/microsoft-build/ปก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/microsoft-build/ปก.webp`,
   link: '/news-and-events/microsoft-build',
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/microsoft-build/ปก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/microsoft-build/ปก.webp`,
     alt: 'ปก',
   },
 ];

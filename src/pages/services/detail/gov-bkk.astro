@@ -1,35 +1,39 @@
 ---
 import Image from '~/components/common/Image.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'ผลงาน WRM | Our Works',
+  title: 'GOV BKK | Services',
 };
 
 const features = [
-  'ระบบบันทึกเหตุการณ์ภัยพิบัติ',
-  'ระบบวางแผนแรงงานและต้นทุน',
-  'ระบบแผนที่',
-  'ระบบการจัดการที่พักสําหรับบุคคลากร',
-  'ระบบบริหารจัดการวัสดุและครุภัณฑ์',
-  'ระบบการเงิน',
-  'รายงานสรุปผล',
+  'Popup News',
+  'บริการด่วนสำหรับประชาชน',
+  'ข่าวประชาสัมพันธ์',
+  'ข้อมูลเปิดสำหรับประชาชน',
+  'ข้อมูลการเดินทาง',
+  'แบบสำรวจประชาชน',
+  'คำถามที่พบบ่อย',
 ];
 
-const screens = [1, 2, 3, 4, 5, 6, 7, 8];
+const screens = [
+  `~/assets/images/popup-news.webp`,
+  `~/assets/images/services.webp`,
+  `~/assets/images/gallory.webp`,
+  `~/assets/images/survey.webp`,
+  `~/assets/images/weblink.webp`,
+];
 ---
 
 <Layout metadata={metadata}>
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
     <div class="wrm-container max-w-4xl mx-auto px-4 py-8 pt-12 lg:pt-0">
-      <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-primary pb-2 mb-6 animate-on-scroll">Storm Manager (USA)</h2>
+      <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-primary pb-2 mb-6 animate-on-scroll">GOV BKK</h2>
 
       <p class="text-gray-700 mb-4 animate-on-scroll">
-
-        พัฒนาระบบบริหารจัดการต้นทุนและทรัพยากรมนุษย์ ที่เกิดขึ้นใน USA หรือ Storm Manager ในรูปแบบ Web Application และ
-        Web Service ซึ่งประกอบด้วยคุณสมบัติต่างๆ ได้แก่:
+        บริการภาครัฐกรุงเทพมหานคร ครบจบในที่เดียว, บริการให้บริการข้อมูลหลากหลายให้กับประชาชน, แบบสำรวจ, การเดินทาง
+        ในกรุงเทพมหานคร
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
@@ -45,21 +49,21 @@ const screens = [1, 2, 3, 4, 5, 6, 7, 8];
 
       <div class="flex justify-center mb-6 animate-on-scroll">
         <a
-          href="https://www.wrmsoftware.com/"
+          href="https://govbkk.tt-ss.net/"
           target="_blank"
           rel="noopener noreferrer"
           class="btn-primary sm:mb-0 break-all"
         >
-          หน้าหลักของ WRM
+          หน้าหลักของ GOV BKK
         </a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
         {
-          screens.map((num) => (
+          screens.map((screen, index) => (
             <Image
-              src={`${environmentConfig.baseImageUrl}/images/wrm_screen/wrm-screen-${num}.webp`}
-              alt={`WRM Screen ${num}`}
+              src={screen}
+              alt={`GOV BKK Screen ${index}`}
               class="w-full h-full rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:scale-105 !object-left-top animate-on-scroll"
             />
           ))

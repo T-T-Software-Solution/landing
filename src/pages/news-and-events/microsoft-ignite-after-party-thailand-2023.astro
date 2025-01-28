@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -13,21 +14,21 @@ const event = {
   title: `ร่วมงาน “Microsoft Ignite – After Party Thailand 2023`,
   description: `คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท ได้เข้าร่วมงาน “Microsoft Ignite – After Party Thailand 2023” และได้รับเกียรติเป็นวิทยากรบรรยายในหัวข้อ Azure Chaos Studio: Improve resilience through chaos engineering and fault injection สามารถดูย้อนหลังได้ที่`,
   descriptionLink: 'https://youtu.be/suoJ_S52HN4',
-  image: '~/assets/images/news_events/microsoft-ignite-after-party-thailand-2023/ปก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/microsoft-ignite-after-party-thailand-2023/ปก.webp`,
   link: '/news-and-events/microsoft-ignite-after-party-thailand-2023',
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/microsoft-ignite-after-party-thailand-2023/ปก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/microsoft-ignite-after-party-thailand-2023/ปก.webp`,
     alt: 'ปก',
   },
   {
-    src: '~/assets/images/news_events/microsoft-ignite-after-party-thailand-2023/409380320_10160293065468787_8649378213666886989_n.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/microsoft-ignite-after-party-thailand-2023/409380320_10160293065468787_8649378213666886989_n.webp`,
     alt: 'microsoft-ignite-after-party-thailand-2023-1',
   },
   {
-    src: '~/assets/images/news_events/microsoft-ignite-after-party-thailand-2023/409288239_10160293065298787_5259203664403619400_n.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/microsoft-ignite-after-party-thailand-2023/409288239_10160293065298787_5259203664403619400_n.webp`,
     alt: 'microsoft-ignite-after-party-thailand-2023-2',
   },
 ];

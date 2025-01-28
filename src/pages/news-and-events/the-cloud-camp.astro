@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -13,13 +14,13 @@ const event = {
   title: `ร่วมแนะนำผู้เข้าร่วมโครงการ “The Cloud Camp” ซึ่งจัดโดย Jumpbox`,
   description: `คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท ร่วมแนะนำผู้เข้าร่วมโครงการ “The Cloud Camp” ซึ่งจัดโดย Jumpbox โดยมีการบรรยายในหัวข้อเกี่ยวกับการใช้งานเทคโนโลยี Cloud Native ทั้งนี้ ได้กล่าวถึงบทบาทของ .NET Aspire ในการช่วยลดเวลาในการติดตั้ง Backing Service สำหรับการสังเกตการณ์ระบบ (Observability) เช่น การติดตามสถิติการทำงานของแอปพลิเคชัน (Application Metrics), การตรวจสอบการทำงานแบบกระจาย (Distributed Tracing), การรวมบันทึกข้อมูล (Log Aggregation) และการค้นหาบริการ (Service Discovery) รวมถึงการเพิ่มประสิทธิภาพด้านกลยุทธ์เพื่อความเสถียรของระบบ (Resiliency Strategy) อาทิ การกำหนด Timeout, Circuit Breaker และ Retry Attempts ซึ่งช่วยให้การดูแลรักษาระบบมีประสิทธิภาพมากยิ่งขึ้น สามารถดูย้อนหลังได้ที่`,
   descriptionLink: 'https://youtu.be/eozUs3x7hkA',
-  image: '~/assets/images/news_events/the-cloud-camp/หน้าปก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/the-cloud-camp/หน้าปก.webp`,
   link: '/news-and-events/the-cloud-camp',
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/the-cloud-camp/หน้าปก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/the-cloud-camp/หน้าปก.webp`,
     alt: 'ปก',
   },
 ];

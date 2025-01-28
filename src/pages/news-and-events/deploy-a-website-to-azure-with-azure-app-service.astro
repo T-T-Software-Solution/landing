@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -13,13 +14,13 @@ const event = {
   title: 'Deploy a Website to Azure with Azure App Service',
   description: `คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท  ได้ร่วมแบ่งปันความรู้ผ่าน Live ของ Microsoft Reactor โดยบรรยายในหัวข้อ “Deploy a Website to Azure with Azure App Service” ซึ่งเป็นการสาธิตและแนะนำวิธีการนำเว็บไซต์ขึ้นสู่แพลตฟอร์ม Azure โดยใช้บริการ Azure App Service เพื่อช่วยให้นักพัฒนาและผู้สนใจสามารถเรียนรู้ขั้นตอนและแนวปฏิบัติที่ดีในการใช้เทคโนโลยีของ Microsoft ในการพัฒนาและบริหารจัดการเว็บไซต์ ดูข้อมูลเพิ่มเติมได้ที่ Slide:`,
   descriptionLink: 'https://1drv.ms/p/s!At70Q7njCy4Wg4ASSsqo1Derb_Lp2w?e=Qq2ZhU',
-  image: '~/assets/images/news_events/deploy-a-website-to-azure-with-azure-app-service/ปก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/deploy-a-website-to-azure-with-azure-app-service/ปก.webp`,
   link: '/news-and-events/deploy-a-website-to-azure-with-azure-app-service',
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/deploy-a-website-to-azure-with-azure-app-service/ปก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/deploy-a-website-to-azure-with-azure-app-service/ปก.webp`,
     alt: 'ปก',
   },
 ];

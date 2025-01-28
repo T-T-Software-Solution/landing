@@ -2,6 +2,7 @@
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -12,64 +13,64 @@ const event = {
   date: 'วันที่ 6 มีนาคม 2567',
   title: `การเตรียมความพร้อมก่อนการทำงานด้านการพัฒนาซอฟต์แวร์`,
   description: `คุณวิทวัส กาพย์ไกรแก้ว ผู้บริหารบริษัท และทีมงาน ได้เข้าร่วมบรรยายแก่นักศึกษาสาขาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยขอนแก่น ในหัวข้อ “การเตรียมความพร้อมก่อนการทำงานด้านการพัฒนาซอฟต์แวร์” เป็นครั้งที่ 2 บริษัทฯ หวังเป็นอย่างยิ่งว่านักศึกษาจะได้รับประโยชน์จากประสบการณ์ในครั้งนี้อย่างเต็มที่ และสามารถนำความรู้และทักษะที่ได้รับไปปรับใช้ในการเตรียมตัวเข้าสู่สายงานหรือการศึกษาต่อไปในอนาคต บริษัทฯ ขอขอบคุณ รศ.ดร.กานดา สายแก้ว  ที่ให้การสนับสนุนและเปิดโอกาสในการจัดกิจกรรมนี้`,
-  image: '~/assets/images/news_events/Preparation before working in software development/ภาพหน้าแรก.webp',
+  image: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/ภาพหน้าแรก.webp`,
 };
 
 const images = [
   {
-    src: '~/assets/images/news_events/Preparation before working in software development/ภาพหน้าแรก.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/ภาพหน้าแรก.webp`,
     alt: 'ภาพหน้าแรก',
   },
   {
-    src: '~/assets/images/news_events/Preparation before working in software development/431323956_431698935869391_8059239596062906189_n.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/431323956_431698935869391_8059239596062906189_n.webp`,
     alt: '431323956_431698935869391_8059239596062906189_n',
   },
   {
-    src: '~/assets/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_1.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_1.webp`,
     alt: 'LINE_ALBUM_20240306.COE_241030_1',
   },
   {
-    src: '~/assets/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_2.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_2.webp`,
     alt: 'LINE_ALBUM_20240306.COE_241030_2',
   },
   {
-    src: '~/assets/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_3.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_3.webp`,
     alt: 'LINE_ALBUM_20240306.COE_241030_3',
   },
   {
-    src: '~/assets/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_4.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_4.webp`,
     alt: 'LINE_ALBUM_20240306.COE_241030_4',
   },
   {
-    src: '~/assets/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_5.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_5.webp`,
     alt: 'LINE_ALBUM_20240306.COE_241030_5',
   },
   {
-    src: '~/assets/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_6.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_6.webp`,
     alt: 'LINE_ALBUM_20240306.COE_241030_6',
   },
   {
-    src: '~/assets/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_7.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_7.webp`,
     alt: 'LINE_ALBUM_20240306.COE_241030_7',
   },
   {
-    src: '~/assets/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_9.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_9.webp`,
     alt: 'LINE_ALBUM_20240306.COE_241030_9',
   },
   {
-    src: '~/assets/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_10.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_10.webp`,
     alt: 'LINE_ALBUM_20240306.COE_241030_10',
   },
   {
-    src: '~/assets/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_11.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_11.webp`,
     alt: 'LINE_ALBUM_20240306.COE_241030_11',
   },
   {
-    src: '~/assets/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_12.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_12.webp`,
     alt: 'LINE_ALBUM_20240306.COE_241030_12',
   },
   {
-    src: '~/assets/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_13.webp',
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/LINE_ALBUM_20240306.COE_241030_13.webp`,
     alt: 'LINE_ALBUM_20240306.COE_241030_13',
   },
 ];

@@ -7,15 +7,19 @@ export const headerData = {
       href: getPermalink('/'),
     },
     {
-      text: 'สินค้า/บริการ',
+      text: 'ผลิตภัณฑ์',
+      href: '/products',
+    },
+    {
+      text: 'บริการ',
       href: '/services',
     },
     {
-      text: 'ผลงานของเรา',
+      text: 'ผลงาน',
       href: '/our-works',
     },
     {
-      text: 'มาตรฐาน และใบรับรองของเรา',
+      text: 'มาตรฐาน และใบรับรอง',
       href: '/our-standard',
     },
     {

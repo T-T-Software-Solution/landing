@@ -56,14 +56,15 @@ const executives = [
 
 <Layout metadata={metadata}>
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <div class="pt-6">
     <Headline
       title="ทีมงานของเรา"
       subtitle="พบกับทีมผู้นำและบุคลากรที่มีความสามารถของเรา ผู้ขับเคลื่อนความสำเร็จขององค์กร"
       classes={{ container: 'pt-12 lg:pt-0' }}
     />
-
+    </div>
     <section class="mb-16">
-      <h2 class="text-3xl font-bold mb-8 text-center">ผู้บริหาร</h2>
+      <h2 class="text-3xl font-bold mb-6 text-center">ผู้บริหาร</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {
           executives.map((exec) => (

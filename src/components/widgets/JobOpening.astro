@@ -4,82 +4,6 @@ import Image from '~/components/common/Image.astro';
 import { environmentConfig } from '~/config';
 const jobs = [
   {
-    image: `${environmentConfig.baseImageUrl}/images/jobs/SE.webp`,
-    title: 'Software Engineer',
-    description: {
-      sections: [
-        {
-          title: 'Analyze and design systems',
-          items: [
-            'Collaborate with the team to identify user requirements and plan full-stack software development, covering both frontend and backend components.',
-            'Develop flowcharts, technical specifications, and system architecture that address the entire application stack (frontend, backend, database).',
-          ],
-        },
-        {
-          title: 'Work with cross-functional teams',
-          items: [
-            'Communicate with the Product Owner, UX/UI Designer, backend engineers, and frontend developers to ensure alignment with business and technical requirements.',
-            'Work closely with DevOps and QA teams to streamline deployment pipelines and ensure smooth integration across all layers of the application.',
-          ],
-        },
-        {
-          title: 'Develop and maintain software (Frontend & Backend)',
-          items: [
-            'Design and develop high-quality frontend components using modern frameworks (e.g., React, Angular, Vue).',
-            'Implement responsive and accessible UI designs, ensuring optimal performance across multiple devices.',
-            'Build and maintain backend services, APIs, and databases, ensuring robust and scalable infrastructure.',
-            'Write clean, well-tested code following best practices and industry standards, both for frontend and backend services.',
-            'Debug and resolve issues across the entire stack, including frontend, backend, and database.',
-          ],
-        },
-        {
-          title: 'Participate in code reviews and collaboration',
-          items: [
-            'Actively participate in peer code reviews for both frontend and backend code.',
-            'Provide and incorporate feedback on performance, security, and maintainability across the full stack.',
-          ],
-        },
-        {
-          title: 'Test and ensure quality (Frontend & Backend)',
-          items: [
-            'Write and execute unit, integration, and end-to-end tests for frontend and backend components to ensure overall system quality.',
-            'Ensure that both frontend and backend systems meet the specified requirements and perform optimally in production environments.',
-          ],
-        },
-        {
-          title: 'Maintain and improve software:',
-          items: [
-            'Continuously monitor and enhance both frontend and backend components for optimal performance, security, and scalability.',
-            'Keep the software operational and up-to-date with new features and patches, ensuring proper integration of frontend and backend updates.',
-            'Create comprehensive documentation, covering both frontend and backend systems for long-term maintenance and support.',
-          ],
-        },
-      ],
-    },
-    qualifications: [
-      "Bachelor's degree in Computer Science, Computer Engineering, or a related field.",
-      'At least 1-3 years of experience as a Software Engineer or Software Developer.',
-      'Strong proficiency in JavaScript, TypeScript, C# and SQL.',
-      'Experience with React, Next.js, .NET Core, PostgreSQL, MSSQL, Redis and MongoDB.',
-      'Solid understanding of software development principles and methodologies (e.g., Agile, DevOps).',
-      'Excellent problem-solving, analytical, and debugging skills.',
-      'Ability to develop and test software using Test-Driven Development (TDD) methodology.',
-      'Strong communication skills and ability to work well within a team.',
-      'Ability to work in an adaptive environment and manage change effectively.',
-      'Able to work with minimal supervision.',
-      'Passion for staying up-to-date with the latest technology trends and best practices.',
-    ],
-    locations: {
-      remote: 'Remote Working - Work Anywhere',
-      office: ['KKU Science Park', 'Glowfish Khon Kaen'],
-    },
-    contact: {
-      tel: '06-1018-1275 (HR)',
-      email: 'hr@tt-ss.net',
-    },
-    applyLink: 'https://forms.gle/gm33nzXHeRXcsm669',
-  },
-  {
     image: `${environmentConfig.baseImageUrl}/images/jobs/Net.webp`,
     title: '.NET (C#) Developer',
     description: {
@@ -122,65 +46,8 @@ const jobs = [
     applyLink: 'https://forms.gle/ZReYauwG16ZhgeM68',
   },
   {
-    image: `${environmentConfig.baseImageUrl}/images/jobs/DevOps.webp`,
-    title: 'DevOps Engineer',
-    description: {
-      sections: [
-        {
-          title: 'The Opportunity',
-          items: [
-            'Our site reliability team is based remotely in Thailand. As a DevOps Engineer, you will work closely with the SRE Leader to build automated tools for enhancing high productivity in all environments.',
-            "T.T. Software Solutions use technology to lead the enterprise software like natural crisis manager in the USA using cloud scalable infrastructure, we're providing a leading solution software to help people live better with a usually natural disaster.",
-            'We are looking for a software engineer who focuses on productivity by crafting efficient software to join our friendly team.',
-          ],
-        },
-        {
-          title: 'Responsibilities',
-          items: [
-            'Automating manual tasks. For example, configuration changes, creating tools for automatic tasks, shortening delivery software process, etc.',
-            'Ensure systems are available with a minimum of manual effort',
-            'Supporting and troubleshooting developers where needed',
-            'Helping to create the DevOps culture',
-            'Sharing knowledge of DevOps across the software engineering team',
-          ],
-        },
-        {
-          title: 'Minimum Requirements',
-          items: [
-            'Strong programming skills as a former backend engineer',
-            'Problem Solving Skill',
-            'Effective communication skills to be able to explain your thought process and reasonable proposal in a global team environment.',
-            'Experience in container-based technology e.g. Docker.',
-          ],
-        },
-        {
-          title: 'Expected Requirements',
-          items: [
-            '3+ years of software engineering experience using object-oriented languages, preferably JavaScript/TypeScript.',
-            'Experience managing Linux-based/Windows-based systems in a public cloud (Preferred, Microsoft Azure)',
-            'Experience in writing automated tools using GitHub Actions and JavaScript/TypeScript',
-            'Experience in Infrastructure as Code (Terraform)',
-            'Experience with Kubernetes',
-            'Ability to troubleshoot systems issues quickly and accurately',
-            'Strong knowledge of Linux',
-          ],
-        },
-      ],
-    },
-    qualifications: [],
-    locations: {
-      remote: 'Remote Working - Work Anywhere',
-      office: ['KKU Science Park', 'Glowfish Khon Kaen'],
-    },
-    contact: {
-      tel: '06-1018-1275 (HR)',
-      email: 'hr@tt-ss.net',
-    },
-    applyLink: 'https://forms.gle/TgKurf9VQ7rHgJYU7',
-  },
-  {
     image: `${environmentConfig.baseImageUrl}/images/jobs/Tester.webp`,
-    title: 'Tester (Automate+Manual)',
+    title: 'QA/Tester (Automate+Manual)',
     description: {
       sections: [
         {

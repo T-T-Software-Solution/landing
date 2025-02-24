@@ -53,8 +53,64 @@ const images = [
 
 const pdpa = [
   {
-    src: `${environmentConfig.baseImageUrl}/images/our_certificates/Nakorn/Nakorn-Professional.webp`,
-    alt: 'Nakorn-Professional',
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/1.นคร%20เหรียญตระกูลชัย.webp`,
+    alt: 'pdpa1',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/2.วิทวัส%20กาพย์ไกรแก้ว.webp`,
+    alt: 'pdpa2',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/3.วัชรพงษ์_%20สุขวนิช.webp`,
+    alt: 'pdpa3',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/4.ธาดา%20หวังธรรมมั่ง.webp`,
+    alt: 'pdpa4',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/5.วชิรวิทย์%20ยวงวิภักดิ์.webp`,
+    alt: 'pdpa5',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/6.วีระพันธุ์%20ไทยรัก.webp`,
+    alt: 'pdpa6',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/7.รัฐพล%20สกลชัยไพรสัณฑ์.webp`,
+    alt: 'pdpa7',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/8.นที%20เหรียญตระกูลชัย.webp`,
+    alt: 'pdpa8',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/9.สิรามล%20สกลชัยไพรสัณฑ์.webp`,
+    alt: 'pdpa9',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/10.สุทธิพร%20ภูโคกสูง.webp`,
+    alt: 'pdpa10',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/11.อนัญพร%20กังวานเกียรติชัย.webp`,
+    alt: 'pdpa11',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/12.วินัย%20ภูสีทอง.webp`,
+    alt: 'pdpa12',
+  },
+  // {
+  //   src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/13นัฐชรินทร์%20จันทร์หอม.webp`,
+  //   alt: 'pdpa13',
+  // },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/14.ภาณุพงศ์%20ฉ่ำสมบูรณ์.webp`,
+    alt: 'pdpa14',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/15.Yuraporn%20Nanthasuta.webp`,
+    alt: 'pdpa15',
   },
 ]
 ---
@@ -142,11 +198,31 @@ const pdpa = [
         <Headline title="PDPA" classes={{ container: 'pt-12 lg:pt-0 lg:mb-8' }} />
         <div class="flex justify-center md:items-center xl:items-start">
           <p class="flex justify-center md:text-lg md:flex-row flex-col items-center">
-            ทีมงานของเราได้ผ่านการอบรมเกี่ยวกับ
+        ทีมงานของเราได้ผ่านการอบรมเกี่ยวกับ
             <span class="text-primary">ความปลอดภัยของข้อมูลส่วนบุคคล (PDPA)</span>
             และมีการปฏิบัติตามกฎหมายอย่างเคร่งครัด
           </p>
         </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 mx-auto">
+          {
+            pdpa.map((pdpa) => (
+              <div class="image-container border-gray-300 p-2">
+          <a href={pdpa.src} class="image-link">
+            <Image src={pdpa.src} alt={pdpa.alt} class="w-full h-full !object-contain mx-auto border-2" />
+          </a>
+              </div>
+            ))
+          }
+        </div>
+
+        <style>
+          .image-link img {
+            transition: transform 0.3s ease;
+          }
+          .image-link:hover img {
+            transform: scale(1.1);
+          }
+        </style>
       </div>
     </div>
   </WidgetWrapper>

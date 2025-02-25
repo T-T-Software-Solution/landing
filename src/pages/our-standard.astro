@@ -122,10 +122,12 @@ const pdpa = [
       <input type="radio" name="slider" id="tab-1" checked />
       <input type="radio" name="slider" id="tab-2" />
       <input type="radio" name="slider" id="tab-3" />
+      <input type="radio" name="slider" id="tab-4" />
       <header>
-        <label for="tab-1" class="tab-1">มาตรฐานของเรา</label>
-        <label for="tab-2" class="tab-2">ใบรับรองของเรา</label>
-        <label for="tab-3" class="tab-3">PDPA</label>
+        <label for="tab-1" class="tab-1">ISO 29110</label>
+        <label for="tab-2" class="tab-2">Microsoft</label>
+        <!-- <label for="tab-3" class="tab-3">PDPA</label>
+        <label for="tab-4" class="tab-4">PDPA DPO</label> -->
         <div class="slider"></div>
       </header>
     </div>
@@ -256,68 +258,70 @@ const pdpa = [
   }
 
   /*---------- slider tab selector -----------*/
-  .wrapper {
-    width: 100%;
-    max-width: 480px;
-    background: #fff;
-  }
+  :root {
+  --tab-count: 2; /* Change this to match the number of tabs */
+}
 
-  .wrapper header {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 480px;
-  }
-  header label {
-    height: 100%;
-    z-index: 2;
-    width: 30%;
-    display: flex;
-    cursor: pointer;
-    font-size: 18px;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.3s ease;
-  }
-  #tab-1:checked ~ header .tab-1,
-  #tab-2:checked ~ header .tab-2,
-  #tab-3:checked ~ header .tab-3 {
-    color: #fff;
-  }
-  header label:nth-child(2) {
-    width: 40%;
-  }
-  header .slider {
-    position: absolute;
-    height: 93%;
-    border-radius: inherit;
-    background: linear-gradient(145deg, var(--aw-color-primary) 0%, #ffd000 120%);
-    transition: all 0.3s ease;
-  }
-  #tab-1:checked ~ header .slider {
-    left: 0%;
-    width: 140px;
-    transform: translateX(2%);
-  }
-  #tab-2:checked ~ header .slider {
-    left: 50%;
-    width: 140px;
-    transform: translateX(-50%);
-  }
-  #tab-3:checked ~ header .slider {
-    left: 100%;
-    width: 140px;
-    transform: translateX(-102%);
-  }
-  .wrapper input[type='radio'] {
-    display: none;
-  }
+.wrapper {
+  width: calc(var(--tab-count) * 120px); /* Adjust 120px per tab as needed */
+  max-width: 100%;
+  background: #fff;
+}
+
+.wrapper header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+header label {
+  height: 100%;
+  z-index: 2;
+  width: calc(100% / var(--tab-count)); /* Dynamically adjust label width */
+  display: flex;
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+header .slider {
+  position: absolute;
+  height: 93%;
+  border-radius: inherit;
+  background: linear-gradient(145deg, var(--aw-color-primary) 0%, #ffd000 120%);
+  transition: all 0.3s ease;
+  width: calc(100% / var(--tab-count)); /* Dynamic slider width */
+}
+
+/* Dynamic slider positioning */
+#tab-1:checked ~ header .slider {
+  left: calc(0 * (100% / var(--tab-count)));
+}
+
+#tab-2:checked ~ header .slider {
+  left: calc(1 * (100% / var(--tab-count)));
+}
+
+#tab-3:checked ~ header .slider {
+  left: calc(2 * (100% / var(--tab-count)));
+}
+
+#tab-4:checked ~ header .slider {
+  left: calc(3 * (100% / var(--tab-count)));
+}
+
+.wrapper input[type='radio'] {
+  display: none;
+}
+
 
   @media screen and (max-width: 480px) {
     .wrapper header {
@@ -330,31 +334,9 @@ const pdpa = [
       padding: 8px 0;
     }
 
-    header .slider {
-      width: 100%;
-      height: 5px;
-      bottom: 0;
-      left: 0;
-    }
+ 
 
-    #tab-1:checked ~ header .slider {
-      left: 0%;
-      width: 120px;
-      height: 37px;
-      transform: translateX(0%);
-    }
-    #tab-2:checked ~ header .slider {
-      left: 50%;
-      width: 120px;
-      height: 37px;
-      transform: translateX(-50%);
-    }
-    #tab-3:checked ~ header .slider {
-      left: 100%;
-      width: 120px;
-      height: 37px;
-      transform: translateX(-100%);
-    }
+
   }
 </style>
 

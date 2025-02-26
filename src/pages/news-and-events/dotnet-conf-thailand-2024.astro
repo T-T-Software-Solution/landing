@@ -1,0 +1,165 @@
+---
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: `.NET Conf Thailand 2024`,
+};
+
+const event = {
+  date: 'วันที่ 23 พฤศจิกายน พ.ศ. 2567',
+  title: '.NET Conf Thailand 2024',
+  description: `เมื่อวันที่ 23 พฤศจิกายน พ.ศ. 2567 
+    ผู้บริหารและทีมงานของบริษัท ได้เข้าร่วมงาน .NET Conf Thailand 2024 ซึ่งเป็นงานสัมมนาด้านเทคโนโลยีที่สำคัญ 
+ในโอกาสนี้ ผู้บริหารบริษัท ได้รับเกียรติเป็นวิทยากรบรรยายในหัวข้อ
+**“An Old-school Developer’s Journey to Implementing RAG and Vector Search”**
+`,
+};
+
+const images = [
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/NETConf2024/รูปปก.jpg`,
+    alt: 'ปก',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/NETConf2024/LINE_ALBUM_.NET Conf Thailand 2024 (20241123)_241213_2.jpg`,
+    alt: '1',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/NETConf2024/LINE_ALBUM_.NET Conf Thailand 2024 (20241123)_241213_3.jpg`,
+    alt: '2',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/NETConf2024/LINE_ALBUM_.NET Conf Thailand 2024 (20241123)_241213_5.jpg`,
+    alt: '3',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/NETConf2024/LINE_ALBUM_.NET Conf Thailand 2024 (20241123)_241213_6.jpg`,
+    alt: '4',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <Headline title="" subtitle={event.title} classes={{ container: 'pt-12 lg:pt-0' }} />
+    <div class="p-6">
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">{event.date}</p>
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">
+        {event.description}
+      </p>
+      <p>
+        <h1>ดูเนื้อหาเพิ่มเติมได้ที่..</h1>
+        <ul class="list-disc list-inside text-primary">
+          <li>
+            <a
+              href="https://youtu.be/IjYGOshSjIA?si=l1oLJjk6KElVj-QL&fbclid=IwZXh0bgNhZW0CMTAAAR29Ri_ja4ngXG4nGV8yU4II4unU7bVWndV4A1mkyQYqlpCmxujMYJ-owqo_aem_ClPp-m-q6CiysxPklYp5cg"
+              target="_blank">Video</a>
+          </li>
+          <li>
+            <a
+              href="https://docs.google.com/presentation/d/1YbzoBvpv1JCGvOYj8GFiQ3wFC0OSwIzyrpJVql7hyCE/edit?usp=drivesdk&fbclid=IwZXh0bgNhZW0CMTAAAR1I77gJAlc2KZg1RF9c7La5muMI38t40JHfUFMQQ-NfceTSTH3yW7u63yU_aem_fnQBtt-XkAqtz6iIGugUtQ"
+              target="_blank">Slide</a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/T-T-Software-Solution/dotnetConf2024.ttss.version?fbclid=IwZXh0bgNhZW0CMTAAAR1-UdHHciTNxjcvhVYbP7mIEWsWyaHNHgFUqoO4sNt_T1bcaBBb7ZKV5U8_aem_6ToqssrO-H2ARG1q9uWBhQ"
+              target="_blank">Source Code</a>
+          </li>
+          <li>
+            <a
+              href="https://medium.com/t-t-software-solution/net-conf-2024-keynote-state-of-net-ai-6323a3d2d481?fbclid=IwZXh0bgNhZW0CMTAAAR0cf1CYSn_fDnI4hEI1IXqhmXDKXgZ3vraw_3tskzWtt0_fImErBxG_DlM_aem_EBmzvleLRSCTul8aowTVhg"
+              target="_blank">Blog 1</a>
+          </li>
+          <li>
+            <a
+              href="https://medium.com/t-t-software-solution/%E0%B8%AA%E0%B8%A3%E0%B8%B8%E0%B8%9B%E0%B9%80%E0%B8%99%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%AB%E0%B8%B2%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99-net-e1621671bacb?fbclid=IwZXh0bgNhZW0CMTAAAR3rxabnyzsojd-kfZGZrTkN_DctI3OQhrroNomU9n_MQiq21eHOQs0gYnQ_aem_xEo6MDSB-xZDRdNJ2nHClg"
+              target="_blank">Blog 2</a>
+          </li>
+          <li>
+            <a
+              href="https://medium.com/t-t-software-solution/%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%94%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-azure-openai-service-9ce61cf45289?fbclid=IwZXh0bgNhZW0CMTAAAR0cf1CYSn_fDnI4hEI1IXqhmXDKXgZ3vraw_3tskzWtt0_fImErBxG_DlM_aem_EBmzvleLRSCTul8aowTVhg"
+              target="_blank">Blog 3</a>
+          </li>
+          <li>
+            <a
+              href="https://medium.com/t-t-software-solution/rag-%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%90%E0%B8%B2%E0%B8%99%E0%B9%82%E0%B8%94%E0%B8%A2-semantic-kernel-c-%E0%B8%A3%E0%B9%88%E0%B8%A7%E0%B8%A1%E0%B8%81%E0%B8%B1%E0%B8%9A-chat-completion-model-%E0%B9%81%E0%B8%A5%E0%B8%B0-text-embedding-model-%E0%B9%83%E0%B8%99-azure-9a86f606c225?fbclid=IwZXh0bgNhZW0CMTAAAR3-_TV6rUV4U5q4aq0_2YSsfmGgzwDBO-WqVnb1J-fvJhd0Qv0GNeGrvp0_aem_oz6FkZ-26gmFJKLUZKqkJg"
+              target="_blank">Blog 4</a>
+          </li>
+          <li>
+            <a
+              href="https://medium.com/t-t-software-solution/%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B9%83%E0%B8%88%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-semantic-kernel-in-c-%E0%B8%A3%E0%B9%88%E0%B8%A7%E0%B8%A1%E0%B8%81%E0%B8%B1%E0%B8%9A-mongodb-atlas-vector-search-206703c27a62?fbclid=IwZXh0bgNhZW0CMTAAAR0lK1McylCZWkS9qvG8bcNvg14CrBb8MmJNW4srkXwgXJyilzOtONF5bP4_aem_hK3ZqwGovEd0zx2v8nCL4A"
+              target="_blank">Blog 5</a>
+          </li>
+        </ul>
+      </p>
+      <div
+        class={`grid grid-cols-1 md:grid-cols-2 ${images.length > 2 ? 'lg:grid-cols-3' : ''} gap-4 mt-8 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8`}
+      >
+        {
+          images.map((image, index) => (
+            <div
+              class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-up-element image-container"
+              style={`--delay: ${index * 0.1}s`}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                class="w-full h-full md:h-72 !object-cover !object-center image-scale"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </WidgetWrapper>
+
+  <style>
+    .fade-up-element {
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity 0.6s ease-out,
+        transform 0.6s ease-out;
+      transition-delay: var(--delay, 0s);
+    }
+    .fade-up-element.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .image-container {
+      overflow: hidden;
+    }
+    .image-scale {
+      transition: transform 0.3s ease-in-out;
+    }
+    .image-container:hover .image-scale {
+      transform: scale(1.1);
+    }
+  </style>
+
+  <script>
+    function handleIntersection(entries, observer) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    });
+
+    document.addEventListener('astro:page-load', () => {
+      const elements = document.querySelectorAll('.fade-up-element');
+      elements.forEach((el) => observer.observe(el));
+    });
+  </script>
+</Layout>

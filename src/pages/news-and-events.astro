@@ -1,4 +1,5 @@
 ---
+import { date } from 'astro:schema';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import EventGrid from '~/components/widgets/EventGrid.astro';
@@ -10,6 +11,76 @@ const metadata = {
 };
 
 const events = [
+  {
+    "date": "19-21 กุมภาพันธ์ พ.ศ. 2568",
+    "title": "การประชุมวิชาการระดับปริญญาตรีด้านคอมพิวเตอร์ภูมิภาคเอเซีย ครั้งที่ 13 (AUCC2025)",
+    "description": "บริษัทได้ให้การสนับสนุนการประชุมวิชาการระดับปริญญาตรีด้านคอมพิวเตอร์ภูมิภาคเอเชีย ครั้งที่ 13 (AUCC2025) ณ คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยราชภัฏอุตรดิตถ์ โดยคณะผู้บริหารและทีมงานได้ร่วมเป็นวิทยากร ถ่ายทอดความรู้แก่ผู้เข้าร่วมงานในหัวข้อ “ปัญญาประดิษฐ์ในปัจจุบัน(AI)” พร้อมทั้งแนะนำเทคโนโลยี GPT จากค่ายต่าง ๆ, Introduction to Cloud Computing และ การพัฒนาแอปพลิเคชันอย่างรวดเร็วด้วย Cloud Native",
+    "image": `${environmentConfig.baseImageUrl}/images/news/2025/AUCC2025/ภาพปก.jpg`,
+    "link": "/news-and-events/aucc-2025"
+  },
+  {
+    "date": "17 กุมภาพันธ์ พ.ศ. 2568",
+    "title": "Microsoft AI Roadshow in Nakhon Ratchasima",
+    "description": "ผู้บริหารบริษัท นำโดย คุณวิทวัส กาพย์ไกรแก้ว พร้อมด้วยทีมงาน ได้เข้าร่วมงาน Microsoft AI Roadshow in Nakhon Ratchasima โดยร่วมจัดแสดงบูธเพื่อประชาสัมพันธ์และแนะนำบริษัทให้เป็นที่รู้จักในหมู่ผู้เข้าร่วมงาน นอกจากนี้ยังได้รับเกียรติเป็นวิทยากรบรรยาย ถ่ายทอดองค์ความรู้ให้แก่ผู้เข้าร่วมงาน",
+    "image": `${environmentConfig.baseImageUrl}/images/news/2025/MicrosoftAIRoadshow/ภาพปก.jpg`,
+    "link": "/news-and-events/microsoft-ai-roadshow-2025"
+  },
+  {
+    "date": "1 กุมภาพันธ์ พ.ศ. 2568",
+    "title": "Barcamp Songkhla ครั้งที่ 9",
+    "description": "บริษัทมีความยินดีเป็นอย่างยิ่งที่ได้ให้การสนับสนุนงาน Barcamp Songkhla ครั้งที่ 9 ณ มหาวิทยาลัยสงขลานครินทร์ อำเภอหาดใหญ่ จังหวัดสงขลา ทั้งนี้ ผู้บริหารและทีมงานได้มีโอกาสถ่ายทอดองค์ความรู้แก่ผู้เข้าร่วมงาน",
+    "image": `${environmentConfig.baseImageUrl}/images/news/2025/BarcampSongkhla/ปก.jpg`,
+    "link": "/news-and-events/barcamp-songkhla-9"
+  },
+  {
+    "date": "4-10 มกราคม พ.ศ. 2568",
+    "title": "โครงการ Nanspiration GEN3",
+    "description": "บริษัทได้ให้การสนับสนุนโครงการ 'Nanspiration GEN3' ซึ่งเป็นค่ายอาสาสร้างแรงบันดาลใจทางการศึกษาแก่เยาวชนระดับชั้นมัธยมศึกษาในพื้นที่อำเภอบ่อเกลือ จังหวัดน่าน โดยได้รับการดำเนินการจากกลุ่มนักศึกษา SoCHANGE จากมหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+    "image": `${environmentConfig.baseImageUrl}/images/news/2025/Nanspiration/รูปปก.jpg`,
+    "link": "/news-and-events/nanspiration-gen3"
+  },
+  {
+    "date": "14 ธันวาคม พ.ศ. 2567",
+    "title": "Microsoft AI Day in Khon Kaen",
+    "description": "บริษัทได้ร่วมจัดงาน Microsoft AI Day in Khon Kaen โดยในงานนี้ ผู้บริหารของบริษัท คุณวิทวัส กาพย์ไกรแก้ว ได้บรรยายให้ความรู้ในหัวข้อ 'Activate your data and analytics for AI innovation with Microsoft Azure'",
+    "image": `${environmentConfig.baseImageUrl}/images/news/2025/MicrosoftAIDay/ภาพปก.jpg`,
+    "link": "/news-and-events/microsoft-ai-day-in-khon-kaen"
+  },
+  {
+    "date": "ธันวาคม พ.ศ. 2567",
+    "title": "โรงเรียนบ้านคอลอตันหยง",
+    "description": "บริษัทได้ร่วมสมทบทุนกับโรงเรียนบ้านคอลอตันหยง จังหวัดปัตตานี ช่วยเหลือผู้ประสบภัยน้ำท่วมในพื้นที่ภายใต้กิจกรรม 'ปันน้ำใจ สู้ภัยน้ำท่วม' โดยการจัดส่งถุงยังชีพและสิ่งของจำเป็นเพื่อบรรเทาความเดือดร้อนของผู้ที่ได้รับผลกระทบ",
+    "image": "https://scontent.fbkk22-6.fna.fbcdn.net/v/t39.30808-6/470572181_1075319114394101_5835868567249175362_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeGEXKRfJUD0gKbc9wGCOOL1NmFXq0S2_9Y2YVerRLb_1huyrVYkY6yAEp7OyygLi7l8ayah_qYTWxYzZMGiI7NX&_nc_ohc=uY6l0-nTwNIQ7kNvgHSsuvc&_nc_oc=Adhn3sygcRiIMx32kBrkRwz6_ij76BTfeBXko-fBbgjGpAT-dfpDufnnL3i8YTL0HBlVccHAV73kJgi5J9xjS2pY&_nc_zt=23&_nc_ht=scontent.fbkk22-6.fna&_nc_gid=ANzgzILiW2xhuMLbojzQGZN&oh=00_AYAtqyUigJpzNXH17T7J6wVx8QgUmUL6DBsvsx9cCeTt6g&oe=67C487F6",
+    "link": "/news-and-events/help-with-kholotanyong"
+  },
+  {
+    "date": "30 พฤศจิกายน พ.ศ. 2567",
+    "title": "National Coding Day 2024",
+    "description": "ผู้บริหารและทีมงานได้เข้าร่วมงาน National Coding Day 2024 พร้อมทั้งจัดแสดงบูธของบริษัท เพื่อประชาสัมพันธ์และแนะนำบริการของบริษัทให้เป็นที่รู้จักในหมู่ผู้เข้าร่วมงาน",
+    "image": `${environmentConfig.baseImageUrl}/images/news/2025/NCD/ภาพปก.jpg`,
+    "link": "/news-and-events/help-with-kholotanyong"
+  },
+  {
+    "date": "26 พฤศจิกายน พ.ศ. 2567",
+    "title": "Generation Thailand",
+    "description": "คุณวัชรพงษ์ สุขวนิช และคุณวีรพันธุ์ ไทยรัก ได้เข้าร่วมงาน Generation Thailand แถลงข่าวความสำเร็จโครงการ GenNX Model (JSD) และเปิดตัวโครงการ GenNX NEXT มุ่งหน้าต่อยอด อว. for EV ณ ห้องชาเทรียม แกรนด์บอลรูม โรงแรมชาเทรียม แกรนด์ กรุงเทพมหานคร",
+    "image": `${environmentConfig.baseImageUrl}/images/news/2025/GenerationThailand/ภาพปก.jpg`,
+    "link": "/news-and-events/generation-thailand"
+  },
+  {
+    "date": "23 พฤศจิกายน พ.ศ. 2567",
+    "title": ".NET Conf Thailand 2024",
+    "description": "ผู้บริหารและทีมงานของบริษัท ได้เข้าร่วมงาน .NET Conf Thailand 2024 ซึ่งเป็นงานสัมมนาด้านเทคโนโลยีที่สำคัญ โดยได้รับเกียรติเป็นวิทยากรบรรยายในหัวข้อ 'An Old-school Developer’s Journey to Implementing RAG and Vector Search'",
+    "image": `${environmentConfig.baseImageUrl}/images/news/2025/NETConf2024/รูปปก.jpg`,
+    "link": "/news-and-events/dotnet-conf-thailand-2024"
+  },
+  {
+    "date": "13 พฤศจิกายน พ.ศ. 2567",
+    "title": "ม.เกษตรศาสตร์ วิทยาเขตเฉลิมพระเกียรติ จังหวัดสกลนคร",
+    "description": "คณะอาจารย์และนิสิตจากภาควิชาวิทยาการคอมพิวเตอร์และสารสนเทศ มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตเฉลิมพระเกียรติ จังหวัดสกลนคร ได้เดินทางเข้าเยี่ยมชมบริษัท เพื่อศึกษาและแลกเปลี่ยนความรู้ด้านวิชาการและวิชาชีพ",
+    "image": `${environmentConfig.baseImageUrl}/images/news/2025/KASET/รูปปก.jpg`,
+    "link": "/news-and-events/kasetsart-university-visit"
+  },
   {
     date: 'วันที่ 25 ตุลาคม พ.ศ. 2567',
     title: 'เข้าพบลูกค้า บริษัท สยามลอว์กรุ๊ป จำกัด',

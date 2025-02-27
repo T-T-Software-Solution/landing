@@ -1,13 +1,9 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Image from '~/components/common/Image.astro';
 import ContactInfo from '~/components/widgets/ContactInfo.astro';
 import OfficeLocation from '~/components/widgets/OfficeLocation.astro';
-import { environmentConfig } from '~/config';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const contactImg = `${environmentConfig.baseImageUrl}/images/contact.webp`;
+
 
 const metadata = {
   title: 'ติดต่อเรา',
@@ -26,13 +22,6 @@ const officeLocations = [
     mapSrc:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.3900951679334!2d102.81679277578957!3d16.455773528972657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31228a6f8180f739%3A0x4761e1a9d67a269!2z4Lit4Li44LiX4Lii4Liy4LiZ4Lin4Li04LiX4Lii4Liy4Lio4Liy4Liq4LiV4Lij4LmM4Lig4Li54Lih4Li04Lig4Liy4LiEIOC4oOC4suC4hOC4leC4sOC4p-C4seC4meC4reC4reC4geC5gOC4ieC4teC4ouC4h-C5gOC4q-C4meC4t-C4rSAxIDogUlNQIE5vcnRoZWFzdCAx!5e0!3m2!1sth!2sth!4v1726046017141!5m2!1sth!2sth',
   },
-  // {
-  //   officeName: 'ตึก Glowfish ขอนแก่น',
-  //   address:
-  //     'ห้อง 525 อาคารขอนแก่น อินโนเวชั่น เซ็นเตอร์ เลขที่ 999 ชั้น 12<br>ถนนศรีจันทร์ ตำบลในเมือง<br>อำเภอเมืองขอนแก่น จังหวัดขอนแก่น 40000',
-  //   mapSrc:
-  //     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.8975113237548!2d102.8296517757892!3d16.430030729676673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31228bdb277cbd79%3A0xd2a772d2cd99fd54!2sGlowfish%20Khon%20Kaen!5e0!3m2!1sth!2sth!4v1726046059692!5m2!1sth!2sth',
-  // },
 ];
 const contactInfoList = [
   {
@@ -88,11 +77,5 @@ const contactInfoList = [
       </div>
       </div>
     </div>
-
-    <!-- <div class="grid grid-cols-1 gap-4 mt-12">
-      <div class="mx-auto">
-        <Image src={contactImg} alt="สำนักงาน" class="w-full h-auto rounded-lg shadow-md object-cover" />
-      </div>
-    </div> -->
   </section>
 </Layout>

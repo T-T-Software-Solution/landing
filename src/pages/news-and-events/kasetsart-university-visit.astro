@@ -59,28 +59,20 @@ const images = [
       <p>
         <ul class="list-disc list-inside text-gray-600">
           หัวข้อที่ได้รับการพูดถึงในงาน ได้แก่:
-          <li>
-            <a href="https://www.tt-ss.net/" class="text-primary hover:text-primary-dark" target="_blank" rel="noopener noreferrer">Company Profile</a>
-          </li>
-          <li>
-            <a href="https://youtu.be/w0mFQl51m0Y?si=_BvdY8oNwzIRYeFt" class="text-primary hover:text-primary-dark" target="_blank" rel="noopener noreferrer">Tech Exploration</a>
-          </li>
-          <li>
-            <a href="https://youtu.be/W7SzHtGEtyg?si=2s-yyuuvEiln9waz" class="text-primary hover:text-primary-dark" target="_blank" rel="noopener noreferrer">Software Engineer</a>
-          </li>
-          <li>
-            <a href="https://www.canva.com/design/DAGWRnC0di0/2G61RgO5_T_9EmM5z8U9GQ/edit?ui=eyJEIjp7IlQiOnsiQSI6IlBCWGw3OXQ4V2p0R3loN2oifX19&utm_content=DAGWRnC0di0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton&fbclid=IwZXh0bgNhZW0CMTAAAR3-_TV6rUV4U5q4aq0_2YSsfmGgzwDBO-WqVnb1J-fvJhd0Qv0GNeGrvp0_aem_oz6FkZ-26gmFJKLUZKqkJg" class="text-primary hover:text-primary-dark" target="_blank" rel="noopener noreferrer">Startup 101</a>
-          </li>
+          {[
+            { href: "https://www.tt-ss.net/", text: "Company Profile" },
+            { href: "https://youtu.be/w0mFQl51m0Y?si=_BvdY8oNwzIRYeFt", text: "Tech Exploration" },
+            { href: "https://youtu.be/W7SzHtGEtyg?si=2s-yyuuvEiln9waz", text: "Software Engineer" },
+            { href: "https://www.canva.com/design/DAGWRnC0di0/2G61RgO5_T_9EmM5z8U9GQ/edit?ui=eyJEIjp7IlQiOnsiQSI6IlBCWGw3OXQ4V2p0R3loN2oifX19&utm_content=DAGWRnC0di0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton&fbclid=IwZXh0bgNhZW0CMTAAAR3-_TV6rUV4U5q4aq0_2YSsfmGgzwDBO-WqVnb1J-fvJhd0Qv0GNeGrvp0_aem_oz6FkZ-26gmFJKLUZKqkJg", text: "Startup 101" }
+          ].map((item) => (
+            <li>
+              <a href={item.href} class="text-primary hover:text-primary-dark" target="_blank" rel="noopener noreferrer">{item.text}</a>
+            </li>
+          ))}
         </ul>
       </p>
       <p class="text-gray-600 mt-4">
-        ติดตามสรุปเนื้อหาได้ที่
-        <a
-          class="text-primary hover:text-primary-dark"
-          rel="noopener noreferrer"
-          target="_blank"
-          href={event.descriptionLink}>Medium</a
-        >
+        หากต้องการดูเนื้อหา สามารถคลิ๊กที่หัวข้อได้เลย
       </p>
     </div>
     <div

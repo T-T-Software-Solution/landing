@@ -19,13 +19,12 @@ const event = {
       ในโอกาสนี้ ขอขอบพระคุณคณะครูและบุคลากรที่ได้ทำหน้าที่เป็นตัวแทนของบริษัทในการมอบถุงยังชีพและให้กำลังใจแก่ผู้ที่ได้รับผลกระทบจากภัยน้ำท่วมในครั้งนี้`,
 };
 
-
 const images = [
   {
-    src: 'https://scontent.fbkk22-6.fna.fbcdn.net/v/t39.30808-6/470572181_1075319114394101_5835868567249175362_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeGEXKRfJUD0gKbc9wGCOOL1NmFXq0S2_9Y2YVerRLb_1huyrVYkY6yAEp7OyygLi7l8ayah_qYTWxYzZMGiI7NX&_nc_ohc=uY6l0-nTwNIQ7kNvgHSsuvc&_nc_oc=Adhn3sygcRiIMx32kBrkRwz6_ij76BTfeBXko-fBbgjGpAT-dfpDufnnL3i8YTL0HBlVccHAV73kJgi5J9xjS2pY&_nc_zt=23&_nc_ht=scontent.fbkk22-6.fna&_nc_gid=ANzgzILiW2xhuMLbojzQGZN&oh=00_AYAtqyUigJpzNXH17T7J6wVx8QgUmUL6DBsvsx9cCeTt6g&oe=67C487F6',
-  alt: 'โรงเรียนบ้านคอลอตันหยง',
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/kolotanyong/ภาพปก.webp`,
+    alt: 'โรงเรียนบ้านคอลอตันหยง',
   },
-]
+];
 ---
 
 <Layout metadata={metadata}>
@@ -38,29 +37,31 @@ const images = [
       </p>
     </div>
     <div>
-    <p>ติดตามเพิ่มเติมได้ที่</p>
-    <a href="https://www.facebook.com/kholotanyong/posts/pfbid02FbazWVAw5FZYw83PFkRuEQ86XLQEWLGfETrv7Vzv4HM3yGAY9UtwyTh8gACznJFl?rdid=jP4k43QLlII8SeY1#" target="_blank" class="text-primary">https://www.facebook.com/kholotanyong/</a>
+      <p>ติดตามเพิ่มเติมได้ที่</p>
+      <a
+        href="https://www.facebook.com/kholotanyong/posts/pfbid02FbazWVAw5FZYw83PFkRuEQ86XLQEWLGfETrv7Vzv4HM3yGAY9UtwyTh8gACznJFl?rdid=jP4k43QLlII8SeY1#"
+        target="_blank"
+        class="text-primary">https://www.facebook.com/kholotanyong/</a
+      >
     </div>
 
-
     <div
-        class={`grid grid-cols-1 md:grid-cols-2 ${images.length > 2 ? 'lg:grid-cols-3' : ''} gap-4 mt-8 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8`}
-      >
-        {
-          images.map((image, index) => (
-            <div
-              class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-up-element image-container"
-              style={`--delay: ${index * 0.1}s`}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                class="w-full h-full md:h-72 !object-cover !object-center image-scale"
-              />
-            </div>
-          ))
-        }
-      </div>
+      class={`grid grid-cols-1 md:grid-cols-2 ${images.length > 2 ? 'lg:grid-cols-3' : ''} gap-4 mt-8 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8`}
+    >
+      {
+        images.map((image, index) => (
+          <div
+            class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-up-element image-container"
+            style={`--delay: ${index * 0.1}s`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full md:h-72 !object-cover !object-center image-scale"
+            />
+          </div>
+        ))
+      }
     </div>
   </WidgetWrapper>
 </Layout>

@@ -41,6 +41,41 @@ const images = [
     alt: '4',
   },
 ];
+
+const resources = [
+  {
+    href: 'https://youtu.be/IjYGOshSjIA?si=l1oLJjk6KElVj-QL&fbclid=IwZXh0bgNhZW0CMTAAAR29Ri_ja4ngXG4nGV8yU4II4unU7bVWndV4A1mkyQYqlpCmxujMYJ-owqo_aem_ClPp-m-q6CiysxPklYp5cg',
+    text: 'Video',
+  },
+  {
+    href: 'https://docs.google.com/presentation/d/1YbzoBvpv1JCGvOYj8GFiQ3wFC0OSwIzyrpJVql7hyCE/edit?usp=drivesdk&fbclid=IwZXh0bgNhZW0CMTAAAR1I77gJAlc2KZg1RF9c7La5muMI38t40JHfUFMQQ-NfceTSTH3yW7u63yU_aem_fnQBtt-XkAqtz6iIGugUtQ',
+    text: 'Slide',
+  },
+  {
+    href: 'https://github.com/T-T-Software-Solution/dotnetConf2024.ttss.version?fbclid=IwZXh0bgNhZW0CMTAAAR1-UdHHciTNxjcvhVYbP7mIEWsWyaHNHgFUqoO4sNt_T1bcaBBb7ZKV5U8_aem_6ToqssrO-H2ARG1q9uWBhQ',
+    text: 'Source Code',
+  },
+  {
+    href: 'https://medium.com/t-t-software-solution/net-conf-2024-keynote-state-of-net-ai-6323a3d2d481?fbclid=IwZXh0bgNhZW0CMTAAAR0cf1CYSn_fDnI4hEI1IXqhmXDKXgZ3vraw_3tskzWtt0_fImErBxG_DlM_aem_EBmzvleLRSCTul8aowTVhg',
+    text: 'สรุปเนื้อหาจากงาน .NET Conf 2024 Keynote: State of .NET + AI',
+  },
+  {
+    href: 'https://medium.com/t-t-software-solution/%E0%B8%AA%E0%B8%A3%E0%B8%B8%E0%B8%9B%E0%B9%80%E0%B8%99%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%AB%E0%B8%B2%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99-net-e1621671bacb?fbclid=IwZXh0bgNhZW0CMTAAAR3rxabnyzsojd-kfZGZrTkN_DctI3OQhrroNomU9n_MQiq21eHOQs0gYnQ_aem_xEo6MDSB-xZDRdNJ2nHClg',
+    text: 'สรุปเนื้อหาจากงาน .NET Conf 2024 Get started incorporating AI into your .NET applications and services',
+  },
+  {
+    href: 'https://medium.com/t-t-software-solution/%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%94%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-azure-openai-service-9ce61cf45289?fbclid=IwZXh0bgNhZW0CMTAAAR0cf1CYSn_fDnI4hEI1IXqhmXDKXgZ3vraw_3tskzWtt0_fImErBxG_DlM_aem_EBmzvleLRSCTul8aowTVhg',
+    text: 'บันทึกการทดลองใช้ Azure OpenAI Service',
+  },
+  {
+    href: 'https://medium.com/t-t-software-solution/rag-%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%90%E0%B8%B2%E0%B8%99%E0%B9%82%E0%B8%94%E0%B8%A2-semantic-kernel-c-%E0%B8%A3%E0%B9%88%E0%B8%A7%E0%B8%A1%E0%B8%81%E0%B8%B1%E0%B8%9A-chat-completion-model-%E0%B9%81%E0%B8%A5%E0%B8%B0-text-embedding-model-%E0%B9%83%E0%B8%99-azure-9a86f606c225?fbclid=IwZXh0bgNhZW0CMTAAAR3-_TV6rUV4U5q4aq0_2YSsfmGgzwDBO-WqVnb1J-fvJhd0Qv0GNeGrvp0_aem_oz6FkZ-26gmFJKLUZKqkJg',
+    text: 'RAG พื้นฐานโดย Semantic Kernel C# ร่วมกับ Chat Completion Model และ Text Embedding Model ใน Azure OpenAI Service',
+  },
+  {
+    href: 'https://medium.com/t-t-software-solution/%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B9%83%E0%B8%88%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-semantic-kernel-in-c-%E0%B8%A3%E0%B9%88%E0%B8%A7%E0%B8%A1%E0%B8%81%E0%B8%B1%E0%B8%9A-mongodb-atlas-vector-search-206703c27a62?fbclid=IwZXh0bgNhZW0CMTAAAR0lK1McylCZWkS9qvG8bcNvg14CrBb8MmJNW4srkXwgXJyilzOtONF5bP4_aem_hK3ZqwGovEd0zx2v8nCL4A',
+    text: 'บันทึกความเข้าใจจากการเรียนรู้การใช้งาน Semantic Kernel in C# ร่วมกับ MongoDB Atlas Vector Search และ MongoDB Compass',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
@@ -54,18 +89,11 @@ const images = [
       <p>
         <h1>ดูเนื้อหาเพิ่มเติมได้ที่..</h1>
         <ul class="list-disc list-inside text-primary">
-          {[
-            { href: "https://youtu.be/IjYGOshSjIA?si=l1oLJjk6KElVj-QL&fbclid=IwZXh0bgNhZW0CMTAAAR29Ri_ja4ngXG4nGV8yU4II4unU7bVWndV4A1mkyQYqlpCmxujMYJ-owqo_aem_ClPp-m-q6CiysxPklYp5cg", text: "Video" },
-            { href: "https://docs.google.com/presentation/d/1YbzoBvpv1JCGvOYj8GFiQ3wFC0OSwIzyrpJVql7hyCE/edit?usp=drivesdk&fbclid=IwZXh0bgNhZW0CMTAAAR1I77gJAlc2KZg1RF9c7La5muMI38t40JHfUFMQQ-NfceTSTH3yW7u63yU_aem_fnQBtt-XkAqtz6iIGugUtQ", text: "Slide" },
-            { href: "https://github.com/T-T-Software-Solution/dotnetConf2024.ttss.version?fbclid=IwZXh0bgNhZW0CMTAAAR1-UdHHciTNxjcvhVYbP7mIEWsWyaHNHgFUqoO4sNt_T1bcaBBb7ZKV5U8_aem_6ToqssrO-H2ARG1q9uWBhQ", text: "Source Code" },
-            { href: "https://medium.com/t-t-software-solution/net-conf-2024-keynote-state-of-net-ai-6323a3d2d481?fbclid=IwZXh0bgNhZW0CMTAAAR0cf1CYSn_fDnI4hEI1IXqhmXDKXgZ3vraw_3tskzWtt0_fImErBxG_DlM_aem_EBmzvleLRSCTul8aowTVhg", text: "Blog 1" },
-            { href: "https://medium.com/t-t-software-solution/%E0%B8%AA%E0%B8%A3%E0%B8%B8%E0%B8%9B%E0%B9%80%E0%B8%99%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%AB%E0%B8%B2%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99-net-e1621671bacb?fbclid=IwZXh0bgNhZW0CMTAAAR3rxabnyzsojd-kfZGZrTkN_DctI3OQhrroNomU9n_MQiq21eHOQs0gYnQ_aem_xEo6MDSB-xZDRdNJ2nHClg", text: "Blog 2" },
-            { href: "https://medium.com/t-t-software-solution/%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%94%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-azure-openai-service-9ce61cf45289?fbclid=IwZXh0bgNhZW0CMTAAAR0cf1CYSn_fDnI4hEI1IXqhmXDKXgZ3vraw_3tskzWtt0_fImErBxG_DlM_aem_EBmzvleLRSCTul8aowTVhg", text: "Blog 3" },
-            { href: "https://medium.com/t-t-software-solution/rag-%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%90%E0%B8%B2%E0%B8%99%E0%B9%82%E0%B8%94%E0%B8%A2-semantic-kernel-c-%E0%B8%A3%E0%B9%88%E0%B8%A7%E0%B8%A1%E0%B8%81%E0%B8%B1%E0%B8%9A-chat-completion-model-%E0%B9%81%E0%B8%A5%E0%B8%B0-text-embedding-model-%E0%B9%83%E0%B8%99-azure-9a86f606c225?fbclid=IwZXh0bgNhZW0CMTAAAR3-_TV6rUV4U5q4aq0_2YSsfmGgzwDBO-WqVnb1J-fvJhd0Qv0GNeGrvp0_aem_oz6FkZ-26gmFJKLUZKqkJg", text: "Blog 4" },
-            { href: "https://medium.com/t-t-software-solution/%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B9%83%E0%B8%88%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-semantic-kernel-in-c-%E0%B8%A3%E0%B9%88%E0%B8%A7%E0%B8%A1%E0%B8%81%E0%B8%B1%E0%B8%9A-mongodb-atlas-vector-search-206703c27a62?fbclid=IwZXh0bgNhZW0CMTAAAR0lK1McylCZWkS9qvG8bcNvg14CrBb8MmJNW4srkXwgXJyilzOtONF5bP4_aem_hK3ZqwGovEd0zx2v8nCL4A", text: "Blog 5" }
-          ].map((link) => (
+          {resources.map((link) => (
             <li>
-              <a href={link.href} target="_blank">{link.text}</a>
+              <a href={link.href} target="_blank">
+                {link.text}
+              </a>
             </li>
           ))}
         </ul>

@@ -1,0 +1,143 @@
+---
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: `Kasetsart University Visit`,
+};
+
+const event = {
+  date: 'วันที่ 13 พฤศจิกายน พ.ศ. 2567 ',
+  title: 'เยี่ยมชมม.เกษตรศาสตร์ วิทยาเขตเฉลิมพระเกียรติ จังหวัดสกลนคร',
+  description: `คณะอาจารย์และนิสิตจากภาควิชาวิทยาการคอมพิวเตอร์และสารสนเทศ มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตเฉลิมพระเกียรติ จังหวัดสกลนคร ได้เดินทางเข้าเยี่ยมชมบริษัท เพื่อศึกษาและแลกเปลี่ยนความรู้ด้านวิชาการและวิชาชีพ
+
+     ในโอกาสนี้ คณะผู้บริหารของบริษัทได้ให้การต้อนรับอย่างอบอุ่น และได้ร่วมถ่ายทอดความรู้แก่นิสิตในหัวข้อสำคัญต่าง ๆ`,
+  descriptionLink: '',
+  image: `${environmentConfig.baseImageUrl}/images/news/2025/KASET/รูปปก.jpg`,
+  link: '/news-and-events/microsoft-build',
+};
+
+const images = [
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/KASET/รูปปก.jpg`,
+    alt: 'ปก',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/KASET/466605643_591458436560106_1075175628607190548_n.jpg`,
+    alt: '1',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/KASET/466621127_591458193226797_1776643841512238781_n.jpg`,
+    alt: '2',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/KASET/466737216_591457893226827_7314902241454809537_n.jpg`,
+    alt: '3',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/KASET/466737216_591457893226827_7314902241454809537_n.jpg`,
+    alt: '4',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/KASET/466737216_591457893226827_7314902241454809537_n.jpg`,
+    alt: '5',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <Headline title="" subtitle={event.title} classes={{ container: 'pt-12 lg:pt-0' }} />
+    <div class="p-6">
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">{event.date}</p>
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">
+        {event.description}
+      </p>
+      <p>
+        <ul class="list-disc list-inside text-gray-600">
+          หัวข้อที่ได้รับการพูดถึงในงาน ได้แก่:
+          {[
+            { href: "https://www.tt-ss.net/", text: "Company Profile" },
+            { href: "https://youtu.be/w0mFQl51m0Y?si=_BvdY8oNwzIRYeFt", text: "Tech Exploration" },
+            { href: "https://youtu.be/W7SzHtGEtyg?si=2s-yyuuvEiln9waz", text: "Software Engineer" },
+            { href: "https://www.canva.com/design/DAGWRnC0di0/2G61RgO5_T_9EmM5z8U9GQ/edit?ui=eyJEIjp7IlQiOnsiQSI6IlBCWGw3OXQ4V2p0R3loN2oifX19&utm_content=DAGWRnC0di0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton&fbclid=IwZXh0bgNhZW0CMTAAAR3-_TV6rUV4U5q4aq0_2YSsfmGgzwDBO-WqVnb1J-fvJhd0Qv0GNeGrvp0_aem_oz6FkZ-26gmFJKLUZKqkJg", text: "Startup 101" }
+          ].map((item) => (
+            <li>
+              <a href={item.href} class="text-primary hover:text-primary-dark" target="_blank" rel="noopener noreferrer">{item.text}</a>
+            </li>
+          ))}
+        </ul>
+      </p>
+      <p class="text-gray-600 mt-4">
+        หากต้องการดูเนื้อหา สามารถคลิ๊กที่หัวข้อได้เลย
+      </p>
+    </div>
+    <div
+      class={`grid grid-cols-1 md:grid-cols-2 ${images.length > 2 ? 'lg:grid-cols-3' : ''} gap-4 mt-8 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8`}
+    >
+      {
+        images.map((image, index) => (
+          <div
+            class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-up-element image-container"
+            style={`--delay: ${index * 0.1}s`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full md:h-72 !object-cover !object-center image-scale"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </WidgetWrapper>
+</Layout>
+
+<style>
+  .fade-up-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    transition-delay: var(--delay, 0s);
+  }
+  .fade-up-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .image-container {
+    overflow: hidden;
+  }
+  .image-scale {
+    transition: transform 0.3s ease-in-out;
+  }
+  .image-container:hover .image-scale {
+    transform: scale(1.1);
+  }
+</style>
+
+<script>
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.fade-up-element');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

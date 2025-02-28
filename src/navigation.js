@@ -19,7 +19,7 @@ export const headerData = {
       href: '/our-works',
     },
     {
-      text: 'มาตรฐาน และใบรับรอง',
+      text: 'มาตรฐานและใบรับรอง',
       href: '/our-standard',
     },
     {

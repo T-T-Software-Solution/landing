@@ -4,6 +4,7 @@ import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import { environmentConfig } from '~/config';
+
 const metadata = {
   title: 'มาตรฐาน และใบรับรองของเรา | Our Standard',
 };
@@ -46,88 +47,305 @@ const images = [
   },
   {
     src: `${environmentConfig.baseImageUrl}/images/our_certificates/Nakorn/Nakorn-Professional.webp`,
-    alt: 'Nakorn-Professional', 
+    alt: 'Nakorn-Professional',
   },
 ];
+
+const pdpa = [
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/1.นคร%20เหรียญตระกูลชัย.webp`,
+    alt: 'pdpa1',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/2.วิทวัส%20กาพย์ไกรแก้ว.webp`,
+    alt: 'pdpa2',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/3.วัชรพงษ์_%20สุขวนิช.webp`,
+    alt: 'pdpa3',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/4.ธาดา%20หวังธรรมมั่ง.webp`,
+    alt: 'pdpa4',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/5.วชิรวิทย์%20ยวงวิภักดิ์.webp`,
+    alt: 'pdpa5',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/6.วีระพันธุ์%20ไทยรัก.webp`,
+    alt: 'pdpa6',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/7.รัฐพล%20สกลชัยไพรสัณฑ์.webp`,
+    alt: 'pdpa7',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/8.นที%20เหรียญตระกูลชัย.webp`,
+    alt: 'pdpa8',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/9.สิรามล%20สกลชัยไพรสัณฑ์.webp`,
+    alt: 'pdpa9',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/10.สุทธิพร%20ภูโคกสูง.webp`,
+    alt: 'pdpa10',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/11.อนัญพร%20กังวานเกียรติชัย.webp`,
+    alt: 'pdpa11',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/12.วินัย%20ภูสีทอง.webp`,
+    alt: 'pdpa12',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/14.ภาณุพงศ์%20ฉ่ำสมบูรณ์.webp`,
+    alt: 'pdpa14',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/15.Yuraporn%20Nanthasuta.webp`,
+    alt: 'pdpa15',
+  },
+]
 ---
 
 <Layout metadata={metadata}>
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
-    <Headline title="มาตรฐานของเรา" classes={{ container: 'pt-12 lg:pt-0 lg:mb-8' }} />
-    <div class="animate-on-scroll mb-4">
-      <p class="indent-20 md:text-lg">
-        บริษัทได้รับการประเมินและผ่านการรับรองมาตรฐาน <span class="text-primary">ISO 29110</span> ในกระบวนการ 
-        <span class="text-primary">การบริหารจัดการโครงการ (Project Management: PM Process)</span> 
-        รวมถึงการควบคุมกระบวนการ <span class="text-primary">การพัฒนาซอฟต์แวร์ (Software Implementation: SI Process)</span> โดยมีการดำเนินงานตามกรอบมาตรฐานที่กำหนดไว้อย่างเคร่งครัด เพื่อให้มั่นใจในประสิทธิภาพและคุณภาพของกระบวนการต่าง ๆ ที่เกี่ยวข้องในการพัฒนาซอฟต์แวร์ <span class="font-bold">เมื่อวันที่ 27 กันยายน 2567</span>
-      </p>
+    <!-- Tabs -->
+    <div class="wrapper mt-12 xl:mt-0 mb-[-40px] xl:mb-[-0px]">
+      <input type="radio" name="slider" id="tab-1" checked />
+      <input type="radio" name="slider" id="tab-2" />
+      <input type="radio" name="slider" id="tab-3" />
+      <input type="radio" name="slider" id="tab-4" />
+      <header>
+        <label for="tab-1" class="tab-1">ISO 29110</label>
+        <label for="tab-2" class="tab-2">Microsoft</label>
+        <!-- <label for="tab-3" class="tab-3">PDPA</label>
+        <label for="tab-4" class="tab-4">PDPA DPO</label> -->
+        <div class="slider"></div>
+      </header>
     </div>
-    <div
-      class="border-[2px] border-black flex justify-center my-4 animate-on-scroll max-w-xl mx-auto shadow-xl hover:shadow-2xl transition-shadow duration-300 fade-up-element image-container"
-    >
-      <Image src={`${environmentConfig.baseImageUrl}/images/ISO.webp`} alt="ISO 29110" class="!object-contain h-auto w-auto" />
-    </div>
-    <Headline title="ใบรับรองของเรา" classes={{ container: 'pt-8 mb-8 sm:mb-6 sm:pt-6 lg:mb-8' }} />
-    <div class="indent-20 animate-on-scroll mb-4 md:text-lg">
-      ทีมงานของเราเป็น <span class="text-primary">ผู้เชี่ยวชาญด้านเทคโนโลยีของ Microsoft</span> ซึ่งได้รับการยืนยันด้วยใบรับรองจาก <span class="text-primary">Microsoft</span> ตลอดระยะเวลาที่ผ่านมา
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-8 mx-auto">
-      {
-        images.map((image, index) => (
+
+    <!-- Standards Tab Content -->
+    <div id="standards" class="tab-content active">
+      <div class="block-effect" style="--td: 1s">
+        <div class="block-reveal pt-4" style="--bc: var(--aw-color-primary); --d: .1ms">
+          <Headline title="มาตรฐานของเรา" classes={{ container: 'pt-14 lg:pt-0 lg:mb-8' }} />
+        </div>
+      </div>
+      <div class="flex flex-col items-center gap-8 p-4 lg:p-0">
+        <div class="lg:w-1/2">
+          <p class="md:text-md">
+            บริษัทได้รับการประเมินและผ่านการรับรองมาตรฐาน
+            <span class="text-primary">ISO 29110</span> ในกระบวนการ
+            <span class="text-primary">การบริหารจัดการโครงการ (Project Management: PM Process)</span>
+            รวมถึงการควบคุมกระบวนการ
+            <span class="text-primary">การพัฒนาซอฟต์แวร์ (Software Implementation: SI Process)</span>
+            โดยมีการดำเนินงานตามกรอบมาตรฐานที่กำหนดไว้อย่างเคร่งครัด เพื่อให้มั่นใจในประสิทธิภาพและคุณภาพของกระบวนการต่าง
+            ๆ ที่เกี่ยวข้องในการพัฒนาซอฟต์แวร์
+            <span class="font-bold">เมื่อวันที่ 27 กันยายน 2567</span>
+          </p>
+        </div>
+
+        <div class="lg:w-[40%] flex justify-center">
           <div
-            class="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 fade-up-element image-container animate-on-scroll"
-            style={`--delay: ${index * 0.1}s`}
+            class="border-[2px] border-black flex justify-center my-4 animate-on-scroll max-w-xl mx-auto shadow-xl hover:shadow-2xl transition-shadow duration-300 fade-up-element image-container"
           >
-            <a href={image.link ?? '#'} target="_blank" rel="noopener noreferrer">
-              <Image src={image.src} alt={image.alt} class="w-full h-full !object-contain !object-center" />
-            </a>
+            <Image
+              src={`${environmentConfig.baseImageUrl}/images/ISO.webp`}
+              alt="ISO 29110"
+              class="!object-contain w-3/4"
+            />
           </div>
-        ))
-      }
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificates Tab Content -->
+    <div id="certificates" class="tab-content flex justify-center">
+      <div class="pt-4">
+        <Headline title="ใบรับรองของเรา" classes={{ container: 'pt-12 lg:pt-0 lg:mb-8' }} />
+      </div>
+      <div class="flex justify-center md:items-center xl:items-start">
+        <p class="text-md">
+          ทีมงานของเราเป็น
+          <span class="text-primary">ผู้เชี่ยวชาญด้านเทคโนโลยีของ Microsoft</span>
+          ซึ่งได้รับการยืนยันด้วยใบรับรองจาก
+          <span class="text-primary">Microsoft</span>
+          ตลอดระยะเวลาที่ผ่านมา
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-8 mx-auto">
+        {
+          images.map((image) => (
+            <div class="image-container">
+              <a href={image.link ?? '#'} target="_blank">
+                <Image src={image.src} alt={image.alt} class="w-full h-full !object-contain" />
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- PDPA Tab Content -->
+    <div id="PDPA" class="tab-content">
+      <div class="pt-4 flex justify-center flex-col items-center gap-0">
+        <Headline title="PDPA" classes={{ container: 'pt-12 lg:pt-0 lg:mb-8' }} />
+        <div class="flex justify-center md:items-center xl:items-start">
+          <p class="flex justify-center md:text-lg md:flex-row flex-col items-center">
+        ทีมงานของเราได้ผ่านการอบรมเกี่ยวกับ
+            <span class="text-primary">ความปลอดภัยของข้อมูลส่วนบุคคล (PDPA)</span>
+            และมีการปฏิบัติตามกฎหมายอย่างเคร่งครัด
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 mx-auto">
+          {
+            pdpa.map((pdpa) => (
+              <div class="image-container border-gray-300 p-2">
+          <a href={pdpa.src} class="image-link">
+            <Image src={pdpa.src} alt={pdpa.alt} class="w-full h-full !object-contain mx-auto border-2" />
+          </a>
+              </div>
+            ))
+          }
+        </div>
+
+        <style>
+          .image-link img {
+            transition: transform 0.3s ease;
+          }
+          .image-link:hover img {
+            transform: scale(1.1);
+          }
+        </style>
+      </div>
     </div>
   </WidgetWrapper>
 </Layout>
 
 <style>
-  .image-container {
-    overflow: hidden;
-  }
-  .image-scale {
-    transition: transform 0.3s ease-in-out;
-  }
-  .image-container:hover .image-scale {
-    transform: scale(1.1);
-  }
-  .animate-on-scroll {
+  .tab-content {
+    display: none;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
     transition:
-      opacity 0.6s ease-out,
-      transform 0.6s ease-out;
-    transition-delay: calc(var(--animation-order, 0) * 0.1s);
+      opacity 0.3s ease-out,
+      transform 0.3s ease-out;
+    animation: fade-in 1s ease-out forwards;
   }
-  .animate-on-scroll.show {
-    opacity: 1;
-    transform: translateY(0);
+
+  .tab-content.active {
+    display: block;
+    animation: fade-in 1s ease-out forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /*---------- slider tab selector -----------*/
+  :root {
+  --tab-count: 2; /* Change this to match the number of tabs */
+}
+
+.wrapper {
+  width: calc(var(--tab-count) * 120px); /* Adjust 120px per tab as needed */
+  max-width: 100%;
+  background: #fff;
+}
+
+.wrapper header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+header label {
+  height: 100%;
+  z-index: 2;
+  width: calc(100% / var(--tab-count)); /* Dynamically adjust label width */
+  display: flex;
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+header .slider {
+  position: absolute;
+  height: 93%;
+  border-radius: inherit;
+  background: linear-gradient(145deg, var(--aw-color-primary) 0%, #ffd000 120%);
+  transition: all 0.3s ease;
+  width: calc(100% / var(--tab-count)); /* Dynamic slider width */
+}
+
+/* Dynamic slider positioning */
+#tab-1:checked ~ header .slider {
+  left: calc(0 * (100% / var(--tab-count)));
+}
+
+#tab-2:checked ~ header .slider {
+  left: calc(1 * (100% / var(--tab-count)));
+}
+
+#tab-3:checked ~ header .slider {
+  left: calc(2 * (100% / var(--tab-count)));
+}
+
+#tab-4:checked ~ header .slider {
+  left: calc(3 * (100% / var(--tab-count)));
+}
+
+.wrapper input[type='radio'] {
+  display: none;
+}
+
+
+  @media screen and (max-width: 480px) {
+    .wrapper header {
+      height: auto;
+      margin-top: 40px;
+    }
+
+    header label {
+      font-size: 14px;
+      padding: 8px 0;
+    }
+
+ 
+
+
   }
 </style>
 
 <script>
-  function handleIntersection(entries: IntersectionObserverEntry[]) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  }
-
-  const observer = new IntersectionObserver(handleIntersection, {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1,
-  });
-
   document.addEventListener('astro:page-load', () => {
-    const elements = document.querySelectorAll('.animate-on-scroll');
-    elements.forEach((el) => observer.observe(el));
+    const inputs = document.querySelectorAll('input[name="slider"]');
+    const contents = document.querySelectorAll('.tab-content');
+
+    inputs.forEach((input, index) => {
+      input.addEventListener('change', () => {
+        contents.forEach((content) => content.classList.remove('active'));
+        contents[index].classList.add('active');
+      });
+    });
   });
 </script>

@@ -9,21 +9,6 @@ const metadata = {
   title: 'ผลงานของเรา | Our Works',
 };
 
-const governmentProjects = [
-  {
-    title: 'หน่วยงานกรุงเทพมหานคร',
-    description: 'ระบบเผยแพร่ข้อมูลจัดซื้อจัดจ้างภาครัฐของหน่วยงานกรุงเทพมหานคร',
-    image: `${environmentConfig.baseImageUrl}/images/protal-egp2.webp`,
-    link: 'https://egp2.bangkok.go.th',
-  },
-  {
-    title: 'อบรมหลักสูตรการใช้งาน ระบบเผยแพร่ข้อมูลการจัดซื้อจัดจ้างภาครัฐของหน่วยงานกรุงเทพมหานคร ระยะที่ 2',
-    description:
-      'เมื่อวันที่ 18 กรกฎาคม 2567 บริษัทฯได้จัดอบรมหลักสูตรการใช้งาน ระบบเผยแพร่ข้อมูลการจัดซื้อจัดจ้างภาครัฐของหน่วยงานกรุงเทพมหานคร ระยะที่ 2 โดยลุล่วงไปด้วยดี และได้ส่งงานตามกรอบเวลา ซึ่งแสดงให้เห็นถึงศักยภาพของบริษัทฯ ได้เป็นอย่างดี',
-    image: `${environmentConfig.baseImageUrl}/images/seminar-egp.webp`,
-  },
-];
-
 const privateProjects = [
   {
     image: `${environmentConfig.baseImageUrl}/images/eventbanana-logo.png`,
@@ -79,12 +64,6 @@ const internationalProjects = [
       </p>
 
       <div class="mb-8">
-        <h3 class="text-2xl font-semibold mb-4">ภาครัฐ (บางส่วน)</h3>
-        <ProjectGrid projects={governmentProjects} classes={{ itemContent: 'flex flex-col justify-between h-full' }} />
-      </div>
-
-      <div class="mb-8">
-        <h3 class="text-2xl font-semibold mb-4">ภาคเอกชน (บางส่วน)</h3>
         <ProjectGrid
           projects={privateProjects}
           classes={{ itemContent: 'flex flex-col justify-between h-full animate-on-scroll' }}

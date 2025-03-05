@@ -114,7 +114,7 @@ const pdpa = [
 <Layout metadata={metadata}>
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
     <!-- Tabs -->
-    <div class="wrapper mt-12 xl:mt-0 mb-[-40px] xl:mb-[-0px]">
+    <!-- <div class="wrapper mt-12 xl:mt-0 mb-[-40px] xl:mb-[-0px]">
       <input type="radio" name="slider" id="tab-1" checked />
       <input type="radio" name="slider" id="tab-2" />
       <input type="radio" name="slider" id="tab-3" />
@@ -122,14 +122,14 @@ const pdpa = [
       <header>
         <label for="tab-1" class="tab-1">ISO 29110</label>
         <label for="tab-2" class="tab-2">Microsoft</label>
-        <!-- <label for="tab-3" class="tab-3">PDPA</label>
-        <label for="tab-4" class="tab-4">PDPA DPO</label> -->
+        <label for="tab-3" class="tab-3">PDPA</label>
+        <label for="tab-4" class="tab-4">PDPA DPO</label>
         <div class="slider"></div>
       </header>
-    </div>
+    </div> -->
 
     <!-- Standards Tab Content -->
-    <div id="standards" class="tab-content active">
+    <div id="standards" class="tab-content ">
       <div class="block-effect" style="--td: 1s">
         <div class="block-reveal pt-4" style="--bc: var(--aw-color-primary); --d: .1ms">
           <Headline title="มาตรฐานของเรา" classes={{ container: 'pt-14 lg:pt-0 lg:mb-8' }} />
@@ -164,7 +164,7 @@ const pdpa = [
     </div>
 
     <!-- Certificates Tab Content -->
-    <div id="certificates" class="tab-content flex justify-center">
+    <div id="certificates" class="tab-content flex justify-center active">
       <div class="pt-4">
         <Headline title="ใบรับรองของเรา" classes={{ container: 'pt-12 lg:pt-0 lg:mb-8' }} />
       </div>
@@ -255,7 +255,7 @@ const pdpa = [
 
   /*---------- slider tab selector -----------*/
   :root {
-  --tab-count: 2; /* Change this to match the number of tabs */
+  --tab-count: 1; /* Change this to match the number of tabs */
 }
 
 .wrapper {

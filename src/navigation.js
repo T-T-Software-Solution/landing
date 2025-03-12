@@ -3,8 +3,8 @@ import { getPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'หน้าแรก',
-      href: getPermalink('/'),
+      text: 'รู้จักเรา',
+      href: getPermalink('/about-us'),
     },
     {
       text: 'ผลิตภัณฑ์',
@@ -55,7 +55,7 @@ export const footerData = {
     {
       title: 'เมนู',
       links: [
-        { text: 'หน้าแรก', href: getPermalink('/') },
+        { text: 'รู้จักเรา', href: getPermalink('/about-us') },
         { text: 'สินค้า/บริการ', href: '/services' },
         { text: 'ผลงานของเรา', href: '/our-works' },
         { text: 'มาตรฐาน และใบรับรองของเรา', href: '/our-standard' }, 
@@ -72,10 +72,10 @@ export const footerData = {
     },
   ],
   contactLinks: [
-    { icon: 'envelope', text: 'nakorn@tt-ss.net', href: 'mailto:nakorn@tt-ss.net' },
+    { icon: 'envelope', text: 'watcharapong@tt-ss.net', href: 'mailto:watcharapong@tt-ss.net' },
     { icon: 'envelope', text: 'hr@tt-ss.net (ฝ่ายทรัพยากรบุคคล)', href: 'mailto:hr@tt-ss.net' },
-    { icon: 'phone', text: '086-899-6243 (สำนักงานกรุงเทพ)', href: 'tel:0868996243' },
-    { icon: 'phone', text: '061-018-1275 (สำนักงานขอนแก่น)', href: 'tel:0610181275' },
+    { icon: 'phone', text: '090-161-9166 (สำนักงานกรุงเทพ)', href: 'tel:0901619166' },
+    { icon: 'phone', text: '061-018-1275 (ฝ่ายทรัพยากรบุคคล)', href: 'tel:0610181275' },
     { icon: 'line', text: '@ttss', href: 'https://line.me/R/ti/p/@ttss' },
   ],
   socialLinks: [

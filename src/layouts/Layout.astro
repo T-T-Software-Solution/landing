@@ -9,9 +9,10 @@ import BasicScripts from '~/components/common/BasicScripts.astro';
 import CommonMeta from '~/components/common/CommonMeta.astro';
 import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
-import ZohoSalesIqWidget from '~/components/common/ZohoSalesIqWidget.astro';
+// import ZohoSalesIqWidget from '~/components/common/ZohoSalesIqWidget.astro';
 import CustomStyles from '~/components/CustomStyles.astro';
 import Favicons from '~/components/Favicons.astro';
+import SalesIQ from '~/components/ZohoChat';
 
 // Comment the line below to disable View Transitions
 import { ViewTransitions } from 'astro:transitions';
@@ -36,7 +37,8 @@ const { language, textDirection } = I18N;
     <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
-    <ZohoSalesIqWidget />
+    <SalesIQ client:load />
+    <!-- <ZohoSalesIqWidget /> -->
     <!-- Comment the line below to disable View Transitions -->
     <ViewTransitions fallback="swap" />
   </head>

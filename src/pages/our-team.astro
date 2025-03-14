@@ -43,27 +43,30 @@ const executives = [
   {
     name: 'Watcharapong Suckavanich',
     position: 'General Manager (GM)',
-    bio: 'ประสบการณ์ด้านบริหารโครงการและวิทยากรอบรมมากกว่า 12 ปี',
+    bio: 'เป็นผู้เชี่ยวชาญ และที่ปรึกษาด้านบริหารโครงการในหลายหน่วยงาน',
     image: `${environmentConfig.baseImageUrl}/images/team-gm.webp`,
     certificates: [
-      'บริหารจัดการโครงการ ปรับปรุงระบบเผยแพร่ข้อมูล การจัดซื้อจัดจ้างภาครัฐ ของหน่วยงานกรุงเทพมหานคร (e-GP BMA) Phase 2',
-      'วิทยากรบรรยาย แก่นักศึกษาคณะวิศวกรรมศาสตร์ มหาวิทยาลัยขอนแก่น',
-      'วิทยากรอบรมผู้ใช้งาน โครงการปรับปรุงระบบเผยแพร่ข้อมูล การจัดซื้อจัดจ้างภาครัฐ ของหน่วยงานกรุงเทพมหานคร (e-GP BMA) Phase 2',
+      'PhD (Candidate) Information Technology Management (ITM), Mahidol University',
+      'M.Sc. Financial Engineering, UTCC (ทุนวิจัยตลาดหลักทรัพย์แห่งประเทศไทย)',
+      'บริหารโครงการทั้งภาครัฐและเอกชน หลายองค์กร มากว่า 12 ปี',
+      'วิทยากรอบรม และบรรยายในงานอีเวนต์ และมหาวิทยาลัยต่างๆ',
+      'ที่ปรึกษาออกแบบระบบต่างๆ รวมถึงการทำ Digital Transformation และการนำเสนอ IT Solutions เพื่อแก้ปัญหาในองค์กร',
     ],
-  },
+},
 ];
 ---
 
 <Layout metadata={metadata}>
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <div class="pt-6">
     <Headline
       title="ทีมงานของเรา"
       subtitle="พบกับทีมผู้นำและบุคลากรที่มีความสามารถของเรา ผู้ขับเคลื่อนความสำเร็จขององค์กร"
       classes={{ container: 'pt-12 lg:pt-0' }}
     />
-
+    </div>
     <section class="mb-16">
-      <h2 class="text-3xl font-bold mb-8 text-center">ผู้บริหาร</h2>
+      <h2 class="text-3xl font-bold mb-6 text-center">ผู้บริหาร</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {
           executives.map((exec) => (
@@ -150,7 +153,7 @@ const executives = [
     </section>
     <div class="flex justify-center">
       <Image
-        src={`${environmentConfig.baseImageUrl}/images/team-photo-new.webp`}
+        src={`${environmentConfig.baseImageUrl}/images/our_team/2025/1.png`}
         alt="รูปรวมพนักงาน"
         class="w-full max-w-4xl rounded-lg shadow-lg"
       />

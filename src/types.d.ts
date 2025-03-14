@@ -216,6 +216,7 @@ export interface Form {
 export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' | 'classes'> {
   contact?: string;
   actions?: string | CallToAction[];
+  overrideClass?: string;
 }
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {

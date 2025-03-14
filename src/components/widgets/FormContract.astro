@@ -1,0 +1,149 @@
+---
+import { Icon } from 'astro-icon/components';
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } = Astro.props;
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-screen-lg mx-auto py-4 lg:py-8 ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-2">
+      <h2 class="text-2xl font-bold">ติดต่อเรา</h2>
+      <p class="text-sm text-gray-500">
+        ติดต่อผู้เชี่ยวชาญด้านซอฟต์แวร์ของ TTSS เพื่อขอข้อมูลเพิ่มเติมหรือนำเสนอบริการของเรา
+      </p>
+      <form class="flex flex-col gap-2" id="form-contract">
+        <div class="flex flex-col gap-2">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div class="flex flex-col gap-2">
+              <label for="firstname" class="text-sm text-gray-500">ชื่อ <span class="text-red-500">*</span></label>
+              <input type="text" id="firstname" class="w-full p-2 border border-gray-300 rounded-md" />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="lastname" class="text-sm text-gray-500">นามสกุล <span class="text-red-500">*</span></label>
+              <input type="text" id="lastname" class="w-full p-2 border border-gray-300 rounded-md" />
+            </div>
+          </div>
+          <label for="company" class="text-sm text-gray-500"
+            >ชื่อหน่วยงาน/องค์กร/บริษัท <span class="text-red-500">*</span></label
+          >
+          <input type="text" id="company" class="w-full p-2 border border-gray-300 rounded-md" />
+          <label for="email" class="text-sm text-gray-500">อีเมล <span class="text-red-500">*</span></label>
+          <input type="email" id="email" class="w-full p-2 border border-gray-300 rounded-md" />
+          <label for="phone" class="text-sm text-gray-500">เบอร์โทรศัพท์ <span class="text-red-500">*</span></label>
+          <input type="tel" id="phone" class="w-full p-2 border border-gray-300 rounded-md" />
+          <label for="message" class="text-sm text-gray-500">รายละเอียดเพิ่มเติม</label>
+          <textarea id="message" rows="4" class="w-full p-2 border border-gray-300 rounded-md"></textarea>
+          <button
+            type="submit"
+            class="w-full p-2 bg-primary text-white rounded-md disabled:opacity-50"
+            id="submit-send-contract">ส่งข้อมูล</button
+          >
+        </div>
+      </form>
+      <div id="loading-dialog" class="fixed inset-0 items-center justify-center bg-black bg-opacity-50 hidden z-50">
+        <div class="bg-white p-4 rounded-md">
+          <div class="flex flex-col items-center gap-2">
+            <Icon name="tabler:loader" class="w-10 h-10 mr-2 rtl:mr-0 rtl:ml-2 text-primary" />
+            <h2 class="text-lg font-bold">กำลังส่งข้อมูล</h2>
+          </div>
+        </div>
+      </div>
+      <div id="success-dialog" class="fixed inset-0 items-center justify-center bg-black bg-opacity-50 hidden z-50">
+        <div class="bg-white p-4 rounded-md">
+          <div class="flex flex-col items-center gap-2">
+            <Icon name="tabler:bell-check" class="w-10 h-10 mr-2 rtl:mr-0 rtl:ml-2 text-green-700" />
+            <h2 class="text-lg font-bold">บริษัทได้รับข้อมูลของคุณเรียบร้อย</h2>
+          </div>
+          <p class="text-sm text-gray-500">ขอบคุณสำหรับการติดต่อเรา ทางบริษัทจะติดต่อกลับเร็วๆ นี้</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</WidgetWrapper>
+
+<script>
+  import emailjs from '@emailjs/browser';
+  function openLoadingDialog() {
+    const loadingDialog = document.getElementById('loading-dialog');
+    loadingDialog?.classList.add('flex');
+    loadingDialog?.classList.remove('hidden');
+  }
+  function closeLoadingDialog() {
+    const loadingDialog = document.getElementById('loading-dialog');
+    loadingDialog?.classList.add('hidden');
+    loadingDialog?.classList.remove('flex');
+  }
+  function displaySuccessDialog() {
+    const successDialog = document.getElementById('success-dialog');
+    successDialog?.classList.add('flex');
+    successDialog?.classList.remove('hidden');
+
+    setTimeout(() => {
+      successDialog?.classList.add('hidden');
+      successDialog?.classList.remove('flex');
+    }, 3000);
+  }
+  document.addEventListener('astro:page-load', () => {
+    const form = document.getElementById('form-contract');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      openLoadingDialog();
+      const firstname = form?.querySelector('#firstname') as HTMLInputElement;
+      const lastname = form?.querySelector('#lastname') as HTMLInputElement;
+      const company = form?.querySelector('#company') as HTMLInputElement;
+      const email = form?.querySelector('#email') as HTMLInputElement;
+      const phone = form?.querySelector('#phone') as HTMLInputElement;
+      const message = form?.querySelector('#message') as HTMLTextAreaElement;
+      const templateParams = {
+        firstname: firstname?.value,
+        lastname: lastname?.value,
+        company: company?.value,
+        email: email?.value,
+        phone: phone?.value,
+        message: message?.value,
+      };
+      const fields = [
+        { id: 'firstname', message: 'กรุณากรอกชื่อ' },
+        { id: 'lastname', message: 'กรุณากรอกนามสกุล' },
+        { id: 'company', message: 'กรุณากรอกชื่อหน่วยงาน/องค์กร/บริษัท' },
+        { id: 'email', message: 'กรุณากรอกอีเมล' },
+        { id: 'phone', message: 'กรุณากรอกเบอร์โทรศัพท์' },
+      ];
+
+      fields.forEach((field) => {
+        const input = form?.querySelector(`#${field.id}`) as HTMLInputElement;
+        const error = document.getElementById(`${field.id}-error`);
+        error?.remove();
+        if (!input?.value) {
+          input.insertAdjacentHTML(
+            'afterend',
+            `<span id="${field.id}-error" class="text-red-500 text-sm">${field.message}</span>`
+          );
+        }
+      });
+      try {
+        if (firstname?.value && lastname?.value && company?.value && email?.value && phone?.value) {
+          emailjs
+            .send('service_337e56c', 'template_1k7a6vd', templateParams, {
+              publicKey: 'JYgV35bv1uroN3uyQ',
+            })
+            .then(() => {
+              closeLoadingDialog();
+              displaySuccessDialog();
+            })
+            .catch((error) => {
+              closeLoadingDialog();
+              console.log(error);
+            });
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  });
+</script>

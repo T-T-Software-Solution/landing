@@ -9,27 +9,13 @@ const metadata = {
   title: 'ผลงานของเรา | Our Works',
 };
 
-const governmentProjects = [
-  {
-    title: 'หน่วยงานกรุงเทพมหานคร',
-    description: 'ระบบเผยแพร่ข้อมูลจัดซื้อจัดจ้างภาครัฐของหน่วยงานกรุงเทพมหานคร',
-    image: `${environmentConfig.baseImageUrl}/images/protal-egp2.webp`,
-    link: 'https://egp2.bangkok.go.th',
-  },
-  {
-    title: 'อบรมหลักสูตรการใช้งาน ระบบเผยแพร่ข้อมูลการจัดซื้อจัดจ้างภาครัฐของหน่วยงานกรุงเทพมหานคร ระยะที่ 2',
-    description:
-      'เมื่อวันที่ 18 กรกฎาคม 2567 บริษัทฯได้จัดอบรมหลักสูตรการใช้งาน ระบบเผยแพร่ข้อมูลการจัดซื้อจัดจ้างภาครัฐของหน่วยงานกรุงเทพมหานคร ระยะที่ 2 โดยลุล่วงไปด้วยดี และได้ส่งงานตามกรอบเวลา ซึ่งแสดงให้เห็นถึงศักยภาพของบริษัทฯ ได้เป็นอย่างดี',
-    image: `${environmentConfig.baseImageUrl}/images/seminar-egp.webp`,
-  },
-];
-
 const privateProjects = [
   {
     image: `${environmentConfig.baseImageUrl}/images/eventbanana-logo.png`,
     imageClass: 'p-4 min-h-60 !object-contain !object-center',
     title: 'Event Banana',
-    description: 'อีเวนท์ บานาน่า เป็นแพลตฟอร์มออนไลน์ที่รวบรวมสถานที่จัดงานกว่า 5,000 แห่งทั่วไทย และเสนอเมนูอาหารสำหรับงานต่าง ๆ มากกว่า 2,000 เมนู เหมาะสำหรับการจัดประชุม งานแต่ง งานเลี้ยง และงานองค์กร ช่วยให้การจัดงานง่ายขึ้นในทุกขั้นตอน',
+    description:
+      'อีเวนท์ บานาน่า เป็นแพลตฟอร์มออนไลน์ที่รวบรวมสถานที่จัดงานกว่า 5,000 แห่งทั่วไทย และเสนอเมนูอาหารสำหรับงานต่าง ๆ มากกว่า 2,000 เมนู เหมาะสำหรับการจัดประชุม งานแต่ง งานเลี้ยง และงานองค์กร ช่วยให้การจัดงานง่ายขึ้นในทุกขั้นตอน',
   },
   {
     image: `${environmentConfig.baseImageUrl}/images/easyinsure.webp`,
@@ -57,33 +43,27 @@ const internationalProjects = [
     link: '/our-works/detail/wrm',
   },
 ];
-
 ---
 
 <Layout metadata={metadata}>
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
-    <Headline
-      title="ผลงานของเรา"
-      subtitle="ค้นพบโครงการที่น่าตื่นเต้นและสร้างสรรค์ของทีมเรา ทั้งในประเทศและต่างประเทศ"
-      classes={{ container: 'pt-12 lg:pt-0' }}
-    />
-
+    <div class="pt-6">
+      <Headline
+        title="ผลงานของเรา"
+        subtitle="ค้นพบโครงการที่น่าตื่นเต้นและสร้างสรรค์ของทีมเรา ทั้งในประเทศและต่างประเทศ"
+        classes={{ container: 'pt-12 lg:pt-0' }}
+      />
+    </div>
     <section class="mb-12">
       <h2 class="text-3xl font-bold mb-4">ผลงานภายในประเทศ</h2>
       <p class="text-gray-600 mb-6">
-        บริษัทฯ มุ่งมั่นพัฒนาคุณภาพการให้บริการอย่างต่อเนื่องมาตั้งแต่อดีตจนถึงปัจจุบัน 
-        จนได้รับความเชื่อมั่นและการยอมรับจากลูกค้าอย่างกว้างขวาง 
-        โดยสามารถสังเกตได้จากความไว้วางใจของลูกค้าเดิมที่เคยใช้บริการพัฒนาระบบกับบริษัทฯ 
-        ซึ่งยังคงเลือกให้บริษัทฯ ดำเนินการปรับปรุงและพัฒนาระบบเดิมให้ทันสมัย (Upgrade and Enhancement) อย่างต่อเนื่อง
+        บริษัทฯ มุ่งมั่นพัฒนาคุณภาพการให้บริการอย่างต่อเนื่องมาตั้งแต่อดีตจนถึงปัจจุบัน
+        จนได้รับความเชื่อมั่นและการยอมรับจากลูกค้าอย่างกว้างขวาง
+        โดยสามารถสังเกตได้จากความไว้วางใจของลูกค้าเดิมที่เคยใช้บริการพัฒนาระบบกับบริษัทฯ ซึ่งยังคงเลือกให้บริษัทฯ
+        ดำเนินการปรับปรุงและพัฒนาระบบเดิมให้ทันสมัย (Upgrade and Enhancement) อย่างต่อเนื่อง
       </p>
 
       <div class="mb-8">
-        <h3 class="text-2xl font-semibold mb-4">ภาครัฐ (บางส่วน)</h3>
-        <ProjectGrid projects={governmentProjects} classes={{ itemContent: 'flex flex-col justify-between h-full' }} />
-      </div>
-
-      <div class="mb-8">
-        <h3 class="text-2xl font-semibold mb-4">ภาคเอกชน (บางส่วน)</h3>
         <ProjectGrid
           projects={privateProjects}
           classes={{ itemContent: 'flex flex-col justify-between h-full animate-on-scroll' }}

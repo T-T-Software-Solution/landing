@@ -139,7 +139,7 @@ const metadata = {
           </a>
         </div>
         <div
-          class="text-center font-bold cursor-pointer my-2 border border-[#FF6A3F] rounded-lg w-fit mx-auto px-4 py-2 bg-gradient-to-l from-[#FF6A3F] to-[#F5C253] text-white sm:min-w-[300px] hover:bg-gradient-to-l hover:from-[#cf6244] hover:to-[#F5C253] transition-all duration-300"
+          class="open-chat-head text-center font-bold cursor-pointer my-2 border border-[#FF6A3F] rounded-lg w-fit mx-auto px-4 py-2 bg-gradient-to-l from-[#FF6A3F] to-[#F5C253] text-white sm:min-w-[300px] hover:bg-gradient-to-l hover:from-[#cf6244] hover:to-[#F5C253] transition-all duration-300"
         >
           แชทกับเราตอนนี้ →
         </div>
@@ -221,3 +221,19 @@ const metadata = {
   </div>
   <TalktoMe />
 </Layout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const openChatHead = document.querySelectorAll('.open-chat-head');
+    if (openChatHead) {
+      openChatHead.forEach((element) => {
+        element.addEventListener('click', () => {
+          const zohoButton = document.querySelector('#zsiq_float') as HTMLButtonElement;
+          if (zohoButton) {
+            zohoButton.click();
+          }
+        });
+      });
+    }
+  });
+</script>

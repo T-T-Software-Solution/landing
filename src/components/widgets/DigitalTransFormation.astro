@@ -112,7 +112,7 @@ const services = [
         </p>
         <div class="flex justify-center">
           <div
-            class="cursor-pointer inline-block bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
+            class="open-chat-head cursor-pointer inline-block bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
           >
             แชทกับผู้เชี่ยวชาญของเราตอนนี้ →
           </div>
@@ -121,3 +121,19 @@ const services = [
     </div>
   </div>
 </WidgetWrapper>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const openChatHead = document.querySelectorAll('.open-chat-head');
+    if (openChatHead) {
+      openChatHead.forEach((element) => {
+        element.addEventListener('click', () => {
+          const zohoButton = document.querySelector('#zsiq_float') as HTMLButtonElement;
+          if (zohoButton) {
+            zohoButton.click();
+          }
+        });
+      });
+    }
+  });
+</script>

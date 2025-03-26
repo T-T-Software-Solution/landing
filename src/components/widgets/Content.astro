@@ -11,6 +11,7 @@ export interface Props extends Content {
   imageContainerClasses?: string;
   contentContainerClasses?: string;
   contentClasses?: string;
+  disableAnimation?: boolean;
 }
 
 const {
@@ -31,7 +32,8 @@ const {
   bg = await Astro.slots.render('bg'),
   imageContainerClasses = '',
   contentContainerClasses = '',
-  contentClasses = ''
+  contentClasses = '',
+  disableAnimation = false,
 } = Astro.props;
 ---
 
@@ -70,7 +72,7 @@ const {
           defaultIcon="tabler:check"
           classes={{
             container: `gap-y-4 lg:gap-y-8`,
-            panel: 'max-w-none animate-on-scroll',
+            panel: `max-w-none ${disableAnimation ? '' : 'animate-on-scroll'}`,
             title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
             description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
             icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-primary dark:bg-primary text-gray-50 p-1',

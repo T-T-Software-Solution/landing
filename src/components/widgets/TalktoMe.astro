@@ -1,0 +1,69 @@
+---
+import { Icon } from 'astro-icon/components';
+import Image from '../common/Image.astro';
+import LineIcon from '../icons/LineIcon.astro';
+---
+
+<div class="relative max-w-7xl mx-auto px-4 lg:px-6 py-12 text-center border border-[#FF6A3F] rounded-lg bg-[#FFEEE9]">
+  <div class="hidden lg:block absolute bottom-[-30px] right-[0px] z-50">
+    <Image src="~/assets/images/footer.webp" alt="Talk to me" class="xl:h-[600px] lg:h-[400px] w-full !object-contain" />
+  </div>
+  <h2 class="text-3xl font-bold mb-8">คุยกับเราตอนนี้</h2>
+  <div class="border-b border-4 border-[#FF6A3F] w-[100px] mx-auto my-4"></div>
+  <p class="text-gray-600 mb-8">ทีมงานและผู้เชี่ยวชาญพร้อมให้บริการคุณในช่องทางที่คุณสะดวก</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- Messenger -->
+    <div class="bg-white p-6 rounded-lg shadow h-full flex flex-col justify-between">
+      <div class="flex flex-col items-center">
+        <div class="bg-[#2D5CCC1A] p-3 rounded-full mb-4">
+          <Image src="~/assets/images/live-chat.svg" alt="Messenger" class="w-8 h-8" />
+        </div>
+        <h3 class="font-bold mb-2">แชทกับเราตอนนี้</h3>
+        <p class="text-sm text-gray-600 mb-4">แชทได้ผ่านเว็บไซต์นี้</p>
+      </div>
+      <div class="mt-4 bg-[#FF6B4A] w-fit mx-auto min-w-[160px] text-white px-6 py-2 rounded-full hover:bg-[#ff8468]">
+        เริ่มแชทเลย →
+      </div>
+    </div>
+
+    <div class="bg-white p-6 rounded-lg shadow h-full flex flex-col justify-between">
+      <div class="flex flex-col items-center">
+        <div class="bg-[#FFEEE9] p-3 rounded-full mb-2">
+          <LineIcon width="1.25rem" height="1.25rem" fill="#00C300"/>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <h3 class="font-bold mb-2">คุยกับเราผ่าน <br /> Line OA <span class="text-sm text-primary"> @ttss</span></h3>
+        </div>
+      </div>
+      <a
+        href="https://line.me/R/ti/p/@ttss"
+        target="_blank"
+        class=" text-sm mt-4 bg-[#FF6B4A] w-fit mx-auto min-w-[160px] text-white px-6 py-2 rounded-full hover:bg-[#ff8468]"
+      >
+        ADD LINE →
+      </a>
+    </div>
+
+    <!-- Phone -->
+    <div class="bg-white p-6 rounded-lg shadow h-full flex flex-col justify-between">
+      <div class="flex flex-col items-center">
+        <div class="bg-[#FFEEE9] p-3 rounded-full mb-2">
+          <Icon name="tabler:phone-filled" class="w-8 h-8 text-[#FF6A3F]" fill="#FF6A3F" />
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <h3 class="font-bold mb-2">โทรหาเรา</h3>
+          <p class="text-sm text-gray-600">090-161-9166 (สำนักงานกรุงเทพ)</p>
+          <p class="text-sm text-gray-600">061-018-1275 (ฝ่ายทรัพยากรบุคคล)</p>
+        </div>
+      </div>
+      <a
+        href="tel:0901619166"
+        target="_blank"
+        class="mt-4 bg-[#FF6B4A] w-fit mx-auto min-w-[160px] text-white px-6 py-2 rounded-full hover:bg-[#ff8468]"
+      >
+        โทรเลย →
+      </a>
+    </div>
+  </div>
+</div>

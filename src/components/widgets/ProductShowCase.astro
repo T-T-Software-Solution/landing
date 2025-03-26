@@ -1,0 +1,110 @@
+---
+import type { Content } from '~/types';
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Image from '../common/Image.astro';
+import { Icon } from 'astro-icon/components';
+
+export interface Props extends Content {
+  imageContainerClasses?: string;
+}
+
+const { isAfterContent = false, id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } = Astro.props;
+
+const products = [
+  {
+    title: 'T.T. AI CHAT BOT',
+    description:
+      'T.T. AI CHAT คือระบบที่พัฒนาโดยทีมงานผู้เชี่ยวชาญ ของเรา เพื่อตอบโจทย์การใช้งานและจัดการ AI อย่างมี ประสิทธิภาพ เช่น การกำหนดสิทธิ์การเข้าถึงข้อมูล และควบคุมการมองเห็นข้อมูล เพื่อให้ AI ทำงานได้อย่าง ปลอดภัยและตอบสนองความต้องการของคุณ ได้อย่างสมบูรณ์',
+    image: `~/assets/images/ai.webp`,
+    icon: '~/assets/images/product1.webp',
+  },
+  {
+    title: 'T.T. HR',
+    description:
+      'TT HR คือ ระบบบริหารบุคลากรที่พัฒนาขึ้นโดยทีมงาน ผู้เชี่ยวชาญของเรา เพื่อตอบโจทย์ทุกความต้องการในการ จัดการทรัพยากรบุคคลในองค์กร ระบบนี้ครอบคลุม การจัดการ ข้อมูลบุคคลทั้งหมดตั้งแต่ประวัติส่วนตัว การจ้างงาน ประวัติการศึกษาไปจนถึงการออกรายงาน ที่สำคัญ เช่น กพ.7 นอกจากนี้ยังมาพร้อมฟังก์ชัน ระบบจัดการ เงินเดือนและระบบการลาที่ช่วยให้การ ดำเนินการต่าง ๆ เป็นไปอย่างสะดวกและครบวงจร',
+    image: `~/assets/images/hr.webp`,
+    icon: '~/assets/images/product2.webp',
+  },
+  {
+    title: 'T.T. CMS',
+    description:
+      'TT CMS คือระบบจัดการ Content Management System ที่พัฒนาขึ้นโดยทีมงานของเรา เพื่อช่วยให้ การจัดการเนื้อหา (Content) ฝั่ง Public บนเว็บไซต์ ของคุณเป็นเรื่องง่ายและสะดวกสบาย ระบบนี้ออกแบบมา เพื่อรองรับไฟล์หลากหลายรูปแบบ พร้อมด้วย RichEditor ที่ช่วยให้ผู้ใช้งานสามารถแก้ไขเนื้อหาได้ โดยตรงบนเว็บไซต์โดยไม่จำเป็นต้องมีความรู้ด้านการ เขียนโค้ด ผู้ใช้งานสามารถจัดการเนื้อหาได้อย่างรวดเร็ว และเป็นระบบ',
+    image: `~/assets/images/cms.webp`,
+    icon: '~/assets/images/product3.webp',
+  },
+  {
+    title: 'T.T. BUDGET',
+    description:
+      'TT BUDGET คือระบบบริหารงบประมาณที่ออกแบบ และพัฒนาโดยทีมงานผู้เชี่ยวชาญของเราเพื่อรองรับ ทุกขั้นตอนของการจัดการงบประมาณอย่างครบวงจร ตั้งแต่กระบวนการ วางแผนตั้งงบประมาณ การจัดสรร งบประมาณ ให้กับหน่วยงานที่เกี่ยวข้อง การโยกย้าย งบประมาณไปจนถึงการติดตามการใช้งบประมาณ อย่างมีประสิทธิภาพ',
+    image: `~/assets/images/budget.webp`,
+    icon: '~/assets/images/product4.webp',
+  },
+  {
+    title: 'T.T. SURVEY',
+    description:
+      'TT SURVEY เป็นระบบ บริหารจัดการแบบสอบถาม ที่ออกแบบมาเพื่อรองรับการเก็บข้อมูลเชิงโครงสร้าง รองรับรูปแบบคำถาม-คำตอบ ที่หลากหลาย และสามารถกำหนดสิทธิ์การเข้าถึง ตามบทบาทผู้ใช้งานและหน่วยงาน สร้างแบบสอบถาม ได้ไม่จำกัดจำนวน พร้อมระบบบริหารจัดการแบบสอบถามที่เป็นมาตรฐาน รองรับการนำออกข้อมูลเพื่อนำไปใช้กับระบบอื่น',
+    image: '~/assets/images/tt-survey.webp',
+    icon: '~/assets/images/product5.webp',
+  },
+  {
+    title: 'T.T. FINANCE',
+    description:
+      'TT Finance คือระบบบริหารจัดการทางการเงิน ครบวงจรสำหรับสินเชื่อและการดำเนินคดีโดยระบบมีวัตถุประสงค์หลักในการจัดเก็บข้อมูลทรัพย์สิน, บริหารสินเชื่อ, ติดตามการชำระหนี้,และควบคุมกระบวนการดำเนินคดี ของลูกหนี้ที่ผิดนัดชำระรวมถึงควบคุมค่าใช้จ่ายทาง กฎหมายต่างๆ ได้อย่างเป็นระบบ',
+    image: '~/assets/images/finance.webp',
+    icon: '~/assets/images/product6.webp',
+  },
+  {
+    title: 'T.T. ILAB',
+    description:
+      'T.T. iLAB คือระบบบริการตรวจวิเคราะห์ตัวอย่าง ทางชีวภาพหรือสารตัวอย่าง เพื่อหาผลลัพธ์ทางการแพทย์ วิทยาศาสตร์ หรืออุตสาหกรรม โดยระบบรองรับการ บริหารจัดการคำร้อง (Lab Order), คำนวณค่าบริการ อัตโนมัติ และชำระเงินได้หลายรูปแบบ (QR Code / บัตรเครดิต)พร้อมแสดงสถานะการดำเนินการและ ผลวิเคราะห์ผ่านระบบออนไลน์',
+    image: '~/assets/images/ILab.webp',
+    icon: '~/assets/images/product7.webp',
+  },
+  {
+    title: 'T.T. TRACKING',
+    description:
+      'T.T. Tracking คือระบบติดตามการเดินทาง โดยระบบจะบันทึกจุดขึ้น-ลงของแต่ละคนแบบเรียลไทม์ ผ่านการสแกน QR Code ที่ติดตั้งในรถ พร้อมแสดง ข้อมูลเส้นทาง, สถานะปัจจุบัน, และประวัติการเดินทาง ผ่านแผนที่ ที่สามารถเข้าถึงได้ง่ายจากอุปกรณ์ทุกชนิด เช่น มือถือ, Tablet หรือ Web Application',
+    image: '~/assets/images/tracking.webp',
+    icon: '~/assets/images/product8.webp',
+  },
+];
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-7xl mx-auto ${isAfterContent ? 'pt-0 lg:pt-0 lg:pt-0' : ''} ${classes?.container ?? ''} bg-white py-4 lg:py-4 rounded-lg`}
+  bg={bg}
+>
+  <div class="max-w-7xl mx-auto px-4 lg:px-6 py-12">
+    {
+      products.map((product, index) => (
+        <div class="bg-white rounded-lg p-8 grid grid-cols-1 lg:grid-cols-3 items-center gap-8 border border-[#FF6A3F] shadow-lg my-4">
+          <div class={`${index % 2 === 0 ? 'order-1' : ''}`}>
+            <Image src={product.image} alt={product.title} class="w-full rounded-lg shadow-lg" />
+          </div>
+          <div class={`${index % 2 === 1 ? 'order-2' : ''}`}>
+            <h2 class="text-3xl font-bold mb-4 bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] inline-block text-transparent bg-clip-text">
+              {product.title}
+            </h2>
+            <p class="text-[#4D4C66] mb-6">{product.description}</p>
+          </div>
+          <div class="order-3 flex flex-col items-center justify-center">
+            <div class="w-full relative">
+              <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                <div class="w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] bg-[#FFE9CD] rounded-full" />
+              </div>
+              <Image src={product.icon} alt={product.title} class="w-full h-[200px] !object-contain lg:h-[300px]" />
+            </div>
+            <div class="flex items-center gap-2 w-fit bg-[#FF9B3F] text-white px-8 py-2 rounded-lg border-[3px] border-black font-medium hover:opacity-90 transition-opacity">
+              สนใจ
+              <div class="bg-black rounded-full p-1">
+                <Icon name="tabler:chevron-right" />
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</WidgetWrapper>

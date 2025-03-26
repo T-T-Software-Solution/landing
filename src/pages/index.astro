@@ -1,12 +1,17 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Image from '~/components/common/Image.astro';
+import ArrowRightIcon from '~/components/icons/ArrowRightIcon.astro';
 import FacebookIcon from '~/components/icons/FacebookIcon.astro';
 import LineIcon from '~/components/icons/LineIcon.astro';
-import FormContract from '~/components/widgets/FormContract.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import DigitalTransFormation from '~/components/widgets/DigitalTransFormation.astro';
 import { environmentConfig } from '~/config';
 import Layout from '~/layouts/PageLayout.astro';
+import ProductShowCase from '~/components/widgets/ProductShowCase.astro';
+import TrustBusiness from '~/components/widgets/TrustBusiness.astro';
+import TalktoMe from '~/components/widgets/TalktoMe.astro';
 
 const metadata = {
   title: 'T.T. Software Solution — ที.ที. ซอฟแวร์ โซลูชั่น',
@@ -16,53 +21,203 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
-  <Hero
-    tagline="T.T. Software Solution"
-    bg={`${environmentConfig.baseImageUrl}/images/hero-bg-shape.webp`}
-    overrideClass="pt-20 !py-0 !lg:py-0"
-  >
-    <Fragment slot="title">
-      We are Software Solution Expert<br />made by MVP Technical Team
-    </Fragment>
-    <Fragment slot="subtitle">
-      เราคือผู้นำด้าน Microsoft Technology ในประเทศไทย<br />พัฒนาโซลูชันธุรกิจด้วย ASP.NET, Azure และ C# โดยทีม MVP
-      และผู้เชี่ยวชาญ
-    </Fragment>
-    <Fragment slot="contact">
-      <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-8 text-muted content-center">
-        <div class="col-span-1">
-          <span>สนใจติดต่อ</span>
+  <div class="max-w-7xl mx-auto px-4 lg:px-6 py-12">
+    <Hero bg={`${environmentConfig.baseImageUrl}/images/hero-bg-shape.webp`} overrideClass="pt-20 !py-0 !lg:py-0">
+      <Fragment slot="title">
+        <div
+          class="sm:text-4xl text-2xl bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] inline-block text-transparent bg-clip-text"
+        >
+          T.T. Software Solution
         </div>
-        <a href="tel:0901619166" target="_blank">
-          <div class="flex items-center gap-2 w-fit">
-            <Icon name="phone" />
-            <span>090-161-9166 (สำนักงานกรุงเทพ)</span>
+        <div class="font-bold tracking-normal mt-2 md:text-2xl">
+          รับพัฒนาซอฟต์แวร์ตามความต้องการของลูกค้า<br />
+          เริ่มต้นง่ายๆ 3 ขั้นตอน
+        </div>
+      </Fragment>
+      <Fragment slot="contact">
+        <div class="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-11 gap-5 lg:gap-2 items-center my-4 !mt-7">
+          <div
+            class="relative col-span-4 lg:col-span-3 border-2 border-[#FF6A3F] rounded-lg p-5 flex flex-col items-center justify-center lg:justify-start gap-4 h-full"
+          >
+            <div class="absolute top-[-1rem] min-w-[150px] border-2 border-[#FF6A3F] rounded-lg">
+              <div class="flex items-center justify-center bg-white rounded-lg px-2 py-1">
+                <span class="text-sm font-bold text-[#FF6A3F]">Step 1</span>
+              </div>
+            </div>
+            <div
+              class="flex items-center justify-center bg-gradient-to-b from-[#FFD8CD] to-[#FFEA9400] rounded-lg mt-2"
+            >
+              <Image src="~/assets/images/step1.webp" alt="Step 1" class="h-[200px] lg:h-[300px] !object-contain" />
+            </div>
+            <div class="text-center">
+              <span class="text-xl font-bold">ติดต่อเราได้หลากหลายช่องทาง<br />เพื่อพูดคุยความต้องการเบื้องต้น</span>
+            </div>
+            <div class="text-center font-normal text-[#6C757D] text-sm">
+              คุยกับเราผ่าน <span class="text-[#FF6A3F]">Facebook</span>, <span class="text-[#FF6A3F]">Live Chat</span>
+              <span class="text-[#FF6A3F]">บนเว็บไซต์</span>, <span class="text-[#FF6A3F]">Line @ttss</span> หรือโทรศัพท์
+              เพื่อการพูดคุยที่สะดวกและรวดเร็ว
+            </div>
           </div>
-        </a>
-        <a href="mailto:watcharapong@tt-ss.net" target="_blank">
-          <div class="flex items-center gap-2 w-fit">
-            <Icon name="envelope" />
-            <span>watcharapong@tt-ss.net</span>
+          <div class="items-center justify-center hidden lg:flex">
+            <ArrowRightIcon width="4rem" height="4rem" />
           </div>
-        </a>
-        <a href="https://www.facebook.com/ttsoftwaresolution" target="_blank">
-          <div class="flex items-center gap-2 w-fit">
-            {/* <Icon name="facebook" /> */}
-            <FacebookIcon width="1em" height="1em" />
-            <span>T. T. Software Solution</span>
+          <div
+            class="relative col-span-4 lg:col-span-3 border-2 border-[#FF6A3F] rounded-lg p-5 flex flex-col items-center justify-start gap-4 h-full"
+          >
+            <div class="absolute top-[-1.5rem] min-w-[150px] border-2 border-[#FF6A3F] rounded-lg mt-2">
+              <div class="flex items-center justify-center bg-white rounded-lg px-2 py-1">
+                <span class="text-sm font-bold text-[#FF6A3F]">Step 2</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-center bg-gradient-to-b from-[#FFD8CD] to-[#FFEA9400] rounded-lg">
+              <Image src="~/assets/images/step2.webp" alt="Step 2" class="h-[200px] lg:h-[300px] !object-contain" />
+            </div>
+            <div class="text-center">
+              <span class="text-xl font-bold">จัดทำระบบตัวอย่าง<br />ในรูปแบบ MVP</span>
+            </div>
+            <div class="text-center font-normal text-[#6C757D] text-sm">
+              ทีมงานนำเสนอระบบงานตัวอย่างที่ออกแบบ ให้ตรงกับธุรกิจ/งาน/กิจกรรมของคุณ
+            </div>
           </div>
-        </a>
-        <a href="https://line.me/R/ti/p/@ttss" target="_blank">
-          <div class="flex items-center gap-2 w-fit">
-            {/* <Icon name="line" /> */}
-            <LineIcon width="1em" height="1em" />
-            <span>@ttss</span>
+          <div class="items-center justify-center hidden lg:flex">
+            <ArrowRightIcon width="4rem" height="4rem" />
           </div>
-        </a>
+          <div
+            class="relative col-span-4 lg:col-span-3 border-2 border-[#FF6A3F] rounded-lg p-5 flex flex-col items-center justify-start gap-4 h-full"
+          >
+            <div class="absolute top-[-1.5rem] min-w-[150px] border-2 border-[#FF6A3F] rounded-lg mt-2">
+              <div class="flex items-center justify-center bg-white rounded-lg px-2 py-1">
+                <span class="text-sm font-bold text-[#FF6A3F]">Step 3</span>
+              </div>
+            </div>
+            <div
+              class="flex items-center justify-center bg-gradient-to-b from-[#FFD8CD] to-[#FFEA9400] rounded-lg mt-2"
+            >
+              <Image src="~/assets/images/step3.webp" alt="Step 3" class="h-[200px] lg:h-[300px] !object-contain" />
+            </div>
+            <div class="text-center">
+              <span class="text-xl font-bold">ประเมินราคาและ<br />เริ่มงาน</span>
+            </div>
+            <div class="text-center font-normal text-[#6C757D] text-sm">
+              พูดคุยความต้องการอย่างละเอียด <br />ส่งใบเสนอราคา, ทำสัญญา และเริ่มงาน
+            </div>
+          </div>
+        </div>
+        <div class="text-center text-muted my-2">เราคือผู้นำด้าน Microsoft Technology ในประเทศไทย</div>
+        <div class="text-center text-muted my-2">
+          พัฒนาโซลูชันธุรกิจด้วย ASP.NET, Azure และ C# โดยทีม MVP และผู้เชี่ยวชาญ
+        </div>
+        <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-8 text-muted content-center">
+          <div class="col-span-1">
+            <span>สนใจติดต่อ</span>
+          </div>
+          <a href="tel:0901619166" target="_blank">
+            <div class="flex items-center gap-2 w-fit">
+              <Icon name="phone" />
+              <span class="text-sm sm:text-base">090-161-9166 (สำนักงานกรุงเทพ)</span>
+            </div>
+          </a>
+          <a href="mailto:watcharapong@tt-ss.net" target="_blank">
+            <div class="flex items-center gap-2 w-fit">
+              <Icon name="envelope" />
+              <span class="text-sm sm:text-base">watcharapong@tt-ss.net</span>
+            </div>
+          </a>
+          <a href="https://www.facebook.com/ttsoftwaresolution" target="_blank">
+            <div class="flex items-center gap-2 w-fit">
+              {/* <Icon name="facebook" /> */}
+              <FacebookIcon width="1em" height="1em" />
+              <span class="text-sm sm:text-base">T. T. Software Solution</span>
+            </div>
+          </a>
+          <a href="https://line.me/R/ti/p/@ttss" target="_blank">
+            <div class="flex items-center gap-2 w-fit">
+              {/* <Icon name="line" /> */}
+              <LineIcon width="1em" height="1em" />
+              <span class="text-sm sm:text-base">@ttss</span>
+            </div>
+          </a>
+        </div>
+        <div
+          class="text-center font-bold cursor-pointer my-2 border border-[#FF6A3F] rounded-lg w-fit mx-auto px-4 py-2 bg-gradient-to-l from-[#FF6A3F] to-[#F5C253] text-white sm:min-w-[300px] hover:bg-gradient-to-l hover:from-[#cf6244] hover:to-[#F5C253] transition-all duration-300"
+        >
+          แชทกับเราตอนนี้ →
+        </div>
+      </Fragment>
+    </Hero>
+  </div>
+
+  <div class="bg-[#FAFAFA] pb-16">
+    <div
+      class="max-w-7xl mx-auto px-4 lg:px-6 py-12 text-center text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 animate-on-scroll"
+    >
+      <div>ผลิตภัณฑ์ และ ความเชี่ยวชาญของเรา</div>
+      <div class="border-b border-4 border-[#FF6A3F] w-[100px] mx-auto my-4"></div>
+      <div class="text-base font-normal mt-4 md:text-xl text-[#4D4C66]">
+        ด้วยประสบการณ์ มากกว่า 15 ปี เราขอเสนอบริการ ดังนี้
       </div>
-    </Fragment>
-  </Hero>
-  <Image src="~/assets/images/main_full.webp" alt="Main Full Services" class="w-full p-4 md:p-8 !max-w-screen-xl mx-auto" />
-  <FormContract />
+    </div>
+    <Content
+      isReversed
+      classes={{
+        container: '',
+        items: {
+          icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-[#2CD762] dark:bg-[#2CD762] text-gray-50 p-1',
+        },
+      }}
+      isAfterContent
+      disableAnimation
+      items={[
+        {
+          title: 'เชื่อมโยงระบบทั้งหมด',
+          description: 'บูรณาการข้อมูลจากทุกแผนกในองค์กรให้ทำงานร่วมกันได้อย่างราบรื่น',
+          icon: 'tabler:check',
+        },
+        {
+          title: 'ประมวลผลภาษาไทยและภาษาอังกฤษได้อย่างธรรมชาติ',
+          description: 'เข้าใจและวิเคราะห์ข้อความภาษาไทย-อังกฤษได้อย่างธรรมชาติและแม่นยำ',
+          icon: 'tabler:check',
+        },
+        {
+          title: 'สร้างโมเดล AI เฉพาะองค์กร',
+          description: 'ปรับแต่ง AI ให้เข้ากับความต้องการเฉพาะของธุรกิจคุณ',
+          icon: 'tabler:check',
+        },
+        {
+          title: 'งานอัตโนมัติ',
+          description: 'ลดภาระงานประจำด้วยระบบอัตโนมัติที่ชาญฉลาด',
+          icon: 'tabler:check',
+        },
+      ]}
+    >
+      <Fragment slot="title"> </Fragment>
+      <Fragment slot="content">
+        <h3
+          class="text-2xl font-bold bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] inline-block text-transparent bg-clip-text sm:text-3xl mb-2 animate-on-scroll"
+        >
+          T.T. AI Framework
+        </h3>
+        <div class="text-muted text-base my-2">
+          โซลูชันที่ช่วยให้องค์กรของคุณสามารถนำเทคโนโลยี AI มาประยุกต์ใช้ได้อย่างมีประสิทธิภาพ โดยไม่จำเป็นต้องมีความรู้
+          ด้านการเขียนโค้ดขั้นสูง เราออกแบบระบบให้รองรับการเชื่อมต่อ แบบไร้รอยต่อกับระบบที่มีอยู่เดิมในองค์กรของคุณ
+        </div>
+      </Fragment>
+      <Fragment slot="image">
+        <Image
+          src={`${environmentConfig.baseImageUrl}/images/main_full.webp`}
+          alt="ระบบฐานข้อมูล"
+          class="w-full h-full"
+        />
+      </Fragment>
+    </Content>
+  </div>
+  <DigitalTransFormation title="รับพัฒนาระบบตามความต้องการ" subtitle="ความเชี่ยวชาญและการบริการที่คุณไว้วางใจได้" />
+  <ProductShowCase />
+  <div class="bg-[#FAFAFA] pb-16">
+    <TrustBusiness
+      title="มั่นใจในคุณภาพการให้บริการ"
+      subtitle="ด้วยประสบการณ์ ความเชี่ยวชาญของทีมงานกว่า 30+ คน และการร่วมงานหน่วยงานภาครัฐและเอกชน"
+    />
+  </div>
+  <TalktoMe />
 </Layout>

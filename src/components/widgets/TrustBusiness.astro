@@ -1,0 +1,103 @@
+---
+import type { Content } from '~/types';
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Image from '../common/Image.astro';
+import { environmentConfig } from '~/config';
+
+export interface Props extends Content {
+  imageContainerClasses?: string;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  isAfterContent = false,
+  id,
+  isDark = false,
+  classes = {},
+} = Astro.props;
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-7xl mx-auto ${isAfterContent ? 'pt-0 lg:pt-0 lg:pt-0' : ''} ${classes?.container ?? ''} py-4 lg:py-4 rounded-lg`}
+>
+  <div
+    class="max-w-7xl mx-auto px-4 lg:px-6 py-12 text-center text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 animate-on-scroll"
+  >
+    <div class="bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] inline-block text-transparent bg-clip-text">{title}</div>
+    <div class="border-b border-4 border-[#FF6A3F] w-[100px] mx-auto my-4"></div>
+    <div class="text-muted text-base my-2">{subtitle}</div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2 px-4 lg:px-6">
+    <div class="flex flex-col gap-2 justify-between h-full">
+      <div>
+        <div>
+          <Image
+            src="~/assets/images/bento-primary.webp"
+            alt="Trust 1"
+            class="w-full h-[200px] lg:h-[300px] rounded-lg"
+          />
+        </div>
+        <div class="flex flex-col gap-2 items-center justify-center my-2">
+          <div class="">ก่อตั้งเมื่อ 2553</div>
+          <div class="font-bold">ประสบการณ์ 20 ปี ด้าน Microsoft</div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <div
+          class="min-w-[160px] text-center cursor-pointer inline-block bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] text-white px-4 py-1 rounded-3xl font-medium hover:opacity-90 transition-opacity"
+        >
+          ดูต่อ
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2 justify-between h-full">
+      <div>
+        <div>
+          <Image
+            src={`${environmentConfig.baseImageUrl}/images/bento-secondary.webp`}
+            alt="Trust 2"
+            class="w-full h-[200px] lg:h-[300px] rounded-lg"
+          />
+        </div>
+        <div class="flex flex-col gap-2 items-center justify-center my-2">
+          <div class="">ทีมงาน</div>
+          <div class="font-bold">มากกว่า 30 คน</div>
+          <div class="">พร้อมให้บริการ</div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <div
+          class="min-w-[160px] text-center cursor-pointer inline-block bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] text-white px-4 py-1 rounded-3xl font-medium hover:opacity-90 transition-opacity"
+        >
+          ดูต่อ
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2 justify-between h-full">
+      <div>
+        <div>
+          <Image
+            src={`${environmentConfig.baseImageUrl}/images/WorkEnvironment5.webp`}
+            alt="Trust 3"
+            class="w-full h-[200px] lg:h-[300px] rounded-lg"
+          />
+        </div>
+        <div class="flex flex-col gap-2 items-center justify-center my-2">
+          <div class="">มีตัวอย่างผลงาน</div>
+          <div class="font-bold">ทั้งภาครัฐ เอกชน และต่างประเทศ</div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <div
+          class="min-w-[160px] text-center cursor-pointer inline-block bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] text-white px-4 py-1 rounded-3xl font-medium hover:opacity-90 transition-opacity"
+        >
+          ดูต่อ
+        </div>
+      </div>
+    </div>
+  </div>
+</WidgetWrapper>

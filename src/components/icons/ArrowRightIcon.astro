@@ -1,0 +1,16 @@
+---
+interface Props {
+  width?: string;
+  height?: string;
+  fill?: string;
+}
+
+const { width = '30', height = '30', fill = '#BBC7D2' } = Astro.props;
+---
+
+<svg width={width} height={height} viewBox="0 0 50 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M23.5195 2.47949L47.4977 39.7087L23.5195 72.521" stroke={fill} stroke-width="4" stroke-linecap="round"
+  ></path>
+  <path d="M2.06641 2.47949L26.0446 39.7087L2.06641 72.521" stroke={fill} stroke-width="3" stroke-linecap="round"
+  ></path>
+</svg>

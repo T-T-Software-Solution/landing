@@ -73,3 +73,19 @@ import LineIcon from '../icons/LineIcon.astro';
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const openChatHead = document.querySelectorAll('.open-chat-head');
+    if (openChatHead) {
+      openChatHead.forEach((element) => {
+        element.addEventListener('click', () => {
+          const zohoButton = document.querySelector('#zsiq_float') as HTMLButtonElement;
+          if (zohoButton) {
+            zohoButton.click();
+          }
+        });
+      });
+    }
+  });
+</script>

@@ -1,0 +1,134 @@
+---
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Kasetsart University Visit',
+};
+
+const event = {
+  date: 'วันที่ 26 มีนาคม พ.ศ. 2568 ',
+  title: 'Martech Expo 2025 : Product Launch Stage',
+  description: `       คณะผู้บริหารของบริษัท ได้ขึ้นเวที Product Launch Stage นำเสนอผลิตภัณฑ์ของบริษัทในงาน MarTech Expo 2025 ซึ่งถือเป็นโอกาสสำคัญในการแสดงถึงผลงาน ความสามารถและนวัตกรรมของบริษัทในการพัฒนาซอฟต์แวร์ที่มีความเฉพาะตัวและการบูรณาการเทคโนโลยีปัญญาประดิษฐ์ (AI) ที่ล้ำสมัย
+
+          ในหัวข้อ Empower Your Business with Tailor-Made Software Solutions and AI Integration ซึ่งเป็นโซลูชันที่ตอบสนองความต้องการเฉพาะของธุรกิจแต่ละประเภท โดยการออกแบบและพัฒนาซอฟต์แวร์ที่สามารถปรับแต่งให้สอดคล้องกับลักษณะการดำเนินงานและเป้าหมายของลูกค้าแต่ละราย การผสานรวมกับเทคโนโลยี AI ยังช่วยเพิ่มประสิทธิภาพในการทำงาน ลดต้นทุน และยกระดับประสบการณ์ของลูกค้าให้ดีขึ้นอย่างเห็นได้ชัด
+
+         การนำเสนอในครั้งนี้มุ่งเน้นการแสดงถึงศักยภาพในการช่วยให้ธุรกิจต่างๆ สามารถปรับตัวและเติบโตได้อย่างยั่งยืนในยุคดิจิทัล ด้วยโซลูชันที่สามารถปรับเปลี่ยนได้ตามความต้องการที่เฉพาะเจาะจง นอกจากนี้ยังเป็นการแสดงให้เห็นถึงวิสัยทัศน์และความมุ่งมั่นของบริษัทในการเป็นผู้นำด้านเทคโนโลยีที่สามารถช่วยเพิ่มขีดความสามารถในการแข่งขันให้กับธุรกิจต่างๆ ทั่วไป
+
+        ทางบริษัทหวังเป็นอย่างยิ่งว่า ผลิตภัณฑ์ที่ได้นำเสนอในงานครั้งนี้จะเป็นก้าวสำคัญในการเสริมสร้างความสัมพันธ์ทางธุรกิจ และสร้างโอกาสใหม่ๆ สำหรับลูกค้าและพันธมิตรในการร่วมพัฒนาและเติบโตไปพร้อมกันในอนาคต
+     `,
+  descriptionLink: '',
+  image: `${environmentConfig.baseImageUrl}/images/news/2025/martech-expo-2025/booth/ภาพปก.webp`,
+  link: '',
+};
+
+const images = [
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/martech-expo-2025/booth/ภาพปก.webp`,
+    alt: 'ปก',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/martech-expo-2025/booth/1.webp`,
+    alt: '1',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/martech-expo-2025/booth/2.webp`,
+    alt: '2',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/martech-expo-2025/booth/3.webp`,
+    alt: '3',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/martech-expo-2025/booth/4.webp`,
+    alt: '4',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/martech-expo-2025/booth/5.webp`,
+    alt: '5',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/martech-expo-2025/booth/6.webp`,
+    alt: '6',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <Headline title="" subtitle={event.title} classes={{ container: 'pt-12 lg:pt-0' }} />
+    <div class="p-6">
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">{event.date}</p>
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">
+        {event.description}
+      </p>
+    </div>
+    <div
+      class={`grid grid-cols-1 md:grid-cols-2 ${images.length > 2 ? 'lg:grid-cols-3' : ''} gap-4 mt-8 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8`}
+    >
+      {
+        images.map((image, index) => (
+          <div
+            class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-up-element image-container"
+            style={`--delay: ${index * 0.1}s`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full md:h-72 !object-cover !object-center image-scale"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </WidgetWrapper>
+</Layout>
+
+<style>
+  .fade-up-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    transition-delay: var(--delay, 0s);
+  }
+  .fade-up-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .image-container {
+    overflow: hidden;
+  }
+  .image-scale {
+    transition: transform 0.3s ease-in-out;
+  }
+  .image-container:hover .image-scale {
+    transform: scale(1.1);
+  }
+</style>
+
+<script>
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.fade-up-element');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

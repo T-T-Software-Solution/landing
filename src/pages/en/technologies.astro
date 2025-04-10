@@ -1,0 +1,169 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { default as TechSection } from '~/components/widgets/Technologies.astro';
+import Headline from '~/components/ui/Headline.astro';
+import { environmentConfig } from '~/config';
+
+const metadata = {
+  title: 'Technologies',
+};
+---
+
+<Layout metadata={metadata}>
+  <Headline
+    classes={{
+      container: 'pt-20 px-2'
+    }}
+    tagline="Technologies we use"
+    title="Technologies we use"
+    subtitle="Tools and technologies we use to create efficient solutions"
+  />
+  <TechSection
+    items={[
+      {
+        description: '.NET',
+        icon: `${environmentConfig.baseImageUrl}/images/dotnet.svg`,
+      },
+      {
+        description: 'Microsoft Azure',
+        icon: `${environmentConfig.baseImageUrl}/images/azure.svg`,
+        classes: {
+          icon: 'mt-[30px]',
+        },
+      },
+      {
+        description: 'React',
+        icon: `${environmentConfig.baseImageUrl}/images/react.svg`,
+      },
+      {
+        description: 'TypeScript',
+        icon: `${environmentConfig.baseImageUrl}/images/typescript.svg`,
+      },
+      {
+        description: 'Next.js',
+        icon: `${environmentConfig.baseImageUrl}/images/nextjs.svg`,
+      },
+      {
+        description: 'Docker',
+        icon: `${environmentConfig.baseImageUrl}/images/docker.svg`,
+      },
+      {
+        description: 'Kubernetes',
+        icon: `${environmentConfig.baseImageUrl}/images/kubernetes.svg`,
+      },
+      {
+        description: 'Node.js',
+        icon: `${environmentConfig.baseImageUrl}/images/nodejs.svg`,
+      },
+      {
+        description: 'PostgreSQL',
+        icon: `${environmentConfig.baseImageUrl}/images/pgsql.svg`,
+      },
+      {
+        description: 'MongoDB',
+        icon: `${environmentConfig.baseImageUrl}/images/mongodb.svg`,
+        classes: {
+          icon: 'mt-[30px]',
+        },
+      },
+      {
+        description: 'Tailwind CSS',
+        icon: `${environmentConfig.baseImageUrl}/images/tailwindcss.svg`,
+      },
+      {
+        description: 'Microsoft SQL Server',
+        icon: `${environmentConfig.baseImageUrl}/images/microsoft-sql-server.svg`,
+      },
+      {
+        description: 'React Native',
+        icon: `${environmentConfig.baseImageUrl}/images/react-native.svg`,
+        classes: {
+          icon: 'max-w-[140px]',
+        },
+      },
+      {
+        description: 'Terraform',
+        icon: `${environmentConfig.baseImageUrl}/images/terraform.png`,
+      },
+      {
+        description: 'RabbitMQ',
+        icon: `${environmentConfig.baseImageUrl}/images/rabbitmq.png`,
+        classes: {
+          image: '!max-h-[90px] w-full',
+        },
+      },
+      {
+        description: 'Redis',
+        icon: `${environmentConfig.baseImageUrl}/images/redis.svg`,
+        classes: {
+          icon: 'mt-[20px]',
+        },
+      },
+      {
+        description: 'OpenTelemetry',
+        icon: `${environmentConfig.baseImageUrl}/images/opentelemetry.png`,
+      },
+      {
+        description: 'Jaeger',
+        icon: `${environmentConfig.baseImageUrl}/images/jaeger.png`,
+        classes: {
+          icon: 'mt-[20px]',
+        },
+      },
+      {
+        description: 'Grafana',
+        icon: `${environmentConfig.baseImageUrl}/images/grafana.png`,
+        classes: {
+          icon: 'mt-[20px]',
+        },
+      },
+      {
+        description: 'Prometheus',
+        icon: `${environmentConfig.baseImageUrl}/images/prometheus.png`,
+      },
+      {
+        description: 'Jasper Report',
+        icon: `${environmentConfig.baseImageUrl}/images/jaspersoft.svg`,
+        classes: {
+          icon: 'mt-[30px]',
+        },
+      },
+      {
+        description: 'Apache Superset',
+        icon: `${environmentConfig.baseImageUrl}/images/superset_logo.svg`,
+        classes: {
+          icon: 'mt-[30px]',
+        },
+      },
+      {
+        description: 'Jenkins',
+        icon: `${environmentConfig.baseImageUrl}/images/jenkins.png`,
+        classes: {
+          icon: 'mt-[30px]',
+        },
+      },
+      {
+        description: 'gRPC',
+        icon: `${environmentConfig.baseImageUrl}/images/grpc-logo.png`,
+        classes: {
+          image: '!max-h-[90px] w-full',
+        },
+      },
+      {
+        description: 'tRPC',
+        icon: `${environmentConfig.baseImageUrl}/images/trpc.svg`,
+        classes: {
+          icon: 'mt-[20px]',
+        },
+      },
+      {
+        description: 'NestJs',
+        icon: `${environmentConfig.baseImageUrl}/images/nestjs.png`,
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-[#FFF6F4] dark:bg-transparent"></div>
+    </Fragment>
+  </TechSection>
+</Layout>

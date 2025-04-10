@@ -2,6 +2,8 @@
 import { Icon } from 'astro-icon/components';
 import Image from '../common/Image.astro';
 import LineIcon from '../icons/LineIcon.astro';
+
+const isEnglist = Astro.currentLocale === 'en';
 ---
 
 <div class="relative max-w-7xl mx-auto px-4 lg:px-6 py-12 text-center border border-[#FF6A3F] rounded-lg bg-[#FFEEE9]">
@@ -12,9 +14,9 @@ import LineIcon from '../icons/LineIcon.astro';
       class="xl:h-[600px] lg:h-[400px] w-full !object-contain"
     />
   </div>
-  <h2 class="text-3xl font-bold mb-8">คุยกับเราตอนนี้</h2>
+  <h2 class="text-3xl font-bold mb-8">{isEnglist ? 'Talk with us' : 'คุยกับเราตอนนี้'}</h2>
   <div class="border-b border-4 border-[#FF6A3F] w-[100px] mx-auto my-4"></div>
-  <p class="text-gray-600 mb-8">ทีมงานและผู้เชี่ยวชาญพร้อมให้บริการคุณในช่องทางที่คุณสะดวก</p>
+  <p class="text-gray-600 mb-8">{isEnglist ? 'Our team and experts are ready to serve you through your preferred channels' : 'ทีมงานและผู้เชี่ยวชาญพร้อมให้บริการคุณในช่องทางที่คุณสะดวก'}</p>
 
   <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
     <!-- Messenger -->
@@ -23,13 +25,13 @@ import LineIcon from '../icons/LineIcon.astro';
         <div class="bg-[#2D5CCC1A] p-3 rounded-full mb-4">
           <Image src="~/assets/images/live-chat.svg" alt="Messenger" class="w-8 h-8" />
         </div>
-        <h3 class="font-bold mb-2">แชทกับเราตอนนี้</h3>
-        <p class="text-sm text-gray-600 mb-4">แชทได้ผ่านเว็บไซต์นี้</p>
+        <h3 class="font-bold mb-2">{isEnglist ? 'Talk with us now' : 'แชทกับเราตอนนี้'}</h3>
+        <p class="text-sm text-gray-600 mb-4">{isEnglist ? 'Talk with us through this website' : 'แชทได้ผ่านเว็บไซต์นี้'}</p>
       </div>
       <div
         class="open-chat-head cursor-pointer mt-4 bg-[#FF6B4A] w-fit mx-auto min-w-[160px] text-white px-6 py-2 rounded-full hover:bg-[#ff8468]"
       >
-        เริ่มแชทเลย →
+        {isEnglist ? 'Start Chatting →' : 'เริ่มแชทเลย →'}
       </div>
     </div>
 
@@ -39,7 +41,9 @@ import LineIcon from '../icons/LineIcon.astro';
           <LineIcon width="1.25rem" height="1.25rem" fill="#00C300" />
         </div>
         <div class="flex flex-col items-center gap-2">
-          <h3 class="font-bold mb-2">คุยกับเราผ่าน <br /> Line OA <span class="text-sm text-primary"> @ttss</span></h3>
+          <h3 class="font-bold mb-2">
+            {isEnglist ? 'Talk with us via' : 'คุยกับเราผ่าน'} <br /> Line OA <span class="text-sm text-primary"> @ttss</span>
+          </h3>
         </div>
       </div>
       <a
@@ -58,34 +62,20 @@ import LineIcon from '../icons/LineIcon.astro';
           <Icon name="tabler:phone-filled" class="w-8 h-8 text-[#FF6A3F]" fill="#FF6A3F" />
         </div>
         <div class="flex flex-col items-center gap-2">
-          <h3 class="font-bold mb-2">โทรหาเรา</h3>
-          <p class="text-sm text-gray-600">090-161-9166 (สำนักงานกรุงเทพ)</p>
-          <p class="text-sm text-gray-600">061-018-1275 (ฝ่ายทรัพยากรบุคคล)</p>
+          <h3 class="font-bold mb-2">
+            {isEnglist ? 'Call us' : 'โทรหาเรา'}
+          </h3>
+          <p class="text-sm text-gray-600">{isEnglist ? '+6690-161-9166 (Bangkok Office)' : '090-161-9166 (สำนักงานกรุงเทพ)'}</p>
+          <p class="text-sm text-gray-600">{isEnglist ? '+6661-018-1275 (Khon Kaen Office)' : '061-018-1275 (ฝ่ายทรัพยากรบุคคล)'}</p>
         </div>
       </div>
       <a
-        href="tel:0901619166"
+        href={isEnglist ? 'tel:+66901619166' : 'tel:0901619166'}
         target="_blank"
         class="mt-4 bg-[#FF6B4A] w-fit mx-auto min-w-[160px] text-white px-6 py-2 rounded-full hover:bg-[#ff8468]"
       >
-        โทรเลย →
+        {isEnglist ? 'Call us →' : 'โทรเลย →'}
       </a>
     </div>
   </div>
 </div>
-
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const openChatHead = document.querySelectorAll('.open-chat-head');
-    if (openChatHead) {
-      openChatHead.forEach((element) => {
-        element.addEventListener('click', () => {
-          const zohoButton = document.querySelector('#zsiq_float') as HTMLButtonElement;
-          if (zohoButton) {
-            zohoButton.click();
-          }
-        });
-      });
-    }
-  });
-</script>

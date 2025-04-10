@@ -18,6 +18,8 @@ import {
   lazyImagesRehypePlugin,
 } from './src/utils/frontmatter.mjs';
 
+import react from '@astrojs/react';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const hasExternalScripts = false;
@@ -72,6 +74,10 @@ export default defineConfig({
     astrowind({
       config: './src/config.yaml',
     }),
+    react({
+      include: ['**/react/*'],
+      experimentalDisableStreaming: true,
+    })
   ],
 
   image: {
@@ -90,4 +96,9 @@ export default defineConfig({
       },
     },
   },
+
+  i18n: {
+    locales: ["th", "en"],
+    defaultLocale: "th",
+  }
 });

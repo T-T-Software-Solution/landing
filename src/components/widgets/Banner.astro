@@ -3,6 +3,7 @@
 import Image from '~/components/common/Image.astro';
 
 const { careerImage } = Astro.props;
+const isEnglish = Astro.currentLocale === 'en';
 ---
 
 <section class="relative flex items-center justify-center h-fit mt-20 lg:mt-[76px] 2xl:mt-[95px]">
@@ -14,10 +15,10 @@ const { careerImage } = Astro.props;
   />
   <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4 md:p-8 rounded-md">
     <div class="bg-black bg-opacity-60 p-4 md:p-8 rounded-md w-full max-w-[90%] md:max-w-[70%] lg:max-w-[60%]">
-      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4">ร่วมงานกับเรา</h1>
-      <p class="text-md md:text-xl lg:text-2xl mb-4 md:mb-8">มาร่วมเป็นส่วนหนึ่งของทีมเรา และเติบโตไปด้วยกัน</p>
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4">{isEnglish ? 'Join Us' : 'ร่วมงานกับเรา'}</h1>
+      <p class="text-md md:text-xl lg:text-2xl mb-4 md:mb-8">{isEnglish ? 'Join our team and grow together' : 'มาร่วมเป็นส่วนหนึ่งของทีมเรา และเติบโตไปด้วยกัน'}</p>
       <a href="#apply" class="bg-primary px-6 md:px-8 py-3 md:py-4 rounded-md text-sm md:text-lg lg:text-xl font-semibold mt-4">
-        สมัครตอนนี้
+        {isEnglish ? 'Apply Now' : 'สมัครตอนนี้'}
       </a>
     </div>
   </div>

@@ -1,0 +1,99 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import ProjectGrid from '~/components/widgets/ProjectGrid.astro';
+import { environmentConfig } from '~/config';
+
+const metadata = {
+  title: 'Our Works',
+};
+
+const privateProjects = [
+  {
+    image: `${environmentConfig.baseImageUrl}/images/eventbanana-logo.png`,
+    imageClass: 'p-4 min-h-60 !object-contain !object-center',
+    title: 'Event Banana',
+    description:
+      'Event Banana is a comprehensive online platform featuring over 5,000 venues across Thailand and 2,000+ catering menus. Our platform streamlines event planning for conferences, weddings, parties, and corporate events, optimizing every step of the planning process.',
+  },
+  {
+    image: `${environmentConfig.baseImageUrl}/images/easyinsure.webp`,
+    title: 'Easyinsure',
+    description:
+      'A full-service digital insurance brokerage platform offering seamless, efficient solutions with personalized coverage recommendations. Features instant coverage activation and simplified payment processing.',
+    link: '/en/our-works/detail/easyinsure',
+  },
+  {
+    image: `${environmentConfig.baseImageUrl}/images/siamlaw.webp`,
+    title: 'Siamlaw Group',
+    description:
+      'Developed an integrated case management system featuring case tracking, attorney and staff portals, automated billing, tax invoice generation, and executive reporting dashboard.',
+  },
+];
+
+const internationalProjects = [
+  {
+    title: 'WRM STORM Manager & OPS Manager',
+    description:
+      'An advanced Emergency Resource Management System designed for critical infrastructure repair (electrical systems, gas distribution networks, etc.) and wildfire response operations.\nThe platform enables real-time tracking of personnel and equipment resources, facilitates logistics management including accommodation and catering, and streamlines expense management for emergency service providers.\nUsers can efficiently update work status, submit reports, and access accommodation routing through an intuitive mobile application. This system optimizes emergency response operations for maximum efficiency and rapid deployment.',
+    image: `${environmentConfig.baseImageUrl}/images/storm.webp`,
+    imageClass: 'md:h-72',
+    badgeImage: `${environmentConfig.baseImageUrl}/images/WRM.webp`,
+    link: '/en/our-works/detail/wrm',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <div class="pt-6">
+      <Headline
+        title="Our Works"
+        subtitle="Discover our team's innovative and creative projects, showcasing both domestic and international implementations"
+        classes={{ container: 'pt-12 lg:pt-0' }}
+      />
+    </div>
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-4">Domestic Projects</h2>
+      <p class="text-gray-600 mb-6">
+        Our company maintains an unwavering commitment to service excellence, consistently delivering high-quality solutions since our inception. 
+        This dedication has earned us widespread client trust and recognition, evidenced by our high client retention rate. 
+        Our existing clients consistently choose us for system upgrades and enhancements, demonstrating their confidence in our technical expertise and service delivery.
+      </p>
+
+      <div class="mb-8">
+        <ProjectGrid
+          projects={privateProjects}
+          classes={{ itemContent: 'flex flex-col justify-between h-full animate-on-scroll' }}
+        />
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">International Projects (Selected)</h2>
+      <ProjectGrid projects={internationalProjects} classes={{ itemContent: 'animate-on-scroll' }} />
+    </section>
+  </WidgetWrapper>
+</Layout>
+
+<script>
+  function handleIntersection(entries: IntersectionObserverEntry[]) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

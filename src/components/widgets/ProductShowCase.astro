@@ -9,61 +9,69 @@ export interface Props extends Content {
 }
 
 const { isAfterContent = false, id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } = Astro.props;
-
+const isEnglist = Astro.currentLocale === 'en';
 const products = [
   {
     title: 'T.T. AI CHAT BOT',
-    description:
-      'T.T. AI CHAT คือระบบที่พัฒนาโดยทีมงานผู้เชี่ยวชาญ ของเรา เพื่อตอบโจทย์การใช้งานและจัดการ AI อย่างมี ประสิทธิภาพ เช่น การกำหนดสิทธิ์การเข้าถึงข้อมูล และควบคุมการมองเห็นข้อมูล เพื่อให้ AI ทำงานได้อย่าง ปลอดภัยและตอบสนองความต้องการของคุณ ได้อย่างสมบูรณ์',
+    description: isEnglist
+      ? 'T.T. AI CHAT is a system developed by our expert team to effectively address AI usage and management needs. It includes features such as setting data access permissions and controlling data visibility, ensuring that AI operates securely while fully meeting your requirements.'
+      : 'T.T. AI CHAT คือระบบที่พัฒนาโดยทีมงานผู้เชี่ยวชาญ ของเรา เพื่อตอบโจทย์การใช้งานและจัดการ AI อย่างมี ประสิทธิภาพ เช่น การกำหนดสิทธิ์การเข้าถึงข้อมูล และควบคุมการมองเห็นข้อมูล เพื่อให้ AI ทำงานได้อย่าง ปลอดภัยและตอบสนองความต้องการของคุณ ได้อย่างสมบูรณ์',
     image: `~/assets/images/ai.webp`,
     icon: '~/assets/images/product1.webp',
   },
   {
     title: 'T.T. HR',
-    description:
-      'TT HR คือ ระบบบริหารบุคลากรที่พัฒนาขึ้นโดยทีมงาน ผู้เชี่ยวชาญของเรา เพื่อตอบโจทย์ทุกความต้องการในการ จัดการทรัพยากรบุคคลในองค์กร ระบบนี้ครอบคลุม การจัดการ ข้อมูลบุคคลทั้งหมดตั้งแต่ประวัติส่วนตัว การจ้างงาน ประวัติการศึกษาไปจนถึงการออกรายงาน ที่สำคัญ เช่น กพ.7 นอกจากนี้ยังมาพร้อมฟังก์ชัน ระบบจัดการ เงินเดือนและระบบการลาที่ช่วยให้การ ดำเนินการต่าง ๆ เป็นไปอย่างสะดวกและครบวงจร',
+    description: isEnglist
+      ? 'T.T. HR is a comprehensive HR management system developed by our experts to address all personnel management needs. It handles employee data from personal details to employment history, generates key reports like Formal documents, and includes integrated payroll and leave management for streamlined operations.'
+      : 'TT HR คือ ระบบบริหารบุคลากรที่พัฒนาขึ้นโดยทีมงาน ผู้เชี่ยวชาญของเรา เพื่อตอบโจทย์ทุกความต้องการในการ จัดการทรัพยากรบุคคลในองค์กร ระบบนี้ครอบคลุม การจัดการ ข้อมูลบุคคลทั้งหมดตั้งแต่ประวัติส่วนตัว การจ้างงาน ประวัติการศึกษาไปจนถึงการออกรายงาน ที่สำคัญ เช่น กพ.7 นอกจากนี้ยังมาพร้อมฟังก์ชัน ระบบจัดการ เงินเดือนและระบบการลาที่ช่วยให้การ ดำเนินการต่าง ๆ เป็นไปอย่างสะดวกและครบวงจร',
     image: `~/assets/images/hr.webp`,
     icon: '~/assets/images/product2.webp',
   },
   {
     title: 'T.T. CMS',
-    description:
-      'TT CMS คือระบบจัดการ Content Management System ที่พัฒนาขึ้นโดยทีมงานของเรา เพื่อช่วยให้ การจัดการเนื้อหา (Content) ฝั่ง Public บนเว็บไซต์ ของคุณเป็นเรื่องง่ายและสะดวกสบาย ระบบนี้ออกแบบมา เพื่อรองรับไฟล์หลากหลายรูปแบบ พร้อมด้วย RichEditor ที่ช่วยให้ผู้ใช้งานสามารถแก้ไขเนื้อหาได้ โดยตรงบนเว็บไซต์โดยไม่จำเป็นต้องมีความรู้ด้านการ เขียนโค้ด ผู้ใช้งานสามารถจัดการเนื้อหาได้อย่างรวดเร็ว และเป็นระบบ',
+    description: isEnglist
+      ? 'T.T. CMS is a Content Management System developed by our team to make managing public content on your website easy and convenient. The system supports various file formats and includes a Rich Editor that allows users to edit content directly on the website without coding knowledge. Users can manage content quickly and systematically.'
+      : 'TT CMS คือระบบจัดการ Content Management System ที่พัฒนาขึ้นโดยทีมงานของเรา เพื่อช่วยให้ การจัดการเนื้อหา (Content) ฝั่ง Public บนเว็บไซต์ ของคุณเป็นเรื่องง่ายและสะดวกสบาย ระบบนี้ออกแบบมา เพื่อรองรับไฟล์หลากหลายรูปแบบ พร้อมด้วย RichEditor ที่ช่วยให้ผู้ใช้งานสามารถแก้ไขเนื้อหาได้ โดยตรงบนเว็บไซต์โดยไม่จำเป็นต้องมีความรู้ด้านการ เขียนโค้ด ผู้ใช้งานสามารถจัดการเนื้อหาได้อย่างรวดเร็ว และเป็นระบบ',
     image: `~/assets/images/cms.webp`,
     icon: '~/assets/images/product3.webp',
   },
   {
     title: 'T.T. BUDGET',
-    description:
-      'TT BUDGET คือระบบบริหารงบประมาณที่ออกแบบ และพัฒนาโดยทีมงานผู้เชี่ยวชาญของเราเพื่อรองรับ ทุกขั้นตอนของการจัดการงบประมาณอย่างครบวงจร ตั้งแต่กระบวนการ วางแผนตั้งงบประมาณ การจัดสรร งบประมาณ ให้กับหน่วยงานที่เกี่ยวข้อง การโยกย้าย งบประมาณไปจนถึงการติดตามการใช้งบประมาณ อย่างมีประสิทธิภาพ',
+    description: isEnglist
+      ? 'T.T. BUDGET is a comprehensive budget management system designed and developed by our expert team to support all stages of budget processes. It covers budget planning, allocation to relevant departments, budget transfers, and efficient budget tracking.'
+      : 'TT BUDGET คือระบบบริหารงบประมาณที่ออกแบบ และพัฒนาโดยทีมงานผู้เชี่ยวชาญของเราเพื่อรองรับ ทุกขั้นตอนของการจัดการงบประมาณอย่างครบวงจร ตั้งแต่กระบวนการ วางแผนตั้งงบประมาณ การจัดสรร งบประมาณ ให้กับหน่วยงานที่เกี่ยวข้อง การโยกย้าย งบประมาณไปจนถึงการติดตามการใช้งบประมาณ อย่างมีประสิทธิภาพ',
     image: `~/assets/images/budget.webp`,
     icon: '~/assets/images/product4.webp',
   },
   {
-    title: 'T.T. SURVEY',
-    description:
-      'TT SURVEY เป็นระบบ บริหารจัดการแบบสอบถาม ที่ออกแบบมาเพื่อรองรับการเก็บข้อมูลเชิงโครงสร้าง รองรับรูปแบบคำถาม-คำตอบ ที่หลากหลาย และสามารถกำหนดสิทธิ์การเข้าถึง ตามบทบาทผู้ใช้งานและหน่วยงาน สร้างแบบสอบถาม ได้ไม่จำกัดจำนวน พร้อมระบบบริหารจัดการแบบสอบถามที่เป็นมาตรฐาน รองรับการนำออกข้อมูลเพื่อนำไปใช้กับระบบอื่น',
+    title: 'T.T. SURVEY / e-Testing',
+    description: isEnglist
+      ? 'T.T. Survey/e-Testing is a questionnaire management system designed to support structured data collection with various question-answer formats. It features role-based access controls by user and department, allows unlimited survey creation, includes standard survey management tools, and supports data export for use with other systems.'
+      : 'TT SURVEY เป็นระบบ บริหารจัดการแบบสอบถาม ที่ออกแบบมาเพื่อรองรับการเก็บข้อมูลเชิงโครงสร้าง รองรับรูปแบบคำถาม-คำตอบ ที่หลากหลาย และสามารถกำหนดสิทธิ์การเข้าถึง ตามบทบาทผู้ใช้งานและหน่วยงาน สร้างแบบสอบถาม ได้ไม่จำกัดจำนวน พร้อมระบบบริหารจัดการแบบสอบถามที่เป็นมาตรฐาน รองรับการนำออกข้อมูลเพื่อนำไปใช้กับระบบอื่น',
     image: '~/assets/images/tt-survey.webp',
     icon: '~/assets/images/product5.webp',
   },
   {
     title: 'T.T. FINANCE',
-    description:
-      'TT Finance คือระบบบริหารจัดการทางการเงิน ครบวงจรสำหรับสินเชื่อและการดำเนินคดีโดยระบบมีวัตถุประสงค์หลักในการจัดเก็บข้อมูลทรัพย์สิน, บริหารสินเชื่อ, ติดตามการชำระหนี้,และควบคุมกระบวนการดำเนินคดี ของลูกหนี้ที่ผิดนัดชำระรวมถึงควบคุมค่าใช้จ่ายทาง กฎหมายต่างๆ ได้อย่างเป็นระบบ',
+    description: isEnglist
+      ? `T.T. Finance is a comprehensive financial management system for loans and litigation. The system's main purpose is to store asset information, manage loans, track debt repayments, and control litigation processes for defaulting debtors, as well as systematically manage legal expenses.`
+      : 'TT Finance คือระบบบริหารจัดการทางการเงิน ครบวงจรสำหรับสินเชื่อและการดำเนินคดีโดยระบบมีวัตถุประสงค์หลักในการจัดเก็บข้อมูลทรัพย์สิน, บริหารสินเชื่อ, ติดตามการชำระหนี้,และควบคุมกระบวนการดำเนินคดี ของลูกหนี้ที่ผิดนัดชำระรวมถึงควบคุมค่าใช้จ่ายทาง กฎหมายต่างๆ ได้อย่างเป็นระบบ',
     image: '~/assets/images/finance.webp',
     icon: '~/assets/images/product6.webp',
   },
   {
     title: 'T.T. ILAB',
-    description:
-      'T.T. iLAB คือระบบบริการตรวจวิเคราะห์ตัวอย่าง ทางชีวภาพหรือสารตัวอย่าง เพื่อหาผลลัพธ์ทางการแพทย์ วิทยาศาสตร์ หรืออุตสาหกรรม โดยระบบรองรับการ บริหารจัดการคำร้อง (Lab Order), คำนวณค่าบริการ อัตโนมัติ และชำระเงินได้หลายรูปแบบ (QR Code / บัตรเครดิต)พร้อมแสดงสถานะการดำเนินการและ ผลวิเคราะห์ผ่านระบบออนไลน์',
+    description: isEnglist
+      ? 'T.T. iLAB is a laboratory testing system for biological specimens or samples to determine medical, scientific, or industrial results. The system supports lab order management, automatic fee calculation, and multiple payment methods (QR Code/credit card), while displaying processing status and analysis results through an online platform.'
+      : 'T.T. iLAB คือระบบบริการตรวจวิเคราะห์ตัวอย่าง ทางชีวภาพหรือสารตัวอย่าง เพื่อหาผลลัพธ์ทางการแพทย์ วิทยาศาสตร์ หรืออุตสาหกรรม โดยระบบรองรับการ บริหารจัดการคำร้อง (Lab Order), คำนวณค่าบริการ อัตโนมัติ และชำระเงินได้หลายรูปแบบ (QR Code / บัตรเครดิต)พร้อมแสดงสถานะการดำเนินการและ ผลวิเคราะห์ผ่านระบบออนไลน์',
     image: '~/assets/images/ILab.webp',
     icon: '~/assets/images/product7.webp',
   },
   {
     title: 'T.T. TRACKING',
-    description:
-      'T.T. Tracking คือระบบติดตามการเดินทาง โดยระบบจะบันทึกจุดขึ้น-ลงของแต่ละคนแบบเรียลไทม์ ผ่านการสแกน QR Code ที่ติดตั้งในรถ พร้อมแสดง ข้อมูลเส้นทาง, สถานะปัจจุบัน, และประวัติการเดินทาง ผ่านแผนที่ ที่สามารถเข้าถึงได้ง่ายจากอุปกรณ์ทุกชนิด เช่น มือถือ, Tablet หรือ Web Application',
+    description: isEnglist
+      ? 'T.T. Tracking is a journey tracking system that records real-time boarding and alighting points of each person through QR Code scanning installed in vehicles. The system displays route information, current status, and travel history via maps that are easily accessible from all devices such as mobile phones, tablets, or web applications.'
+      : 'T.T. Tracking คือระบบติดตามการเดินทาง โดยระบบจะบันทึกจุดขึ้น-ลงของแต่ละคนแบบเรียลไทม์ ผ่านการสแกน QR Code ที่ติดตั้งในรถ พร้อมแสดง ข้อมูลเส้นทาง, สถานะปัจจุบัน, และประวัติการเดินทาง ผ่านแผนที่ ที่สามารถเข้าถึงได้ง่ายจากอุปกรณ์ทุกชนิด เช่น มือถือ, Tablet หรือ Web Application',
     image: '~/assets/images/tracking.webp',
     icon: '~/assets/images/product8.webp',
   },
@@ -80,10 +88,10 @@ const products = [
     {
       products.map((product, index) => (
         <div class="bg-white rounded-lg p-8 grid grid-cols-1 lg:grid-cols-3 items-center gap-8 border border-[#FF6A3F] shadow-lg my-4">
-          <div class={`${index % 2 === 0 ? 'order-1' : ''}`}>
+          <div class={`${index % 2 === 1 ? 'order-1' : ''}`}>
             <Image src={product.image} alt={product.title} class="w-full rounded-lg shadow-lg" />
           </div>
-          <div class={`${index % 2 === 1 ? 'order-2' : ''}`}>
+          <div class={`${index % 2 === 0 ? 'order-2' : ''}`}>
             <h2 class="text-3xl font-bold mb-4 bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] inline-block text-transparent bg-clip-text">
               {product.title}
             </h2>
@@ -93,8 +101,8 @@ const products = [
             <div class="w-full relative">
               <Image src={product.icon} alt={product.title} class="w-full h-[200px] !object-contain lg:h-[300px]" />
             </div>
-            <div class="cursor-pointer flex items-center gap-2 w-fit bg-[#FF9B3F] text-white px-8 py-2 rounded-lg border-[3px] border-black font-medium hover:opacity-90 transition-opacity">
-              สนใจ
+            <div class="open-chat-head cursor-pointer flex items-center gap-2 w-fit bg-[#FF9B3F] text-white px-8 py-2 rounded-lg border-[3px] border-black font-medium hover:opacity-90 transition-opacity">
+              {isEnglist ? 'Explore' : 'สนใจ'}
               <div class="bg-black rounded-full p-1">
                 <Icon name="tabler:chevron-right" />
               </div>

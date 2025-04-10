@@ -1,0 +1,135 @@
+---
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Products',
+};
+
+const products = [
+  {
+    title: 'TT AI Chat',
+    description:
+      'T.T. AI CHAT is a system developed by our expert team to effectively address AI usage and management needs. It includes features such as setting data access permissions and controlling data visibility, ensuring that AI operates securely while fully meeting your requirements.',
+    subDescription:
+      'Features include configuring data access permissions and visibility control, ensuring AI operates securely while completely fulfilling your requirements',
+    image: '~/assets/images/ai.webp',
+  },
+  {
+    title: 'TT HR',
+    description:
+      'TT HR is a personnel management system developed by our expert team to address all human resource management needs in your organization. The system covers comprehensive personnel data management',
+    subDescription:
+      'From personal information, employment details, educational history, to generating essential reports such as Form 7. Additionally, it comes with payroll management and leave management functionalities that streamline operations in an integrated manner',
+    image: '~/assets/images/hr.webp',
+  },
+  {
+    title: 'TT CMS',
+    description:
+      'TT CMS is a Content Management System developed by our team to simplify content management for the public-facing section of your website',
+    subDescription:
+      'The system is designed to support various file formats and includes a RichEditor that allows users to edit content directly on the website without coding knowledge. Users can manage content quickly and systematically',
+    image: '~/assets/images/cms.webp',
+  },
+  {
+    title: 'TT RSS',
+    description:
+      'TT RSS is a system developed by our expert team to meet the needs for efficiently searching and tracking government procurement project announcements nationwide',
+    subDescription:
+      'This system aggregates procurement information from all government agencies in one place, making it easy, convenient, and quick to search for and track projects relevant to your organization',
+    image: '~/assets/images/rss-feed.webp',
+  },
+  {
+    title: 'TT Budget',
+    description: 'A comprehensive budget management system designed and developed by our expert team to support every step of the budget management lifecycle',
+    subDescription: 'From budget planning processes, allocation to relevant departments, budget transfers, to efficient budget utilization tracking',
+    image: '~/assets/images/budget.webp',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <div class="pt-6">
+    <Headline
+      title="Our Products"
+      subtitle="Solutions we develop for organizations"
+      classes={{ container: 'pt-12 lg:pt-0 animate-on-scroll' }}
+    />
+    </div>
+    <!-- Content Widget **************** -->
+
+    {
+      products.map((product, index) => (
+        <Content
+          isReversed={index % 2 === 0}
+          classes={{ container: 'mb-16 animate-on-scroll' }}
+          isAfterContent
+          imageContainerClasses="content-center mt-0 md:mt-10 lg:basis-1/2"
+          contentContainerClasses="lg:gap-6"
+          contentClasses="lg:basis-1/2"
+        >
+          <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white md:text-3xl mb-2 animate-on-scroll">
+              <span class="text-primary">{product.title}</span>
+            </h3>
+            <p class="animate-on-scroll indent-10">{product.description}</p>
+            <p class="animate-on-scroll">{product.subDescription}</p>
+          </Fragment>
+          <Fragment slot="image">
+            <Image src={`${product.image}`} alt={product.title} class="w-full h-full rounded-lg animate-on-scroll" />
+          </Fragment>
+        </Content>
+      ))
+    }
+  </WidgetWrapper>
+</Layout>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-on-scroll {
+    opacity: 0;
+    transition:
+      opacity 0.6s,
+      transform 0.6s;
+    transition-delay: calc(var(--animation-order, 0) * 0.1s);
+  }
+  .animate-on-scroll.show {
+    opacity: 1;
+    animation: fadeInUp 0.6s ease-out;
+  }
+</style>
+
+<script>
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

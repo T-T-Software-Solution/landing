@@ -16,6 +16,11 @@ const {
   isDark = false,
   classes = {},
 } = Astro.props;
+
+const isEnglist = Astro.currentLocale === 'en';
+const aboutUsLink = isEnglist ? '/en/about-us' : '/about-us';
+const teamLink = isEnglist ? '/en/our-team' : '/our-team';
+const projectShowcaseLink = isEnglist ? '/en/our-works' : '/our-works';
 ---
 
 <WidgetWrapper
@@ -42,15 +47,16 @@ const {
           />
         </div>
         <div class="flex flex-col gap-2 items-center justify-center my-2">
-          <div class="">ก่อตั้งเมื่อ 2553</div>
-          <div class="font-bold">ประสบการณ์ 20 ปี ด้าน Microsoft</div>
+          <div class="">{isEnglist ? 'Established in 2010' : 'ก่อตั้งเมื่อ 2553'}</div>
+          <div class="font-bold">{isEnglist ? 'Over 15 years of experience' : 'ประสบการณ์มากกว่า 15 ปี'}</div>
         </div>
       </div>
       <div class="flex justify-center">
         <div
           class="min-w-[160px] text-center cursor-pointer inline-block bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] text-white px-4 py-1 rounded-3xl font-medium hover:opacity-90 transition-opacity"
+          onclick={`window.location.href = '${aboutUsLink}'`}
         >
-          ดูต่อ
+          {isEnglist ? 'View More' : 'ดูต่อ'}
         </div>
       </div>
     </div>
@@ -64,16 +70,17 @@ const {
           />
         </div>
         <div class="flex flex-col gap-2 items-center justify-center my-2">
-          <div class="">ทีมงาน</div>
-          <div class="font-bold">มากกว่า 30 คน</div>
-          <div class="">พร้อมให้บริการ</div>
+          <div class="">{isEnglist ? 'Team' : 'ทีมงาน'}</div>
+          <div class="font-bold">{isEnglist ? 'More than 42 people' : 'มากกว่า 42 คน'}</div>
+          <div class="">{isEnglist ? 'Ready to assist' : 'พร้อมให้บริการ'}</div>
         </div>
       </div>
       <div class="flex justify-center">
         <div
           class="min-w-[160px] text-center cursor-pointer inline-block bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] text-white px-4 py-1 rounded-3xl font-medium hover:opacity-90 transition-opacity"
+          onclick={`window.location.href = '${teamLink}'`}
         >
-          ดูต่อ
+          {isEnglist ? 'View More' : 'ดูต่อ'}
         </div>
       </div>
     </div>
@@ -87,15 +94,19 @@ const {
           />
         </div>
         <div class="flex flex-col gap-2 items-center justify-center my-2">
-          <div class="">มีตัวอย่างผลงาน</div>
-          <div class="font-bold">ทั้งภาครัฐ เอกชน และต่างประเทศ</div>
+          <div class="">{isEnglist ? 'ProjectShowcase' : 'มีตัวอย่างผลงาน'}</div>
+          <div class="font-bold">{isEnglist ? 'From government, private sectors' : 'ทั้งภาครัฐ เอกชน'}</div>
+          <div class="font-bold">
+            {isEnglist ? 'Both in Thailand and interational clients' : 'ทั้งในประเทศและต่างประเทศ'}
+          </div>
         </div>
       </div>
       <div class="flex justify-center">
         <div
           class="min-w-[160px] text-center cursor-pointer inline-block bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] text-white px-4 py-1 rounded-3xl font-medium hover:opacity-90 transition-opacity"
+          onclick={`window.location.href = '${projectShowcaseLink}'`}
         >
-          ดูต่อ
+          {isEnglist ? 'View More' : 'ดูต่อ'}
         </div>
       </div>
     </div>

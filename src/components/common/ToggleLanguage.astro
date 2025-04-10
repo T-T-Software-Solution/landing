@@ -1,0 +1,87 @@
+---
+import { getPermalink } from '~/utils/permalinks';
+
+export interface Props {
+  label?: string;
+  class?: string;
+}
+
+const {
+  class:
+    className = 'flex flex-col px-2 xl:px-5 py-1.5 rounded justify-center items-center cursor-pointer group bg-primary text-white',
+} = Astro.props;
+
+const currentLocale = Astro.currentLocale;
+const thURL = Astro.url.pathname === '/en' ? '/' : getPermalink(Astro.url.pathname.replace('/en', '/'));
+const enURL = Astro.url.pathname.startsWith('/en')
+  ? Astro.url.pathname
+  : Astro.url.pathname === '/'
+    ? '/en'
+    : `/en${Astro.url.pathname}`;
+---
+
+<div class="relative">
+  <button type="button" class={className} id="language-selector" aria-label="Select language">
+    <span class={`font-bold uppercase ${currentLocale === 'en' ? 'text-[12px] min-[1575px]:text-[16px]' : 'text-sm '}`}
+      >{currentLocale}</span
+    >
+  </button>
+
+  <div
+    id="language-dropdown"
+    class="absolute left-0 mt-2 min-w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg hidden"
+  >
+    <div class="py-1">
+      <a
+        class={`text-center block w-full hover:text-white hover:bg-primary dark:hover:bg-gray-700 ${currentLocale === 'en' ? 'px-2 py-2 text-[12px] min-[1575px]:text-[16px]' : 'py-2 px-4 text-sm'}`}
+        data-lang="th"
+        href={thURL}
+      >
+        TH
+      </a>
+      <a
+        class={`text-center block w-full hover:text-white hover:bg-primary dark:hover:bg-gray-700 ${currentLocale === 'en' ? 'px-2 py-2 text-[12px] min-[1575px]:text-[16px]' : 'py-2 px-4 text-sm'}`}
+        data-lang="en"
+        href={enURL}
+      >
+        EN
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initLanguageSelector() {
+    const button = document.getElementById('language-selector');
+    const dropdown = document.getElementById('language-dropdown');
+    const languageButtons = dropdown?.querySelectorAll('button');
+
+    button?.addEventListener('click', () => {
+      dropdown?.classList.toggle('hidden');
+    });
+
+    languageButtons?.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        if (lang) {
+          const span = button?.querySelector('span');
+          if (span) {
+            span.textContent = lang.toUpperCase();
+          }
+          dropdown?.classList.add('hidden');
+
+          // Reload page to apply language change
+          window.location.reload();
+        }
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!button?.contains(e.target as Node)) {
+        dropdown?.classList.add('hidden');
+      }
+    });
+  }
+
+  document.addEventListener('astro:page-load', initLanguageSelector);
+</script>

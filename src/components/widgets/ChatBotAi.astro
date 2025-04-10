@@ -1,28 +1,38 @@
 ---
 import { environmentConfig } from '~/config';
 import Image from '../common/Image.astro';
+
+const isEnglish = Astro.currentLocale === 'en';
 ---
 
 <section class="py-16">
   <div class="w-full mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12">การออกแบบและพัฒนา AI Chatbot</h2>
+    <h2 class="text-3xl font-bold text-center mb-12">
+      {isEnglish ? 'Design and Develop AI Chatbot' : 'การออกแบบและพัฒนา AI Chatbot'}
+    </h2>
 
     <div class="flex flex-col md:flex-row gap-8 md:gap-0 items-center">
       <div class="space-y-6 lg:space-y-10">
         <div class="p-6 rounded-lg border border-[rgb(55 71 79)/20] md:border-r-0 md:rounded-r-none">
-          <h3 class="text-xl font-semibold mb-3">การออกแบบและพัฒนา AI Chatbot</h3>
+          <h3 class="text-xl font-semibold mb-3">
+            {isEnglish ? 'Design and Develop AI Chatbot' : 'การออกแบบและพัฒนา AI Chatbot'}
+          </h3>
           <p>
-            บริการออกแบบและพัฒนา AI Chatbot ที่ตอบโจทย์เฉพาะของธุรกิจคุณ ไม่ว่าจะเป็น การเพิ่มยอดขาย
-            ยกระดับบริการลูกค้าหรือเพิ่มประสิทธิภาพการทำงานภายใน
+            {
+              isEnglish
+                ? "AI Chatbot design and development services tailored to your business needs, whether it's increasing sales, enhancing customer service, or improving internal efficiency."
+                : 'บริการออกแบบและพัฒนา AI Chatbot ที่ตอบโจทย์เฉพาะของธุรกิจคุณ ไม่ว่าจะเป็น การเพิ่มยอดขาย ยกระดับบริการลูกค้าหรือเพิ่มประสิทธิภาพการทำงานภายใน'
+            }
           </p>
         </div>
         <div
           class="bg-[rgba(255,106,63,0.8)] text-white p-6 rounded-lg border border-[rgb(55 71 79)/20] md:border-r-0 md:rounded-r-none"
         >
-          <h3 class="text-xl font-semibold mb-3">การฝึกอบรมและให้คำปรึกษา</h3>
+          <h3 class="text-xl font-semibold mb-3">
+            {isEnglish ? 'Training and Consultation' : 'การฝึกอบรมและให้คำปรึกษา'}
+          </h3>
           <p>
-            บริการฝึกอบรมทีมงานของคุณให้สามารถใช้งานและดูแล AI Chatbot ได้อย่างมีประสิทธิภาพ
-            พร้อมให้คำปรึกษาในการปรับใช้ให้เหมาะสมกับธุรกิจ
+            {isEnglish ? 'Train and consult your staff to use and maintain AI Chatbot effectively, ready to provide advice on how to apply it to your business.' : 'บริการฝึกอบรมทีมงานของคุณให้สามารถใช้งานและดูแล AI Chatbot ได้อย่างมีประสิทธิภาพ พร้อมให้คำปรึกษาในการปรับใช้ให้เหมาะสมกับธุรกิจ'}
           </p>
         </div>
       </div>
@@ -37,17 +47,23 @@ import Image from '../common/Image.astro';
         <div
           class="bg-[rgba(255,106,63,0.8)] text-white p-6 rounded-lg border border-[rgb(55 71 79)/20] md:border-l-0 md:rounded-l-none"
         >
-          <h3 class="text-xl font-semibold mb-3">การผสานรวม Multi-Platform</h3>
+          <h3 class="text-xl font-semibold mb-3">
+            {isEnglish ? 'Multi-Platform Integration' : 'การผสานรวม Multi-Platform'}
+          </h3>
           <p>
-            ประยุกต์ใช้ AI Chatbot ของคุณได้หลากหลายแพลตฟอร์ม ทั้งเว็บไซต์ แอปพลิเคชันมือถือ Line Official Account
-            และช่องทางการสื่อสารอื่นๆ
+            {isEnglish ? 'Apply your AI Chatbot to multiple platforms, including websites, mobile applications, Line Official Accounts, and other communication channels.' : 'ประยุกต์ใช้ AI Chatbot ของคุณได้หลากหลายแพลตฟอร์ม ทั้งเว็บไซต์ แอปพลิเคชันมือถือ Line Official Account และช่องทางการสื่อสารอื่นๆ'}
           </p>
         </div>
         <div class="p-6 rounded-lg border border-[rgb(55 71 79)/20] md:border-l-0 md:rounded-l-none">
-          <h3 class="text-xl font-semibold mb-3">การดูแลและอัพเดท AI Chatbot</h3>
+          <h3 class="text-xl font-semibold mb-3">
+            {isEnglish ? 'AI Chatbot Maintenance and Updates' : 'การดูแลและอัพเดท AI Chatbot'}
+          </h3>
           <p>
-            บริการดูแลและอัพเดท AI Chatbot ของคุณอย่างต่อเนื่อง เพื่อให้ทันสมัย
-            ปลอดภัยและตอบสนองความต้องการทางธุรกิจที่เปลี่ยนแปลงไป
+            {
+              isEnglish 
+                ? 'Continuous maintenance and updates of your AI Chatbot to keep it modern, secure and responsive to evolving business needs.'
+                : 'บริการดูแลและอัพเดท AI Chatbot ของคุณอย่างต่อเนื่อง เพื่อให้ทันสมัย ปลอดภัยและตอบสนองความต้องการทางธุรกิจที่เปลี่ยนแปลงไป'
+            }
           </p>
         </div>
       </div>

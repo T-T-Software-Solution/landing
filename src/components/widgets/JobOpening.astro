@@ -2,6 +2,8 @@
 // JobOpening.astro
 import Image from '~/components/common/Image.astro';
 import { environmentConfig } from '~/config';
+
+const isEnglish = Astro.currentLocale === 'en';
 const jobs = [
   {
     image: `${environmentConfig.baseImageUrl}/images/jobs/2025/1.png`,
@@ -40,7 +42,7 @@ const jobs = [
       office: ['KKU Science Park'],
     },
     contact: {
-      tel: '06-1018-1275 (HR)',
+      tel: isEnglish? '+666-1018-1275 (HR)':'06-1018-1275 (HR)',
       email: 'hr@tt-ss.net',
     },
     applyLink: 'https://forms.gle/ZReYauwG16ZhgeM68',
@@ -100,7 +102,7 @@ const jobs = [
 
 <section id="apply" class="py-16 bg-white">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-semibold text-center mb-8">ตำแหน่งงานที่เปิดรับ</h2>
+    <h2 class="text-3xl font-semibold text-center mb-8">{isEnglish ? 'Job Openings' : 'ตำแหน่งงานที่เปิดรับ'}</h2>
     <div class="space-y-8">
         {
           jobs.map((job) => (
@@ -155,7 +157,7 @@ const jobs = [
                     href={job.applyLink}
                     class="inline-block bg-primary px-6 py-3 rounded-md text-lg font-semibold text-white transition hover:bg-primary-dark"
                   >
-                    สมัครงาน
+                    {isEnglish ? 'Apply Now' : 'สมัครงาน'}
                   </a>
                 </div>
               </div>

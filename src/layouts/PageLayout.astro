@@ -3,7 +3,7 @@ import Footer from '~/components/widgets/Footer.astro';
 import Header from '~/components/widgets/Header.astro';
 import Layout from '~/layouts/Layout.astro';
 
-import { footerData, headerData } from '~/navigation';
+import { footerData, footerDataEN, headerData, headerDataEN } from '~/navigation';
 
 import type { MetaData } from '~/types';
 
@@ -12,17 +12,18 @@ export interface Props {
 }
 
 const { metadata } = Astro.props;
+const currentLocale = Astro.currentLocale;
 ---
 
 <Layout metadata={metadata}>
   <slot name="header">
-    <Header {...headerData} isSticky position="center" />
+    <Header {...(currentLocale === 'en' ? headerDataEN : headerData)} isSticky position="center" />
   </slot>
   <main>
     <slot />
   </main>
   <slot name="footer">
-    <Footer {...footerData}>
+    <Footer {...(currentLocale === 'en' ? footerDataEN : footerData)}>
       <Fragment slot="description">
         <p>
           We are Software Solution Expert made by <span class="text-primary font-bold">MVP Technical Team</span><br

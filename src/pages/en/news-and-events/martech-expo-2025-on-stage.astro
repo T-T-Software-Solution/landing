@@ -1,0 +1,148 @@
+---
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Martech Expo 2025 : Product Launch Stage',
+};
+
+const event = {
+  date: 'March 26, 2025',
+  title: 'MarTech Expo 2025 - Product Launch Stage',
+  description:
+    "Company executives took the Product Launch Stage to present company products at MarTech Expo 2025, which was an important opportunity to showcase the company's work, capabilities and innovations in developing unique software and integrating advanced artificial intelligence (AI) technology.",
+  image: `${environmentConfig.baseImageUrl}/images/news/2025/martech/stage/ภาพปก.webp`,
+  link: '/en/news-and-events/martech-expo-2025-on-stage',
+};
+
+const images = [
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/martech/stage/ภาพปก.webp`,
+    alt: 'ปก',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/martech/stage/1.webp`,
+    alt: '1',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/martech/stage/2.webp`,
+    alt: '2',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/martech/stage/3.webp`,
+    alt: '3',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/martech/stage/4.webp`,
+    alt: '4',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/martech/stage/5.webp`,
+    alt: '5',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news/2025/martech/stage/6.webp`,
+    alt: '6',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <Headline title="" subtitle={event.title} classes={{ container: 'pt-12 lg:pt-0' }} />
+    <div class="p-6">
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">{event.date}</p>
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">
+        <p class="indent-7 py-4">
+          Company executives took the Product Launch Stage to present company products at MarTech Expo 2025, which was
+          an important opportunity to showcase the company's work, capabilities and innovations in developing unique
+          software and integrating advanced artificial intelligence (AI) technology.
+        </p>
+        <p class="indent-7 py-4">
+          Under the topic "Empower Your Business with Tailor-Made Software Solutions and AI Integration", which offers
+          solutions that cater to the specific needs of each business type through software design and development that
+          can be customized to align with each client's operational characteristics and goals. The integration with AI
+          technology helps increase work efficiency, reduce costs, and noticeably enhance customer experience.
+        </p>
+        <p class="indent-7 py-4">
+          This presentation focused on demonstrating the potential to help businesses adapt and grow sustainably in the
+          digital age with solutions that can be modified according to specific needs. Additionally, it showcased the
+          company's vision and commitment to being a technology leader capable of enhancing competitiveness for various
+          businesses.
+        </p>
+        <p class="indent-7 py-4">
+          The company sincerely hopes that the products presented at this event will be a significant step in
+          strengthening business relationships and creating new opportunities for customers and partners to develop and
+          grow together in the future.
+        </p>
+      </p>
+    </div>
+    <div
+      class={`grid grid-cols-1 md:grid-cols-2 ${images.length > 2 ? 'lg:grid-cols-3' : ''} gap-4 mt-8 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8`}
+    >
+      {
+        images.map((image, index) => (
+          <div
+            class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-up-element image-container"
+            style={`--delay: ${index * 0.1}s`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full md:h-72 !object-cover !object-center image-scale"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </WidgetWrapper>
+</Layout>
+
+<style>
+  .fade-up-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    transition-delay: var(--delay, 0s);
+  }
+  .fade-up-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .image-container {
+    overflow: hidden;
+  }
+  .image-scale {
+    transition: transform 0.3s ease-in-out;
+  }
+  .image-container:hover .image-scale {
+    transform: scale(1.1);
+  }
+</style>
+
+<script>
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.fade-up-element');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

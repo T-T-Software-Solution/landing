@@ -17,39 +17,49 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
+const isEnglist = Astro.currentLocale === 'en';
+
 const services = [
   {
-    title: 'พัฒนาระบบ E-Litigation',
-    description: 'ระบบจัดการคดีความในรูปแบบดิจิทัลที่ช่วยให้กระบวนการทางกฎหมายเป็นไปได้อย่างมีประสิทธิภาพ',
+    title: isEnglist ? 'E-Litigation System Development' : 'พัฒนาระบบ E-Litigation',
+    description: isEnglist
+      ? 'A case management system in digital format that helps streamline legal processes effectively'
+      : 'ระบบจัดการคดีความในรูปแบบดิจิทัลที่ช่วยให้กระบวนการทางกฎหมายเป็นไปได้อย่างมีประสิทธิภาพ',
     icon: '~/assets/images/erp.svg',
   },
   {
-    title: 'พัฒนาระบบ HR',
-    description: 'ระบบพัฒนาทรัพยากรบุคคลที่ช่วยบริหารจัดการข้อมูลพนักงาน ติดตามการฝึกอบรม และประเมินผลการปฏิบัติงาน',
+    title: isEnglist ? 'HR System Development' : 'พัฒนาระบบ HR',
+    description: isEnglist
+      ? 'A human resource management system that manages employee data, training monitoring, and performance evaluation'
+      : 'ระบบพัฒนาทรัพยากรบุคคลที่ช่วยบริหารจัดการข้อมูลพนักงาน ติดตามการฝึกอบรม และประเมินผลการปฏิบัติงาน',
     icon: '~/assets/images/hr.svg',
   },
   {
-    title: 'พัฒนาระบบ Finance',
-    description:
-      'ระบบจัดการข้อมูลการเงินที่ช่วยให้องค์กรสามารถติดตาม วิเคราะห์และรายงานธุรกรรม ทางการเงินได้อย่างมีประสิทธิภาพและเป็นระบบ',
+    title: isEnglist ? 'Finance System Development' : 'พัฒนาระบบ Finance',
+    description: isEnglist
+      ? 'A financial management system for organizations that can track budgets and expenses efficiently and systematically'
+      : 'ระบบจัดการข้อมูลการเงินที่ช่วยให้องค์กรสามารถติดตาม วิเคราะห์และรายงานธุรกรรม ทางการเงินได้อย่างมีประสิทธิภาพและเป็นระบบ',
     icon: '~/assets/images/fiannce.svg',
   },
   {
-    title: 'พัฒนาระบบ CMS',
-    description:
-      'ระบบจัดการเนื้อหาที่ช่วยให้ผู้ใช้สามารถแก้ไขและจัดการเนื้อหาบนเว็บไซต์ได้อย่างง่ายดายโดยไม่ต้องมีความรู้ด้านการเขียนโค้ด',
+    title: isEnglist ? 'CMS System Development' : 'พัฒนาระบบ CMS',
+    description: isEnglist
+      ? 'A content management system that allows users to edit and manage content without needing programming knowledge'
+      : 'ระบบจัดการเนื้อหาที่ช่วยให้ผู้ใช้สามารถแก้ไขและจัดการเนื้อหาบนเว็บไซต์ได้อย่างง่ายดายโดยไม่ต้องมีความรู้ด้านการเขียนโค้ด',
     icon: '~/assets/images/crm.svg',
   },
   {
     title: 'Dynamic Dashboard',
-    description:
-      'ระบบแสดงข้อมูลแบบโต้ตอบที่นำเสนอข้อมูลสำคัญในรูปแบบที่ปรับเปลี่ยนได้ตามความต้องการของผู้ใช้และอัพเดตข้อมูลแบบเรียลไทม์',
+    description: isEnglist
+      ? 'A data display system that presents important information in a format that compares with user requirements and visualizes data in real-time'
+      : 'ระบบแสดงข้อมูลแบบโต้ตอบที่นำเสนอข้อมูลสำคัญในรูปแบบที่ปรับเปลี่ยนได้ตามความต้องการของผู้ใช้และอัพเดตข้อมูลแบบเรียลไทม์',
     icon: '~/assets/images/statisctics.svg',
   },
   {
     title: 'Dynamic Reporting',
-    description:
-      'ระบบการสร้างรายงานที่สามารถปรับเปลี่ยนได้แบบอัตโนมัติ ตามข้อมูลใหม่และความต้องการของผู้ใช้ โดยช่วยให้ การวิเคราะห์ข้อมูลเป็นไปอย่างรวดเร็วและมีประสิทธิภาพ',
+    description: isEnglist
+      ? 'A report creation system that can customize formats according to new data and user needs without programming, with fast and efficient data analysis'
+      : 'ระบบการสร้างรายงานที่สามารถปรับเปลี่ยนได้แบบอัตโนมัติ ตามข้อมูลใหม่และความต้องการของผู้ใช้ โดยช่วยให้ การวิเคราะห์ข้อมูลเป็นไปอย่างรวดเร็วและมีประสิทธิภาพ',
     icon: '~/assets/images/report.svg',
   },
 ];
@@ -102,38 +112,30 @@ const services = [
         <h2
           class="text-xl font-bold mb-4 bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] inline-block text-transparent bg-clip-text"
         >
-          ปฏิรูปองค์กรของคุณสู่ดิจิทัลอย่างครบวงจร
+          {
+            isEnglist
+              ? 'Transform your organization digitally in a comprehensive way'
+              : 'ปฏิรูปองค์กรของคุณสู่ดิจิทัลอย่างครบวงจร'
+          }
         </h2>
         <p class="text-[#4D4C66] mb-6">
-          ด้วยการประยุกต์ใช้เทคโนโลยีล้ำสมัยในการปรับเปลี่ยนโครงสร้างพื้นฐาน กระบวนการทำงาน และวัฒนธรรมองค์กร
+          {
+            isEnglist
+              ? `By applying advanced technology to fundamentally change your work processes and organizational systems. We have experience from various industries together with analyzing your specific business needs. We develop digital strategies that respond to and drive change with confidence in a rapidly changing competitive environment.`
+              : `ด้วยการประยุกต์ใช้เทคโนโลยีล้ำสมัยในการปรับเปลี่ยนโครงสร้างพื้นฐาน กระบวนการทำงาน และวัฒนธรรมองค์กร
           เรามีประสบการณ์ จากหลากหลาย อุตสาหกรรมพร้อมวิเคราะห์ ความต้องการเฉพาะ ของธุรกิจคุณ พัฒนากลยุทธ์ดิจิทัล
           ที่ตอบโจทย์ และดำเนินการปรับเปลี่ยน ที่เห็นผลลัพธ์ชัดเจน เพื่อสร้างความได้เปรียบ ในการแข่งขัน
-          และความยั่งยืนในยุคที่เปลี่ยนแปลงอย่างรวดเร็ว
+          และความยั่งยืนในยุคที่เปลี่ยนแปลงอย่างรวดเร็ว`
+          }
         </p>
         <div class="flex justify-center">
           <div
             class="open-chat-head cursor-pointer inline-block bg-gradient-to-r from-[#FF6A3F] to-[#FFAC26F0] text-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
           >
-            แชทกับผู้เชี่ยวชาญของเราตอนนี้ →
+            {isEnglist ? 'Chat with our Expert →' : 'แชทกับผู้เชี่ยวชาญของเราตอนนี้ →'}
           </div>
         </div>
       </div>
     </div>
   </div>
 </WidgetWrapper>
-
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const openChatHead = document.querySelectorAll('.open-chat-head');
-    if (openChatHead) {
-      openChatHead.forEach((element) => {
-        element.addEventListener('click', () => {
-          const zohoButton = document.querySelector('#zsiq_float') as HTMLButtonElement;
-          if (zohoButton) {
-            zohoButton.click();
-          }
-        });
-      });
-    }
-  });
-</script>

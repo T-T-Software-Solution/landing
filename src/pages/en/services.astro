@@ -1,0 +1,371 @@
+---
+import { twMerge } from 'tailwind-merge';
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import ChatBotAi from '~/components/widgets/ChatBotAi.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import { environmentConfig } from '~/config';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Our Services',
+};
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <div class="pt-6">
+      <Headline
+        title="Our Services"
+        subtitle="We offer design and development of Back Office Web Applications for your organization"
+        classes={{ container: 'pt-12 lg:pt-0 animate-on-scroll' }}
+      />
+    </div>
+    <!-- Features2 Widget ************** -->
+
+    <Features2
+      classes={{
+        container: 'lg:py-12 lg:pt-0',
+        panel: 'border border-gray-200 dark:border-gray-800',
+      }}
+      columns={3}
+      items={[
+        {
+          title: 'Back Office Web Application',
+          description: 'We design and develop Back Office Web Applications that meet the specific needs of your organization',
+          icon: 'tabler:browser',
+        },
+        {
+          title: 'Data Visualization',
+          description: 'We design and develop Dashboards and data visualization tools that help analyze and make decisions',
+          icon: 'tabler:chart-pie',
+        },
+        {
+          title: 'Azure Cloud Services',
+          description: 'We offer consulting, development, and maintenance of systems on Azure Cloud by our professional team',
+          icon: 'tabler:cloud',
+        },
+      ]}
+    />
+
+    <!-- Content Widget **************** -->
+
+    <Content
+      isReversed
+      classes={{ container: 'mb-16 animate-on-scroll' }}
+      isAfterContent
+      items={[
+        {
+          title: 'Customizable Design',
+          description: 'We design databases and screens for recording data according to customer requirements',
+          icon: 'tabler:adjustments',
+        },
+        {
+          title: 'Customizable Reports',
+          description: 'The system can generate reports according to customer requirements',
+          icon: 'tabler:report',
+        },
+        {
+          title: 'Integration with existing systems',
+          description:
+            'The system can integrate with existing systems, such as LDAP, Active Directory, or Google',
+          icon: 'tabler:puzzle',
+        },
+      ]}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 animate-on-scroll">
+          Why choose our services?
+        </h3>
+        <div class="text-muted text-base my-2 animate-on-scroll">
+          We understand that every organization has unique complexities and operational requirements. 
+          Designing systems that not only meet your needs but also enhance operational efficiency is crucial. 
+          With our services, you'll get a system that delivers results, making data management and internal operations 
+          more streamlined, efficient, and secure.
+        </div>
+        <p class="animate-on-scroll">
+          Let us help you develop a Back Office system that will be a key enabler for your organization's growth 
+          and success in the digital era.
+        </p>
+      </Fragment>
+      <Fragment slot="image">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full h-full">
+          <Image
+            src={`${environmentConfig.baseImageUrl}/images/db-design.webp`}
+            alt="Database Design"
+            class="w-full h-72 lg:col-span-2 animate-on-scroll"
+            style={`--animation-order: 0;`}
+          />
+          <Image
+            src={`${environmentConfig.baseImageUrl}/images/report-design.webp`}
+            alt="Report Design"
+            class="w-full h-72 animate-on-scroll"
+            style={`--animation-order: 1;`}
+          />
+          <Image
+            src={`${environmentConfig.baseImageUrl}/images/login-any.webp`}
+            alt="Login System"
+            class="w-full h-72 animate-on-scroll"
+            style={`--animation-order: 2;`}
+          />
+        </div>
+      </Fragment>
+    </Content>
+
+    <!-- Content Widget **************** -->
+
+    <Content
+      classes={{ container: 'mb-16 animate-on-scroll' }}
+      isReversed
+      isAfterContent
+      items={[
+        {
+          title: 'Customizable Design',
+          description:
+            'Every organization has unique ways of working and data management, which may not be met by general-purpose software. We design and develop systems that are tailored to your organization',
+          icon: 'tabler:adjustments',
+        },
+        {
+          title: 'Increased Operational Efficiency',
+          description:
+            'Our systems help streamline data recording, document management, and operational processes within your organization, resulting in smoother and faster operations. This not only saves time but also reduces errors that may occur from manual work.',
+          icon: 'tabler:chart-arrows',
+        },
+        {
+          title: 'Customizable Reports',
+          description:
+            'Accessing reports that are designed to meet your organization\'s needs helps you receive accurate and important information at the right time, whether for analyzing internal data, checking performance, or making strategic decisions. Our systems can create customizable reports that are tailored to your actual needs.',
+          icon: 'tabler:report',
+        },
+        {
+          title: 'Integration with Existing Systems',
+          description:
+            'We understand the importance of integrating new systems with your existing systems, such as LDAP, Active Directory, or Google. This integration helps streamline changes within your organization, allowing you to leverage existing structures without starting from scratch.',
+          icon: 'tabler:puzzle',
+        },
+        {
+          title: 'Security and Access Control',
+          description:
+            'Data security is a priority, so our systems are designed to easily and securely control access. You can be confident that important organization data will be protected and accessible only to those who have the necessary permissions.',
+          icon: 'tabler:shield-lock',
+        },
+        {
+          title: 'Support for Your Success',
+          description:
+            'Our team is ready to support you at every stage, from analyzing your needs to designing and developing, installing, and maintaining systems. We are committed to providing the best service to ensure that the systems we design and develop will help your organization succeed.',
+          icon: 'tabler:headset',
+        },
+      ]}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 animate-on-scroll">
+          Benefits of Our Services
+        </h3>
+      </Fragment>
+    </Content>
+
+    <!-- Content Widget **************** -->
+
+    <Content
+      isReversed
+      classes={{ container: 'mb-16 animate-on-scroll' }}
+      isAfterContent
+      imageContainerClasses="content-center mt-0 md:mt-10 lg:basis-1/3"
+      contentContainerClasses="lg:gap-6"
+      contentClasses="lg:basis-2/3"
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white md:text-3xl mb-2 animate-on-scroll">
+          Custom <span class="text-primary">Data Visualization</span> Services
+        </h3>
+        <p class="animate-on-scroll">
+          Our Data Visualization services include designing and developing interactive dashboards and visualization tools 
+          featuring bar charts, pie charts, line graphs, and various other visualization formats.
+        </p>
+        <p class="animate-on-scroll">
+          These tools transform complex data into intuitive visual representations, enabling users to analyze and make 
+          data-driven decisions effectively. Each visualization is designed with user-friendly filtering and search 
+          capabilities, making it easy to track and analyze performance metrics.
+        </p>
+      </Fragment>
+      <Fragment slot="image">
+        <Image
+          src={`${environmentConfig.baseImageUrl}/images/data-visualize.webp`}
+          alt="Data Visualization"
+          class="w-full h-full rounded-lg animate-on-scroll"
+        />
+      </Fragment>
+    </Content>
+    <!-- Content Widget **************** -->
+
+    <Content
+      imageContainerClasses="content-center"
+      isReversed
+      isAfterContent
+      items={[
+        {
+          title: 'Azure Cloud Migration',
+          description:
+            'This service helps your business move and install systems on Azure Cloud in the most seamless and appropriate way, tailored to your needs and organization structure.',
+          icon: 'tabler:cloud',
+        },
+        {
+          title: 'Azure Cloud Development',
+          description:
+            'Design and develop solutions that run on Azure Cloud with high efficiency, while integrating seamlessly with other systems in your organization.',
+          icon: 'tabler:cloud-cog',
+        },
+        {
+          title: 'Azure Cloud Consulting and Training',
+          description:
+            'We offer consulting and guidance related to using Azure Cloud, including specialized training, which will help your team understand and fully utilize the cloud.',
+          icon: 'tabler:users-group',
+        },
+        {
+          title: 'Azure Cloud Maintenance',
+          description:
+            'We provide maintenance services for systems installed on Azure Cloud to ensure stability and security, while managing costs appropriately for cloud usage.',
+          icon: 'tabler:database-import',
+        },
+      ]}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 animate-on-scroll">
+          Professional Azure Cloud Services
+        </h3>
+        <div class="text-muted text-base my-2 animate-on-scroll">
+          As a leading provider of Azure Cloud consulting and development services, our expert team delivers comprehensive 
+          solutions tailored to meet diverse business needs. Our services include:
+        </div>
+      </Fragment>
+      <Fragment slot="image">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-full">
+          <Image
+            src={`${environmentConfig.baseImageUrl}/images/service-azure.webp`}
+            alt="Azure Cloud"
+            class="w-full h-80 md:col-span-2 rounded-lg animate-on-scroll"
+          />
+          <div class="relative animate-on-scroll">
+            <Image
+              src={`${environmentConfig.baseImageUrl}/images/ceo.webp`}
+              alt="Professional Team"
+              class="w-full h-72 rounded-lg"
+            />
+            {
+              [
+                { url: `${environmentConfig.baseImageUrl}/images/devops_engineer.png` },
+                { url: `${environmentConfig.baseImageUrl}/images/azure_developer.png` },
+                { url: `${environmentConfig.baseImageUrl}/images/azure_fundamentals.png` },
+              ].map(({ url }, index) => (
+                <div
+                  class={twMerge(
+                    'absolute bottom-0 right-0 bg-white rounded-l-lg p-2',
+                    index === 0
+                      ? 'right-0 min-[490px]:right-0 bottom-0'
+                      : index === 1
+                        ? 'right-0 min-[490px]:right-12 bottom-12 min-[490px]:bottom-0 rounded-none'
+                        : 'right-0 min-[490px]:right-24 bottom-24 min-[490px]:bottom-0'
+                  )}
+                >
+                  <div class="w-10 h-10">
+                    <Image src={url} alt="trust-cert" class="w-10 h-10 !object-contain" />
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+          <div class="relative animate-on-scroll">
+            <Image
+              src={`${environmentConfig.baseImageUrl}/images/mvp-ponggun.webp`}
+              alt="Professional Team"
+              class="w-full h-72 rounded-lg md:!object-left min-[490px]:!object-top !object-left animate-on-scroll"
+            />
+            <div class={twMerge('absolute bottom-0 right-0 bg-white rounded-l-lg p-2 min-[490px]:right-0 ')}>
+              <div class="w-12 h-12 flex items-center justify-center">
+                <Image
+                  src={`${environmentConfig.baseImageUrl}/images/mvp-azure.webp`}
+                  alt="mvp-azure"
+                  class="w-10 h-10 animate-on-scroll !object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </Fragment>
+    </Content>
+    <!-- CallToAction Widget *********** -->
+    <ChatBotAi />
+
+    <CallToAction
+      actions={[
+        {
+          variant: 'primary',
+          target: '_blank',
+          text: 'Contact Us',
+          href: '/en/contact-us',
+        },
+      ]}
+    >
+      <Fragment slot="title">
+        <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 py-2 animate-on-scroll">
+          Elevate Your Business with Modern Technology
+        </h2>
+      </Fragment>
+
+      <Fragment slot="subtitle">
+        <p class="text-muted md:text-lg my-2 animate-on-scroll">
+          Let us help you develop systems that will be key enablers for your organization's growth and success in the digital era.
+        </p>
+      </Fragment>
+    </CallToAction>
+  </WidgetWrapper>
+</Layout>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-on-scroll {
+    opacity: 0;
+    transition:
+      opacity 0.6s,
+      transform 0.6s;
+    transition-delay: calc(var(--animation-order, 0) * 0.1s);
+  }
+  .animate-on-scroll.show {
+    opacity: 1;
+    animation: fadeInUp 0.6s ease-out;
+  }
+</style>
+
+<script>
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

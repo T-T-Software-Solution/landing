@@ -1,0 +1,21 @@
+---
+// CareerPage.astro
+import Layout from '~/layouts/PageLayout.astro';
+import Banner from '~/components/widgets/Banner.astro';
+import Benefits from '~/components/widgets/Benefits.astro';
+import WorkingStyle from '~/components/widgets/WorkingStyle.astro';
+import JobOpening from '~/components/widgets/JobOpening.astro';
+
+import { environmentConfig } from '~/config';
+
+const careerImage = `${environmentConfig.baseImageUrl}/images/career.webp`;
+---
+
+<Layout metadata={{ title: 'Join Us' }}>
+  <div class="pt-16">
+  <Banner careerImage={careerImage} />
+  </div>
+  <JobOpening />
+  <Benefits />
+  <WorkingStyle />
+</Layout>

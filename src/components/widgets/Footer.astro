@@ -35,6 +35,7 @@ const {
 } = Astro.props;
 
 const year = new Date().getFullYear();
+const currentLocale = Astro.currentLocale;
 ---
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
@@ -51,8 +52,8 @@ const year = new Date().getFullYear();
       </div>
       {
         links.map(({ title, links }) => (
-          <div class="col-span-6 lg:col-span-2 md:col-span-3">
-            <div class="text-muted font-extrabold mb-2">{title}</div>
+          <div class="col-span-12 sm:col-span-6 lg:col-span-2 md:col-span-3">
+            {title && (<div class="text-muted font-extrabold mb-2">{title}</div>)}
             {links && Array.isArray(links) && links.length > 0 && (
               <ul class="text-sm">
                 {links.map(({ text, href, ariaLabel }) => (
@@ -72,7 +73,7 @@ const year = new Date().getFullYear();
         ))
       }
       <div class="col-span-12 lg:col-span-3 md:col-span-6">
-        <div class="text-muted font-extrabold mb-2">ติดต่อเรา</div>
+        <div class="text-muted font-extrabold mb-2">{currentLocale === 'en' ? 'Contact Us' : 'ติดต่อเรา'}</div>
         <ul class="text-sm">
           {
             contactLinks.map(({ icon, text, href }) => (

@@ -1,0 +1,107 @@
+---
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Meeting with Siam Law Group Co., Ltd.',
+};
+
+const event = {
+    date: 'October 25, 2024',
+    title: 'Meeting with Siam Law Group Co., Ltd.',
+    description:
+      'Company representatives met with Siam Law Group Co., Ltd. to present a congratulatory basket on the occasion of the client using our system, which has resulted in continuous increased work and branch expansion. The client expressed satisfaction with our system and is ready to begin Phase 2 (Mobile Applications) immediately. The company thanks all staff for their dedicated work, with the client commenting that working with our team has been positive and they are confident there will be more projects to work on in the future.',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Siam Law Group Company Limited/รูปปก.webp`,
+    link: '/en/news-and-events/siam-low-group',
+  };
+
+const images = [
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Siam Law Group Company Limited/รูปปก.webp`,
+    alt: 'รูปปก',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Siam Law Group Company Limited/IMG_4760.webp`,
+    alt: 'IMG_4760.webp',
+  },
+  {
+    src: `${environmentConfig.baseImageUrl}/images/news_events/Siam Law Group Company Limited/IMG_4763.webp`,
+    alt: 'IMG_4763.webp',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <Headline title="" subtitle="เข้าพบลูกค้า บริษัท สยามลอว์กรุ๊ป จำกัด" classes={{ container: 'pt-12 lg:pt-0' }} />
+    <div class="p-6">
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">{event.date}</p>
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">{event.description}</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      {
+        images.map((image, index) => (
+          <div
+            class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-up-element image-container"
+            style={`--delay: ${index * 0.1}s`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full md:h-72 !object-cover !object-center image-scale"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </WidgetWrapper>
+</Layout>
+
+<style>
+  .fade-up-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    transition-delay: var(--delay, 0s);
+  }
+  .fade-up-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .image-container {
+    overflow: hidden;
+  }
+  .image-scale {
+    transition: transform 0.3s ease-in-out;
+  }
+  .image-container:hover .image-scale {
+    transform: scale(1.1);
+  }
+</style>
+
+<script>
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.fade-up-element');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

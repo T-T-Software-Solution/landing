@@ -5,7 +5,8 @@ import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import Button from '~/components/ui/Button.astro';
 import type { CallToAction } from '~/types';
-import { getAsset, getHomePermalink, trimSlash } from '~/utils/permalinks';
+import { getAsset, getHomePermalink, getPermalink, trimSlash } from '~/utils/permalinks';
+import ToggleLanguage from '../common/ToggleLanguage.astro';
 
 interface Link {
   text?: string;
@@ -44,6 +45,7 @@ const {
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 const isTopOfPage = Astro.url.pathname === '/';
+const currentLocale = Astro.currentLocale;
 ---
 
 <header
@@ -73,7 +75,7 @@ const isTopOfPage = Astro.url.pathname === '/';
     ]}
   >
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
-      <a class="flex items-center" href={getHomePermalink()}>
+      <a class="flex items-center" href={currentLocale === 'en' ? getPermalink('/en') : getHomePermalink()}>
         <Logo class="w-auto h-8" />
       </a>
       <div class="flex items-center lg:hidden">
@@ -88,14 +90,14 @@ const isTopOfPage = Astro.url.pathname === '/';
       aria-label="Main navigation"
     >
       <ul
-        class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl min-[1575px]:text-[0.9375rem] tracking-[0.01rem] font-bold lg:justify-center lg:text-[10px] xl:text-[14px]"
+        class={`flex flex-col lg:flex-row lg:self-center w-full lg:w-auto tracking-[0.01rem] font-bold lg:justify-center ${currentLocale === 'en' ? 'lg:text-[10px] xl:text-[12px] min-[1575px]:text-[16px]' : 'text-xl min-[1575px]:text-[0.9375rem] lg:text-[10px] xl:text-[14px]'}`}
       >
         {
           links.map(({ text, href, links }) => (
-            <li class={links?.length ? 'dropdown' : ''}>
+            <li class={`${links?.length ? 'dropdown' : ''}`}>
               {links?.length ? (
                 <>
-                  <button type="button" class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center">
+                  <button type="button" class="hover:text-link dark:hover:text-white px-2 py-3 flex items-center">
                     {text}{' '}
                     <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden lg:inline" />
                   </button>
@@ -153,14 +155,17 @@ const isTopOfPage = Astro.url.pathname === '/';
             )
           }
         </div>
+        <div>
+          <ToggleLanguage />
+        </div>
         {
           actions?.length ? (
-            <span class="ml-4 rtl:ml-0 rtl:mr-4 p-2">
+            <span class="ml-0 rtl:ml-0 rtl:mr-4 p-2">
               {actions.map((btnProps) => (
                 <Button
                   {...btnProps}
                   variant="primary"
-                  class="ml-2 py-1.5 px-4 lg:px-5 font-bold shadow-none text-sm w-auto"
+                  class={`py-1.5 px-4 lg:px-5 font-bold shadow-none w-auto ${currentLocale === 'en' ? 'text-[12px] lg:px-2 min-[1575px]:text-[16px]' : 'text-sm '}`}
                 />
               ))}
             </span>
@@ -246,4 +251,15 @@ const isTopOfPage = Astro.url.pathname === '/';
   if (linkContainer) {
     linkContainer.addEventListener('scroll', updateHeader);
   }
+</script>
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const languageSelect = document.querySelector('select');
+    if (languageSelect) {
+      languageSelect.addEventListener('change', (event) => {
+        const selectedLanguage = (event.target as HTMLSelectElement).value;
+        localStorage.setItem('language', selectedLanguage);
+      });
+    }
+  });
 </script>

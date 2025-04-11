@@ -1,0 +1,237 @@
+---
+import ImageBentoGrid from '~/components/widgets/ImageBentoGrid.astro';
+import OurPartners from '~/components/widgets/OurPartners.astro';
+import OurServices from '~/components/widgets/OurServices.astro';
+import OurTeam from '~/components/widgets/OurTeam.astro';
+import OurWorksCarousel from '~/components/widgets/OurWorksCarousel.astro';
+import Technologies from '~/components/widgets/Technologies.astro';
+import WorkEnvironment from '~/components/widgets/WorkEnvironment.astro';
+import { environmentConfig } from '~/config';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'T.T. Software Solution — ที.ที. ซอฟแวร์ โซลูชั่น',
+  ignoreTitleTemplate: true,
+};
+---
+<Layout metadata={metadata}>
+  <!-- ImageBentoGrid Widget ******************* -->
+
+  <ImageBentoGrid
+    containerClass="pt-20"
+    images={[
+      {
+        url: '~/assets/images/bento-primary.webp',
+        class: {
+          container: 'col-span-3 md:col-span-2 h-fit',
+          image: 'md:min-h-[400px] max-h-[400px] !object-cover',
+        },
+      },
+      {
+        url: `${environmentConfig.baseImageUrl}/images/bento-secondary.webp`,
+        class: {
+          image: 'md:min-h-[400px] max-h-[400px] !object-cover',
+          container: 'h-fit',
+        },
+      },
+      {
+        url: `${environmentConfig.baseImageUrl}/images/bento-third.webp`,
+        class: {
+          image: 'md:min-h-[400px] max-h-[400px] !object-cover',
+          container: 'h-fit',
+        },
+      },
+    ]}
+  />
+
+  <!-- OurServices Widget ******************* -->
+
+  <OurServices
+    tagline="Our Services"
+    id="ourServices"
+    title="Our Services"
+    subtitle="Comprehensive technology solutions tailored to your business requirements"
+    classes={{
+      headline: {
+        container: 'mx-auto',
+      },
+    }}
+    items={[
+      {
+        title: 'Back Office Web Application Service',
+        description:
+          'Development services for back-office web applications that efficiently manage internal operations such as accounting, CRM, and resource management, customized for each business\'s specific workflow',
+        icon: `${environmentConfig.baseImageUrl}/images/web-development.svg`,
+      },
+      {
+        title: 'Azure Cloud by Professtional',
+        description:
+          'Azure cloud consulting and solution development by experts, helping organizations migrate to cloud, manage IT resources, and enhance data security',
+        icon: `${environmentConfig.baseImageUrl}/images/cloud.svg`,
+      },
+      {
+        title: 'Responsive Web Design Service',
+        description:
+          'Responsive website design services compatible with all devices - computers, tablets, and smartphones, creating optimal user experience and expanding business reach',
+        icon: `${environmentConfig.baseImageUrl}/images/responsive-web.svg`,
+      },
+      {
+        title: 'Training and Skills Development',
+        description:
+          'IT training and skills development services for organizational personnel, covering courses on the latest technologies to enhance operational efficiency and system utilization',
+        icon: `${environmentConfig.baseImageUrl}/images/teacher.svg`,
+      },
+      {
+        title: 'Data Visualization Service',
+        description:
+          'Data visualization services that present information in easily understandable graphics, efficiently analyzing complex data for reports, market trend analysis, and business decision-making',
+        icon: `${environmentConfig.baseImageUrl}/images/analysis.svg`,
+      },
+      {
+        title: 'Automated Test Service',
+        description:
+          'Automated testing system development and implementation services, reducing time and costs in software testing while ensuring product quality before deployment',
+        icon: `${environmentConfig.baseImageUrl}/images/tecnique.svg`,
+      },
+    ]}
+  />
+
+  <!-- OurWorksCarousel Widget ******************* -->
+  <OurWorksCarousel />
+
+  <!-- OurTeam Widget ******************* -->
+  <OurTeam
+    title='Empowering Your Digital Journey\nwith <span class="text-secondary">Expert Solutions</span>'
+    descriptionFirst="With our extensive experience and Microsoft MVP-level expertise, we're ready to elevate your business with cutting-edge software solutions, including application development, cloud system implementation, and IT infrastructure management"
+    descriptionSecond="Our team of experts is ready to guide you to success in the digital era with Microsoft certifications in Azure and DevOps. We create solutions tailored to your business needs, helping you stay ahead of competitors in a highly competitive market"
+    imageExecutive={[
+      { url: `${environmentConfig.baseImageUrl}/images/ceo-index.webp`, role: 'CEO' },
+      { url: `${environmentConfig.baseImageUrl}/images/cto-index.webp`, role: 'CTO' },
+      { url: `${environmentConfig.baseImageUrl}/images/gm-index.webp`, role: 'GM' },
+    ]}
+    imagCertified={[
+      { url: `${environmentConfig.baseImageUrl}/images/azure_fundamentals.png` },
+      { url: `${environmentConfig.baseImageUrl}/images/azure_developer.png` },
+      { url: `${environmentConfig.baseImageUrl}/images/devops_engineer.png` },
+    ]}
+    contentImage={`${environmentConfig.baseImageUrl}/images/mvp-circle.webp`}
+  />
+  <!-- Technologies Widget ************** -->
+
+  <Technologies
+    title="Technologies we use"
+    subtitle="Tools and technologies we use to build efficient solutions"
+    tagline="Technologies we use"
+    items={[
+      {
+        description: '.NET',
+        icon: `${environmentConfig.baseImageUrl}/images/dotnet.svg`,
+      },
+      {
+        description: 'Microsoft Azure',
+        icon: `${environmentConfig.baseImageUrl}/images/azure.svg`,
+        classes: {
+          icon: 'mt-[30px]',
+        },
+      },
+      {
+        description: 'React',
+        icon: `${environmentConfig.baseImageUrl}/images/react.svg`,
+      },
+      {
+        description: 'TypeScript',
+        icon: `${environmentConfig.baseImageUrl}/images/typescript.svg`,
+      },
+      {
+        description: 'Next.js',
+        icon: `${environmentConfig.baseImageUrl}/images/nextjs.svg`,
+      },
+      {
+        description: 'Docker',
+        icon: `${environmentConfig.baseImageUrl}/images/docker.svg`,
+      },
+      {
+        description: 'Kubernetes',
+        icon: `${environmentConfig.baseImageUrl}/images/kubernetes.svg`,
+      },
+      {
+        description: 'Node.js',
+        icon: `${environmentConfig.baseImageUrl}/images/nodejs.svg`,
+      },
+      {
+        description: 'PostgreSQL',
+        icon: `${environmentConfig.baseImageUrl}/images/pgsql.svg`,
+      },
+      {
+        description: 'MongoDB',
+        icon: `${environmentConfig.baseImageUrl}/images/mongodb.svg`,
+        classes: {
+          icon: 'mt-[30px]',
+        },
+      },
+      {
+        description: 'Tailwind CSS',
+        icon: `${environmentConfig.baseImageUrl}/images/tailwindcss.svg`,
+      },
+      {
+        description: 'Microsoft SQL Server',
+        icon: `${environmentConfig.baseImageUrl}/images/microsoft-sql-server.svg`,
+      },
+    ]}
+    callToAction1={{ variant: 'secondary', text: 'View all technologies', href: '/en/technologies' }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-[#FFF6F4] dark:bg-transparent"></div>
+    </Fragment>
+  </Technologies>
+
+  <!-- OurPartner Widget ******* -->
+
+  <OurPartners
+    classes={{
+      container: 'lg:py-0 lg:pt-20 py-0 pt-12',
+    }}
+    title="Our Partners"
+    subtitle="We're proud to partner with leading technology companies"
+    tagline="Our Partners"
+    items={[
+      {
+        icon: `${environmentConfig.baseImageUrl}/images/jumpbox.png`,
+      },
+      {
+        icon: `${environmentConfig.baseImageUrl}/images/thaitype.png`,
+      },
+      {
+        icon: `${environmentConfig.baseImageUrl}/images/thai-programmer.webp`,
+      },
+      {
+        icon: `${environmentConfig.baseImageUrl}/images/lawxtech.webp`,
+      },
+      {
+        icon: `${environmentConfig.baseImageUrl}/images/arctica.webp`,
+      },
+    ]}
+  />
+
+  <WorkEnvironment
+    subtitle="Supporting remote work from anywhere, creating a happy environment, and enhancing productivity"
+    images={[
+      { url: `${environmentConfig.baseImageUrl}/images/WorkEnvironment1.webp` },
+      { url: `${environmentConfig.baseImageUrl}/images/WorkEnvironment2.webp` },
+      { url: `${environmentConfig.baseImageUrl}/images/WorkEnvironment3.webp` },
+      { url: `${environmentConfig.baseImageUrl}/images/WorkEnvironment4.webp` },
+      { url: `${environmentConfig.baseImageUrl}/images/WorkEnvironment5.webp` },
+      { url: `${environmentConfig.baseImageUrl}/images/WorkEnvironment6.webp` },
+    ]}
+    callToAction1={{
+      variant: 'secondary',
+      text: 'View our work environment',
+      href: '/en/work-environment',
+    }}
+  >
+    <Fragment slot="title">
+      Support Work From <span class="underline underline-offset-2 decoration-wavy decoration-primary">Anywhere</span><br
+      /> A Happy Environment for Better Results
+    </Fragment>
+  </WorkEnvironment>
+</Layout>

@@ -1,0 +1,308 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import EventGrid from '~/components/widgets/EventGrid.astro';
+import { environmentConfig } from '~/config';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'News and Events',
+};
+
+const events = [
+  {
+    date: 'March 26, 2025',
+    title: 'MarTech Expo 2025 - Product Launch Stage',
+    description:
+      'Company executives took the Product Launch Stage to present company products at MarTech Expo 2025, which was an important opportunity to showcase the company\'s work, capabilities and innovations in developing unique software and integrating advanced artificial intelligence (AI) technology.',
+    image: `${environmentConfig.baseImageUrl}/images/news/2025/martech/stage/ภาพปก.webp`,
+    link: '/en/news-and-events/martech-expo-2025-on-stage',
+  },
+  {
+    date: 'March 26, 2025',
+    title: 'MarTech Expo 2025',
+    description:
+      'Company executives and staff had the opportunity to participate in a booth at MarTech Expo 2025 at BITEC BURI Exhibition and Convention Center. On this occasion, the company showcased and introduced products, as well as provided opportunities for attendees to participate in various activities prepared by the company.',
+    image: `${environmentConfig.baseImageUrl}/images/news/2025/martech/booth/ภาพปก.webp`,
+    link: '/en/news-and-events/martech-expo-2025',
+  },
+  {
+    date: 'February 27, 2025',
+    title: 'Microsoft AI Roadshow in Songkhla',
+    description:
+      'Company executives and team members participated in the Microsoft AI Roadshow in Songkhla, setting up a promotional booth to introduce the company to event attendees.',
+    image: `${environmentConfig.baseImageUrl}/images/news/2025/MicrosoftAIRoadshowSongkhla/ภาพปก.webp`,
+    link: '/en/news-and-events/microsoft-ai-roadshow-2025-songkhla',
+  },
+  {
+    date: 'February 19-21, 2025',
+    title: '13th Asian Undergraduate Computing Conference (AUCC2025)',
+    description:
+      'The company supported the 13th Asian Undergraduate Computing Conference (AUCC2025) at the Faculty of Science and Technology, Uttaradit Rajabhat University. Company executives and staff served as speakers, sharing knowledge with attendees on topics including "Current AI", various GPT technologies, Introduction to Cloud Computing, and Rapid Application Development with Cloud Native.',
+    image: `${environmentConfig.baseImageUrl}/images/news/2025/AUCC2025/ภาพปก.jpg`,
+    link: '/en/news-and-events/aucc-2025',
+  },
+  {
+    date: 'February 17, 2025',
+    title: 'Microsoft AI Roadshow in Nakhon Ratchasima',
+    description:
+      'Company executives, led by Mr. Witthawat Kapkraikaew and team, participated in the Microsoft AI Roadshow in Nakhon Ratchasima, exhibiting a booth to promote and introduce the company to attendees. Additionally, they were honored to serve as speakers, sharing knowledge with event participants.',
+    image: `${environmentConfig.baseImageUrl}/images/news/2025/MicrosoftAIRoadshow/ภาพปก.jpg`,
+    link: '/en/news-and-events/microsoft-ai-roadshow-2025-nakhon-ratchasima',
+  },
+  {
+    date: 'February 1, 2025',
+    title: 'Barcamp Songkhla 9',
+    description:
+      'The company was pleased to support Barcamp Songkhla 9 at Prince of Songkla University, Hat Yai District, Songkhla Province. The executives and team had the opportunity to share knowledge with event participants.',
+    image: `${environmentConfig.baseImageUrl}/images/news/2025/BarcampSongkhla/ปก.jpg`,
+    link: '/en/news-and-events/barcamp-songkhla-9',
+  },
+  {
+    date: 'January 4-10, 2025',
+    title: 'Nanspiration GEN3 Project',
+    description:
+      'The company supported the \'Nanspiration GEN3\' project, an educational inspiration camp for high school students in Bo Kluea District, Nan Province, conducted by the SoCHANGE student group from King Mongkut\'s University of Technology Thonburi.',
+    image: `${environmentConfig.baseImageUrl}/images/news/2025/Nanspiration/รูปปก.jpg`,
+    link: '/en/news-and-events/nanspiration-gen3',
+  },
+  {
+    date: 'December 16, 2024',
+    title: 'Ban Kholo Tanyong School',
+    description:
+      'The company contributed funds to Ban Kholo Tanyong School in Pattani Province to assist flood victims under the \'Share Kindness, Fight Floods\' activity by delivering survival bags and necessities to alleviate the hardship of those affected.',
+    image: `${environmentConfig.baseImageUrl}/images/news/2025/kolotanyong/ภาพปก.webp`,
+    link: '/en/news-and-events/help-with-kholotanyong',
+  },
+  {
+    date: 'December 14, 2024',
+    title: 'Microsoft AI Day in Khon Kaen',
+    description:
+      'The company co-organized Microsoft AI Day in Khon Kaen, where company executive Mr. Witthawat Kapkraikaew gave a lecture on \'Activate your data and analytics for AI innovation with Microsoft Azure\'.',
+    image: `${environmentConfig.baseImageUrl}/images/news/2025/MicrosoftAIDay/ภาพปก.jpg`,
+    link: '/en/news-and-events/microsoft-ai-day-in-khon-kaen',
+  },
+  {
+    date: 'November 30, 2024',
+    title: 'National Coding Day 2024',
+    description:
+      'Executives and staff participated in National Coding Day 2024 and set up a company booth to promote and introduce company services to event attendees.',
+    image: `${environmentConfig.baseImageUrl}/images/news/2025/NCD/ภาพปก.jpg`,
+    link: '/en/news-and-events/national-coding-day-2024',
+  },
+  {
+    date: 'November 26, 2024',
+    title: 'Generation Thailand',
+    description:
+      'Mr. Watcharapong Sukwanich and Mr. Weeraphan Thairak attended the Generation Thailand event to announce the success of the GenNX Model (JSD) project and launch the GenNX NEXT project, advancing Higher Education for EV at Chatrium Grand Ballroom, Chatrium Grand Bangkok.',
+    image: `${environmentConfig.baseImageUrl}/images/news/2025/GenerationThailand/ภาพปก.jpg`,
+    link: '/en/news-and-events/generation-thailand',
+  },
+  {
+    date: 'November 23, 2024',
+    title: '.NET Conf Thailand 2024',
+    description:
+      'Company executives and staff participated in .NET Conf Thailand 2024, a significant technology seminar, where they were honored to speak on \'An Old-school Developer\'s Journey to Implementing RAG and Vector Search\'.',
+    image: `${environmentConfig.baseImageUrl}/images/news/2025/NETConf2024/รูปปก.jpg`,
+    link: '/en/news-and-events/dotnet-conf-thailand-2024',
+  },
+  {
+    date: 'November 13, 2024',
+    title: 'Kasetsart University, Chalermphrakiat Sakon Nakhon Province Campus',
+    description:
+      'Faculty and students from the Department of Computer Science and Information, Kasetsart University, Chalermphrakiat Sakon Nakhon Province Campus, visited the company to study and exchange academic and professional knowledge.',
+    image: `${environmentConfig.baseImageUrl}/images/news/2025/KASET/รูปปก.jpg`,
+    link: '/en/news-and-events/kasetsart-university-visit',
+  },
+  {
+    date: 'October 25, 2024',
+    title: 'Meeting with Siam Law Group Co., Ltd.',
+    description:
+      'Company representatives met with Siam Law Group Co., Ltd. to present a congratulatory basket on the occasion of the client using our system, which has resulted in continuous increased work and branch expansion. The client expressed satisfaction with our system and is ready to begin Phase 2 (Mobile Applications) immediately. The company thanks all staff for their dedicated work, with the client commenting that working with our team has been positive and they are confident there will be more projects to work on in the future.',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Siam Law Group Company Limited/รูปปก.webp`,
+    link: '/en/news-and-events/siam-low-group',
+  },
+  {
+    date: 'October 12, 2024',
+    title: 'Ban Dan Krong Krang School',
+    description:
+      'T.T. Software Solution Co., Ltd. organized a volunteer activity by donating building renovation materials (paint) and floor mats to the Kita Muay Thai Club at Ban Dan Krong Krang School, Nakhon Ratchasima Province, to support creating a beautiful environment conducive to club members\' training. The company thanks for the opportunity to be part of supporting creative activities and school development.',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Ban Dan Krong Krang School, Nakhon Ratchasima Province/ภาพหน้าแรก.webp`,
+    link: '/en/news-and-events/ban-dan-krong-krang-school',
+  },
+  {
+    date: 'October 11, 2024',
+    title: 'Pitching Your Way to Entrepreneurial Excellence',
+    description:
+      'Executives of T.T. Software Solution Co., Ltd. were honored to be commentators at the Pitching Your Way to Entrepreneurial Excellence event organized by Finance students from the Faculty of Business Administration and Accountancy, Khon Kaen University. The company thanks the Finance Department, Faculty of Business Administration and Accountancy, Khon Kaen University for the opportunity to share experiences and perspectives to promote entrepreneurial knowledge among students.',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Pitching Your Way to Entrepreneurial Excellence/ภาพหน้าแรก.webp`,
+    link: '/en/news-and-events/pitching-your-way-to-entrepreneurial-excellence',
+  },
+  {
+    date: 'October 2, 2024',
+    title: 'Company Introduction as an Entrepreneur under KKU Science Park',
+    description:
+      'Mr. Witthawat Kapkraikaew, company executive, was honored to introduce the company as an entrepreneur under Khon Kaen University Science Park to delegates from Chiang Mai Science Park, French representatives, and startup companies.',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/starup-kku-science-park/ปก.webp`,
+    link: '/en/news-and-events/starup-kku-science-park',
+  },
+  {
+    date: 'August 26, 2024',
+    title: 'Sharing Experience of Opening a Software House',
+    description:
+      'Mr. Witthawat Kapkraikaew, company executive, shared experiences of opening a software house with 11 years of remote work through [Podcast], focusing on building organizational culture with 100% remote work. This interesting content can be viewed on ThaiType Facebook page\'s YouTube channel at',
+    descriptionLink: 'https://youtu.be/xAwXHCgQi9g',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/share-experience-opening-software-house/ปก.webp`,
+    link: '/en/news-and-events/share-experience-opening-software-house',
+  },
+  {
+    date: 'August 16, 2024',
+    title: 'Seminar Project for New Graduate Competency Development (iTalk6)',
+    description:
+      'Mr. Witthawat Kapkraikaew, company executive, gave a lecture to Information Science students (iSchool KKU), Faculty of Humanities and Social Sciences, Khon Kaen University, on "Exploring and Preparing for Success in Digital Era Careers: Exploration and Preparation for Future Work in the Digital Era" \n\t The company thanks the Information Science Department (iSchool KKU), Faculty of Humanities and Social Sciences, Khon Kaen University for the opportunity to share experiences and knowledge beneficial for preparing for the digital future. Watch the replay at',
+    descriptionLink: 'https://youtu.be/w0mFQl51m0Y',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Seminar project to develop competency for new graduates/ภาพหน้าแรก.webp`,
+    link: '/en/news-and-events/seminar-project-to-develop-competency-for-new-graduates',
+  },
+  {
+    date: 'July 5, 2024',
+    title: 'Computer Engineering Seminar at Khon Kaen University',
+    description:
+      'Company executives and staff were honored to be speakers at a computer engineering seminar to share knowledge with computer engineering students at Khon Kaen University. The company thanks Assistant Professor Panupong Wanchanthuek for this excellent opportunity to share knowledge with the students.',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Computer Engineering Seminar Khon Kaen University/ภาพหน้าแรก.webp`,
+    link: '/en/news-and-events/computer-engineering-seminar-khon-kaen-university',
+  },
+  {
+    date: 'July 8, 2024',
+    title: 'AI for Human Life in Khon Kaen',
+    description:
+      'T.T. Software Solution Co., Ltd., together with network partners, organized the "AI for Human Life in Khon Kaen" event. The event aimed to be a platform for knowledge exchange and sharing information about new technologies in Cloud Native, Artificial Intelligence (AI), and related technologies. The event featured experts from various sectors including Khun Roof from ODDS, Khun Chris from Thoughtworks, Khun Pongkan MVP from Microsoft, and JoJo from Jumpbox who shared experiences and presented valuable perspectives to participants. There were also fun activities like lucky draws, egg scooping, and workshops for hands-on practice in a friendly atmosphere. This "Cloud Native Thaiban" event was another creative and exciting activity for technology enthusiasts. Watch the replay at',
+    descriptionLink: 'https://youtu.be/a3V2TN9VeZY',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/AI for Human Life in Khon Kaen/ภาพหน้าแรก.webp`,
+    link: '/en/news-and-events/ai-for-human-life-in-khon-kaen',
+  },
+  {
+    date: 'May 31, 2024',
+    title: `Thai Ban University Project`,
+    description: `T.T. Software Solution Co., Ltd. participated in the opening of a new course in the "Thai Ban University" project, which is an activity focused on bringing knowledge in technology to support and build educational spaces in the community. The "Thai Ban University" project is committed to creating a sustainable learning ecosystem to elevate the quality of life in the community, supported by the "Moss Foundation" and the "Return Homeland" project. The company is proud to be part of this effort, listening, dreaming, and creating a bright future with the community.`,
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Thai Ban University Project/ภาพหน้าแรก.webp`,
+    link: '/en/news-and-events/thai-ban-university-project',
+  },
+  {
+    date: 'May 21, 2024',
+    title: 'Sharing Knowledge in the Topic “Psychology and Programming: The Path to Success and Happiness”',
+    description:
+      'Mr. Witthawat Kapkraikaew, company executive, participated in the "Psychology and Programming: The Path to Success and Happiness" event, organized by the Thai Programmer Association. This activity aims to share knowledge about the connection between psychology and software development, including promoting efficient working methods that will help improve the quality of life of developers. Watch the replay at',
+    descriptionLink: 'https://www.youtube.com/watch?v=cCYs4xw_NRY',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/psychology-and-programming/ปก.webp`,
+    link: '/en/news-and-events/psychology-and-programming',
+  },
+  {
+    date: 'March 6, 2024',
+    title: 'Preparing for Software Development Work',
+    description:
+      'Mr. Witthawat Kapkraikaew, company executive, and the team participated in sharing knowledge and experience with computer engineering students at Khon Kaen University, second time. The company thanks the Computer Engineering Department at Khon Kaen University and all participants who contributed to sharing deep experiences and useful information for the students in this event.',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Preparation before working in software development/ภาพหน้าแรก.webp`,
+    link: '/en/news-and-events/preparation-before-working-in-software-development',
+  },
+  {
+    date: 'February 21, 2024',
+    title: 'Educating Students from Chiang Mai University, Second Time',
+    description:
+      'The company executives and staff participated in sharing knowledge and experience with computer engineering students at Chiang Mai University, second time. The company thanks the Computer Engineering Department at Chiang Mai University and all participants who contributed to sharing deep experiences and useful information for the students in this event.',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Educate students Chiang Mai University/ภาพหน้าแรก.webp`,
+    link: '/en/news-and-events/educate-students-chiang-mai-university',
+  },
+  {
+    date: 'December 21, 2023',
+    title: 'Participating in the "The Cloud Camp" event organized by Jumpbox',
+    description:
+      'Mr. Witthawat Kapkraikaew, company executive, participated in the "The Cloud Camp" event organized by Jumpbox. The event featured a lecture on the use of Cloud Native technology, including the role of .NET Aspire in reducing the time required to install Backing Services for Observability, such as Application Metrics, Distributed Tracing, Log Aggregation, Service Discovery, and Resiliency Strategy, including Timeout, Circuit Breaker, and Retry Attempts, which help maintain system efficiency. Watch the replay at',
+    descriptionLink: 'https://youtu.be/eozUs3x7hkA',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/the-cloud-camp/หน้าปก.webp`,
+    link: '/en/news-and-events/the-cloud-camp',
+  },
+  {
+    date: 'December 9, 2023',
+    title: 'Participating in the "Microsoft Ignite – After Party Thailand 2023" event',
+    description:
+      'Mr. Witthawat Kapkraikaew, company executive, participated in the "Microsoft Ignite – After Party Thailand 2023" event and was honored to be a speaker on the topic "Azure Chaos Studio: Improve resilience through chaos engineering and fault injection". Watch the replay at',
+    descriptionLink: 'https://youtu.be/suoJ_S52HN4',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/microsoft-ignite-after-party-thailand-2023/ปก.webp`,
+    link: '/en/news-and-events/microsoft-ignite-after-party-thailand-2023',
+  },
+  {
+    date: 'November 25, 2023',
+    title: '.NET Conf',
+    description:
+      'Mr. Witthawat Kapkraikaew, company executive, and Mr. Nakorn Rientrakunchai, company executive, participated in the .NET Conf event, an event that brings together developers and organizations interested in .NET technology in Thailand. This event focused on sharing knowledge and creating a network between developers and various organizations. Mr. Witthawat Kapkraikaew was honored to be a speaker on the topic ".NET Aspire". Watch the replay at',
+    descriptionLink:
+      'https://docs.google.com/presentation/d/1Ym8xmHYy0VPD_uTHG9XI2mURE2Q2yZN29rFoDRkqfAI/edit?usp=sharing',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/dotnet-conf/ปก.webp`,
+    link: '/en/news-and-events/dotnet-conf',
+  },
+  {
+    date: 'November 3-5, 2023',
+    title: 'Outing 2023',
+    description:
+      'The company organized an outing event on November 3-5, 2023, in Rayong Province. This event not only provided an opportunity for the team to relax and spend time together but also helped promote teamwork and camaraderie. The company thanks all participants for creating a warm and fun atmosphere and for their contributions to the event, and hopes everyone will have a great experience and enjoy the event.',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/outing-2566/รูปปก.webp`,
+    link: '/en/news-and-events/outing-2566',
+  },
+  {
+    date: 'October 20, 2023',
+    title: '.NET Meetup',
+    description:
+      'Mr. Witthawat Kapkraikaew, company executive, participated in the .NET Meetup event, an event for those interested in and developers in the .NET field in Thailand. The event focused on sharing knowledge and exchanging new experiences related to .NET technology. Watch the replay at',
+    descriptionLink:
+      'https://docs.google.com/presentation/d/1UZbLoW-xJarqNv6NuYvgdIBugYc6Xi7UDCXnkPD6BGs/edit?usp=sharing',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/dotnet-meetup/ภาพปก.webp`,
+    link: '/en/news-and-events/dotnet-meetup',
+  },
+  {
+    date: 'June 23, 2023',
+    title: 'Cloud Native Thaiban Khon Kaen',
+    description:
+      'T.T. Software Solution Co., Ltd. collaborated with network partners to organize the "Cloud Native Thaiban Khon Kaen" event, or "Cloud Native Thaiban", in Khon Kaen Province. This event aimed to be a platform for knowledge exchange and sharing information about new technologies in Cloud Native, Artificial Intelligence (AI), and related technologies. The event featured experts from various sectors including Mr. Roof from ODDS, Mr. Chris from Thoughtworks, Mr. Pongkan MVP from Microsoft, and JoJo from Jumpbox who shared experiences and presented valuable perspectives to participants. There were also fun activities like star gazing, egg-collecting, and workshop activities for hands-on practice in a friendly atmosphere. This "Cloud Native Thaiban" event was another creative and exciting activity for technology enthusiasts. Watch the replay at',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Cloud Native Thaiban Khon Kaen/ภาพหน้าแรก.webp`,
+    link: '/en/news-and-events/cloud-native-thaiban-khon-kaen',
+  },
+  {
+    date: 'May 17, 2023',
+    title: 'Deploy a Website to Azure with Azure App Service',
+    description:
+      'Mr. Witthawat Kapkraikaew, company executive, shared knowledge through Microsoft Reactor Live, lecturing on "Deploy a Website to Azure with Azure App Service". This demonstrated and introduced methods for deploying websites to the Azure platform using Azure App Service to help developers and interested parties learn steps and best practices in using Microsoft technology for website development and management. See more information at Slide:',
+    descriptionLink: 'https://1drv.ms/p/s!At70Q7njCy4Wg4ASSsqo1Derb_Lp2w?e=Qq2ZhU',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/deploy-a-website-to-azure-with-azure-app-service/ปก.webp`,
+    link: '/en/news-and-events/deploy-a-website-to-azure-with-azure-app-service',
+  },
+  {
+    date: 'February 25, 2023',
+    title: 'Microsoft Build',
+    description:
+      'Mr. Witthawat Kapkraikaew, company executive, participated and shared knowledge at "Microsoft Build", a global seminar organized to disseminate and introduce new Microsoft technologies. The event covered various technology aspects such as Power Platform, Azure Services, Microsoft Data Service, and Azure AI, with special emphasis on applying AI technology for beneficial and easier use. Follow the content summary at',
+    descriptionLink: 'https://medium.com/t-t-software-solution/สรุปเนื้อหาจากงาน-thailand-developer-day-211d9171f66d',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/microsoft-build/ปก.webp`,
+    link: '/en/news-and-events/microsoft-build',
+  },
+  {
+    date: 'January 9, 2023',
+    title: 'Educating Students at Chiang Mai University (1st Session)',
+    description:
+      'Company executives from T.T. Software Solution Co., Ltd., along with team members, shared knowledge and work experience with computer engineering students at Chiang Mai University for the first time. The company thanks the computer engineering faculty and everyone involved in sharing in-depth experiences and useful facts with students on this occasion.',
+    image: `${environmentConfig.baseImageUrl}/images/news_events/Educate students Chiang Mai University 1/ภาพหน้าแรก.webp`,
+    link: '/en/news-and-events/educate-students-chiang-mai-university-1',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <div class="pt-6">
+      <Headline title="News and Events" subtitle="" classes={{ container: 'pt-12 lg:pt-0' }} />
+    </div>
+    <div class="mb-8">
+      <EventGrid events={events} classes={{ itemContent: 'flex flex-col justify-between h-full' }} />
+    </div>
+  </WidgetWrapper>
+</Layout>

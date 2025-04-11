@@ -2,31 +2,41 @@
 import { environmentConfig } from '~/config';
 import Headline from '../ui/Headline.astro';
 import OurWorks from './OurWorks.astro';
+
+const isEnglish = Astro.currentLocale === 'en';
 ---
 
 <div class="max-w-7xl mx-auto">
   <Headline
     title="Everything in One Place: Empower Your Business with Advanced Analytics"
-    subtitle="เทคโนโลยีที่ถูกพัฒนามาเพื่อใช้งานง่าย ยืดหยุ่น แสดงผลได้ครบทุกอุปกรณ์ พร้อมแดชบอร์ดอัจฉริยะที่ช่วยวิเคราะห์ข้อมูลเชิงลึก\nปรับแต่งได้ตามความต้องการ เพื่อขับเคลื่อนกลยุทธ์การตลาดและเพิ่มประสิทธิภาพธุรกิจของคุณ"
+    subtitle={isEnglish
+      ? 'Technology that is easy to use, flexible, and displays on all devices, with an intelligent dashboard that helps analyze data deeply, customizable to meet business needs to drive marketing strategies and improve business efficiency'
+      : 'เทคโนโลยีที่ถูกพัฒนามาเพื่อใช้งานง่าย ยืดหยุ่น แสดงผลได้ครบทุกอุปกรณ์ พร้อมแดชบอร์ดอัจฉริยะที่ช่วยวิเคราะห์ข้อมูลเชิงลึก\nปรับแต่งได้ตามความต้องการ เพื่อขับเคลื่อนกลยุทธ์การตลาดและเพิ่มประสิทธิภาพธุรกิจของคุณ'}
   />
 
   <div class="carousel-container">
     <div class="carousel flex">
-      <div class="slide flex justify-center items-start md:items-center ">
+      <div class="slide flex justify-center items-start md:items-center">
         <OurWorks
           isReversed
           items={[
             {
               title: 'Comprehensive dashboard views',
-              description: 'ดูภาพรวมประสิทธิภาพธุรกิจของคุณบนอุปกรณ์หลากหลาย ตั้งแต่สมาร์ทโฟนจนถึงเดสก์ท็อป',
+              description: isEnglish
+                ? 'View your business performance on all devices, from smartphones to desktops'
+                : 'ดูภาพรวมประสิทธิภาพธุรกิจของคุณบนอุปกรณ์หลากหลาย ตั้งแต่สมาร์ทโฟนจนถึงเดสก์ท็อป',
             },
             {
               title: 'Real-time data updates',
-              description: 'ติดตามตัวชี้วัดทางธุรกิจของคุณด้วยข้อมูลแบบเรียลไทม์และการอัปเดตทันที',
+              description: isEnglish
+                ? 'Track your business performance with real-time data and instant updates'
+                : 'ติดตามตัวชี้วัดทางธุรกิจของคุณด้วยข้อมูลแบบเรียลไทม์และการอัปเดตทันที',
             },
             {
               title: 'Customizable widgets',
-              description: 'ปรับแต่ง dashboard ให้เน้น KPI ที่สำคัญที่สุดสำหรับธุรกิจของคุณ',
+              description: isEnglish
+                ? 'Customize the dashboard to focus on the most important KPIs for your business'
+                : 'ปรับแต่ง dashboard ให้เน้น KPI ที่สำคัญที่สุดสำหรับธุรกิจของคุณ',
             },
           ]}
           image={{
@@ -48,19 +58,27 @@ import OurWorks from './OurWorks.astro';
           items={[
             {
               title: 'Data visualization',
-              description: `แปลงข้อมูลที่ซับซ้อนให้เป็นแผนภูมิ กราฟ และอินโฟกราฟิกที่เข้าใจง่าย`,
+              description: isEnglish
+                ? 'Convert complex data into easy-to-understand charts, graphs, and infographics'
+                : `แปลงข้อมูลที่ซับซ้อนให้เป็นแผนภูมิ กราฟ และอินโฟกราฟิกที่เข้าใจง่าย`,
             },
             {
               title: 'Predictive analytics',
-              description: 'ใช้อัลกอริทึมการเรียนรู้ของเครื่องเพื่อคาดการณ์แนวโน้มและตัดสินใจโดยอิงจากข้อมูล',
+              description: isEnglish
+                ? 'Use machine learning algorithms to predict trends and make decisions based on data'
+                : 'ใช้อัลกอริทึมการเรียนรู้ของเครื่องเพื่อคาดการณ์แนวโน้มและตัดสินใจโดยอิงจากข้อมูล',
             },
             {
               title: 'Custom reporting',
-              description: 'สร้างรายงานโดยละเอียดที่ปรับแต่งตามความต้องการเฉพาะของธุรกิจและผู้มีส่วนได้ส่วนเสียของคุณ',
+              description: isEnglish
+                ? "Create detailed reports that are customizable to meet your business and your team's needs"
+                : 'สร้างรายงานโดยละเอียดที่ปรับแต่งตามความต้องการเฉพาะของธุรกิจและผู้มีส่วนได้ส่วนเสียของคุณ',
             },
             {
               title: 'Multi-source data integration',
-              description: 'รวมข้อมูลจากแหล่งต่างๆ เพื่อมุมมองที่ครอบคลุมของระบบนิเวศทางธุรกิจของคุณ',
+              description: isEnglish
+                ? 'Integrate data from various sources to provide a comprehensive view of your business ecosystem'
+                : 'รวมข้อมูลจากแหล่งต่างๆ เพื่อมุมมองที่ครอบคลุมของระบบนิเวศทางธุรกิจของคุณ',
             },
           ]}
           image={{
@@ -86,22 +104,27 @@ import OurWorks from './OurWorks.astro';
           items={[
             {
               title: 'Customizable conversation flows',
-              description: 'ออกแบบและปรับแต่งลำดับการสนทนาได้ตามต้องการ รองรับ use cases ที่หลากหลายของธุรกิจ',
+              description: isEnglish
+                ? 'Design and customize conversation flows to meet your business needs and support various use cases'
+                : 'ออกแบบและปรับแต่งลำดับการสนทนาได้ตามต้องการ รองรับ use cases ที่หลากหลายของธุรกิจ',
             },
             {
               title: 'Multi-platform support',
-              description:
-                'รองรับการทำงานบนหลากหลายแพลตฟอร์ม ทั้ง web, mobile และ desktop applications ด้วยมาตรฐานเดียวกัน',
+              description: isEnglish
+                ? 'Support multi-platform operations, including web, mobile, and desktop applications with the same standard'
+                : 'รองรับการทำงานบนหลากหลายแพลตฟอร์ม ทั้ง web, mobile และ desktop applications ด้วยมาตรฐานเดียวกัน',
             },
             {
               title: 'Continuous learning and improvement',
-              description:
-                'พัฒนาประสิทธิภาพอย่างต่อเนื่องด้วยระบบการเรียนรู้อัตโนมัติ ปรับปรุงการตอบสนอง จากข้อมูลจริง',
+              description: isEnglish
+                ? 'Continuous improvement with automatic learning systems, updating responses from real data'
+                : 'พัฒนาประสิทธิภาพอย่างต่อเนื่องด้วยระบบการเรียนรู้อัตโนมัติ ปรับปรุงการตอบสนอง จากข้อมูลจริง',
             },
             {
               title: 'Analytics and insights dashboard',
-              description:
-                'วิเคราะห์และพัฒนาอย่างต่อเนื่อง มาพร้อมแดชบอร์ดวิเคราะห์ข้อมูลเชิงลึก ช่วยให้คุณเข้าใจพฤติกรรมลูกค้าและปรับปรุง chatbot ให้ฉลาดขึ้นเรื่อยๆ',
+              description: isEnglish
+                ? 'Continuous improvement with automatic learning systems, updating responses from real data'
+                : 'พัฒนาประสิทธิภาพอย่างต่อเนื่องด้วยระบบการเรียนรู้อัตโนมัติ ปรับปรุงการตอบสนอง จากข้อมูลจริง',
             },
           ]}
           image={{

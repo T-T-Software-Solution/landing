@@ -28,6 +28,7 @@ interface Props {
 }
 
 const { events, classes } = Astro.props;
+const isEnglish = Astro.currentLocale === 'en';
 ---
 
 <div class={twMerge('grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-8', classes?.container)}>
@@ -80,7 +81,7 @@ const { events, classes } = Astro.props;
           {event.link && (
             <div class="flex justify-center mt-auto pt-4 pb-6">
               <a href={event.link} class="text-primary hover:text-primary-dark flex items-center gap-2">
-                ดูรายละเอียด
+                {isEnglish ? 'View Details' : 'ดูรายละเอียด'}
                 <Icon name="tabler:arrow-right" class="w-4 h-4" />
               </a>
             </div>

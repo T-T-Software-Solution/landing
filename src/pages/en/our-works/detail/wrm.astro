@@ -1,0 +1,105 @@
+---
+import Image from '~/components/common/Image.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'WRM | Our Works',
+};
+
+const features = [
+  'Event Recording System',
+  'Workforce Planning and Cost System',
+  'Map System',
+  'Accommodation Management System',
+  'Material and Equipment Management System',    
+  'Financial System',
+  'Summary Report',
+];
+
+const screens = [1, 2, 3, 4, 5, 6, 7, 8];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <div class="wrm-container max-w-4xl mx-auto px-4 py-8 pt-12 lg:pt-0">
+      <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-primary pb-2 mb-6 animate-on-scroll">Storm Manager (USA)</h2>
+
+      <p class="text-gray-700 mb-4 animate-on-scroll">
+
+        Developed a cost management and human resource management system that occurred in the USA, or Storm Manager in the form of a Web Application and
+        Web Service, which includes the following features:
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+        {
+          features.map((feature) => (
+            <div class="flex items-center animate-on-scroll">
+              <span class="text-primary mr-2 text-xl">•</span>
+              <span>{feature}</span>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="flex justify-center mb-6 animate-on-scroll">
+        <a
+          href="https://www.wrmsoftware.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary sm:mb-0 break-all"
+        >
+          WRM Main Page
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+        {
+          screens.map((num) => (
+            <Image
+              src={`${environmentConfig.baseImageUrl}/images/wrm_screen/wrm-screen-${num}.webp`}
+              alt={`WRM Screen ${num}`}
+              class="w-full h-full rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:scale-105 !object-left-top animate-on-scroll"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </WidgetWrapper>
+</Layout>
+<style>
+  .animate-on-scroll {
+    opacity: 0;
+    transition:
+      opacity 0.6s,
+      transform 0.6s;
+    transition-delay: calc(var(--animation-order, 0) * 0.1s);
+  }
+  .animate-on-scroll.show {
+    opacity: 1;
+    animation: fadeInUp 0.6s ease-out;
+  }
+</style>
+
+<script>
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

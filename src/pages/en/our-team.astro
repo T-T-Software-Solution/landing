@@ -1,0 +1,234 @@
+---
+import { twMerge } from 'tailwind-merge';
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import TeamVisualization from '~/components/widgets/TeamVisualization.astro';
+import { environmentConfig } from '~/config';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Our Team',
+};
+
+const executives = [
+  {
+    name: 'Nakorn Rientrakunchai',
+    position: 'Chief Executive Officer (CEO)',
+    bio: 'A distinguished expert in developing solutions with Microsoft technologies',
+    image: `${environmentConfig.baseImageUrl}/images/ceo.webp`,
+    certificates: [
+      'Certified expertise through Microsoft Certified Azure Developer Associate',
+      'Certified expertise through Microsoft Certified DevOps Engineer Expert',
+      'These certifications not only validate his knowledge and skills but also demonstrate his involvement and ability to meet complex project requirements and solve diverse problems. They also reflect his continuous commitment to improving software development.',
+    ],
+    badgeImages: [
+      { url: `${environmentConfig.baseImageUrl}/images/devops_engineer.png` },
+      { url: `${environmentConfig.baseImageUrl}/images/azure_developer.png` },
+      { url: `${environmentConfig.baseImageUrl}/images/azure_fundamentals.png` },
+    ],
+  },
+  {
+    name: 'Wittawat Karpkrikaew',
+    position: 'Chief Technology Officer (CTO)',
+    bio: 'Wittawat Karpkrikaew, also known as Ponggun',
+    image: `${environmentConfig.baseImageUrl}/images/cto.webp`,
+    imageClass: '!object-top md:!object-center',
+    certificates: [
+      'Has proven his potential and passion for Microsoft technology through efficient remote work, demonstrating his adaptability and ability to deliver outstanding results in any situation',
+      'Highly recognized by Microsoft by receiving the Microsoft Most Valuable Professional (MVP) award in 2022 for the Microsoft Azure category, honoring his expertise and continuous engagement with the technology community',
+    ],
+    badgeImages: [{ url: `${environmentConfig.baseImageUrl}/images/mvp-azure.webp` }],
+  },
+  {
+    name: 'Watcharapong Suckavanich',
+    position: 'General Manager (GM)',
+    bio: 'An expert and consultant in project management across multiple organizations',
+    image: `${environmentConfig.baseImageUrl}/images/team-gm.webp`,
+    certificates: [
+      'PhD (Candidate) Information Technology Management (ITM), Mahidol University',
+      'M.Sc. Financial Engineering, UTCC (Stock Exchange of Thailand Research Scholarship)',
+      'Over 12 years of experience managing projects in both public and private sectors across multiple organizations',
+      'Training instructor and speaker at events and various universities',
+      'Consultant for system design, including Digital Transformation and IT Solutions presentation to solve organizational problems',
+    ],
+},
+];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <div class="pt-6">
+    <Headline
+      title="Our Team"
+      subtitle="Meet our capable leadership team and staff who drive our organization's success"
+      classes={{ container: 'pt-12 lg:pt-0' }}
+    />
+    </div>
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-6 text-center">Executives</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          executives.map((exec) => (
+            <div class="bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden animate-on-scroll">
+              <div class="relative">
+                <Image src={exec.image} alt={exec.name} class={twMerge('w-full h-96 md:h-72', exec.imageClass ?? '')} />
+                {exec.badgeImages?.map(({ url }, index) => (
+                  <div
+                    class={twMerge(
+                      'absolute top-0 right-0 bg-white rounded-l-lg p-2',
+                      index === 0
+                        ? 'right-0 min-[490px]:right-0 top-0'
+                        : index === 1
+                          ? 'right-0 min-[490px]:right-12 top-12 min-[490px]:top-0 rounded-none'
+                          : 'right-0 min-[490px]:right-24 top-24 min-[490px]:top-0'
+                    )}
+                  >
+                    <div class="w-10 h-10">
+                      <Image src={url} alt={exec.name} class="w-10 h-10 !object-contain" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">{exec.name}</h3>
+                <p class="text-gray-800 text-lg mb-4 font-bold">{exec.position}</p>
+                <p class="text-gray-700 mb-4">{exec.bio}</p>
+                <ul class="list-disc pl-5 text-gray-700">
+                  {exec.certificates.map((cert) => (
+                    <li>{cert}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+    <section class="mb-16 animate-on-scroll">
+      <div
+        class="bg-white shadow-lg border border-gray-200 rounded-lg p-6 text-center flex flex-col-reverse md:flex-row w-full gap-8 items-center"
+      >
+        <div class="flex flex-col gap-4 items-start text-left">
+          <h3 class="text-xl font-semibold">Nakorn Rientrakunchai</h3>
+          <p class="text-sm">
+            Received a "Certificate" for dedicating time and effort as a volunteer in the Junior Software Developer Program
+            (#GenMentorJSD) Cohort 7, supported by the Ministry of Higher Education, Science, Research and Innovation,
+            Microsoft Thailand, and Bank of America Foundation
+          </p>
+          <p class="text-sm">This volunteer work spans from May 27, 2024 to August 31, 2024.</p>
+          <p class="text-sm">
+            The certificate is signed by the CEO of Generation Thailand and COO of Knowledge Xchange,
+            which is part of King Mongkut's University of Technology Thonburi
+          </p>
+        </div>
+        <div class="">
+          <Image
+            src={`${environmentConfig.baseImageUrl}/images/genmentor.webp`}
+            alt="Team photo"
+            class="w-full max-w-4xl rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="mb-16 animate-on-scroll">
+      <div
+        class="bg-white shadow-lg border border-gray-200 rounded-lg p-6 text-center flex flex-col-reverse md:flex-row-reverse w-full gap-8 items-center"
+      >
+        <div class="flex flex-col gap-4 items-start text-left">
+          <h3 class="text-xl font-semibold">Wittawat Karpkrikaew</h3>
+          <p class="text-sm">
+            Recognized as Microsoft Most Valuable Professional (MVP) for the second time in 2023 in the Microsoft Azure category
+          </p>
+        </div>
+        <div class="">
+          <Image
+            src={`${environmentConfig.baseImageUrl}/images/mvp-ponggun.webp`}
+            alt="Team photo"
+            class="w-full rounded-lg shadow-lg h-80 !object-left"
+          />
+        </div>
+      </div>
+    </section>
+    <div class="flex justify-center">
+      <Image
+        src={`${environmentConfig.baseImageUrl}/images/our_team/2025/02.webp`}
+        alt="Team photo"
+        class="w-full max-w-4xl rounded-lg shadow-lg"
+      />
+    </div>
+    <TeamVisualization />
+  </WidgetWrapper>
+</Layout>
+
+<script>
+  function animateValue(obj, start, end, duration) {
+    let startTimestamp = 0;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj.innerHTML = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  function handleIntersection(entries: IntersectionObserverEntry[]) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const animated = entry.target.getAttribute('data-animated');
+        if (entry.isIntersecting && !animated) {
+          const target = parseInt(entry.target.getAttribute('data-target') ?? '0', 10);
+          animateValue(entry.target, 0, target, target < 10 ? 500 : 1000);
+          entry.target.setAttribute('data-animated', 'true');
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    }
+  );
+
+  const observerManager = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const counters = document.querySelectorAll('.employee-count');
+    counters.forEach((counter) => {
+      observer.observe(counter);
+    });
+
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observerManager.observe(el));
+  });
+</script>
+
+<style>
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    transition-delay: calc(var(--animation-order, 0) * 0.1s);
+  }
+  .animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

@@ -13,8 +13,20 @@ const metadata = {
 
 const executives = [
   {
+    name: 'Wittawat Karpkrikaew',
+    position: 'Managing Director (MD)',
+    bio: 'Wittawat Karpkrikaew, หรือที่รู้จักกันในชื่อ Ponggun',
+    image: `${environmentConfig.baseImageUrl}/images/cto.webp`,
+    imageClass: '!object-top md:!object-center',
+    certificates: [
+      'ได้พิสูจน์ศักยภาพและความหลงใหลในเทคโนโลยี Microsoft ด้วยการทำงานจากที่ไกลอย่างมีประสิทธิภาพ ซึ่งสะท้อนให้เห็นถึงความสามารถในการปรับตัวและการนำเสนอผลงานที่โดดเด่นได้ในทุกสถานการณ์',
+      'ได้รับการยอมรับในระดับสูงจาก Microsoft โดยได้รับรางวัล Microsoft Most Valuable Professional (MVP) ในปี 2022 สำหรับหมวดหมู่ Microsoft Azure ซึ่งเป็นการยกย่องถึงความเชี่ยวชาญและการมีส่วนร่วมอย่างต่อเนื่องกับชุมชนเทคโนโลยี',
+    ],
+    badgeImages: [{ url: `${environmentConfig.baseImageUrl}/images/mvp-azure.webp` }],
+  },
+  {
     name: 'Nakorn Rientrakunchai',
-    position: 'Chief Executive Officer (CEO)',
+    position: 'Managing Director (MD)',
     bio: 'เป็นผู้มีความรู้และความสามารถโดดเด่นในด้านการพัฒนาโซลูชั่นด้วยเทคโนโลยีของ Microsoft',
     image: `${environmentConfig.baseImageUrl}/images/ceo.webp`,
     certificates: [
@@ -29,20 +41,8 @@ const executives = [
     ],
   },
   {
-    name: 'Wittawat Karpkrikaew',
-    position: 'Chief Technology Officer (CTO)',
-    bio: 'Wittawat Karpkrikaew, หรือที่รู้จักกันในชื่อ Ponggun',
-    image: `${environmentConfig.baseImageUrl}/images/cto.webp`,
-    imageClass: '!object-top md:!object-center',
-    certificates: [
-      'ได้พิสูจน์ศักยภาพและความหลงใหลในเทคโนโลยี Microsoft ด้วยการทำงานจากที่ไกลอย่างมีประสิทธิภาพ ซึ่งสะท้อนให้เห็นถึงความสามารถในการปรับตัวและการนำเสนอผลงานที่โดดเด่นได้ในทุกสถานการณ์',
-      'ได้รับการยอมรับในระดับสูงจาก Microsoft โดยได้รับรางวัล Microsoft Most Valuable Professional (MVP) ในปี 2022 สำหรับหมวดหมู่ Microsoft Azure ซึ่งเป็นการยกย่องถึงความเชี่ยวชาญและการมีส่วนร่วมอย่างต่อเนื่องกับชุมชนเทคโนโลยี',
-    ],
-    badgeImages: [{ url: `${environmentConfig.baseImageUrl}/images/mvp-azure.webp` }],
-  },
-  {
     name: 'Watcharapong Suckavanich',
-    position: 'General Manager (GM)',
+    position: 'Managing Director (MD)',
     bio: 'เป็นผู้เชี่ยวชาญ และที่ปรึกษาด้านบริหารโครงการในหลายหน่วยงาน',
     image: `${environmentConfig.baseImageUrl}/images/team-gm.webp`,
     certificates: [
@@ -52,18 +52,18 @@ const executives = [
       'วิทยากรอบรม และบรรยายในงานอีเวนต์ และมหาวิทยาลัยต่างๆ',
       'ที่ปรึกษาออกแบบระบบต่างๆ รวมถึงการทำ Digital Transformation และการนำเสนอ IT Solutions เพื่อแก้ปัญหาในองค์กร',
     ],
-},
+  },
 ];
 ---
 
 <Layout metadata={metadata}>
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
     <div class="pt-6">
-    <Headline
-      title="ทีมงานของเรา"
-      subtitle="พบกับทีมผู้นำและบุคลากรที่มีความสามารถของเรา ผู้ขับเคลื่อนความสำเร็จขององค์กร"
-      classes={{ container: 'pt-12 lg:pt-0' }}
-    />
+      <Headline
+        title="ทีมงานของเรา"
+        subtitle="พบกับทีมผู้นำและบุคลากรที่มีความสามารถของเรา ผู้ขับเคลื่อนความสำเร็จขององค์กร"
+        classes={{ container: 'pt-12 lg:pt-0' }}
+      />
     </div>
     <section class="mb-16">
       <h2 class="text-3xl font-bold mb-6 text-center">ผู้บริหาร</h2>

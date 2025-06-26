@@ -13,8 +13,20 @@ const metadata = {
 
 const executives = [
   {
+    name: 'Wittawat Karpkrikaew',
+    position: 'Managing Director (MD)',
+    bio: 'Wittawat Karpkrikaew, also known as Ponggun',
+    image: `${environmentConfig.baseImageUrl}/images/cto.webp`,
+    imageClass: '!object-top md:!object-center',
+    certificates: [
+      'Has proven his potential and passion for Microsoft technology through efficient remote work, demonstrating his adaptability and ability to deliver outstanding results in any situation',
+      'Highly recognized by Microsoft by receiving the Microsoft Most Valuable Professional (MVP) award in 2022 for the Microsoft Azure category, honoring his expertise and continuous engagement with the technology community',
+    ],
+    badgeImages: [{ url: `${environmentConfig.baseImageUrl}/images/mvp-azure.webp` }],
+  },
+  {
     name: 'Nakorn Rientrakunchai',
-    position: 'Chief Executive Officer (CEO)',
+    position: 'Managing Director (MD)',
     bio: 'A distinguished expert in developing solutions with Microsoft technologies',
     image: `${environmentConfig.baseImageUrl}/images/ceo.webp`,
     certificates: [
@@ -29,20 +41,8 @@ const executives = [
     ],
   },
   {
-    name: 'Wittawat Karpkrikaew',
-    position: 'Chief Technology Officer (CTO)',
-    bio: 'Wittawat Karpkrikaew, also known as Ponggun',
-    image: `${environmentConfig.baseImageUrl}/images/cto.webp`,
-    imageClass: '!object-top md:!object-center',
-    certificates: [
-      'Has proven his potential and passion for Microsoft technology through efficient remote work, demonstrating his adaptability and ability to deliver outstanding results in any situation',
-      'Highly recognized by Microsoft by receiving the Microsoft Most Valuable Professional (MVP) award in 2022 for the Microsoft Azure category, honoring his expertise and continuous engagement with the technology community',
-    ],
-    badgeImages: [{ url: `${environmentConfig.baseImageUrl}/images/mvp-azure.webp` }],
-  },
-  {
     name: 'Watcharapong Suckavanich',
-    position: 'General Manager (GM)',
+    position: 'Managing Director (MD)',
     bio: 'An expert and consultant in project management across multiple organizations',
     image: `${environmentConfig.baseImageUrl}/images/team-gm.webp`,
     certificates: [
@@ -52,18 +52,18 @@ const executives = [
       'Training instructor and speaker at events and various universities',
       'Consultant for system design, including Digital Transformation and IT Solutions presentation to solve organizational problems',
     ],
-},
+  },
 ];
 ---
 
 <Layout metadata={metadata}>
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
     <div class="pt-6">
-    <Headline
-      title="Our Team"
-      subtitle="Meet our capable leadership team and staff who drive our organization's success"
-      classes={{ container: 'pt-12 lg:pt-0' }}
-    />
+      <Headline
+        title="Our Team"
+        subtitle="Meet our capable leadership team and staff who drive our organization's success"
+        classes={{ container: 'pt-12 lg:pt-0' }}
+      />
     </div>
     <section class="mb-16">
       <h2 class="text-3xl font-bold mb-6 text-center">Executives</h2>
@@ -112,14 +112,14 @@ const executives = [
         <div class="flex flex-col gap-4 items-start text-left">
           <h3 class="text-xl font-semibold">Nakorn Rientrakunchai</h3>
           <p class="text-sm">
-            Received a "Certificate" for dedicating time and effort as a volunteer in the Junior Software Developer Program
-            (#GenMentorJSD) Cohort 7, supported by the Ministry of Higher Education, Science, Research and Innovation,
-            Microsoft Thailand, and Bank of America Foundation
+            Received a "Certificate" for dedicating time and effort as a volunteer in the Junior Software Developer
+            Program (#GenMentorJSD) Cohort 7, supported by the Ministry of Higher Education, Science, Research and
+            Innovation, Microsoft Thailand, and Bank of America Foundation
           </p>
           <p class="text-sm">This volunteer work spans from May 27, 2024 to August 31, 2024.</p>
           <p class="text-sm">
-            The certificate is signed by the CEO of Generation Thailand and COO of Knowledge Xchange,
-            which is part of King Mongkut's University of Technology Thonburi
+            The certificate is signed by the CEO of Generation Thailand and COO of Knowledge Xchange, which is part of
+            King Mongkut's University of Technology Thonburi
           </p>
         </div>
         <div class="">
@@ -138,7 +138,8 @@ const executives = [
         <div class="flex flex-col gap-4 items-start text-left">
           <h3 class="text-xl font-semibold">Wittawat Karpkrikaew</h3>
           <p class="text-sm">
-            Recognized as Microsoft Most Valuable Professional (MVP) for the second time in 2023 in the Microsoft Azure category
+            Recognized as Microsoft Most Valuable Professional (MVP) for the second time in 2023 in the Microsoft Azure
+            category
           </p>
         </div>
         <div class="">

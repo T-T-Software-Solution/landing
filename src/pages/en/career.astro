@@ -2,11 +2,11 @@
 // CareerPage.astro
 import Layout from '~/layouts/PageLayout.astro';
 import Banner from '~/components/widgets/Banner.astro';
-import Benefits from '~/components/widgets/Benefits.astro';
-import WorkingStyle from '~/components/widgets/WorkingStyle.astro';
 import JobOpening from '~/components/widgets/JobOpening.astro';
 
 import { environmentConfig } from '~/config';
+import BenefitsEN from '~/components/widgets/BenefitsEN.astro';
+import WorkingStyleEN from '~/components/widgets/WorkingStyleEN.astro';
 
 const careerImage = `${environmentConfig.baseImageUrl}/images/career.webp`;
 ---
@@ -16,6 +16,6 @@ const careerImage = `${environmentConfig.baseImageUrl}/images/career.webp`;
   <Banner careerImage={careerImage} />
   </div>
   <JobOpening />
-  <Benefits />
-  <WorkingStyle />
+  <BenefitsEN />
+  <WorkingStyleEN />
 </Layout>

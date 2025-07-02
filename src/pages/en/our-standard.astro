@@ -228,6 +228,14 @@ const pdpa = [
         </style>
       </div>
     </div>
+
+    <!-- PDPA DPO Tab Content -->
+    <div id="PDPADPO" class="tab-content">
+      <div class="pt-4 flex justify-center flex-col items-center gap-0">
+        <Headline title="PDPA DPO" classes={{ container: 'mt-2 md:pt-4 lg:pt-6 lg:mb-8' }} />
+        
+      </div>
+    </div>
   </WidgetWrapper>
 </Layout>
 
@@ -345,11 +353,16 @@ header .slider {
   document.addEventListener('astro:page-load', () => {
     const inputs = document.querySelectorAll('input[name="slider"]');
     const contents = document.querySelectorAll('.tab-content');
+    contents.forEach((content) => content.classList.remove('active'));
+    
+    contents[0].classList.add('active'); // Activate the first tab by default
+    console.log(`Content:`, contents);
 
     inputs.forEach((input, index) => {
       input.addEventListener('change', () => {
         contents.forEach((content) => content.classList.remove('active'));
         contents[index].classList.add('active');
+        
       });
     });
   });

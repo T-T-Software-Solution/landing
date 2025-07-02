@@ -119,7 +119,7 @@ const pdpa = [
 <Layout metadata={metadata}>
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
     <!-- Tabs -->
-    <div class="wrapper mt-12 xl:mt-0 mb-[-40px] xl:mb-[-0px]">
+    <div class="wrapper mt-12 xl:mt-0">
       <input type="radio" name="slider" id="tab-1" checked />
       <input type="radio" name="slider" id="tab-2" />
       <input type="radio" name="slider" id="tab-3" />
@@ -137,7 +137,7 @@ const pdpa = [
     <div id="standards" class="tab-content ">
       <div class="block-effect" style="--td: 1s">
         <div class="block-reveal pt-4" style="--bc: var(--aw-color-primary); --d: .1ms">
-          <Headline title="มาตรฐานของเรา" classes={{ container: 'pt-14 lg:pt-0 lg:mb-8' }} />
+          <Headline title="มาตรฐานของเรา" classes={{ container: 'mt-2 md:pt-4 lg:pt-6 lg:mb-8' }} />
         </div>
       </div>
       <div class="flex flex-col items-center gap-8 p-4 lg:p-0">
@@ -171,7 +171,7 @@ const pdpa = [
     <!-- Certificates Tab Content -->
     <div id="certificates" class="tab-content flex justify-center active">
       <div class="pt-4">
-        <Headline title="ใบรับรองของเรา" classes={{ container: 'pt-12 lg:pt-0 lg:mb-8' }} />
+        <Headline title="ใบรับรองของเรา" classes={{ container: 'mt-2 md:pt-4 lg:pt-6 lg:mb-8' }} />
       </div>
       <div class="flex justify-center md:items-center xl:items-start">
         <p class="text-md">
@@ -198,7 +198,7 @@ const pdpa = [
     <!-- PDPA Tab Content -->
     <div id="PDPA" class="tab-content">
       <div class="pt-4 flex justify-center flex-col items-center gap-0">
-        <Headline title="PDPA" classes={{ container: 'pt-12 lg:pt-0 lg:mb-8' }} />
+        <Headline title="PDPA" classes={{ container: 'mt-2 md:pt-4 lg:pt-6 lg:mb-8' }} />
         <div class="flex justify-center md:items-center xl:items-start">
           <p class="flex justify-center md:text-lg md:flex-row flex-col items-center">
         ทีมงานของเราได้ผ่านการอบรมเกี่ยวกับ
@@ -226,6 +226,14 @@ const pdpa = [
             transform: scale(1.1);
           }
         </style>
+      </div>
+    </div>
+
+    <!-- PDPA DPO Tab Content -->
+    <div id="PDPADPO" class="tab-content">
+      <div class="pt-4 flex justify-center flex-col items-center gap-0">
+        <Headline title="PDPA DPO" classes={{ container: 'mt-2 md:pt-4 lg:pt-6 lg:mb-8' }} />
+        
       </div>
     </div>
   </WidgetWrapper>

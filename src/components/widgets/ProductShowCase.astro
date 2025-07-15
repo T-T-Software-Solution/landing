@@ -12,52 +12,76 @@ const { isAfterContent = false, id, isDark = false, classes = {}, bg = await Ast
 const isEnglist = Astro.currentLocale === 'en';
 const products = [
   {
-    title: 'T.T. AI CHAT BOT',
+    title: 'T.T. DASHBOARD',
     description: isEnglist
-      ? 'T.T. AI CHAT is a system developed by our expert team to effectively address AI usage and management needs. It includes features such as setting data access permissions and controlling data visibility, ensuring that AI operates securely while fully meeting your requirements.'
-      : 'T.T. AI CHAT คือระบบที่พัฒนาโดยทีมงานผู้เชี่ยวชาญ ของเรา เพื่อตอบโจทย์การใช้งานและจัดการ AI อย่างมี ประสิทธิภาพ เช่น การกำหนดสิทธิ์การเข้าถึงข้อมูล และควบคุมการมองเห็นข้อมูล เพื่อให้ AI ทำงานได้อย่าง ปลอดภัยและตอบสนองความต้องการของคุณ ได้อย่างสมบูรณ์',
-    image: `~/assets/images/ai.webp`,
+      ? 'T.T. Dashboard is a Business Intelligence Dashboard system that transforms complex data into easily understandable visualizations. It enables organizations to consolidate and display critical information from multiple data sources on a single screen, allowing executives and teams to monitor Key Performance Indicators (KPIs), analyze trends, view data from various dimensions, and make sharp, timely business decisions.'
+      : 'T.T. Dashboard คือระบบแสดงผลข้อมูลอัจฉริยะ (Business Intelligence Dashboard) เปลี่ยนข้อมูลที่ซับซ้อนให้กลายเป็นภาพที่เข้าใจง่าย ช่วยให้องค์กรสามารถรวบรวมและแสดงผลข้อมูลสำคัญจากหลากหลายแหล่งที่มาไว้ในหน้าจอเดียว ช่วยให้ผู้บริหารและทีมงานสามารถติดตามตัวชี้วัด (KPIs) วิเคราะห์แนวโน้ม ดูข้อมูลได้หลากหลายมิติ และตัดสินใจทางธุรกิจได้อย่างเฉียบคมและทันท่วงที',
+    image: `~/assets/images/dashboard.webp`,
     icon: '~/assets/images/product1.webp',
   },
   {
-    title: 'T.T. HR',
+    title: 'T.T. e-Litigation',
     description: isEnglist
-      ? 'T.T. HR is a comprehensive HR management system developed by our experts to address all personnel management needs. It handles employee data from personal details to employment history, generates key reports like Formal documents, and includes integrated payroll and leave management for streamlined operations.'
-      : 'TT HR คือ ระบบบริหารบุคลากรที่พัฒนาขึ้นโดยทีมงาน ผู้เชี่ยวชาญของเรา เพื่อตอบโจทย์ทุกความต้องการในการ จัดการทรัพยากรบุคคลในองค์กร ระบบนี้ครอบคลุม การจัดการ ข้อมูลบุคคลทั้งหมดตั้งแต่ประวัติส่วนตัว การจ้างงาน ประวัติการศึกษาไปจนถึงการออกรายงาน ที่สำคัญ เช่น กพ.7 นอกจากนี้ยังมาพร้อมฟังก์ชัน ระบบจัดการ เงินเดือนและระบบการลาที่ช่วยให้การ ดำเนินการต่าง ๆ เป็นไปอย่างสะดวกและครบวงจร',
-    image: `~/assets/images/hr.webp`,
+      ? 'T.T. e-Litigation is a legal case management system designed for organizations involved in legal matters. It enhances efficiency and organizes legal operations within the organization this system is specifically designed to systematically manage various types of legal case data, from information collection and progress tracking to generating summary reports. It helps reduce complexity and prevents critical information from being overlooked, enabling legal teams and executives to accurately monitor every step of the process.'
+      : 'T.T. e-Litigation คือระบบบริหารจัดการงานคดีความสำหรับองค์กรที่มีความเกี่ยวข้องด้านกฏหมาย เพิ่มประสิทธิภาพและจัดระเบียบการดำเนินงานด้านกฎหมายขององค์กร เป็นระบบที่ถูกออกแบบมาเพื่อช่วยบริหารจัดการข้อมูลคดีความประเภทต่างๆ อย่างเป็นระบบ ตั้งแต่การรวบรวมข้อมูล, การติดตามความคืบหน้า, ไปจนถึงการออกรายงานสรุปผล ช่วยลดความซับซ้อนและป้องกันข้อมูลสำคัญตกหล่น ทำให้ทีมกฎหมายและผู้บริหารสามารถติดตามทุกขั้นตอนได้อย่างแม่นยำ',
+    image: `~/assets/images/e-litigation.webp`,
     icon: '~/assets/images/product2.webp',
+  },
+  {
+    title: 'T.T. TRACKING',
+    description: isEnglist
+      ? 'T.T. Tracking is a flexible monitoring and data visualization system for sensors and GPS/IoT devices. It handles various types of data including vehicle and transportation tracking, as well as environmental data such as water levels, wind strength, air quality, or production line data in industrial facilities. The system collects and transforms complex data into real-time displays through user-friendly dashboards, enabling you to monitor status, analyze trends, and make accurate, timely decisions based on actual data.'
+      : 'T.T. Tracking คือระบบติดตาม และแสดงผลข้อมูลจากเซ็นเซอร์และอุปกรณ์ GPS/IoT ได้อย่างยืดหยุ่น ไม่ว่าจะเป็นข้อมูลด้านการติดตามยานพาหนะ และขนส่ง หรือแม้แต่ด้านสิ่งแวดล้อม เช่น ระดับน้ำ, แรงลม, คุณภาพอากาศ, หรือข้อมูลจากสายการผลิตในโรงงานอุตสาหกรรม โดยระบบจะรวบรวมและนำข้อมูลที่ซับซ้อนมาแสดงผลแบบเรียลไทม์ผ่านแดชบอร์ดที่เข้าใจง่าย ช่วยให้คุณสามารถติดตามสถานะ, วิเคราะห์แนวโน้ม, และตัดสินใจจากข้อมูลจริงได้อย่างแม่นยำและทันท่วงที',
+    image: '~/assets/images/tracking.webp',
+    icon: '~/assets/images/product3.webp',
+  },
+  {
+    title: 'T.T. SURVEY / e-Testing',
+    description: isEnglist
+      ? 'T.T. SURVEY is a survey and assessment management system designed to support structured data collection. It accommodates diverse question-answer formats and allows access control configuration based on user roles and departments. The system enables unlimited survey creation with standardized survey management features and supports data export for integration with other systems.'
+      : 'T.T. SURVEY เป็นระบบ บริหารจัดการแบบสอบถามและแบบทดสอบ ที่ออกแบบมาเพื่อรองรับการเก็บข้อมูลเชิงโครงสร้าง รองรับรูปแบบคำถาม-คำตอบ ที่หลากหลาย และสามารถกำหนดสิทธิ์การเข้าถึง ตามบทบาทผู้ใช้งานและหน่วยงาน สร้างแบบสอบถาม ได้ไม่จำกัดจำนวน พร้อมระบบบริหารจัดการแบบสอบถามที่เป็นมาตรฐาน รองรับการนำออกข้อมูลเพื่อนำไปใช้กับระบบอื่น',
+    image: '~/assets/images/tt-survey.webp',
+    icon: '~/assets/images/product4.webp',
+  },
+  {
+    title: 'T.T. AI CHAT BOT',
+    description: isEnglist
+      ? 'T.T. AI CHAT BOT is an intelligent chatbot system for automated communication that elevates service levels and creates 24/7 customer interactions. This solution enables smooth and efficient communication, capable of automatically answering frequently asked questions, providing product information, or handling initial complaint inquiries. All of this operates under the T.T. AI Integration platform, ensuring that every conversation is managed effectively.'
+      : 'T.T. AI CHAT BOT คือระบบแชทบอทอัจฉริยะเพื่อการสื่อสารอัตโนมัติ ยกระดับการบริการและสร้างปฏิสัมพันธ์กับลูกค้าตลอด 24 ชั่วโมง เป็นโซลูชันที่ช่วยให้การสื่อสารเป็นไปอย่างราบรื่นและมีประสิทธิภาพ สามารถตอบคำถามที่พบบ่อย, ให้ข้อมูลผลิตภัณฑ์, หรือรับเรื่องร้องเรียนเบื้องต้นได้โดยอัตโนมัติ ทั้งหมดนี้ทำงานภายใต้แพลตฟอร์ม T.T. AI Integration ที่ช่วยให้คุณมั่นใจได้ว่าทุกการสนทนาจะถูกจัดการอย่างมีประสิทธิภาพ',
+    image: '~/assets/images/tt-ai-chatbot.webp',
+    icon: '~/assets/images/product5.webp',
+  },
+  {
+    title: 'T.T. AI OCR',
+    description: isEnglist
+      ? 'T.T. AI OCR (Optical Character Recognition) is a system that converts documents and images into digital data, reducing manual data entry processes and transforming paper documents into ready-to-use information. Using high-accuracy technology to read and extract text from image files or PDFs, it can be stored in a central database to create easily searchable knowledge management systems, transferred to other workflow systems for automated processes, or used for in-depth analytics to generate reports and dashboards for efficient business decision-making.'
+      : 'T.T. AI OCR (Optical Character Recognition) คือระบบแปลงเอกสาร และรูปภาพให้เป็นข้อมูลดิจิทัล ลดขั้นตอนการคีย์ข้อมูลและเปลี่ยนเอกสารกระดาษให้กลายเป็นข้อมูลที่พร้อมใช้งานด้วย เทคโนโลยีการอ่านและสกัดข้อความจากไฟล์รูปภาพหรือ PDF ที่มีความแม่นยำสูง สามารถนำไปจัดเก็บในฐานข้อมูลกลางเพื่อสร้างองค์ความรู้ที่สืบค้นได้ง่าย (Knowledge Management), ส่งต่อไปยังระบบ Workflow อื่นๆ เพื่อสร้างกระบวนการทำงานอัตโนมัติ (Automation) หรือนำไปวิเคราะห์เชิงลึก (Analytics) เพื่อสร้างรายงานและแดชบอร์ดประกอบการตัดสินใจทางธุรกิจได้อย่างมีประสิทธิภาพ',
+    image: '~/assets/images/tt-ai-chatbot.webp',
+    icon: '~/assets/images/product6.webp',
+  },
+  {
+    title: 'T.T. AI AUTOMATION',
+    description: isEnglist
+      ? 'T.T. AI OCR (Optical Character Recognition) is a system that converts documents and images into digital data, reducing manual data entry processes and transforming paper documents into ready-to-use information. Using high-accuracy technology to read and extract text from image files or PDFs, it can be stored in a central database to create easily searchable knowledge management systems, transferred to other workflow systems for automated processes, or used for in-depth analytics to generate reports and dashboards for efficient business decision-making.'
+      : 'T.T. AI AUTOMATION คือระบบอัตโนมัติอัจฉริยะ (Intelligent Automation Platform) ที่ทำหน้าที่บริหารจัดการกระบวนการทำงานอัตโนมัติให้แก่องค์กรของคุณ โดยสามารถเชื่อมต่อระบบ AI และแอปพลิเคชันต่างๆ ที่ใช้งานอยู่ให้ทำงานร่วมกันได้อย่างไร้รอยต่อ เช่น หลังจากที่รับคำร้องจากลูกค้า, ระบบ Automation สามารถนำข้อมูลไปสร้าง Task, เปิด Ticket ในระบบหลังบ้าน, หรือรับและแจ้งเตือนไปยังแผนกที่เกี่ยวข้องได้ทันที ช่วยลดข้อผิดพลาดและงานที่ต้องทำซ้ำซ้อน เพื่อให้ทีมของคุณมีเวลาไปโฟกัสกับงานที่สำคัญกว่า',
+    image: '~/assets/images/tt-ai-automation-2.webp',
+    icon: '~/assets/images/product7.webp',
+  },
+  {
+    title: 'T.T. BUDGETING',
+    description: isEnglist
+      ? 'T.T. BUDGETING is a comprehensive budget management, approval, and monitoring system designed and developed by our expert team to support every stage of budget management. It elevates organizational budget administration to be systematic and transparent. The system supports all processes from budget planning, allocation, and transfer/budget increase requests through flexible approval workflows based on cost centers, to real-time monitoring and evaluation via intelligent dashboards. This enables organizations to accurately manage and track annual budgets.'
+      : 'T.T. BUDGETING คือระบบบริหารจัดการ อนุมัติและติดตามงบประมาณที่ออกแบบ และพัฒนาโดยทีมงานผู้เชี่ยวชาญของเราเพื่อรองรับทุกขั้นตอนของการจัดการงบประมาณอย่างครบวงจรยกระดับการบริหารจัดการงบประมาณขององค์กรให้เป็นระบบและโปร่งใส ระบบรองรับทุกกระบวนการ ตั้งแต่การตั้งงบประมาณ, การจัดสรร, การโอนย้าย/ขอเพิ่มงบ ผ่านกระบวนการอนุมัติอย่างยืดหยุ่นตามศูนย์ต้นทุน (Cost Center) ไปจนถึงการติดตามและประเมินผลได้แบบเรียลไทม์ผ่านแดชบอร์ดอัจฉริยะ  ช่วยให้องค์กรสามารถบริหาร และติดตามงบประมาณประจำปีได้อย่างแม่นยำ',
+    image: '~/assets/images/budget2.webp',
+    icon: '~/assets/images/product8.webp',
   },
   {
     title: 'T.T. CMS',
     description: isEnglist
       ? 'T.T. CMS is a Content Management System developed by our team to make managing public content on your website easy and convenient. The system supports various file formats and includes a Rich Editor that allows users to edit content directly on the website without coding knowledge. Users can manage content quickly and systematically.'
-      : 'TT CMS คือระบบจัดการ Content Management System ที่พัฒนาขึ้นโดยทีมงานของเรา เพื่อช่วยให้ การจัดการเนื้อหา (Content) ฝั่ง Public บนเว็บไซต์ ของคุณเป็นเรื่องง่ายและสะดวกสบาย ระบบนี้ออกแบบมา เพื่อรองรับไฟล์หลากหลายรูปแบบ พร้อมด้วย RichEditor ที่ช่วยให้ผู้ใช้งานสามารถแก้ไขเนื้อหาได้ โดยตรงบนเว็บไซต์โดยไม่จำเป็นต้องมีความรู้ด้านการ เขียนโค้ด ผู้ใช้งานสามารถจัดการเนื้อหาได้อย่างรวดเร็ว และเป็นระบบ',
+      : 'T.T. CMS คือระบบจัดการ Content Management System ที่พัฒนาขึ้นโดยทีมงานของเรา เพื่อช่วยให้ การจัดการเนื้อหา (Content) ฝั่ง Public บนเว็บไซต์ ของคุณเป็นเรื่องง่ายและสะดวกสบาย ระบบนี้ออกแบบมา เพื่อรองรับไฟล์หลากหลายรูปแบบ พร้อมด้วย RichEditor ที่ช่วยให้ผู้ใช้งานสามารถแก้ไขเนื้อหาได้ โดยตรงบนเว็บไซต์โดยไม่จำเป็นต้องมีความรู้ด้านการ เขียนโค้ด ผู้ใช้งานสามารถจัดการเนื้อหาได้อย่างรวดเร็ว และเป็นระบบ',
     image: `~/assets/images/cms.webp`,
-    icon: '~/assets/images/product3.webp',
-  },
-  {
-    title: 'T.T. BUDGET',
-    description: isEnglist
-      ? 'T.T. BUDGET is a comprehensive budget management system designed and developed by our expert team to support all stages of budget processes. It covers budget planning, allocation to relevant departments, budget transfers, and efficient budget tracking.'
-      : 'TT BUDGET คือระบบบริหารงบประมาณที่ออกแบบ และพัฒนาโดยทีมงานผู้เชี่ยวชาญของเราเพื่อรองรับ ทุกขั้นตอนของการจัดการงบประมาณอย่างครบวงจร ตั้งแต่กระบวนการ วางแผนตั้งงบประมาณ การจัดสรร งบประมาณ ให้กับหน่วยงานที่เกี่ยวข้อง การโยกย้าย งบประมาณไปจนถึงการติดตามการใช้งบประมาณ อย่างมีประสิทธิภาพ',
-    image: `~/assets/images/budget.webp`,
-    icon: '~/assets/images/product4.webp',
-  },
-  {
-    title: 'T.T. SURVEY / e-Testing',
-    description: isEnglist
-      ? 'T.T. Survey/e-Testing is a questionnaire management system designed to support structured data collection with various question-answer formats. It features role-based access controls by user and department, allows unlimited survey creation, includes standard survey management tools, and supports data export for use with other systems.'
-      : 'TT SURVEY เป็นระบบ บริหารจัดการแบบสอบถาม ที่ออกแบบมาเพื่อรองรับการเก็บข้อมูลเชิงโครงสร้าง รองรับรูปแบบคำถาม-คำตอบ ที่หลากหลาย และสามารถกำหนดสิทธิ์การเข้าถึง ตามบทบาทผู้ใช้งานและหน่วยงาน สร้างแบบสอบถาม ได้ไม่จำกัดจำนวน พร้อมระบบบริหารจัดการแบบสอบถามที่เป็นมาตรฐาน รองรับการนำออกข้อมูลเพื่อนำไปใช้กับระบบอื่น',
-    image: '~/assets/images/tt-survey.webp',
-    icon: '~/assets/images/product5.webp',
-  },
-  {
-    title: 'T.T. FINANCE',
-    description: isEnglist
-      ? `T.T. Finance is a comprehensive financial management system for loans and litigation. The system's main purpose is to store asset information, manage loans, track debt repayments, and control litigation processes for defaulting debtors, as well as systematically manage legal expenses.`
-      : 'TT Finance คือระบบบริหารจัดการทางการเงิน ครบวงจรสำหรับสินเชื่อและการดำเนินคดีโดยระบบมีวัตถุประสงค์หลักในการจัดเก็บข้อมูลทรัพย์สิน, บริหารสินเชื่อ, ติดตามการชำระหนี้,และควบคุมกระบวนการดำเนินคดี ของลูกหนี้ที่ผิดนัดชำระรวมถึงควบคุมค่าใช้จ่ายทาง กฎหมายต่างๆ ได้อย่างเป็นระบบ',
-    image: '~/assets/images/finance.webp',
-    icon: '~/assets/images/product6.webp',
+    icon: '~/assets/images/product9.webp',
   },
   {
     title: 'T.T. ILAB',
@@ -65,15 +89,15 @@ const products = [
       ? 'T.T. iLAB is a laboratory testing system for biological specimens or samples to determine medical, scientific, or industrial results. The system supports lab order management, automatic fee calculation, and multiple payment methods (QR Code/credit card), while displaying processing status and analysis results through an online platform.'
       : 'T.T. iLAB คือระบบบริการตรวจวิเคราะห์ตัวอย่าง ทางชีวภาพหรือสารตัวอย่าง เพื่อหาผลลัพธ์ทางการแพทย์ วิทยาศาสตร์ หรืออุตสาหกรรม โดยระบบรองรับการ บริหารจัดการคำร้อง (Lab Order), คำนวณค่าบริการ อัตโนมัติ และชำระเงินได้หลายรูปแบบ (QR Code / บัตรเครดิต)พร้อมแสดงสถานะการดำเนินการและ ผลวิเคราะห์ผ่านระบบออนไลน์',
     image: '~/assets/images/ILab.webp',
-    icon: '~/assets/images/product7.webp',
+    icon: '~/assets/images/product10.webp',
   },
   {
-    title: 'T.T. TRACKING',
+    title: 'T.T. HR',
     description: isEnglist
-      ? 'T.T. Tracking is a journey tracking system that records real-time boarding and alighting points of each person through QR Code scanning installed in vehicles. The system displays route information, current status, and travel history via maps that are easily accessible from all devices such as mobile phones, tablets, or web applications.'
-      : 'T.T. Tracking คือระบบติดตามการเดินทาง โดยระบบจะบันทึกจุดขึ้น-ลงของแต่ละคนแบบเรียลไทม์ ผ่านการสแกน QR Code ที่ติดตั้งในรถ พร้อมแสดง ข้อมูลเส้นทาง, สถานะปัจจุบัน, และประวัติการเดินทาง ผ่านแผนที่ ที่สามารถเข้าถึงได้ง่ายจากอุปกรณ์ทุกชนิด เช่น มือถือ, Tablet หรือ Web Application',
-    image: '~/assets/images/tracking.webp',
-    icon: '~/assets/images/product8.webp',
+      ? 'T.T. HR is a comprehensive HR management system developed by our experts to address all personnel management needs. It handles employee data from personal details to employment history, generates key reports like Formal documents, and includes integrated payroll and leave management for streamlined operations.'
+      : 'TT HR คือ ระบบบริหารบุคลากรที่พัฒนาขึ้นโดยทีมงาน ผู้เชี่ยวชาญของเรา เพื่อตอบโจทย์ทุกความต้องการในการ จัดการทรัพยากรบุคคลในองค์กร ระบบนี้ครอบคลุม การจัดการ ข้อมูลบุคคลทั้งหมดตั้งแต่ประวัติส่วนตัว การจ้างงาน ประวัติการศึกษาไปจนถึงการออกรายงาน ที่สำคัญ เช่น กพ.7 นอกจากนี้ยังมาพร้อมฟังก์ชัน ระบบจัดการ เงินเดือนและระบบการลาที่ช่วยให้การ ดำเนินการต่าง ๆ เป็นไปอย่างสะดวกและครบวงจร',
+    image: `~/assets/images/hr.webp`,
+    icon: '~/assets/images/product11.webp',
   },
 ];
 ---

@@ -36,9 +36,9 @@ const images = [
     link: 'https://learn.microsoft.com/api/credentials/share/en-gb/NakornRientrakrunchai-3290/FCB870799C623A35?sharingId=57B1B17B693AE35E',
   },
   {
-    src:'~/assets/images/Certificate_nakorn.webp',
-    alt:'Nakorn-Azure-AI',
-    link:'https://learn.microsoft.com/en-gb/users/nakornrientrakrunchai-3290/credentials/a7eb225ae45a65c2'
+    src: '~/assets/images/Certificate_nakorn.webp',
+    alt: 'Nakorn-Azure-AI',
+    link: 'https://learn.microsoft.com/en-gb/users/nakornrientrakrunchai-3290/credentials/a7eb225ae45a65c2',
   },
   {
     src: `${environmentConfig.baseImageUrl}/images/our_certificates/Ponggun/Ponggun-Azure.webp`,
@@ -53,7 +53,7 @@ const images = [
   {
     src: '~/assets/images/nakorn_cybersecurity.webp',
     alt: 'Nakorn-Cybersecurity',
-  }
+  },
 ];
 
 const pdpa = [
@@ -98,10 +98,6 @@ const pdpa = [
     alt: 'pdpa10',
   },
   {
-    src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/11.อนัญพร%20กังวานเกียรติชัย.webp`,
-    alt: 'pdpa11',
-  },
-  {
     src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/12.วินัย%20ภูสีทอง.webp`,
     alt: 'pdpa12',
   },
@@ -113,13 +109,56 @@ const pdpa = [
     src: `${environmentConfig.baseImageUrl}/images/our_certificates/pdpa/15.Yuraporn%20Nanthasuta.webp`,
     alt: 'pdpa15',
   },
-]
+];
+
+const pdpadpo = [
+  {
+    src: '~/assets/images/our_certificates/pdpa/1.นคร เหรียญตระกูลชัย_ADES_DPO.webp',
+    alt: '1.นคร เหรียญตระกูลชัย_ADES_DPO.webp',
+  },
+  {
+    src: '~/assets/images/our_certificates/pdpa/2.วัชรพงษ์ สุขวนิช_ADES_DPO.webp',
+    alt: '2.วัชรพงษ์ สุขวนิช_ADES_DPO.webp',
+  },
+  {
+    src: '~/assets/images/our_certificates/pdpa/3.ธาดา หวังธรรมมั่ง_ADES_DPO.webp',
+    alt: '3.ธาดา หวังธรรมมั่ง_ADES_DPO.webp',
+  },
+  {
+    src: '~/assets/images/our_certificates/pdpa/4.รัฐพล สกลชัยไพรสัณฑ์_ADES_DPO.webp',
+    alt: '4.รัฐพล สกลชัยไพรสัณฑ์_ADES_DPO.webp',
+  },
+  {
+    src: '~/assets/images/our_certificates/pdpa/5.วิทวัส กาพย์ไกรแก้ว_ADES_DPO.webp',
+    alt: '5.วิทวัส กาพย์ไกรแก้ว_ADES_DPO.webp',
+  },
+  {
+    src: '~/assets/images/our_certificates/pdpa/6..นที เหรียญตระกูลชัย_ADES_DPO.webp',
+    alt: '6..นที เหรียญตระกูลชัย_ADES_DPO.webp',
+  },
+  {
+    src: '~/assets/images/our_certificates/pdpa/7.วีระพันธุ์ ไทยรัก_ADES_DPO.webp',
+    alt: '7.วีระพันธุ์ ไทยรัก_ADES_DPO.webp',
+  },
+  {
+    src: '~/assets/images/our_certificates/pdpa/8.ยุรพร นันทสุทา_ADES_DPO.webp',
+    alt: '8.ยุรพร นันทสุทา_ADES_DPO.webp',
+  },
+  {
+    src: '~/assets/images/our_certificates/pdpa/9.สุทธิพร ภูโคกสูง_ADES_DPO.webp',
+    alt: '9.สุทธิพร ภูโคกสูง_ADES_DPO.webp',
+  },
+  {
+    src: '~/assets/images/our_certificates/pdpa/10.สิรามล สกลชัยไพรสัณฑ์_ADES_DPO.webp',
+    alt: '10.สิรามล สกลชัยไพรสัณฑ์_ADES_DPO.webp',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
     <!-- Tabs -->
-    <!-- <div class="wrapper mt-12 xl:mt-0 mb-[-40px] xl:mb-[-0px]">
+    <div class="wrapper mt-12 xl:mt-0">
       <input type="radio" name="slider" id="tab-1" checked />
       <input type="radio" name="slider" id="tab-2" />
       <input type="radio" name="slider" id="tab-3" />
@@ -131,25 +170,24 @@ const pdpa = [
         <label for="tab-4" class="tab-4">PDPA DPO</label>
         <div class="slider"></div>
       </header>
-    </div> -->
+    </div>
 
     <!-- Standards Tab Content -->
-    <div id="standards" class="tab-content ">
+    <div id="standards" class="tab-content active">
       <div class="block-effect" style="--td: 1s">
         <div class="block-reveal pt-4" style="--bc: var(--aw-color-primary); --d: .1ms">
-          <Headline title="มาตรฐานของเรา" classes={{ container: 'pt-14 lg:pt-0 lg:mb-8' }} />
+          <Headline title="Our Standard" classes={{ container: 'mt-2 md:pt-4 lg:pt-6 lg:mb-8' }} />
         </div>
       </div>
       <div class="flex flex-col items-center gap-8 p-4 lg:p-0">
-        <div class="lg:w-1/2">
+        <div class="lg:w-3/4">
           <p class="md:text-md">
-            Our company has been assessed and certified for 
-            <span class="text-primary">ISO 29110</span> standards in 
-            <span class="text-primary">Project Management (PM) Process</span> 
-            and 
-            <span class="text-primary">Software Implementation (SI) Process</span>. 
-            We strictly adhere to the established framework standards to ensure the efficiency 
-            and quality of all software development processes. 
+            Our company has been assessed and certified for
+            <span class="text-primary">ISO 29110</span> standards in
+            <span class="text-primary">Project Management (PM) Process</span>
+            and
+            <span class="text-primary">Software Implementation (SI) Process</span>. We strictly adhere to the
+            established framework standards to ensure the efficiency and quality of all software development processes.
             <span class="font-bold">Certification Date: September 27, 2024</span>
           </p>
         </div>
@@ -169,9 +207,9 @@ const pdpa = [
     </div>
 
     <!-- Certificates Tab Content -->
-    <div id="certificates" class="tab-content flex justify-center active">
+    <div id="certificates" class="tab-content flex justify-center">
       <div class="pt-4">
-        <Headline title="ใบรับรองของเรา" classes={{ container: 'pt-12 lg:pt-0 lg:mb-8' }} />
+        <Headline title="Our Certificates" classes={{ container: 'mt-2 md:pt-4 lg:pt-6 lg:mb-8' }} />
       </div>
       <div class="flex justify-center md:items-center xl:items-start">
         <p class="text-md">
@@ -198,9 +236,9 @@ const pdpa = [
     <!-- PDPA Tab Content -->
     <div id="PDPA" class="tab-content">
       <div class="pt-4 flex justify-center flex-col items-center gap-0">
-        <Headline title="PDPA" classes={{ container: 'pt-12 lg:pt-0 lg:mb-8' }} />
+        <Headline title="PDPA" classes={{ container: 'mt-2 md:pt-4 lg:pt-6 lg:mb-8' }} />
         <div class="flex justify-center md:items-center xl:items-start">
-          <p class="flex justify-center md:text-lg md:flex-row flex-col items-center">
+          <p>
             Our team has been trained in
             <span class="text-primary">Personal Data Protection (PDPA)</span>
             and strictly complies with the law
@@ -209,29 +247,47 @@ const pdpa = [
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 mx-auto">
           {
             pdpa.map((pdpa) => (
-              <div class="image-container border-gray-300 p-2">
-          <a href={pdpa.src} class="image-link">
-            <Image src={pdpa.src} alt={pdpa.alt} class="w-full h-full !object-contain mx-auto border-2" />
-          </a>
+              <div class="image-container border-gray-300 p-2 image-link">
+                <Image src={pdpa.src} alt={pdpa.alt} class="w-full h-full !object-contain mx-auto border-2" />
               </div>
             ))
           }
         </div>
+      </div>
+    </div>
 
-        <style>
-          .image-link img {
-            transition: transform 0.3s ease;
+    <!-- PDPA DPO Tab Content -->
+    <div id="PDPADPO" class="tab-content">
+      <div class="pt-4 flex justify-center flex-col items-center gap-0">
+        <Headline title="PDPA DPO" classes={{ container: 'mt-2 md:pt-4 lg:pt-6 lg:mb-8' }} />
+        <div class="flex justify-center md:items-center xl:items-start">
+          <p>
+            Our team has been trained in
+            <span class="text-primary">"Data Protection Officer (DPO)" course</span>
+            and strictly complies with the law
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 mx-auto">
+          {
+            pdpadpo.map((pdpadpo) => (
+              <div class="image-container border-gray-300 p-2 image-link">
+                <Image src={pdpadpo.src} alt={pdpadpo.alt} class="w-full h-full !object-contain mx-auto border-2" />
+              </div>
+            ))
           }
-          .image-link:hover img {
-            transform: scale(1.1);
-          }
-        </style>
+        </div>
       </div>
     </div>
   </WidgetWrapper>
 </Layout>
 
 <style>
+  .image-link img {
+    transition: transform 0.3s ease;
+  }
+  .image-link:hover img {
+    transform: scale(1.1);
+  }
   .tab-content {
     display: none;
     opacity: 0;
@@ -260,69 +316,68 @@ const pdpa = [
 
   /*---------- slider tab selector -----------*/
   :root {
-  --tab-count: 1; /* Change this to match the number of tabs */
-}
+    --tab-count: 4; /* Change this to match the number of tabs */
+  }
 
-.wrapper {
-  width: calc(var(--tab-count) * 120px); /* Adjust 120px per tab as needed */
-  max-width: 100%;
-  background: #fff;
-}
+  .wrapper {
+    width: calc(var(--tab-count) * 120px); /* Adjust 120px per tab as needed */
+    max-width: 100%;
+    background: #fff;
+  }
 
-.wrapper header {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 30px;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
+  .wrapper header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
 
-header label {
-  height: 100%;
-  z-index: 2;
-  width: calc(100% / var(--tab-count)); /* Dynamically adjust label width */
-  display: flex;
-  cursor: pointer;
-  font-size: 18px;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease;
-}
+  header label {
+    height: 100%;
+    z-index: 2;
+    width: calc(100% / var(--tab-count)); /* Dynamically adjust label width */
+    display: flex;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+  }
 
-header .slider {
-  position: absolute;
-  height: 93%;
-  border-radius: inherit;
-  background: linear-gradient(145deg, var(--aw-color-primary) 0%, #ffd000 120%);
-  transition: all 0.3s ease;
-  width: calc(100% / var(--tab-count)); /* Dynamic slider width */
-}
+  header .slider {
+    position: absolute;
+    height: 93%;
+    border-radius: inherit;
+    background: linear-gradient(145deg, var(--aw-color-primary) 0%, #ffd000 120%);
+    transition: all 0.3s ease;
+    width: calc(100% / var(--tab-count)); /* Dynamic slider width */
+  }
 
-/* Dynamic slider positioning */
-#tab-1:checked ~ header .slider {
-  left: calc(0 * (100% / var(--tab-count)));
-}
+  /* Dynamic slider positioning */
+  #tab-1:checked ~ header .slider {
+    left: calc(0 * (100% / var(--tab-count)));
+  }
 
-#tab-2:checked ~ header .slider {
-  left: calc(1 * (100% / var(--tab-count)));
-}
+  #tab-2:checked ~ header .slider {
+    left: calc(1 * (100% / var(--tab-count)));
+  }
 
-#tab-3:checked ~ header .slider {
-  left: calc(2 * (100% / var(--tab-count)));
-}
+  #tab-3:checked ~ header .slider {
+    left: calc(2 * (100% / var(--tab-count)));
+  }
 
-#tab-4:checked ~ header .slider {
-  left: calc(3 * (100% / var(--tab-count)));
-}
+  #tab-4:checked ~ header .slider {
+    left: calc(3 * (100% / var(--tab-count)));
+  }
 
-.wrapper input[type='radio'] {
-  display: none;
-}
-
+  .wrapper input[type='radio'] {
+    display: none;
+  }
 
   @media screen and (max-width: 480px) {
     .wrapper header {
@@ -334,10 +389,6 @@ header .slider {
       font-size: 14px;
       padding: 8px 0;
     }
-
- 
-
-
   }
 </style>
 

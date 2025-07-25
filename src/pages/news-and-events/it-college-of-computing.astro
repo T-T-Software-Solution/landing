@@ -1,0 +1,120 @@
+---
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { environmentConfig } from '~/config';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: `Kasetsart University Visit`,
+};
+
+const event = {
+  date: 'วันที่ 17 กรกฎาคม พ.ศ. 2568',
+    title: 'IT @ College of Computing',
+    description: `    บริษัท บริษัท ที.ที. ซอฟแวร์ โซลูชั่น จำกัด มีความยินดีเป็นอย่างยิ่งที่ คุณกัณฑ์อเนก รัตนศิริพรหม พนักงานตำแหน่ง DevOps Engineer ได้รับเกียรติให้เข้าร่วมบรรยายในรายวิชา แรงบันดาลใจอาชีพด้านไอที ณ คณะวิทยาลัยการคอมพิวเตอร์ มหาวิทยาลัยขอนแก่น
+ในโอกาสนี้ คุณกัณฑ์อเนก รัตนศิริพรหม ได้แบ่งปันประสบการณ์จากเส้นทางการเรียนรู้ในระดับมหาวิทยาลัย จนกระทั่งก้าวเข้าสู่สายอาชีพด้าน DevOps โดยมีจุดมุ่งหมายเพื่อถ่ายทอดแนวคิด กระบวนการทำงาน และทักษะที่สำคัญให้แก่นักศึกษารุ่นใหม่ ซึ่งกำลังเตรียมพร้อมสำหรับการก้าวเข้าสู่โลกการทำงานในอนาคต
+บริษัทฯ ขอขอบพระคุณอาจารย์ประจำรายวิชาและคณะผู้จัดกิจกรรม ที่ได้มอบโอกาสให้ทีมงานของเราได้มีส่วนร่วมในการสร้างแรงบันดาลใจ และส่งต่อองค์ความรู้ให้แก่นักศึกษาที่มีความมุ่งมั่นในสายอาชีพด้านเทคโนโลยีสารสนเทศ
+เราหวังเป็นอย่างยิ่งว่าจะได้ร่วมเป็นส่วนหนึ่งในการส่งเสริมการเรียนรู้และพัฒนาศักยภาพของนักศึกษาต่อไป`,
+    image: `~/assets/images/ภาพปกITCollegeOfComputing.webp`,
+};
+
+const images = [
+  {
+    src: `~/assets/images/ภาพปกITCollegeOfComputing.webp`,
+    alt: 'ปก',
+  },
+  {
+    src: `~/assets/images/ภาพปกIT-CP1-4.webp`,
+    alt: 'ปก IT College of Computing',
+  },
+    {
+        src: `~/assets/images/ภาพปกIT-CP2-4.webp`,
+        alt: 'ปก IT College of Computing',
+    },
+    {
+        src: `~/assets/images/ภาพปกIT-CP3-4.webp`,
+        alt: 'ปก IT College of Computing',
+    },
+    {
+        src: `~/assets/images/ภาพปกIT-CP4-4.webp`,
+        alt: 'ปก IT College of Computing',
+    },
+];
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <Headline title="" subtitle={event.title} classes={{ container: 'pt-12 lg:pt-0' }} />
+    <div class="p-6">
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">{event.date}</p>
+      <p class="text-gray-600 mb-4 whitespace-pre-wrap">
+        {event.description}
+      </p>
+    </div>
+    <div
+      class={`grid grid-cols-1 md:grid-cols-2 ${images.length > 2 ? 'lg:grid-cols-3' : ''} gap-4 mt-8 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8`}
+    >
+      {
+        images.map((image, index) => (
+          <div
+            class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-up-element image-container"
+            style={`--delay: ${index * 0.1}s`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full md:h-72 !object-cover !object-center image-scale"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </WidgetWrapper>
+</Layout>
+
+<style>
+  .fade-up-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    transition-delay: var(--delay, 0s);
+  }
+  .fade-up-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .image-container {
+    overflow: hidden;
+  }
+  .image-scale {
+    transition: transform 0.3s ease-in-out;
+  }
+  .image-container:hover .image-scale {
+    transform: scale(1.1);
+  }
+</style>
+
+<script>
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    const elements = document.querySelectorAll('.fade-up-element');
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

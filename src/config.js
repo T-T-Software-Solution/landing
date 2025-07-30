@@ -1,3 +1,3 @@
 export const environmentConfig = {
-  baseImageUrl: 'https://ttssdemoimages.azureedge.net'
+  baseImageUrl: 'https://tt-corp-prod-website-cdn-endpoint.azureedge.net'
 }
